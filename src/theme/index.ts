@@ -2,16 +2,16 @@ import {extendTheme} from 'native-base';
 export const theme = extendTheme({
   colors: {
     primary: {
-      50: '#e5faff',
-      100: '#d4f0f9',
-      200: '#acddef',
-      300: '#80cbe5',
-      400: '#5dbadc',
-      500: '#47b1d7',
-      600: '#36acd6',
-      700: '#2596be',
-      800: '#1285ab',
-      900: '#007497',
+      50: '#ebf3ff',
+      100: '#d4e4fa',
+      200: '#a3c6f7',
+      300: '#6fa7f6',
+      400: '#4a8cf5',
+      500: '#367bf5',
+      600: '#2c72f6',
+      700: '#2161dc',
+      800: '#1756c4',
+      900: '#004aad',
     },
     secondary: {
       50: '#fff9e1',
