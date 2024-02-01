@@ -16,6 +16,9 @@ buildscript {
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
     }
+    dependencies {
+  implementation files("../../node_modules/@synonymdev/react-native-ldk/android/libs/LDK-release.aar")
+}}
 }
 
 apply plugin: "com.facebook.react.rootproject"
