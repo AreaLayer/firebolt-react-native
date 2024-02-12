@@ -43,4 +43,6 @@ class MainActivity : ReactActivity() {
    */
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
-}                                             override fun createLDKReactActivityDelegate():             mainComponentName, fabricEnabled)             }
+}                                            
+override fun createLDKReactActivityDelegate():            
+mainComponentName, fabricEnabled)             }
