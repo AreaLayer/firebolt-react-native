@@ -1,11 +1,11 @@
-## Firebolt Wallet React Native ⚡
+## Firebolt Wallet - React Native Version ⚡
 
-⚠️**Wallet in WIP**
+⚠️**Wallet in WIP and development**
 
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 [![LN](https://img.shields.io/badge/lightning-792EE5?logo=lightning)](https://mempool.space/lightning)
 
-React version for Firebolt wallet with LDK, Coinjoin, Nostr, Payjoin and Bitcoin
+React native version for Firebolt wallet with LDK, LSP , Coinjoin, Nostr, Payjoin and Bitcoin
 
 # Getting Started
 
