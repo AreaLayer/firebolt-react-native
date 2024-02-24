@@ -8,6 +8,8 @@ import {
   Button,
   ButtonText,
 } from '@gluestack-ui/themed';
+import {SCREEN_NAMES} from '../../navigation/screenNames';
+import {NavigationProp} from '@react-navigation/native';
 
 const HEADING_TEXT_1 = 'Copy';
 const HEADING_TEXT_2 = 'Seed Phrase';
@@ -33,7 +35,14 @@ const words = [
   'knife',
 ];
 
-function CreateWallet() {
+interface Props {
+  navigation: NavigationProp<any, any>;
+}
+
+function CreateWallet({navigation}: Props) {
+  const onSubmit = () => {
+    navigation.navigate(SCREEN_NAMES.ConfirmSeed);
+  };
   return (
     <Box py={'10%'} px={'$8'} bg="$primary400" flex={1}>
       <Heading w={'$3/5'} size="2xl" color="white">
@@ -60,7 +69,7 @@ function CreateWallet() {
         reversed={false}
         flexWrap="wrap">
         {words.map((word, index) => (
-          <Center>
+          <Center key={index}>
             <Text mb={'$2'} size="xs" color="white" fontWeight="$bold">
               {index + 1}
             </Text>
@@ -73,6 +82,7 @@ function CreateWallet() {
               <Text
                 color="$primary500"
                 size="sm"
+                textTransform="uppercase"
                 borderRadius={'$lg'}
                 fontWeight="$bold">
                 {word}
@@ -88,6 +98,7 @@ function CreateWallet() {
           w={'$5/6'}
           variant="solid"
           action="secondary"
+          onPress={onSubmit}
           isDisabled={false}
           isFocusVisible={false}>
           <ButtonText color="black" fontWeight="$bold">
