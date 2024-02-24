@@ -4,6 +4,8 @@ import OnBoardingHome from '../screens/onboarding/OnBoardingHome';
 import CreateWallet from '../screens/onboarding/CreateWallet';
 import {SCREEN_NAMES} from './screenNames';
 import ConfirmSeed from '../screens/onboarding/ConfirmSeed';
+import PinSetup from '../screens/onboarding/PinSetup';
+import ConfirmPin from '../screens/onboarding/ConfirmPin';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +26,16 @@ function OnBoardingNavigation() {
         options={{headerShown: false}}
         name={SCREEN_NAMES.ConfirmSeed}
         component={ConfirmSeed}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={SCREEN_NAMES.PinSetup}
+        component={PinSetup}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={SCREEN_NAMES.ConfirmPin}
+        component={ConfirmPin}
       />
     </Stack.Navigator>
   );
