@@ -68,7 +68,7 @@ function ConfirmSeed({navigation}: Props) {
   };
 
   const onSubmit = () => {
-    navigation.navigate(SCREEN_NAMES.ConfirmSeed);
+    navigation.navigate(SCREEN_NAMES.PinSetup);
   };
 
   return (

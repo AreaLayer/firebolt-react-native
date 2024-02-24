@@ -78,9 +78,9 @@ function CreateWallet({navigation}: Props) {
               borderColor="$secondary500"
               w="$20"
               h="$10"
-              bg="white">
+              bg="$secondary500">
               <Text
-                color="$primary500"
+                color="$black"
                 size="sm"
                 textTransform="uppercase"
                 borderRadius={'$lg'}
