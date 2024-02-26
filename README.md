@@ -5,7 +5,7 @@
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 [![LN](https://img.shields.io/badge/lightning-792EE5?logo=lightning)](https://mempool.space/lightning)
 
-React native version for Firebolt wallet with LDK, LSP , Coinjoin, Nostr, Payjoin and Bitcoin
+React native version for Firebolt wallet with Bitcoin, Lightning Network (LDK), LSP , Coinjoin, Nostr, Payjoin
 
 # Getting Started
 
