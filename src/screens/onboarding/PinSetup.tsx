@@ -99,8 +99,9 @@ function PinSetup({navigation, route}: Props) {
         alignItems="center"
         reversed={false}
         flexWrap="wrap">
-        {walletPin.map(item => (
+        {walletPin.map((item, index) => (
           <Box
+            key={index}
             borderRadius={'$md'}
             borderColor="$secondary500"
             w="$12"
@@ -122,8 +123,8 @@ function PinSetup({navigation, route}: Props) {
         alignItems="center"
         reversed={false}
         flexWrap="wrap">
-        {digits.map(item => (
-          <Box alignItems="center" width="30%">
+        {digits.map((item, index) => (
+          <Box key={index} alignItems="center" width="30%">
             <Button
               borderRadius={'$full'}
               width="$20"

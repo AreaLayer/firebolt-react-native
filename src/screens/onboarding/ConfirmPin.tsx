@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {
   Box,
   Text,
@@ -12,12 +12,17 @@ import {
   RepeatIcon,
   CloseIcon,
   useToast,
+  ButtonSpinner,
 } from '@gluestack-ui/themed';
 import {SCREEN_NAMES} from '../../navigation/screenNames';
 import {RootStackParamList} from '../../navigation/OnBoarding';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 import ShowToast from '../../components/ShowToast';
+import {mnemonicToSeed} from 'bip39';
+import {encryptAesGcm} from '../../utils/encryption';
+import {STORAGE_KEYS} from '../../utils/storage/storageKeys';
+import storage from '../../utils/storage';
 
 const HEADING_TEXT_1 = 'Confirm';
 const HEADING_TEXT_2 = 'Your PIN code';
@@ -29,10 +34,11 @@ type Props = NativeStackScreenProps<RootStackParamList, 'ConfirmPin'>;
 
 function ConfirmPin({navigation, route}: Props) {
   const {words, walletPin} = route.params;
-  const toast = useToast();
   const [confirmWalletPin, setConfirmWalletPin] = useState<(number | null)[]>(
     Array(5).fill(null),
   );
+  const [buttonLoading, setButtonLoading] = useState(false);
+  const toast = useToast();
   const digits = React.useMemo(
     () => [1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, 'X'],
     [],
@@ -71,10 +77,22 @@ function ConfirmPin({navigation, route}: Props) {
     }
   };
 
-  const onSubmit = () => {
+  const saveEncryptedMnemonic = async () => {
+    const mnemonic = words.join(' ');
+    const seed = await mnemonicToSeed(mnemonic);
+    const hexSeed = seed.toString('hex');
+    const password = walletPin.join('').toString();
+    const encryptedSeedCipher = encryptAesGcm(hexSeed, password);
+    await storage.save({
+      key: STORAGE_KEYS.seedCipher,
+      data: encryptedSeedCipher,
+    });
+  };
+
+  const encryptAndSaveWallet = async () => {
     const isSamePin = compareWalletPins();
     if (isSamePin) {
-      console.warn(words, walletPin);
+      await saveEncryptedMnemonic();
       navigation.navigate(SCREEN_NAMES.Dashboard);
     } else {
       toast.show({
@@ -88,8 +106,18 @@ function ConfirmPin({navigation, route}: Props) {
         ),
       });
     }
+    setButtonLoading(false);
   };
+  useEffect(() => {
+    if (buttonLoading) {
+      setTimeout(encryptAndSaveWallet, 1000);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [buttonLoading]);
 
+  const onSubmit = () => {
+    setButtonLoading(true);
+  };
   return (
     <Box py={'10%'} px={'$8'} bg="$primary400" flex={1}>
       <Heading fontWeight="400" w={'$3/5'} size="lg" color="white">
@@ -125,8 +153,9 @@ function ConfirmPin({navigation, route}: Props) {
         alignItems="center"
         reversed={false}
         flexWrap="wrap">
-        {confirmWalletPin.map(item => (
+        {confirmWalletPin.map((item, index) => (
           <Box
+            key={index}
             borderRadius={'$md'}
             borderColor="$secondary500"
             w="$12"
@@ -148,8 +177,8 @@ function ConfirmPin({navigation, route}: Props) {
         alignItems="center"
         reversed={false}
         flexWrap="wrap">
-        {digits.map(item => (
-          <Box alignItems="center" width="30%">
+        {digits.map((item, index) => (
+          <Box key={index} alignItems="center" width="30%">
             <Button
               borderRadius={'$full'}
               width="$20"
@@ -188,9 +217,18 @@ function ConfirmPin({navigation, route}: Props) {
           onPress={onSubmit}
           isDisabled={false}
           isFocusVisible={false}>
-          <ButtonText color="black" fontWeight="$bold">
-            {STORE_SEED_BTN_TEXT}
-          </ButtonText>
+          {buttonLoading ? (
+            <>
+              <ButtonSpinner color="black" mr="$3" />
+              <ButtonText color="black" fontWeight="$bold">
+                Please wait...
+              </ButtonText>
+            </>
+          ) : (
+            <ButtonText color="black" fontWeight="$bold">
+              {STORE_SEED_BTN_TEXT}
+            </ButtonText>
+          )}
         </Button>
       </Center>
     </Box>
