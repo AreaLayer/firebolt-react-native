@@ -11,9 +11,13 @@ import {
   ButtonIcon,
   RepeatIcon,
   CloseIcon,
+  useToast,
 } from '@gluestack-ui/themed';
 import {SCREEN_NAMES} from '../../navigation/screenNames';
-import {NavigationProp} from '@react-navigation/native';
+import {RootStackParamList} from '../../navigation/OnBoarding';
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+import ShowToast from '../../components/ShowToast';
 
 const HEADING_TEXT_1 = 'Confirm';
 const HEADING_TEXT_2 = 'Your PIN code';
@@ -21,12 +25,12 @@ const COPY_SEED_TEXT = 'Please re-enter your 5 digit PIN code!';
 
 const STORE_SEED_BTN_TEXT = 'Finish';
 
-interface Props {
-  navigation: NavigationProp<any, any>;
-}
+type Props = NativeStackScreenProps<RootStackParamList, 'ConfirmPin'>;
 
-function ConfirmPin({navigation}: Props) {
-  const [walletPin, setWalletPin] = useState<(number | null)[]>(
+function ConfirmPin({navigation, route}: Props) {
+  const {words, walletPin} = route.params;
+  const toast = useToast();
+  const [confirmWalletPin, setConfirmWalletPin] = useState<(number | null)[]>(
     Array(5).fill(null),
   );
   const digits = React.useMemo(
@@ -35,29 +39,54 @@ function ConfirmPin({navigation}: Props) {
   );
 
   const onResetPress = () => {
-    setWalletPin(Array(5).fill(null));
+    setConfirmWalletPin(Array(5).fill(null));
   };
 
-  const onSubmit = () => {
-    navigation.navigate(SCREEN_NAMES.ConfirmSeed);
+  const compareWalletPins = () => {
+    let isSamePin = true;
+    confirmWalletPin.forEach((digit, index) => {
+      if (digit !== walletPin[index]) {
+        isSamePin = false;
+      }
+    });
+    return isSamePin;
   };
 
   const onDigitPress = (digit: number | string) => {
     if (typeof digit === 'number') {
-      const emptyIndex = walletPin.findIndex(item => item === null);
+      const emptyIndex = confirmWalletPin.findIndex(item => item === null);
       if (emptyIndex !== -1) {
-        const newWalletPin = [...walletPin];
+        const newWalletPin = [...confirmWalletPin];
         newWalletPin[emptyIndex] = digit;
-        setWalletPin(newWalletPin);
+        setConfirmWalletPin(newWalletPin);
       }
     } else if (digit === 'X') {
-      const emptyIndex = walletPin.findIndex(item => item === null);
+      const emptyIndex = confirmWalletPin.findIndex(item => item === null);
       if (emptyIndex !== 0) {
         const digitRemovalIndex = emptyIndex === -1 ? 4 : emptyIndex - 1;
-        const newWalletPin = [...walletPin];
+        const newWalletPin = [...confirmWalletPin];
         newWalletPin[digitRemovalIndex] = null;
-        setWalletPin(newWalletPin);
+        setConfirmWalletPin(newWalletPin);
       }
+    }
+  };
+
+  const onSubmit = () => {
+    const isSamePin = compareWalletPins();
+    if (isSamePin) {
+      console.warn(words, walletPin);
+      navigation.navigate(SCREEN_NAMES.Dashboard);
+    } else {
+      toast.show({
+        placement: 'top',
+        render: ({id}) => (
+          <ShowToast
+            id={id}
+            action="error"
+            description="Pin didn't match, please try again!"
+          />
+        ),
+      });
     }
   };
 
@@ -96,7 +125,7 @@ function ConfirmPin({navigation}: Props) {
         alignItems="center"
         reversed={false}
         flexWrap="wrap">
-        {walletPin.map(item => (
+        {confirmWalletPin.map(item => (
           <Box
             borderRadius={'$md'}
             borderColor="$secondary500"
