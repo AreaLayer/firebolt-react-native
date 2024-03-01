@@ -6,8 +6,18 @@ import {SCREEN_NAMES} from './screenNames';
 import ConfirmSeed from '../screens/onboarding/ConfirmSeed';
 import PinSetup from '../screens/onboarding/PinSetup';
 import ConfirmPin from '../screens/onboarding/ConfirmPin';
+import Dashboard from '../screens/Home/Dashboard';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  OnboardingHome: undefined;
+  CreateWallet: undefined;
+  ConfirmSeed: {words: string[]};
+  PinSetup: {words: string[]};
+  ConfirmPin: {words: string[]; walletPin: number[]};
+  Dashboard: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function OnBoardingNavigation() {
   return (
@@ -36,6 +46,11 @@ function OnBoardingNavigation() {
         options={{headerShown: false}}
         name={SCREEN_NAMES.ConfirmPin}
         component={ConfirmPin}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={SCREEN_NAMES.Dashboard}
+        component={Dashboard}
       />
     </Stack.Navigator>
   );
