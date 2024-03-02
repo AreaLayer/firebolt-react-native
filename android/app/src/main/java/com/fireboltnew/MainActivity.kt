@@ -12,6 +12,7 @@ import com.reactnativeldk.EventTypes
 import com.reactnativeldk.LdkEventEmitter
 import com.reactnativeldk.hexEncodedString
 import com.reactnativeldk.hexa
+import com.reactnativecoinjoin.MainFunction
 import org.json.JSONObject
 import org.ldk.structs.Result_StrSecp256k1ErrorZ.Result_StrSecp256k1ErrorZ_OK
 import org.ldk.structs.UtilMethods
