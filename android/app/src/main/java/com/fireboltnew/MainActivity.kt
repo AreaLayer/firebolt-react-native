@@ -47,3 +47,6 @@ class MainActivity : ReactActivity() {
 }                                            
 override fun createLDKReactActivityDelegate():            
 mainComponentName, fabricEnabled)             }
+]
+override fn createCoijoinReactActivityDeledate():
+mainCompoenetName, fabriEnabled) }
