@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {generateMnemonic} from 'bip39';
 import {
   Box,
   Text,
@@ -20,28 +21,14 @@ const COPY_SEED_INFO_TEXT =
 const STORE_SEED_BTN_TEXT = "I've stored my seed phrase";
 const CONFIRM_TEXT = 'You will confirm this seed phrase on the next screen';
 
-const words = [
-  'green',
-  'bullet',
-  'arrow',
-  'building',
-  'car',
-  'weapon',
-  'suitcase',
-  'farm',
-  'cycle',
-  'gun',
-  'wire',
-  'knife',
-];
-
 interface Props {
   navigation: NavigationProp<any, any>;
 }
 
 function CreateWallet({navigation}: Props) {
+  const words = React.useMemo(() => generateMnemonic().split(' '), []);
   const onSubmit = () => {
-    navigation.navigate(SCREEN_NAMES.ConfirmSeed);
+    navigation.navigate(SCREEN_NAMES.ConfirmSeed, {words});
   };
   return (
     <Box py={'10%'} px={'$8'} bg="$primary400" flex={1}>

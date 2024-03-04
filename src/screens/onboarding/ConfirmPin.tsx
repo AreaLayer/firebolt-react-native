@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {
   Box,
   Text,
@@ -11,9 +11,18 @@ import {
   ButtonIcon,
   RepeatIcon,
   CloseIcon,
+  useToast,
+  ButtonSpinner,
 } from '@gluestack-ui/themed';
 import {SCREEN_NAMES} from '../../navigation/screenNames';
-import {NavigationProp} from '@react-navigation/native';
+import {RootStackParamList} from '../../navigation/OnBoarding';
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+import ShowToast from '../../components/ShowToast';
+import {mnemonicToSeed} from 'bip39';
+import {encryptAesGcm} from '../../utils/encryption';
+import {STORAGE_KEYS} from '../../utils/storage/storageKeys';
+import storage from '../../utils/storage';
 
 const HEADING_TEXT_1 = 'Confirm';
 const HEADING_TEXT_2 = 'Your PIN code';
@@ -21,46 +30,94 @@ const COPY_SEED_TEXT = 'Please re-enter your 5 digit PIN code!';
 
 const STORE_SEED_BTN_TEXT = 'Finish';
 
-interface Props {
-  navigation: NavigationProp<any, any>;
-}
+type Props = NativeStackScreenProps<RootStackParamList, 'ConfirmPin'>;
 
-function ConfirmPin({navigation}: Props) {
-  const [walletPin, setWalletPin] = useState<(number | null)[]>(
+function ConfirmPin({navigation, route}: Props) {
+  const {words, walletPin} = route.params;
+  const [confirmWalletPin, setConfirmWalletPin] = useState<(number | null)[]>(
     Array(5).fill(null),
   );
+  const [buttonLoading, setButtonLoading] = useState(false);
+  const toast = useToast();
   const digits = React.useMemo(
     () => [1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, 'X'],
     [],
   );
 
   const onResetPress = () => {
-    setWalletPin(Array(5).fill(null));
+    setConfirmWalletPin(Array(5).fill(null));
   };
 
-  const onSubmit = () => {
-    navigation.navigate(SCREEN_NAMES.ConfirmSeed);
+  const compareWalletPins = () => {
+    let isSamePin = true;
+    confirmWalletPin.forEach((digit, index) => {
+      if (digit !== walletPin[index]) {
+        isSamePin = false;
+      }
+    });
+    return isSamePin;
   };
 
   const onDigitPress = (digit: number | string) => {
     if (typeof digit === 'number') {
-      const emptyIndex = walletPin.findIndex(item => item === null);
+      const emptyIndex = confirmWalletPin.findIndex(item => item === null);
       if (emptyIndex !== -1) {
-        const newWalletPin = [...walletPin];
+        const newWalletPin = [...confirmWalletPin];
         newWalletPin[emptyIndex] = digit;
-        setWalletPin(newWalletPin);
+        setConfirmWalletPin(newWalletPin);
       }
     } else if (digit === 'X') {
-      const emptyIndex = walletPin.findIndex(item => item === null);
+      const emptyIndex = confirmWalletPin.findIndex(item => item === null);
       if (emptyIndex !== 0) {
         const digitRemovalIndex = emptyIndex === -1 ? 4 : emptyIndex - 1;
-        const newWalletPin = [...walletPin];
+        const newWalletPin = [...confirmWalletPin];
         newWalletPin[digitRemovalIndex] = null;
-        setWalletPin(newWalletPin);
+        setConfirmWalletPin(newWalletPin);
       }
     }
   };
 
+  const saveEncryptedMnemonic = async () => {
+    const mnemonic = words.join(' ');
+    const seed = await mnemonicToSeed(mnemonic);
+    const hexSeed = seed.toString('hex');
+    const password = walletPin.join('').toString();
+    const encryptedSeedCipher = encryptAesGcm(hexSeed, password);
+    await storage.save({
+      key: STORAGE_KEYS.seedCipher,
+      data: encryptedSeedCipher,
+    });
+  };
+
+  const encryptAndSaveWallet = async () => {
+    const isSamePin = compareWalletPins();
+    if (isSamePin) {
+      await saveEncryptedMnemonic();
+      navigation.navigate(SCREEN_NAMES.Dashboard);
+    } else {
+      toast.show({
+        placement: 'top',
+        render: ({id}) => (
+          <ShowToast
+            id={id}
+            action="error"
+            description="Pin didn't match, please try again!"
+          />
+        ),
+      });
+    }
+    setButtonLoading(false);
+  };
+  useEffect(() => {
+    if (buttonLoading) {
+      setTimeout(encryptAndSaveWallet, 1000);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [buttonLoading]);
+
+  const onSubmit = () => {
+    setButtonLoading(true);
+  };
   return (
     <Box py={'10%'} px={'$8'} bg="$primary400" flex={1}>
       <Heading fontWeight="400" w={'$3/5'} size="lg" color="white">
@@ -96,8 +153,9 @@ function ConfirmPin({navigation}: Props) {
         alignItems="center"
         reversed={false}
         flexWrap="wrap">
-        {walletPin.map(item => (
+        {confirmWalletPin.map((item, index) => (
           <Box
+            key={index}
             borderRadius={'$md'}
             borderColor="$secondary500"
             w="$12"
@@ -119,8 +177,8 @@ function ConfirmPin({navigation}: Props) {
         alignItems="center"
         reversed={false}
         flexWrap="wrap">
-        {digits.map(item => (
-          <Box alignItems="center" width="30%">
+        {digits.map((item, index) => (
+          <Box key={index} alignItems="center" width="30%">
             <Button
               borderRadius={'$full'}
               width="$20"
@@ -159,9 +217,18 @@ function ConfirmPin({navigation}: Props) {
           onPress={onSubmit}
           isDisabled={false}
           isFocusVisible={false}>
-          <ButtonText color="black" fontWeight="$bold">
-            {STORE_SEED_BTN_TEXT}
-          </ButtonText>
+          {buttonLoading ? (
+            <>
+              <ButtonSpinner color="black" mr="$3" />
+              <ButtonText color="black" fontWeight="$bold">
+                Please wait...
+              </ButtonText>
+            </>
+          ) : (
+            <ButtonText color="black" fontWeight="$bold">
+              {STORE_SEED_BTN_TEXT}
+            </ButtonText>
+          )}
         </Button>
       </Center>
     </Box>

@@ -13,7 +13,8 @@ import {
   CloseIcon,
 } from '@gluestack-ui/themed';
 import {SCREEN_NAMES} from '../../navigation/screenNames';
-import {NavigationProp} from '@react-navigation/native';
+import {RootStackParamList} from '../../navigation/OnBoarding';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 const HEADING_TEXT_1 = 'Setting Up';
 const HEADING_TEXT_2 = 'Your PIN code';
@@ -21,11 +22,9 @@ const COPY_SEED_TEXT = 'Please enter your 5 digit PIN code!';
 
 const STORE_SEED_BTN_TEXT = 'Continue';
 
-interface Props {
-  navigation: NavigationProp<any, any>;
-}
-
-function PinSetup({navigation}: Props) {
+type Props = NativeStackScreenProps<RootStackParamList, 'PinSetup'>;
+function PinSetup({navigation, route}: Props) {
+  const {words} = route.params;
   const [walletPin, setWalletPin] = useState<(number | null)[]>(
     Array(5).fill(null),
   );
@@ -39,7 +38,11 @@ function PinSetup({navigation}: Props) {
   };
 
   const onSubmit = () => {
-    navigation.navigate(SCREEN_NAMES.ConfirmPin);
+    const walletPinParam = walletPin as number[];
+    navigation.navigate(SCREEN_NAMES.ConfirmPin, {
+      words,
+      walletPin: walletPinParam,
+    });
   };
 
   const onDigitPress = (digit: number | string) => {
@@ -96,8 +99,9 @@ function PinSetup({navigation}: Props) {
         alignItems="center"
         reversed={false}
         flexWrap="wrap">
-        {walletPin.map(item => (
+        {walletPin.map((item, index) => (
           <Box
+            key={index}
             borderRadius={'$md'}
             borderColor="$secondary500"
             w="$12"
@@ -119,8 +123,8 @@ function PinSetup({navigation}: Props) {
         alignItems="center"
         reversed={false}
         flexWrap="wrap">
-        {digits.map(item => (
-          <Box alignItems="center" width="30%">
+        {digits.map((item, index) => (
+          <Box key={index} alignItems="center" width="30%">
             <Button
               borderRadius={'$full'}
               width="$20"

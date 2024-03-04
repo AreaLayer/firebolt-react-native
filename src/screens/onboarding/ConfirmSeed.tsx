@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useState, useMemo} from 'react';
 import {
   Box,
   Text,
@@ -10,9 +10,12 @@ import {
   ButtonText,
   ButtonIcon,
   RepeatIcon,
+  useToast,
 } from '@gluestack-ui/themed';
 import {SCREEN_NAMES} from '../../navigation/screenNames';
-import {NavigationProp} from '@react-navigation/native';
+import ShowToast from '../../components/ShowToast';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../navigation/OnBoarding';
 
 const HEADING_TEXT_1 = 'Confirm';
 const HEADING_TEXT_2 = 'Seed Phrase';
@@ -20,31 +23,21 @@ const COPY_SEED_TEXT = 'Please select each words in the correct order!';
 
 const STORE_SEED_BTN_TEXT = 'Confirm Seed Phrase';
 
-const words = [
-  'green',
-  'bullet',
-  'arrow',
-  'building',
-  'car',
-  'weapon',
-  'suitcase',
-  'farm',
-  'cycle',
-  'gun',
-  'wire',
-  'knife',
-];
+type Props = NativeStackScreenProps<RootStackParamList, 'ConfirmSeed'>;
 
-interface Props {
-  navigation: NavigationProp<any, any>;
-}
+function ConfirmSeed({navigation, route}: Props) {
+  const {words} = route.params;
+  const toast = useToast();
 
-function ConfirmSeed({navigation}: Props) {
+  const randomShuffledWords = useMemo(
+    () => [...words].sort(() => Math.random() - 0.5),
+    [words],
+  );
   const [selectedSeedWords, setSelectedSeedWords] = useState<(string | null)[]>(
     Array(12).fill(null),
   );
   const [shuffledSeedWords, setShuffledSeedWords] =
-    useState<(string | null)[]>(words);
+    useState<(string | null)[]>(randomShuffledWords);
 
   const onWordPress = (pressedIndex: number) => {
     const pressedWord = shuffledSeedWords[pressedIndex];
@@ -67,8 +60,32 @@ function ConfirmSeed({navigation}: Props) {
     setShuffledSeedWords(words);
   };
 
+  const compareStoredSeed = () => {
+    let isSame = true;
+    words.forEach((item, index) => {
+      if (item !== selectedSeedWords[index]) {
+        isSame = false;
+      }
+    });
+    return isSame;
+  };
   const onSubmit = () => {
-    navigation.navigate(SCREEN_NAMES.PinSetup);
+    const isSameAsStoredSeed = compareStoredSeed();
+    if (isSameAsStoredSeed) {
+      navigation.navigate(SCREEN_NAMES.PinSetup, {words});
+    } else {
+      toast.show({
+        placement: 'top',
+        render: ({id}) => (
+          <ShowToast
+            id={id}
+            action="error"
+            description="Please choose the correct order and try again!"
+          />
+        ),
+      });
+      onResetPress();
+    }
   };
 
   return (
@@ -177,7 +194,8 @@ function ConfirmSeed({navigation}: Props) {
                 <ButtonText
                   fontSize="$xs"
                   textTransform="uppercase"
-                  color="black">
+                  color="black"
+                  fontWeight="$bold">
                   {word}
                 </ButtonText>
               </Button>
