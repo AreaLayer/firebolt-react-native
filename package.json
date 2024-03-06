@@ -16,7 +16,9 @@
     "react-native": "0.73.2",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "^3.29.0",
-    "react-native-svg": "12.1.1"
+    "react-native-svg": "12.1.1",
+   "react-native-ldk":"0.0.129",
+    
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -28,6 +30,7 @@
     "@react-native/typescript-config": "0.73.1",
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
+    "@synonymdev/react-native-ldk":"0.0.129"
     "babel-jest": "^29.6.3",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
