@@ -88,3 +88,8 @@ To learn more about React Native, take a look at the following resources:
 ## Core functions 
 
 The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/app)
+
+## Roadmap
+
+-  [ ] Core functions
+-  [ ] Beta App
