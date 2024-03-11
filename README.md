@@ -1,11 +1,11 @@
-## Firebolt Wallet React Native ⚡
+## Firebolt Wallet - React Native Version ⚡
 
-⚠️**Wallet in WIP**
+⚠️**Wallet in WIP and development**
 
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 [![LN](https://img.shields.io/badge/lightning-792EE5?logo=lightning)](https://mempool.space/lightning)
 
-React version for Firebolt wallet with LDK, Coinjoin, Nostr, Payjoin and Bitcoin
+React native version for Firebolt wallet with Bitcoin, Lightning Network (LDK), LSP , Coinjoin, Nostr, Payjoin
 
 # Getting Started
 
@@ -84,3 +84,12 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+## Core functions 
+
+The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/app)
+
+## Roadmap
+
+-  [ ] Core functions
+-  [ ] Beta App
