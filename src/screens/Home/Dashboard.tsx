@@ -5,7 +5,7 @@ import {NavigationProp} from '@react-navigation/native';
 const LogoImage = require('../../assets/images/logo.png');
 
 const HEADING_TEXT_1 = 'Firebolt Wallet';
-const HEADING_TEXT_2 = 'Dashboard';
+const HEADING_TEXT_2 = 'Connected!';
 
 interface Props {
   navigation: NavigationProp<any, any>;

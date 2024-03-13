@@ -5,6 +5,7 @@ interface IScreenNames {
   PinSetup: 'PinSetup';
   ConfirmPin: 'ConfirmPin';
   Dashboard: 'Dashboard';
+  VerifyPin: 'VerifyPin';
 }
 export const SCREEN_NAMES: IScreenNames = {
   OnboardingHome: 'OnboardingHome',
@@ -13,4 +14,5 @@ export const SCREEN_NAMES: IScreenNames = {
   PinSetup: 'PinSetup',
   ConfirmPin: 'ConfirmPin',
   Dashboard: 'Dashboard',
+  VerifyPin: 'VerifyPin',
 };

@@ -161,6 +161,6 @@ export function decryptAesGcm(
   } catch (error) {
     console.error('Decryption failed!');
     console.error(error);
-    return void 0;
+    return undefined;
   }
 }
