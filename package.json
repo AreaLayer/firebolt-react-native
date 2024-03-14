@@ -17,7 +17,8 @@
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "^3.29.0",
     "react-native-svg": "12.1.1",
-   "react-native-ldk":"0.0.129",
+     "react-native-breez-sdk":"0.3.2",
+
     
   },
   "devDependencies": {
