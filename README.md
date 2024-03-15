@@ -92,4 +92,5 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 ## Roadmap
 
 -  [ ] Core functions
--  [ ] Beta App
+-  [ ] Breez
+-  [ ] Beta App (Android - via APK)
