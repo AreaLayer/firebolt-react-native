@@ -1,21 +1,6 @@
 package com.fireboltnew
 import android.os.Bundle;
 
-
-import com.facebook.react.ReactActivity
-import com.facebook.react.ReactActivityDelegate
-import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
-import com.facebook.react.defaults.DefaultReactActivityDelegate
-import com.facebook.react.bridge.Arguments
-import com.facebook.react.bridge.WritableMap
-import com.reactnativeldk.EventTypes
-import com.reactnativeldk.LdkEventEmitter
-import com.reactnativeldk.hexEncodedString
-import com.reactnativeldk.hexa
-import com.reactnativecoinjoin.MainFunction
-import org.json.JSONObject
-import org.ldk.structs.Result_StrSecp256k1ErrorZ.Result_StrSecp256k1ErrorZ_OK
-import org.ldk.structs.UtilMethods
 import java.net.HttpURLConnection
 import java.net.URL
 import java.security.MessageDigest
@@ -45,7 +30,7 @@ class MainActivity : ReactActivity() {
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
 }                                            
-override fun createLDKReactActivityDelegate():            
+override fun createBreezeactActivityDelegate():            
 mainComponentName, fabricEnabled)             }
 ]
 override fn createCoijoinReactActivityDeledate():
