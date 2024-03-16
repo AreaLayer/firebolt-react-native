@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
             val transactions = coinjoinService.getCoinjoinTransactions()
             // Update UI with transactions
             val cjxt = cxjct.getCjxtTransactions()
-            val uxto = utxo.getUtxoTransactions()
+            val uxto = utxo.getUtxoTransactions()                   val multisig = 
         }
 
         findViewById<Button>(R.id.createTransactionButton).setOnClickListener {
