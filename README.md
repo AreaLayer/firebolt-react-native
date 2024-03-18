@@ -5,7 +5,7 @@
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 [![LN](https://img.shields.io/badge/lightning-792EE5?logo=lightning)](https://mempool.space/lightning)
 
-React native version for Firebolt wallet with Bitcoin, Lightning Network (LDK), LSP , Coinjoin, Nostr, Payjoin
+React native version for Firebolt wallet with Bitcoin, Lightning Network (Breez), LSP , Coinjoin, Nostr, Payjoin
 
 # Getting Started
 
@@ -92,4 +92,5 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 ## Roadmap
 
 -  [ ] Core functions
--  [ ] Beta App
+-  [ ] Breez
+-  [ ] Beta App (Android - via APK)
