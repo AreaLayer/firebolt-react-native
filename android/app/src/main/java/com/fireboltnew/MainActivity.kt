@@ -12,6 +12,7 @@ import java.util.concurrent.locks.ReentrantLock
 import javax.crypto.Cipher
 import javax.crypto.spec.GCMParameterSpec
 import javax.crypto.spec.SecretKeySpec
+import javax.crypto.spec.Coinjoin
 
 class MainActivity : ReactActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
