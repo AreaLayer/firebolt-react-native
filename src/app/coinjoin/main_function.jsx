@@ -35,15 +35,15 @@ class CoinJoinRound {
     transaction.broadcast();
   }
 }
-const get_current_blockheight () {
+const get_current_blockheight; () {
   class blockchain_info = cjxt_single.jsonrpc
         return blockchain_info;
 }
-const msig_data_pubkeys() {
+const msig_data_pubkeys; () {
 class  multisig_script = cjxt_single
        return musig_data_pubkeys;
 }
-const NN_script_from_pubkeys() {
+const NN_script_from_pubkeys; () {
   return N_script_from_pubkeys;
 };
 const PTG() {
