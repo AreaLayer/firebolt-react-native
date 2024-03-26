@@ -12,6 +12,9 @@ import java.util.concurrent.locks.ReentrantLock
 import javax.crypto.Cipher
 import javax.crypto.spec.GCMParameterSpec
 import javax.crypto.spec.SecretKeySpec
+import javax.crypto.spec.CoinjoinSpec
+import javax.crypto.spec.Bip39Spec
+
 
 class MainActivity : ReactActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +34,8 @@ class MainActivity : ReactActivity() {
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
 }                                            
 override fun createBreezeactActivityDelegate():            
-mainComponentName, fabricEnabled)             }
-]
-override fn createCoijoinReactActivityDeledate():
-mainCompoenetName, fabriEnabled) }
+(mainComponentName, fabricEnabled)             
+}
+override fn createCoinjoinReactActivityDeledate():
+(mainCompoenetName, fabriEnabled) 
+}
