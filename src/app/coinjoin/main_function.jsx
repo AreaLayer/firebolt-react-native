@@ -11,12 +11,13 @@ const explorer = 'https://mempool.space/testnet/tx'
 
 const stats_tx_fee = 10000
 
-const btc_to_satoshis () {
-  return btc_to_satoshis;
-}
-  class satoshis_to_btc () {
-  return satoshis_to_btc;
-  };
+let converter = new BitcoinConverter();
+
+let satoshis = converter.btcToSatoshis(0.001);
+console.log(satoshis); // 100000
+
+let btc = converter.satoshisToBtc(100000);
+console.log(btc); // 0.001
 
 class CoinJoinRound {
   constructor(inputs, outputs) {
