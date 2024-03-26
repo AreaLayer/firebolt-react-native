@@ -1,31 +1,21 @@
 import React from 'react';
+import {GluestackUIProvider} from '@gluestack-ui/themed';
+import {config} from './src/theme/config';
+
 import {NavigationContainer} from '@react-navigation/native';
-import {NativeBaseProvider} from 'native-base';
-import {StyleSheet, View} from 'react-native';
-import {theme} from './src/theme';
-import {Heading} from 'native-base';
+import OnBoardingNavigation from './src/navigation/OnBoarding';
+import {ConnectionProvider} from './src/providers/ConnectionProvider';
 
 function App(): React.JSX.Element {
   return (
-    <NavigationContainer>
-      <NativeBaseProvider theme={theme} isSSR={false}>
-        <View style={styles.container}>
-          <Heading fontFamily="body" color={'secondary.600'} fontSize={'2xl'}>
-            FireBolt Wallet
-          </Heading>
-        </View>
-      </NativeBaseProvider>
-    </NavigationContainer>
+    <GluestackUIProvider config={config}>
+      <ConnectionProvider>
+        <NavigationContainer>
+          <OnBoardingNavigation />
+        </NavigationContainer>
+      </ConnectionProvider>
+    </GluestackUIProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2596be',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default App;
