@@ -87,6 +87,7 @@ class CXJT {
             this.utxo_in = utxo_in;
     
     }
+}
     
     function createTransaction(t) {
         let utxo_in = t.utxo_in;
