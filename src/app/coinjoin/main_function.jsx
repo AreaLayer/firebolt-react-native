@@ -85,7 +85,7 @@ class CXJT {
         constructor(txid, utxo_in) {
             this.txid = txid;
             this.utxo_in = utxo_in;
-        }
+    
     }
     
     function createTransaction(t) {
