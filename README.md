@@ -93,4 +93,6 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 
 -  [ ] Core functions
 -  [ ] Breez
+-  [ ] API Peach Bitcoin
+-  [ ] Portal support (NFC)
 -  [ ] Beta App (Android - via APK)
