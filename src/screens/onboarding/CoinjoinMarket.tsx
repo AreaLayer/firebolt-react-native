@@ -16,7 +16,7 @@ const HEADING_TEXT_1 = 'Firebolt Wallet';
 const HEADING_TEXT_2 = 'The ultimate privacy tool for bitcoiners';
 const CREATE_WALLET_BUTTON_TEXT = 'Create a new wallet';
 const RESTORE_WALLET_BUTTON_TEXT = 'Restore existing wallet';
-const COIJOIN_MARKET_BUTTON__TEXT = "Welcome to the Coinjoin P2P Market"
+const COIJOIN_MARKET_BUTTON__TEXT =  'Welcome to the Coinjoin P2P Market';
 
 interface Props {
   navigation: NavigationProp<any, any>;
