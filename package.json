@@ -1,6 +1,6 @@
 {
   "name": "fireboltNew",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -36,7 +36,7 @@
     "stream-browserify": "^1.0.0",
     "vm-browserify": "^0.0.4"
     "react-native-svg": "12.1.1",
-     "react-native-breez-sdk":"0.3.2",  
+    "react-native-breez-sdk":"0.3.8",  
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
