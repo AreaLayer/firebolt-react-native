@@ -5,7 +5,7 @@ const { Round1, Round2, Round3,Round4, Round5 } = require('./wallets.json')
 
 // Connect to the Bitcoin testnet network
 const provider = 'https://testnet.mempool.space/api';
-const explorer = 'https://mempool.space/testnet/tx'
+const explorer = 'https://mempool.space/testnet/tx';
 
 // PTG function
 
