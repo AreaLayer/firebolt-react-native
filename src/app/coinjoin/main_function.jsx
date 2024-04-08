@@ -60,7 +60,7 @@ const PTG() {
 class CXJT {
     constructor(tx, wallet, n_counterparties, n, locktime = null, keyset = null) {
 
-        if (!(wallet instanceof Wallet)) {
+        if (!(wallet instanceof wallet)) {
             throw new Error("Wallet must be an instance of Wallet");
         }
 
@@ -82,12 +82,15 @@ class CXJT {
           }
           
     };
-    constructor Transaction {
+    class rawTransaction {
         constructor(txid, utxo_in) {
-            this.txid = txid;
-            this.utxo_in = utxo_in;
-    
-    }
+          this.txid = txid;
+          this.utxo_in = utxo_in;
+        }
+      }
+      
+      }
+      
 }
     
     function createTransaction(t) {
