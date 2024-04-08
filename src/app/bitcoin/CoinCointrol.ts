@@ -54,7 +54,7 @@ function createTransaction(selectedUTXOs: UTXO[], outputs: { address: bitcoin.Ad
 }
 
 function signTransaction(wallet: Wallet, transaction: bitcoin.Transaction, selectedUTXOs: UTXO[]) {
-    for (let i = 0; i < selectedUTXOs.length; i++) {
+    for (let i = 0; i < selectedUTXOs. i++) {
         const utxo = selectedUTXOs[i];
         const key = wallet.privateKeys[utxo.address.toString()];
         transaction.sign(i, key);
