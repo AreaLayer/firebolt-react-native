@@ -9,6 +9,7 @@ const explorer = 'https://mempool.space/testnet/tx';
 
 // PTG function
 
+// Stats fee
 const stats_tx_fee = 10000
 
 let converter = new BitcoinConverter();
