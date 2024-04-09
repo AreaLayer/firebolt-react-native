@@ -9,4 +9,5 @@ currently being supported with security updates.
 | ------- | ------------------ |
 | 1.0.0-alpha  | :white_check_mark: |
 | 1.0.1-alpha  | :white_check_mark: |
-
+| 1.0.2-alpha  | :white_check_mark: |
+| 1.0.3-alpha  | :white_check_mark: |
