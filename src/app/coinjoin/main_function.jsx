@@ -44,7 +44,7 @@ const msig_data_pubkeys; () {
 class  multisig_script {cjxt_single
        return musig_data_pubkeys;
 }
-}
+};
 const NN_script_from_pubkeys; () {
   return N_script_from_pubkeys;
 };
