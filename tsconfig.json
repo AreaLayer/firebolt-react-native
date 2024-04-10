@@ -1,6 +1,7 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "lib": ["dom", "es2015.promise"]
+    "lib": ["es6"],
   }
 }
+
