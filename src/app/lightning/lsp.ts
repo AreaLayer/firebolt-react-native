@@ -1,1 +1,1 @@
-import 
+import as lsp from 'react-native-breez';
