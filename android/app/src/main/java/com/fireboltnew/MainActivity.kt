@@ -14,6 +14,7 @@ import javax.crypto.spec.GCMParameterSpec
 import javax.crypto.spec.SecretKeySpec
 import javax.crypto.spec.CoinjoinSpec
 import javax.crypto.spec.Bip39Spec
+import javax.crypto.NostrSpec
 
 
 class MainActivity : ReactActivity() {
