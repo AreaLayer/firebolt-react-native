@@ -1,1 +1,1 @@
-import as lsp from 'react-native-breez';
+import as lsp from 'r@eact-native-breez';
