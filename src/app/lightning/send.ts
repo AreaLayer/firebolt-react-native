@@ -1,1 +1,1 @@
-import as * {Balance, Payment} from 'react-native-breez';
+import {Balance, Payment} from 'react-native-breez-sdk';
