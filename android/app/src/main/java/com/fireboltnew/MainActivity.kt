@@ -34,9 +34,11 @@ class MainActivity : ReactActivity() {
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
 }                                            
-override fun createBreezeactActivityDelegate():            
+override fun createBreezeactActivityDelegate(): {
 (mainComponentName, fabricEnabled)             
-}
-override fn createCoinjoinReactActivityDeledate():
+
+}        
+override fn createCoinjoinReactActivityDeledate(): {
 (mainCompoenetName, fabriEnabled) 
+
 }
