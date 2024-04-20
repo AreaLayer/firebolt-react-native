@@ -1,5 +1,9 @@
 import {Network, Mainnet, Testnet} from ('bitcoinjs-lib');
 
-export const mainnet = {
+export const mMinnet = {
     
+}
+
+export const Testnet = {
+
 }
