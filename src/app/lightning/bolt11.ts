@@ -2,8 +2,8 @@ import {BOLT11} from 'react-breez-native-sdk';
 
 const BOLT11 = {
 
-payment: string,
-invoice: string,
-amount: number,
+Payment: String,
+Invoice: String,
+Amount: Number,
     
 }
