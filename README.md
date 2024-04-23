@@ -99,4 +99,5 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] HD Taproot Wallet
 -  [ ] Full RBF
 -  [ ] Signet
+-  [ ] Submarine Swap 
 -  [ ] Final App
