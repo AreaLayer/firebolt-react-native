@@ -35,7 +35,6 @@
     "readable-stream": "^4.5.2",
     "stream-browserify": "^1.0.0",
     "vm-browserify": "^0.0.4"
-    "react-native-svg": "12.1.1",
     "react-native-breez-sdk":"0.3.8",  
   },
   "devDependencies": {
