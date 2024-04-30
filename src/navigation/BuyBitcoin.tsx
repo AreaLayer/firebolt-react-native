@@ -6,7 +6,7 @@ const P2PApps = () => {
     const [appList, setAppList] = useState([
         { name: 'Peach Bitcoin', link: 'https://learn.robosats.com/' },
         { name: 'Bisq', link: 'https://bisq.network/' },
-        { name: 'Robosats', link: 'https://peachbitcoin.com/' }
+        { name: 'Robosats', link: 'https://peachbitcoin.com/' },
     ]);
 
     const handleAddApp = () => {
