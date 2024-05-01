@@ -1,4 +1,5 @@
 import mempoolJS from '@mempool/mempool.js';
+import block from 'mempool';
 
 // default mempool.space endpoints
 const { block } = mempoolJS();
