@@ -5,7 +5,7 @@
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 [![LN](https://img.shields.io/badge/lightning-792EE5?logo=lightning)](https://mempool.space/lightning)
 
-React native version for Firebolt wallet with Bitcoin, Lightning Network (Breez), LSP , Coinjoin, Nostr, Payjoin, Taproot
+React native version for Firebolt wallet with Bitcoin, Lightning Network/LSP (Breez), Coinjoin, Nostr, Payjoin, Taproot
 
 # Getting Started
 
