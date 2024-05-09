@@ -102,3 +102,5 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Signet
 -  [ ] Submarine Swap 
 -  [ ] Final App
+-  [ ] BIP-352
+-  [ ] Payjoin
