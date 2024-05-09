@@ -104,3 +104,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Final App
 -  [ ] BIP-352
 -  [ ] Payjoin
+
+## Donations
+
+[Rsync](https://tourniquet.app/donate/Rsync)
