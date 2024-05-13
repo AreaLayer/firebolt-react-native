@@ -35,7 +35,7 @@
     "readable-stream": "^4.5.2",
     "stream-browserify": "^1.0.0",
     "vm-browserify": "^0.0.4",
-    "react-native-breez-sdk":"^0.4.0",  
+    "react-native-breez-sdk":"^0.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
