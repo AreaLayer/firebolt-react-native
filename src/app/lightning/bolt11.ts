@@ -6,4 +6,4 @@ Payment: String,
 Invoice: String,
 Amount: Number,
     
-}
+};
