@@ -1,1 +1,1 @@
-import as * from 'coinjoin/lightning';
+import * from 'coinjoin/lightning';
