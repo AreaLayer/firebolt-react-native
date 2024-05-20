@@ -1,1 +1,1 @@
-import  {payment}  from "bitcoinjs-lib";
+import  {Payment}  from "payjoin-client";
