@@ -1,1 +1,1 @@
-
+import { payment } from "../payjoin/receive";
