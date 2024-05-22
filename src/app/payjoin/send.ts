@@ -1,1 +1,1 @@
-import 
+const { Payment} from 'payjoinjs-lib'
