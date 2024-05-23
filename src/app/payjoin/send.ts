@@ -1,1 +1,1 @@
-const { Payment} from 'payjoinjs-lib'
+const { Client, Request, Wallet } from 'payjoin-client';
