@@ -1,0 +1,2 @@
+const BIP352_PREFIX = '00000000';
+const BIP352_PREFIX_LEN = 8;
