@@ -1,1 +1,2 @@
+import { Payment } from './payment';
 
