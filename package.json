@@ -21,6 +21,7 @@
     "assert": "^1.5.1",
     "bip39": "^3.1.0",
     "bitcoinjs-lib": "^6.1.5",
+    "react--native-breez-sdk": "^0.4.1",
     "payjoin-client": "^1.0.1",
     "buffer": "^6.0.3",
     "ecpair": "^2.1.0",
