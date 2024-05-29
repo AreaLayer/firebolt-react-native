@@ -105,6 +105,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] F-Droid
 -  [ ] BIP-352 (Silent Payments)
 -  [ ] Payjoin
+-  [ ] Muntinynet
 
 ## Donations
 
