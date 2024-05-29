@@ -10,3 +10,8 @@ const Wallet = {
     Request,
     Wallet
 }
+const Request = {
+    Client,
+    Request,
+    Wallet
+}
