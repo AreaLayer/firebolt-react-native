@@ -1,5 +1,6 @@
 import Storage from 'react-native-storage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Data from 'react-native-data'
 
 const storage = new Storage({
   // maximum capacity, default 1000 key-ids
@@ -16,5 +17,9 @@ const storage = new Storage({
   // cache data in the memory. default is true.
   enableCache: true,
 });
+
+const data = Data ({
+
+})
 
 export default storage;
