@@ -92,7 +92,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 ## Roadmap
 
 -  [x] Core functions
--  [ ] Breez
+-  [x] Breez (WIP)
 -  [ ] API Peach Bitcoin/RoboSats/Bisq
 -  [ ] Portal support (NFC)
 -  [ ] Taproot functions
