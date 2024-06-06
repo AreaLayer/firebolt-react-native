@@ -8,3 +8,5 @@ ENV PATH=/opt/gradle/gradle-7.4.2/bin:\$PATH
 WORKDIR /app
 COPY . /app
 RUN ./gradlew build
+
+Dockerfile.swift
