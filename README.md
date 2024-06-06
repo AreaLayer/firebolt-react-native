@@ -1,6 +1,6 @@
 ## Firebolt Wallet - React Native Version ⚡🕵️
 
-⚠️**Wallet in WIP and development**
+⚠️**Wallet in WIP/development**
 
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 [![LN](https://img.shields.io/badge/lightning-792EE5?logo=lightning)](https://mempool.space/lightning)
