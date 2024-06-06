@@ -111,3 +111,9 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 ## Donations
 
 [Rsync](https://tourniquet.app/donate/Rsync)
+
+## Electrum Plugin
+
+While our wallet is in development, you can test our Coinjoin using Electrum wallet Plugin
+
+TBA
