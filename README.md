@@ -107,6 +107,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Payjoin
 -  [ ] Recompile code
 -  [ ] Muntinynet
+-  [x] Firebolt Electrum Plugin
 
 ## Donations
 
