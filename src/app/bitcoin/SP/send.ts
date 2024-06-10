@@ -1,1 +1,1 @@
-import 
+import {UTXO, SilentGroup} from 'SilentPayments';
