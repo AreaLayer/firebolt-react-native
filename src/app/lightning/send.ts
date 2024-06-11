@@ -8,7 +8,7 @@ export default class Breez {
   }
 }
 export async getPayment(): Promise<Payment> {
-  if (Platform.OS === 'android') {
+  if getPayment (Platform.OS === 'android') {
     await BreezNative.requestPermissions();
     return await BreezNative.getPayment();
   }
