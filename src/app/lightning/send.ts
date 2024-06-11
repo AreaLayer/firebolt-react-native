@@ -4,11 +4,13 @@ export default class Breez {
   static async getBalance(): Promise<Balance> {
     return await BreezNative.getBalance();
   }
-
+}
 export async getPayment(): Promise<Payment> {
+  if (Platform.OS === 'android') {
+    await BreezNative.requestPermissions();
     return await BreezNative.getPayment();
   }
-
+}
   static async getBackupStatus(): Promise<BackupStatus> {
     return await BreezNative.getBackupStatus();
   }
