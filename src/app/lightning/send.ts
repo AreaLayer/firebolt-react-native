@@ -1,4 +1,6 @@
-import {Balance, Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendPaymentInfo} from 'react-native-breez-sdk';
+import {Balance, Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendPaymentInfo, Interface
+
+} from 'react-native-breez-sdk';
 
 export default class Breez {
   static async getBalance(): Promise<Balance> {
@@ -40,4 +42,17 @@ export async sendPayment(request: SendPaymentInfo): Promise<boolean> {
     paymentId: '1234567890',
     paymentPreimage: '1234567890'
   }
+}
+export async Interface(): Promise<Interface> {
+  breezserver: string
+  chainnotifierUrl: string
+  mempoolspaceUrl?: string
+  workingDir: string
+  network: Network
+  paymentTimeoutSec: number
+  defaultLspId?: string
+  apiKey?: string
+  maxfeePercent: number
+  exemptfeeMsat: number
+  nodeConfig: NodeConfig
 }
