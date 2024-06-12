@@ -108,6 +108,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Recompile code
 -  [ ] Muntinynet
 -  [x] Firebolt Electrum Plugin
+-  [ ] ZK proof for CJ
 
 ## Donations
 
