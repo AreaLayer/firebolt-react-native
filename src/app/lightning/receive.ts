@@ -1,6 +1,5 @@
-import payment from 'react-native-breez-sdk';
+import {Payment} from 'react-native-breez-sdk';
 
 export const payment = {
     
 }
-]
