@@ -1,4 +1,4 @@
-## Firebolt Wallet - React Native Version ⚡🕵️
+### Firebolt Wallet - React Native Version ⚡🕵️
 
 ⚠️**Wallet in WIP/development**
 
@@ -104,7 +104,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Final App
 -  [ ] F-Droid
 -  [ ] BIP-352 (Silent Payments)
--  [ ] Payjoin
+-  [ ] Payjoin (React Native) 
 -  [ ] Recompile code
 -  [ ] Muntinynet
 -  [x] Firebolt Electrum Plugin
