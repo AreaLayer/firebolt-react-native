@@ -1,4 +1,4 @@
-import {Bolt11} from '../react-breez-native-sdk';
+import {Bolt11} from '../lightning';
 
 const BOLT11 = {
 
