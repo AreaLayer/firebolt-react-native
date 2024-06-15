@@ -8,3 +8,4 @@ export cosnt {
   TaggedHash,
   Bech32m,
 };
+export const UTXO 
