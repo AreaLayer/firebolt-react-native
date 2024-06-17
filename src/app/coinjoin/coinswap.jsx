@@ -1,5 +1,8 @@
-const {UTXOs, Address, Radom, Payments} = require('bitcoinjs-lib');
-const firebolt = require('main_function');
+const bitcoin = require('bitcoinjs-lib');
+const {TransactionBuilder} = require('bitcoinjs-lib');
+const {address} = require('bitcoinjs-lib');
+const {script} = require('bitcoinjs-lib');
+const {networks} = require('bitcoinjs-lib');
 const axios = require('axios');
 
 // Bitcoin network configuration
