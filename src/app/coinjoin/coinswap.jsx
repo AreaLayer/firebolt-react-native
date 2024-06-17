@@ -12,6 +12,7 @@ const network = bitcoin.networks.testnet;
 function generateAddress() {
   const keyPair = bitcoin.ECPair.makeRandom({ network });
   const { address } = bitcoin.payments.p2tr({ pubkey: keyPair.publicKey, network });
+  const { TransactionBuilder} = bitcoin.TransactionBuilder.ECPair({ network });
 
   return { address, privateKey: keyPair.toWIF() };
 }
