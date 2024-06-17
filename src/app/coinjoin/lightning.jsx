@@ -1,6 +1,9 @@
 import {Payment, TXID, UTXO} from 'react-native-breez';
-import coinjoinxt = require('./coinjoinxt');
+import { Coinjoin } from './Coinjoin';
 
+const coinjoin = new Coinjoin();
+
+export { coinjoin };
 
 const Payment = {
   Payment,
