@@ -8,6 +8,7 @@ import {
   Heading,
 } from '@gluestack-ui/themed';
 import {SCREEN_NAMES} from '../../navigation/screenNames';
+import {CoinjoinMarketScreen} from '../../screens/CoinjoinMarketScreen';
 import {NavigationProp} from '@react-navigation/native';
 
 const LogoImage = require('../../assets/images/logo.png');
@@ -17,6 +18,8 @@ const HEADING_TEXT_2 = 'The ultimate privacy tool for bitcoiners';
 const CREATE_WALLET_BUTTON_TEXT = 'Create a new wallet';
 const RESTORE_WALLET_BUTTON_TEXT = 'Restore existing wallet';
 const COIJOIN_MARKET_BUTTON_TEXT =  'Welcome to the Coinjoin P2P Market';
+const COIJOIN_MARKET_BUTTON_TEXT_2 = 'Join the Coinjoin P2P Market';
+const COIJOIN_MARKET_BUTTON_TEXT_3 = 'Learn more';
 
 interface Props {
   navigation: NavigationProp<any, any>;

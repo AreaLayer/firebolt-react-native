@@ -2,6 +2,7 @@ const {UTXO, PublicKey, PrivateKey, PSBT, P2TR, Payment} = require('bitcoinjs-li
 const Testnet = bitcoin.network.testnet;
 const { Round1, Round2, Round3,Round4, Round5 } = require('./wallets.json');
 const { Input, Output } = require('./wallets.json');
+const { stats_tx_fee} = require('./stats.json');
 
 
 // Connect to the Bitcoin testnet network
