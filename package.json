@@ -23,6 +23,7 @@
     "bip39": "^3.1.0",
     "bitcoinjs-lib": "^6.1.6",
     "silent-payments":"^0.2.0.",
+    "bitbox-api":"^0.5.0",
     "react--native-breez-sdk": "^0.4.1",
     "payjoin-client": "^1.0.1",
     "buffer": "^6.0.3",
