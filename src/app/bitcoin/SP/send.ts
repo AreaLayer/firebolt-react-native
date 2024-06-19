@@ -8,4 +8,10 @@ export cosnt {
   TaggedHash,
   Bech32m,
 };
-export const UTXO 
+export const UTXO  {
+  UTXO,
+  SilentPaymentroup,
+  TaggedHash,
+  Bech32m,
+  
+}
