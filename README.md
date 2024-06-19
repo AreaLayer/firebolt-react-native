@@ -7,6 +7,70 @@
 
 React native version for Firebolt wallet with Bitcoin, Lightning Network/LSP (Breez), Coinjoin, Nostr, Payjoin, Taproot
 
+## Overview
+
+Cypherpunk App
+
+Firebolt is a wallet designed by a Bitcoiner for Bitcoiners looking for privacy using Payjoin, Lightning Network, Coinjoin, Bitcoin and Nostr
+
+Each individual has their own identity using Nostr
+
+## The problem
+
+Central Banks and cetralized social media
+
+## Firebolt's solution
+
+Firebolt offers a Bitcoin wallet that supports both on-chain and lightning transactions. The application runs a custom, non-routing Lightning node created with the Lightning Development Kit on the user's mobile phone. 
+
+Users can back up their Bitcoin and Lightning keys with a standard BIP-39 seed and backup channel 
+
+The other main features Firebolt supports are as follows:
+
+📱 Contact list via Npub
+
+🪙 Payments via Lightning Network
+
+⚡Non custodial via on-chain and Lightning Network
+
+⚛️ Coinjoin and Payjoin for privacy
+
+🫂Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RobotSats)
+
+## Feature
+
+- Lightning Network (Breez)
+
+- Nostr (create profiles)
+
+- Bitcoin
+
+- LSP
+
+- [CoinJoin powered by CoinjoinXT, Lightning Network, Taproot and Coinswap](https://github.com/AreaLayer/CoinjoinXT)
+
+- Multisig 
+
+- PayJoin
+
+- Bitcoin-only
+
+- Backup using Nostr keys and BIP-39
+
+- Management Nostr Keys
+
+- Miniscript
+
+- Contact list via Nostr (NPub)
+
+- Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RobotSats)
+
+- RBF
+
+- User friendly
+
+- Klotin and Swift (iOS and Android)
+
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
