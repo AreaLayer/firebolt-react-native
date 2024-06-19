@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react-native';
 
 const P2PApps = () => {
     const [appName, setAppName] = useState('');
