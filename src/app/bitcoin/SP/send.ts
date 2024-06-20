@@ -1,6 +1,6 @@
 import {UTXO, SilentPaymentroup, TaggedHash, Bech32m} from 'SilentPayments';
 
-export {UTXO, SilentPaymentroup, TaggedHash, Bech32m};
+export {UTXO, SilentPaymentroup, TaggedHash, Bech32m} from 'SilentPayments';
 
 export const UTXO  {
   UTXO,
@@ -24,4 +24,5 @@ export const SilentPaymentroup  {
   Bech32m,
 
 };
+
 
