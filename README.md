@@ -21,7 +21,7 @@ Central Banks and cetralized social media
 
 ## Firebolt's solution
 
-Firebolt offers a Bitcoin wallet that supports both on-chain and lightning transactions. The application runs a custom, non-routing Lightning node created with the Lightning Development Kit on the user's mobile phone. 
+Firebolt offers a Bitcoin wallet that supports both on-chain and lightning transactions. The application runs a custom, non-routing Lightning node created with the Breez SDK on the user's mobile phone. 
 
 Users can back up their Bitcoin and Lightning keys with a standard BIP-39 seed and backup channel 
 
