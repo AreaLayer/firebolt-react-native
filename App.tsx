@@ -17,6 +17,8 @@ function App(): React.JSX.Element {
         </NavigationContainer>
       </ConnectionProvider>
     </GluestackUIProvider>
+    <GluestackUIProvider config={config}></GluestackUIProvider>
+
   );
 }
 
