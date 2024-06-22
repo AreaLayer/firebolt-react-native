@@ -1,4 +1,4 @@
-import crypto, {CipherGCM, CipherGCMTypes, DecipherGCM} from 'crypto';
+import crypto, { CipherGCM, CipherGCMTypes, DecipherGCM } from 'crypto';
 
 /**
  * Get encryption/decryption algorithm
@@ -52,29 +52,17 @@ export function encryptAesGcm(
     // Generate random initialization vector -> 16 bytes
     const iv = crypto.randomBytes(16);
 
-    // Generate random count of iterations between 10.000 - 99.999 -> 5 bytes
+    // Generate random count of iterations between 10,000 - 99,999 -> 5 bytes
     const iterations = Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000;
 
     // Derive encryption key
-    const encryptionKey = deriveKeyFromPassword(
-      password,
-      salt,
-      Math.floor(iterations * 0.47 + 1337),
-    );
+    const encryptionKey = deriveKeyFromPassword(password, salt, iterations);
 
     // Create cipher
-    // @ts-ignore: TS expects the wrong createCipher return type here
-    const cipher: CipherGCM = crypto.createCipheriv(
-      algorithm,
-      encryptionKey,
-      iv,
-    );
+    const cipher: CipherGCM = crypto.createCipheriv(algorithm, encryptionKey, iv);
 
     // Update the cipher with data to be encrypted and close cipher
-    const encryptedData = Buffer.concat([
-      cipher.update(plainText, 'utf8'),
-      cipher.final(),
-    ]);
+    const encryptedData = Buffer.concat([cipher.update(plainText, 'utf8'), cipher.final()]);
 
     // Get authTag from cipher for decryption // 16 bytes
     const authTag = cipher.getAuthTag();
@@ -84,7 +72,7 @@ export function encryptAesGcm(
       salt,
       iv,
       authTag,
-      Buffer.from(iterations.toString()),
+      Buffer.from(iterations.toString().padStart(5, '0')),
       encryptedData,
     ]).toString('hex');
 
@@ -92,7 +80,7 @@ export function encryptAesGcm(
   } catch (error) {
     console.error('Encryption failed!');
     console.error(error);
-    return void 0;
+    return undefined;
   }
 }
 
@@ -115,7 +103,7 @@ export function decryptAesGcm(
       console.error(
         'Could not determine the beginning of the cipherText. Maybe not encrypted by this method.',
       );
-      return void 0;
+      return undefined;
     } else {
       cipherText = cipherTextParts[1];
     }
@@ -126,31 +114,17 @@ export function decryptAesGcm(
     const salt: Buffer = inputData.slice(0, 64);
     const iv: Buffer = inputData.slice(64, 80);
     const authTag: Buffer = inputData.slice(80, 96);
-    const iterations: number = parseInt(
-      inputData.slice(96, 101).toString('utf-8'),
-      10,
-    );
+    const iterations: number = parseInt(inputData.slice(96, 101).toString('utf-8'), 10);
     const encryptedData: Buffer = inputData.slice(101);
 
     // Derive key
-    const decryptionKey = deriveKeyFromPassword(
-      password,
-      salt,
-      Math.floor(iterations * 0.47 + 1337),
-    );
+    const decryptionKey = deriveKeyFromPassword(password, salt, iterations);
 
     // Create decipher
-    // @ts-ignore: TS expects the wrong createDecipher return type here
-    const decipher: DecipherGCM = crypto.createDecipheriv(
-      algorithm,
-      decryptionKey,
-      iv,
-    );
+    const decipher: DecipherGCM = crypto.createDecipheriv(algorithm, decryptionKey, iv);
     decipher.setAuthTag(authTag);
 
     // Decrypt data
-    // @ts-ignore: TS expects the wrong createDecipher return type here
-    // eslint-disable-next-line prettier/prettier
     const decrypted = decipher.update(encryptedData, 'binary', 'utf-8') + decipher.final('utf-8');
 
     try {
@@ -164,3 +138,4 @@ export function decryptAesGcm(
     return undefined;
   }
 }
+
