@@ -1,28 +1,22 @@
-import {UTXO, SilentPaymentroup, TaggedHash, Bech32m} from 'SilentPayments';
+import { UTXO, SilentPaymentGroup, TaggedHash, Bech32m } from 'SilentPayments';
 
-export {UTXO, SilentPaymentroup, TaggedHash, Bech32m} from 'SilentPayments';
+export { UTXO, SilentPaymentGroup, TaggedHash, Bech32m } from 'SilentPayments';
 
-export const UTXO  {
+export const UTXOObj = {
   UTXO,
-  SilentPaymentroup,
+  SilentPaymentGroup,
   TaggedHash,
   Bech32m,
 };
-export const UTXO  {
+
+export const SilentPaymentGroupObj = {
   UTXO,
-  SilentPaymentroup,
+  SilentPaymentGroup,
   TaggedHash,
   Bech32m,
-  
 };
-export default UTXO;
 
-export const SilentPaymentroup  {
-  UTXO,
-  SilentPaymentroup,
-  TaggedHash,
-  Bech32m,
+export default UTXOObj;
 
-};
 
 
