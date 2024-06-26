@@ -15,6 +15,7 @@ import javax.crypto.spec.SecretKeySpec
 import javax.crypto.spec.CoinjoinSpec
 import javax.crypto.spec.Bip39Spec
 import javax.crypto.NostrSpec
+import javax.crypto.LightningSpec
 
 
 class MainActivity : ReactActivity() {
@@ -39,5 +40,7 @@ override fun createBreezeRactActivityDelegate(): {
 }        
 override fun createCoinjoinReactActivityDeledate(): {
 (mainCompoenetName, fabriEnabled) 
-
+}
+override fun crate NostrReactActivityDeledate(): {
+(mainCompoenetName, fabricEnabled)
 }
