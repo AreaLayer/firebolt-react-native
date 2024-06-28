@@ -6,7 +6,7 @@ const {networks} = require('bitcoinjs-lib');
 const axios = require('axios');
 
 // Bitcoin network configuration
-const network = bitcoin.networks.testnet;
+const network = bitcoin.networks.signet;
 
 // Generate a new Bitcoin address
 function generateAddress() {
