@@ -85,7 +85,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Beta App (Android - via APK)
 -  [ ] HD Taproot Wallet
 -  [ ] Full RBF
--  [ ] Signet
+-  [x] Signet
 -  [ ] Submarine Swap 
 -  [ ] Final App
 -  [ ] F-Droid
@@ -93,6 +93,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Payjoin (React Native) 
 -  [ ] Recompile code
 -  [ ] Muntinynet
+-  [ ] Electrum  server support
 -  [x] Firebolt Electrum Plugin
 -  [ ] ZK proof for CJ
 
