@@ -1,5 +1,5 @@
 { 
-  "extends": "./node_modules/@react-native/typescript-config/tsconfig.json",
+  "extends": "./node_modules/react-native/rn-get-polyfills-path",
   "compilerOptions": {
     "lib": ["es6"],
     "jsx": "react-native",
@@ -15,4 +15,3 @@
     "noFallthroughCasesInSwitch": true,
   }
 }
-
