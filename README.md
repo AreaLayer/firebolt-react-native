@@ -97,6 +97,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] NPM release 
 -  [x] Firebolt Electrum Plugin
 -  [ ] ZK proof for CJ
+-  [ ] Liquid?
 
 ## Donations
 
