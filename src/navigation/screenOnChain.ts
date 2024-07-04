@@ -1,6 +1,5 @@
 import { generateInvoice } from "../app/lightning";
-
-const interfaceOnChain {
+import { SCREEN_ONX_ADDRESS } from "../app/constants";
 
 OnboardingHome: 'OnboardingHome';
 Send: 'Send';
