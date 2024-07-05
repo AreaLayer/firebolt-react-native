@@ -15,7 +15,6 @@ Amount: Number,
       amountMsat: optionalAmountMsat,
       label: optionalLabel
     })
-  } catch (err) {
-    console.error(err)
-  }
+    console.log(response)
+  
   
