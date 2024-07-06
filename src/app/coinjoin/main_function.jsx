@@ -3,11 +3,12 @@ const Testnet = bitcoin.network.signet;
 const { Round1, Round2, Round3,Round4, Round5 } = require('./wallets.json');
 const { Input, Output } = require('./wallets.json');
 const { stats_tx_fee} = require('./stats.json');
+const btc = require('bitcoinjs-lib');
 
 
-// Connect to the Bitcoin testnet network
-const provider = 'https://testnet4.mempool.space/api';
-const explorer = 'https://mempool.space/testnet4/tx';
+// Connect to the Bitcoin signet network
+const provider = 'https://signet.mempool.space/api';
+const explorer = 'https://mempool.space/signet/tx';
 
 // PTG function
 
@@ -39,7 +40,7 @@ class CoinJoinRound {
   }
 }
 const get_current_blockheight; () {
-  class blockchain_info = cjxt_single.jsonrpc
+  class blockchain_info cjxt_single.jsonrpc
         return blockchain_info;
 }
 const msig_data_pubkeys; () {
