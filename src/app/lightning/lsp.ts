@@ -1,4 +1,4 @@
-import as { LSP } from 'react-native-breez';
+import as { LspId, LspInfo } from 'react-native-breez';
 
 export const generateInvoice = async (amount: number, memo: string, network: LSP.Network) => {
   const invoice = await LSP.generateInvoice(amount, memo, network);
