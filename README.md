@@ -1,5 +1,8 @@
 ### Firebolt Wallet - React Native Version ⚡🕵️
 
+![Banner](https://github.com/AreaLayer/FireBolt/raw/main/src/asset/firebolt_logo_readme.png)
+
+
 ⚠️**Wallet in WIP/development**
 
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
