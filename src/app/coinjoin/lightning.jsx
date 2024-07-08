@@ -4,6 +4,7 @@ import { Coinjoin } from './Coinjoin';
 const coinjoin = new Coinjoin();
 
 export { coinjoin };
+export { ract-breez-sdk } from 'react-native-breez';
 
 const Payment = {
   Payment,
