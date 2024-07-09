@@ -6,6 +6,7 @@ const SendPayment: React.FC = () => {
   const [amount, setAmount] = useState(0);
   const [useLightning, setUseLightning] = useState(false);
   const [useCoinjoin, setUseCoinjoin] = useState(false);
+  const [useSilenPayments, setUseSilentPayments] = useState(false);
 
   const handleSendPayment = async () => {
     try {
