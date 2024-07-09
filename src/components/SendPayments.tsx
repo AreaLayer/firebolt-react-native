@@ -55,6 +55,12 @@ const SendPayment: React.FC = () => {
       </div>
       <button onClick={handleSendPayment}>Send</button>
     </div>
+    <label>Use Silent Payments</label>
+    <input
+    type="checkbox"
+    checked={useSilenPayments}
+    onChange={e => setUseSilentPayments(e.target.checked)}
+    />
   );
 };
 
