@@ -1,15 +1,13 @@
 ### Firebolt Wallet - React Native Version ⚡🕵️
 
-![Banner](https://github.com/AreaLayer/FireBolt/raw/main/src/asset/firebolt_logo_readme.png)
-
-
 ⚠️**Wallet in WIP/development**
 
 ⚠️**Alpha stage**
 
-
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 [![LN](https://img.shields.io/badge/lightning-792EE5?logo=lightning)](https://mempool.space/lightning)
+
+![Banner](https://github.com/AreaLayer/FireBolt/raw/main/src/asset/firebolt_logo_readme.png)
 
 >React native version for Firebolt wallet with Bitcoin, Lightning Network/LSP (Breez), Coinjoin, Nostr, Payjoin, Taproot
 
@@ -85,6 +83,8 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 
 -  [x] Core functions
 -  [x] Breez (WIP)
+-  [x] Nostr (NDK)
+-  [x] UI 
 -  [ ] API Peach Bitcoin/RoboSats/Bisq
 -  [ ] Portal support (NFC)
 -  [x] Taproot functions (WIP)
