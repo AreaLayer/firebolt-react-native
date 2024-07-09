@@ -1,8 +1,3 @@
-import { IUser } from './user.interface';
-
-export interface 
-IUserModel extends IUser, Document {
-}
 import React from 'react';
 
 const Settings: React.FC = () => (
