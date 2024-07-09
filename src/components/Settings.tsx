@@ -5,6 +5,12 @@ const Settings: React.FC = () => (
     <h2>Settings</h2>
     <div>
       <h3>Network Settings</h3>
+      <button>Tor</button>
+      <button>Testnet</button>
+      <button>Mainnet</button>
+      <button>Signet</button>
+      <button>Custom</button>
+      <button>Configure Tor</button>
       <button>Configure Lightning Network Node</button>
       <button>Configure Coinjoin</button>
     </div>
