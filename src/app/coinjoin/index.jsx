@@ -13,3 +13,5 @@ const main_function = main_function;
 
 export { main_function };
 
+export const psbt = psbt;
+
