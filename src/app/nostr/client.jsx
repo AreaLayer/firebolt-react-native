@@ -1,8 +1,5 @@
-const { Keys, Client, Metadata, EventId, PublicKey, EventBuilder } = require("@nostr-dev-kit/ndk");
-const { PrivateKey, BIP39, PublicKey } = require("bitcoinjs-lib");
-
-const {Mnemonic, SeedSync} = require("@bitcoinjs-lib/bip39");
- main
+const { Keys, Client, Metadata, EventId, PublicKey, EventBuilder, User, NIP05 } = require("@nostr-dev-kit/ndk");
+const { Mnemonic, SeedSync } = require("@bitcoinjs-lib/bip39");
 
 async function main() {
     let keys = Keys.generate();
@@ -24,16 +21,17 @@ async function main() {
 
     let metadata = new Metadata()
         .name("username")
+        .user("user")
         .displayName("My Username")
         .about("Description")
         .picture("https://example.com/avatar.png")
         .banner("https://example.com/banner.png")
         .nip05("username@example.com")
         .lud16("yuki@getalby.com");
-    
+
     await client.setMetadata(metadata);
 
-    await client.publishTextNote("My first text note from Nostr SDK!", []);
+    await client.publishTextNote("My first text note from NVDK", []);
 
     // Send custom event
     let event_id = EventId.fromBech32("note1z3lwphdc7gdf6n0y4vaaa0x7ck778kg638lk0nqv2yd343qda78sf69t6r");
@@ -41,7 +39,7 @@ async function main() {
     let event = EventBuilder.newReaction(event_id, public_key, "X").toEvent(keys);
 
     // Send custom event to all relays
-    await client.send_event(event);
+    await client.sendEvent(event);
 
     // Send custom event to a specific previously added relay
     // await client.sendEventTo("wss://relay.damus.io", event);
