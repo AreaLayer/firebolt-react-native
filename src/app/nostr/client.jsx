@@ -1,4 +1,4 @@
-const { Keys, Client, Metadata, EventId, PublicKey, EventBuilder, User, NIP05 } = require("@nostr-dev-kit/ndk");
+const { Keys, Client, Metadata, EventId, PublicKey, EventBuilder, User, nip05 } = require("@nostr-dev-kit/ndk");
 const { Mnemonic, SeedSync } = require("@bitcoinjs-lib/bip39");
 
 async function main() {
