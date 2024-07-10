@@ -9,4 +9,32 @@
     margin: 0;
     padding: 0;
   }
+  .key-manager {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
   
+  .key-manager h2 {
+    text-align: center;
+  }
+  
+  .key-manager input {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .key-manager button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .key-manager button:hover {
+    background-color: #0056b3;
+  }

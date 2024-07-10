@@ -12,6 +12,7 @@ const Settings: React.FC = () => (
       <h3>Network Settings</h3>
       <button>Configure Lightning Network Node</button>
       <button>Configure Coinjoin</button>
+      <button>Nostr Backup</button>
     </div>
     <div>
       <h3>Security Settings</h3>
