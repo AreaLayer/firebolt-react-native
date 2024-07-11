@@ -21,7 +21,7 @@ Each individual has their own identity using Nostr
 
 ### The problem
 
-Central Banks and cetralized social media
+Central Banks and centralized social media
 
 ### Firebolt's solution
 
@@ -39,7 +39,7 @@ The other main features Firebolt supports are as follows:
 
 ⚛️ Coinjoin and Payjoin for privacy
 
-🫂Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RobotSats)
+🫂Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RoboSats)
 
 ### Feature
 
@@ -67,13 +67,13 @@ The other main features Firebolt supports are as follows:
 
 - Contact list via Nostr (NPub)
 
-- Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RobotSats)
+- Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RoboSats)
 
 - RBF
 
 - User friendly
 
-- Klotin and Swift (iOS and Android)
+- Kotlin and Swift (iOS and Android)
 
 ## Core functions 
 
@@ -99,7 +99,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Payjoin (React Native) 
 -  [ ] Recompile code
 -  [ ] Muntinynet
--  [ ] Electrum  server support
+-  [ ] Electrum server support
 -  [ ] NPM release 
 -  [x] Firebolt Electrum Plugin
 -  [ ] ZK proof for CJ
