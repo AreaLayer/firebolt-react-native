@@ -108,6 +108,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] BOLT12
 -  [ ] BOLT11
 -  [ ] NWC
+-  [ ] PSBT 
 
 ## Donations
 
