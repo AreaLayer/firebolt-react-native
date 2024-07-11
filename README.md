@@ -107,7 +107,9 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Liquid?
 -  [ ] BOLT12
 -  [ ] BOLT11
--  [ ] NWC
+-  [ ] NWC (NDK)
+-  [ ] LNURL
+-  [ ] Zap
 -  [ ] PSBT 
 
 ## Donations
