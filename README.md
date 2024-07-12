@@ -111,7 +111,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] LNURL
 -  [ ] Zap
 -  [ ] PSBT 
-
+-  [ ] Bitcoin Widget
 ## Donations
 
 [Rsync](https://tourniquet.app/donate/Rsync)
