@@ -113,6 +113,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] PSBT 
 -  [x] Bitcoin Widget
 -  [ ] Miniscript
+-  [ ] Library for Wallet
 
 
 ## Donations
