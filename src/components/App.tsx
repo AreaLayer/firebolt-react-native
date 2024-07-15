@@ -15,6 +15,7 @@ const App: React.FC = () => {
     <div className="App">
       <Navbar />
       <Main />
+      <SendPayments />
     </div>
   );
 }
