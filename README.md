@@ -126,3 +126,9 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 While our wallet is in development, you can test our Coinjoin using Electrum wallet Plugin
 
 [Firebolt Electrum](https://github.com/AreaLayer/firebolt-electrum)
+
+## Contributors
+
+<a align="center" href="https://github.com/AreaLayer/firebolt-react-native aphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AreaLayer/firebolt-react-native" />
+</a>
