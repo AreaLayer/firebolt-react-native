@@ -2,7 +2,7 @@ import { Address } from './address';
 
 export interface Address {
   address: string;
-  type: P2TR;
+  type: any;
   scriptPubKey: string;
   scriptSig: string;
 }
