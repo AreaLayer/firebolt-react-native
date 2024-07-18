@@ -10,6 +10,7 @@
 ![Banner](https://github.com/AreaLayer/FireBolt/raw/main/src/asset/firebolt_logo_readme.png)
 
 >React native version for Firebolt wallet with Bitcoin, Lightning Network/LSP (Breez), Coinjoin, Nostr, Payjoin, Taproot
+>Contributions are welcome
 
 ### Overview
 
