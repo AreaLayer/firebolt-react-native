@@ -1,7 +1,10 @@
-const { PSBT } = require('bitcoinjs-lib');
+const { bip371, psbtutils} = require('bitcoinjs-lib');
 
-const psbt = {
-  psbt
+const TapscriptFinalizer {
+  constructor(psbt, tapscript) {
+        this.psbt = psbt;
+        this.tapscript = tapscript;
+    }
 }
 
-export const psbt;
+module.exports = TapscriptFinalizer;
