@@ -71,7 +71,7 @@ GEM
     nap (1.1.0)
     netrc (0.11.0)
     public_suffix (4.0.7)
-    rexml (3.2.8)
+    rexml (3.3.2)
       strscan (>= 3.0.9)
     ruby-macho (2.5.1)
     strscan (3.1.0)
@@ -85,7 +85,7 @@ GEM
       claide (>= 1.0.2, < 2.0)
       colored2 (~> 3.1)
       nanaimo (~> 0.3.0)
-      rexml (~> 3.2.4)
+      rexml (~> 3.3.2)
 
 PLATFORMS
   ruby
