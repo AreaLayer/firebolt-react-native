@@ -11,6 +11,7 @@ export const payment = {
     receiveInvoice: async (invoice: string) => {
         return await Receive.receiveInvoice(invoice)
     },
+    // getInvoice: async (amount: number, memo: string) => {
 
     // getAddress: async () => {
     //     return await Receive.getAddress()
