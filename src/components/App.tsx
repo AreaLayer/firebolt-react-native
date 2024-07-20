@@ -8,6 +8,8 @@ import Activity from './components/Activity';
 import SendPayment from './components/SendPayment';
 import ReceivePayment from './components/ReceivePayment';
 import Settings from './components/Settings';
+import BitcoinPrice from './BitcoinPrice';
+import PriceTrendGraph from './PriceTrendGraph';
 
 
 const App: React.FC = () => {
@@ -36,6 +38,11 @@ const App: React.FC = () => {
       <SendPayment />
       <ReceivePayment />
       <Settings />
+      <BitcoinPrice />
+      <SendPayment />
+      <ReceivePayment />
+      <NostrKeys />
+      <PriceTrendGraph />
     </div>
   );
 }
