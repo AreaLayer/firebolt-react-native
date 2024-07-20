@@ -10,7 +10,11 @@ import ReceivePayment from './components/ReceivePayment';
 import Settings from './components/Settings';
 import BitcoinPrice from './BitcoinPrice';
 import PriceTrendGraph from './PriceTrendGraph';
-
+import PriceDisplay from './PriceDisplay';
+import NostrKeys from './NostrKeys';
+import Setting from './Setting';
+import SlowToast from './SlowToast';
+import Transactions from './Transactions';
 
 const App: React.FC = () => {
   return (
@@ -43,6 +47,11 @@ const App: React.FC = () => {
       <ReceivePayment />
       <NostrKeys />
       <PriceTrendGraph />
+      <PriceDisplay />
+      <Setting />
+      <Main />
+      <SlowToast />
+      <Transactions />
     </div>
   );
 }
