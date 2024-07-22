@@ -1,6 +1,6 @@
 FROM  Dockerfile.kotlin
 FROM --platform=arm64/v8  Dockerfile.kotlin
-FROM openjdk:11
+FROM openjdk:11.0.16
 RUN apt-get update && \
     apt-get install -y wget unzip
 RUN wget https://services.gradle.org/distributions/gradle-7.4.2-bin.zip -P /tmp
