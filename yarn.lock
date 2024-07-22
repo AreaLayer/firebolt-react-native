@@ -1271,9 +1271,7 @@
   integrity sha512-sD6aFS6Tq5XpyjrboFEIc8LrRY4TA4kodFYHzk6mDchvbkdLODijtjnaDQB1UqihOkMRg49e7ANRAOzc7eymaQ==
 
 "@gluestack-style/react@^1.0.45":
-  version "1.0.45"
-  resolved "https://registry.npmjs.org/@gluestack-style/react/-/react-1.0.45.tgz"
-  integrity sha512-aMGKPX3Z30ZS9mBcyF2Q2IjDsVbNjqxi1WByyLOYdgosMTAHJwnp4lSjB7MT7B/jcLnIS8pd+WwCM/5toa8jFg==
+  version "1.0.57"
   dependencies:
     inline-style-prefixer "^6.0.1"
     normalize-css-color "^1.0.2"
