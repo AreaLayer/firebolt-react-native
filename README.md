@@ -116,6 +116,8 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
+-  [ ] Upgrade to 1.0.0 beta
+-  [ ] Point of Sale
 
 
 ## Donations
