@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import OnBoardingNavigation from './src/navigation/OnBoarding';
 import {ConnectionProvider} from './src/providers/ConnectionProvider';
 import OnBoardingHome from './src/screens/onboarding/CoinjoinMarket';
+import Balance from './src/components/Balance';
 
 function App(): React.JSX.Element {
   return (
@@ -13,11 +14,12 @@ function App(): React.JSX.Element {
         <NavigationContainer>
           <OnBoardingNavigation />
           <OnBoardingHome>
+          <Balance> 
         </NavigationContainer>
       </ConnectionProvider>
     </GluestackUIProvider>
     <GluestackUIProvider config={config}></GluestackUIProvider>
-
+    
   );
 }
 
