@@ -10,6 +10,7 @@ const Payment = {
   Payment,
   TXID,
   UTXO
+  // Coinjoin
 };
 
 export default Payment;
