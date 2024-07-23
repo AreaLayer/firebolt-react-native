@@ -37,7 +37,7 @@
     "react-native-safe-area-context": "3.4.1",
     "react-native-screens": "^3.29.0",
     "react-native-storage": "^1.0.1",
-    "react-native-svg": "13.14.1",
+    "react-native-svg": "15.4.0",
     "readable-stream": "^4.5.2",
     "stream-browserify": "^1.0.0",
     "vm-browserify": "^0.0.4",
