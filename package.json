@@ -31,7 +31,7 @@
     "ecpair": "^2.1.0",
     "events": "^1.1.1",
     "react": "18.2.0",
-    "react-native": "0.73.2",
+    "react-native": "0.74.3",
     "react-native-crypto": "^2.2.0",
     "react-native-randombytes": "^3.6.1",
     "react-native-safe-area-context": "3.3.2",
