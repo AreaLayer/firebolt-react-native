@@ -29,8 +29,10 @@
     "payjoin-client": "^1.0.1",
     "buffer": "^6.0.3",
     "ecpair": "^2.1.0",
-    "events": "^1.1.1",
+    "events": "^3.0.0",
     "react": "18.2.0",
+    "events": "^1.1.1",
+    "react": "18.3.1",
     "react-native": "0.74.3",
     "react-native-crypto": "^2.2.0",
     "react-native-randombytes": "^3.6.1",
@@ -60,8 +62,10 @@
     "jest": "^29.6.3",
     "prettier": "3.3.3",
     "react-test-renderer": "18.2.0",
+    "prettier": "2.8.8",
+    "react-test-renderer": "18.3.1",
     "rn-nodeify": "^10.3.0",
-    "typescript": "5.0.4"
+    "typescript": "5.5.4"
   },
   "engines": {
     "node": ">=18"
