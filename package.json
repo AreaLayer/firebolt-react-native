@@ -61,7 +61,7 @@
     "prettier": "2.8.8",
     "react-test-renderer": "18.2.0",
     "rn-nodeify": "^10.3.0",
-    "typescript": "5.0.4"
+    "typescript": "5.5.4"
   },
   "engines": {
     "node": ">=18"
