@@ -13,3 +13,15 @@ export const profilefromevent = {
 }
 
 }
+
+export const encrypt = {
+    name: String,
+    nip05: String,
+    zapService: String,
+}
+
+export const decrypt = {
+    name: String,
+    nip05: String,
+    zapService: String,
+}
