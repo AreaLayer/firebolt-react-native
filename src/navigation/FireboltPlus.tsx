@@ -48,10 +48,10 @@ const PaymentForm: React.FC = () => {
   return (
     <>
       <h1>Subscribe to our service!</h1>
-      <p>Enter your email address and pay the subscription fee in satoshis:</p>
+      <p>Enter your email Npub and pay the subscription fee in satoshis:</p>
       <form id="paymentForm" action="/process_payment" method="POST">
-        <label htmlFor="email">Email:</label><br />
-        <input type="email" id="email" name="email" required /><br /><br />
+        <label htmlFor="npub">Npub:</label><br />
+        <input type="npub" id="npub" name="npub" required /><br /><br />
         <label htmlFor="amount">Amount (in satoshis):</label><br />
         <input type="number" id="amount" name="amount" min="1" required /><br /><br />
         <button type="submit">Pay with Lightning</button>
