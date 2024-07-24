@@ -16,15 +16,19 @@ const PaymentForm: React.FC = () => {
       const amount = amountInput.value;
 
       try {
-        const web3Modal = new Web3Modal.default({
-          network: 'testnet',
-          cacheProvider: true,
+        // Generate a Lightning invoice
+        const response = await fetch('/create_invoice', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ amount, description: 'Subscription payment' }),
         });
 
-        const provider = await web3Modal.connectTo('lightning');
-        const invoice = await provider.makeInvoice({ amount, description: 'Subscription payment' });
+        const invoiceData = await response.json();
+        const invoice = invoiceData.invoice;
 
-        const response = await fetch('/process_payment', {
+        const paymentResponse = await fetch('/process_payment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -32,7 +36,7 @@ const PaymentForm: React.FC = () => {
           body: JSON.stringify({ email, amount, invoice }),
         });
 
-        const responseData = await response.json();
+        const responseData = await paymentResponse.json();
         alert(responseData.message);
       } catch (error) {
         console.error('Error processing payment:', error);
@@ -57,3 +61,4 @@ const PaymentForm: React.FC = () => {
 };
 
 export default PaymentForm;
+
