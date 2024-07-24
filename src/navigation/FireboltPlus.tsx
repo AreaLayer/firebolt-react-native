@@ -48,7 +48,7 @@ const PaymentForm: React.FC = () => {
   return (
     <>
       <h1>Subscribe to our service!</h1>
-      <p>Enter your email Npub and pay the subscription fee in satoshis:</p>
+      <p>Enter your Npub and pay the subscription fee in satoshis:</p>
       <form id="paymentForm" action="/process_payment" method="POST">
         <label htmlFor="npub">Npub:</label><br />
         <input type="npub" id="npub" name="npub" required /><br /><br />
