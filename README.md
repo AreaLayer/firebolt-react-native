@@ -108,7 +108,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [x] Firebolt Electrum Plugin
 -  [ ] ZK proof for CJ
 -  [ ] BOLT12
--  [ ] BOLT11
+-  [x] BOLT11 (WIP)
 -  [ ] NWC (NDK)
 -  [ ] LNURL
 -  [ ] Zap
