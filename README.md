@@ -120,6 +120,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Upgrade to 1.0.0 beta
 -  [ ] Point of Sale
 -  [ ] BIP-353 (DNS payments)
+-  [ ] XPUB compatible
 -  [x] Firebolt Plus
 
 
