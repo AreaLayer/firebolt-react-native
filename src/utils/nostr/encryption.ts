@@ -25,3 +25,9 @@ export const decrypt = {
     nip05: String,
     zapService: String,
 }
+
+export const random = {
+    name: String,
+    nip05: String,
+    zapService: String,
+}
