@@ -88,7 +88,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [x] Breez (WIP)
 -  [x] Nostr (NDK)
 -  [x] UI 
--  [ ] API Peach Bitcoin/RoboSats/Bisq
+-  [x] API Peach Bitcoin/RoboSats/Bisq (WIP)
 -  [ ] Portal support (NFC)
 -  [x] Taproot functions (WIP)
 -  [ ] Beta App (Android - via APK)
