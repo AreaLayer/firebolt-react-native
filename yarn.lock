@@ -7634,7 +7634,7 @@ react-native-safe-area-context@3.3.2:
   integrity sha512-yOwiiPJ1rk+/nfK13eafbpW6sKW0jOnsRem2C1LPJjM3tfTof6hlvV5eWHATye3XOpu2cJ7N+HdkUvUDGwFD2Q==
 
 react-native-screens@^3.29.0:
-  version "3.32.0"
+  version "3.33.0"
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
