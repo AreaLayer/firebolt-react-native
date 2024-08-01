@@ -1341,7 +1341,7 @@
     "@react-stately/checkbox" "^3.4.2"
 
 "@gluestack-ui/config@^1.1.2":
-  version "1.1.19"
+  version "1.1.20"
   dependencies:
     "@gluestack-ui/utils" "^0.1.12"
     "@react-native-aria/focus" "^0.2.9"
