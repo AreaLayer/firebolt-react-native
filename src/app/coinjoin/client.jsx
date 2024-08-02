@@ -1,4 +1,10 @@
 import { Client } from '/../client';
+const {
+    IBaseAPIOptions,
+    IBaseAPIResponse,
+    IBaseAPIResponseSuccess,
+    IBaseAPIResponseFailure,
+} = require('./types');
 
 export class BaseAPI {
     constructor(client: Client) {
