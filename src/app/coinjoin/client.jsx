@@ -7,7 +7,7 @@ const {
 } = require('./types');
 
 export class BaseAPI {
-    constructor(client: Client) {
+    constructor(client) {
         this.client = client;
     }
 }
