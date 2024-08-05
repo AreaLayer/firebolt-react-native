@@ -1,6 +1,6 @@
 import { UTXO, SilentPaymentGroup, TaggedHash, Bech32m } from 'SilentPayments';
 
-export { UTXO, SilentPaymentGroup, TaggedHash, Bech32m } from 'SilentPayments';
+export { UTXO, SilentPaymentGroup, TaggedHash, Bech32m } from '/app/SilentPayments';
 
 export const UTXOObj = {
   UTXO,
