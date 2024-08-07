@@ -11,13 +11,14 @@ export const payment = {
     receiveInvoice: async (invoice: string) => {
         return await Receive.receiveInvoice(invoice)
     },
-    // getInvoice: async (amount: number, memo: string) => {
 
-    // getAddress: async () => {
-    //     return await Receive.getAddress()
-    // },
-    // getBalance: async () => {
-    
+    getPaymentRequest: async (amount: number, memo: string) => {
+        return await Payment.getPaymentRequest(amount, memo)
+    }
+
+    payPaymentRequest: async (paymentRequest: string) => {
+        return await Payment.payPaymentRequest(paymentRequest)
+    }
 
 
     
