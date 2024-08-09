@@ -1,10 +1,13 @@
 import { LSP } from 'firebolt-react-native';
 import { View, Text } from 'react-native';
 
-export const LSPExample = () => {
+var LSP = new LSP();
+
+export const LSP = () => {
   return (
     <View>
-      <Text>LSP Example</Text>
+      <Text>Set LSP</Text>
+      <Button>Set LSP</Button>
       <LSP />
     </View>
   );
