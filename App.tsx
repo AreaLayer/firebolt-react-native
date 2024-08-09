@@ -7,6 +7,7 @@ import {ConnectionProvider} from './src/providers/ConnectionProvider';
 import OnBoardingHome from './src/screens/onboarding/CoinjoinMarket';
 import Balance from './src/components/Balance';
 import HomeScreen from './src/screens/Home/HomeScreen';
+import BitcoinPrice from './src/components/BitcoinPrice';
 
 function App(): React.JSX.Element {
   return (
@@ -20,6 +21,7 @@ function App(): React.JSX.Element {
       </ConnectionProvider>
     </GluestackUIProvider>
     </Balance>
+    <BitcoinPrice/>
     <HomeScreen/>
     <GluestackUIProvider config={config}></GluestackUIProvider>
     
