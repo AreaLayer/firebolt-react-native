@@ -1,6 +1,6 @@
 const bitcoin = require('bitcoinjs-lib');
 const { UTXO, PublicKey, PrivateKey, PSBT, P2TR, Payment } = bitcoin;
-const Testnet = bitcoin.networks.signet;
+const signet = bitcoin.networks.signet;
 const { Round1, Round2, Round3, Round4, Round5 } = require('./wallets.json');
 const { Input, Output } = require('./wallets.json');
 const { stats_tx_fee } = require('./stats.json');
