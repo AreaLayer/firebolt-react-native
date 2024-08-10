@@ -1,29 +1,26 @@
-const {UTXO, PublicKey, PrivateKey, PSBT, P2TR, Payment} = require('bitcoinjs-lib');
-const Testnet = bitcoin.network.signet;
-const { Round1, Round2, Round3,Round4, Round5 } = require('./wallets.json');
+const bitcoin = require('bitcoinjs-lib');
+const { UTXO, PublicKey, PrivateKey, PSBT, P2TR, Payment } = bitcoin;
+const Testnet = bitcoin.networks.signet;
+const { Round1, Round2, Round3, Round4, Round5 } = require('./wallets.json');
 const { Input, Output } = require('./wallets.json');
-const { stats_tx_fee} = require('./stats.json');
+const { stats_tx_fee } = require('./stats.json');
 const { CoinJoinRound } = require('./coinjoin_round.json');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
-const btc = require('bitcoinjs-lib');
-
 
 // Connect to the Bitcoin signet network
 const provider = 'https://signet.mempool.space/api';
 const explorer = 'https://mempool.space/signet/tx';
 
-// PTG function
-
 // Stats fee
-const stats_tx_fee = 10000
+const statsTxFee = 10000;
 
 let converter = new BitcoinConverter();
 
 let satoshis = converter.btcToSatoshis(0.001);
 console.log(satoshis); // 100000
 
-let btc = converter.satoshisToBtc(100000);
-console.log(btc); // 0.001
+let btcAmount = converter.satoshisToBtc(100000);
+console.log(btcAmount); // 0.001
 
 class CoinJoinRound {
   constructor(inputs, outputs) {
@@ -33,231 +30,121 @@ class CoinJoinRound {
 
   rbf(transaction, feeRate) {
     // Modify the transaction to increase fees
-    // Calculate the new fee based on the fee rate
-    const currentFee = transaction.calculateFee();
+    const currentFee = transaction.getFee();
     const newFee = currentFee * feeRate;
-    transaction.modifyFee(newFee);
+    transaction.setFee(newFee);
     // Broadcast the modified transaction
     transaction.broadcast();
   }
 }
-const get_current_blockheight; () {
-  class blockchain_info cjxt_single.jsonrpc
-        return blockchain_info;
-}
-const msig_data_pubkeys; () {
-class  multisig_script {cjxt_single
-       return musig_data_pubkeys;
-}
-};
-const NN_script_from_pubkeys; () {
-  return N_script_from_pubkeys;
-};
-const PTG() {
-  var attr_list = [
-    'utxo_ins', 'signing_pubkeys', 'signing_redeem_scripts', 'signatures',
-    'output_address', 'change_address', 'output_script', 'change_script',
-    'output_amount', 'change_amount', 'locktime', 'outs', 'pay_out_index',
-    'base_form', 'fully_signed_tx', 'completed', 'txid', 'is_spent',
-    'is_confirmed', 'is_broadcast', 'spending_tx', 'amount', 'paymentfee', 'balance',
-    'paymenthash'
-];
-};
-class CXJT {
-    constructor(tx, wallet, n_counterparties, n, locktime = null, keyset = null) {
 
-        if (!(wallet instanceof wallet)) {
-            throw new Error("Wallet must be an instance of Wallet");
-        }
-
-        if (!(txtemplate instanceof TX)) {
-            throw new Error("txtemplate must be an instance of TX");
-        }
-
-        if (![n_counterparties, n].every(x => Number.isInteger(x))) {
-            throw new Error("n_counterparties and n must be integers");
-        }
-
-        class Transaction {
-            constructor(txid, utxo_in, locktime, keyset) {
-              this.txid = txid;
-              this.utxo_in = utxo_in;
-              this.locktime = locktime;
-              this.keyset = keyset;
-            }
-          }
-          
-    };
-    class rawTransaction {
-        constructor(txid, utxo_in) {
-          this.txid = txid;
-          this.utxo_in = utxo_in;
-        }
-      }
-      
-      }
-      
-}
-    
-    function createTransaction(t) {
-        let utxo_in = t.utxo_in;
-        let transaction = new Transaction(t.txid, utxo_in);
-        // Add the transaction to the list of transactions
-        // Assuming you have a 'transactions' array
-        transactions.push(transaction);
-    }
-    
-    }    
-
-    if (t.txid) {
-        txid = t.txid;
-    } else {
-        throw new Error("Couldn't find outpoint for input");
-    }
-
-    utxo_in = txid + ":" + t.n;
-    this.ins.push([utxo_in, t.amount]);
-}
-  class build_output {
-    for (let i = 0; i < this.template.outs.length; i++) {
-    const t = this.template.outs[i];
-
-    if (t.spk_type === "p2wsh-p2tr") {
-        const address = btc.pubkey_to_p2tr_p2wsh_address(
-            this.keys["outs"][i][t.counterparty],
-            get_p2tr_vbyte()
-        );
-        this.outs.push({
-            "address": t.address,
-            "value": t.amount,
-        });
-    } else if (t.spk_type === "NN") {
-        // Check if all the necessary keys are available
-        if (!Object.keys(this.keys["outs"][i]).every(j => j in this.keys["outs"][i])) {
-            throw new Error("Incomplete key data to construct outputs");
-        }
-
-        const address = btc.pubkeys_to_p2tr_p2wsh_address(
-            Object.values(this.keys["outs"][i]),
-            { vbyte: 100 }
-        );
-
-        this.outs.push({
-            "address": t.address,
-            "value": t.amount,
-        });
-    }
-}
-class Mktx {
-    constructor() {
-        this.build_ins_from_template();
-        this.build_outs_from_template();
-    }
-
-    build_ins_from_template() {
-        // implementation goes here
-    }
-
-    build_outs_from_template() {
-        // implementation goes here
-    }
-}
-
-if (!(this.ins.length && this.outs.length)) {
-    throw new Error("Invalid inputs or outputs");
-}
-
-this.base_form = btc.mktx(this.ins.map(x => x[0]), this.outs);
-const dtx = btc.deserialize(this.base_form);
-
-if (this.locktime) {
-    dtx["ins"][0]["sequence"] = 0;
-    dtx["locktime"] = this.locktime;
-}
-
-for (let i = 0; i < dtx["ins"].length; i++) {
-    const inp = dtx["ins"][i];
-    const sti = this.template.ins[i];
-
-    if (sti.spk_type === "p2wsh-p2tr") {
-        inp["script"] = "16" + btc.pubkey_to_p2tr_p2wsh_script(
-            this.keys["ins"][i][sti.counterparty]
-        );
-    } else if (sti.spk_type === "NN") {
-        inp["script"] = "";
-    }
-}
-
-this.txid = btc.txhash(btc.serialize(dtx));
-
-for (const to of this.template.outs) {
-    to.txid = this.txid;
-}
-class apply_key {
-  constructor(self, key, insouts, idx, cpr) {
-    this.keys[insouts][idx][cpr] = key;
+class Transaction {
+  constructor(txid, utxo_in, locktime, keyset) {
+    this.txid = txid;
+    this.utxo_in = utxo_in;
+    this.locktime = locktime;
+    this.keyset = keyset;
   }
-if (insouts === "ins") {
-    // if all keys are available for this input,
-    // we can set the signing redeem script
-    const tp = this.t.ins[idx].spk_type;
+}
+
+class RawTransaction {
+  constructor(txid, utxo_in) {
+    this.txid = txid;
+    this.utxo_in = utxo_in;
+  }
+}
+
+function createTransaction(t) {
+  let utxo_in = `${t.txid}:${t.n}`;
+  let transaction = new Transaction(t.txid, utxo_in);
+  transactions.push(transaction);
+}
+
+class CXJT {
+  constructor(tx, wallet, n_counterparties, n, locktime = null, keyset = null) {
+    if (!(wallet instanceof Wallet)) {
+      throw new Error("Wallet must be an instance of Wallet");
+    }
+
+    if (!(tx instanceof Transaction)) {
+      throw new Error("Transaction must be an instance of Transaction");
+    }
+
+    if (![n_counterparties, n].every(x => Number.isInteger(x))) {
+      throw new Error("n_counterparties and n must be integers");
+    }
+
+    this.tx = tx;
+    this.wallet = wallet;
+    this.n_counterparties = n_counterparties;
+    this.n = n;
+    this.locktime = locktime;
+    this.keyset = keyset;
+    this.ins = [];
+    this.outs = [];
+    this.base_form = null;
+    this.signing_redeem_scripts = [];
+    this.signatures = [];
+    this.completed = [];
+  }
+
+  buildInsFromTemplate(template) {
+    // Implement logic to build inputs from a template
+  }
+
+  buildOutsFromTemplate(template) {
+    // Implement logic to build outputs from a template
+  }
+
+  applyKey(insouts, idx, cpr, key) {
+    this.keys[insouts][idx][cpr] = key;
+
+    if (insouts === "ins") {
+      const tp = this.t.ins[idx].spk_type;
+
+      if (tp === "p2tr-p2wsh") {
+        this.signing_redeem_scripts[idx] = bitcoin.pubkey_to_p2tr_p2wsh_script(key);
+      } else if (tp === "NN") {
+        if (Object.keys(this.keys["ins"][idx]).length === this.n_counterparties) {
+          this.signing_redeem_scripts[idx] = NN_script_from_pubkeys(
+            Object.values(this.keys["ins"][idx])
+          );
+        }
+      }
+    }
+  }
+
+  signatureForm(index) {
+    if (!this.signing_redeem_scripts[index]) {
+      throw new Error("Signing redeem script not available");
+    }
+
+    return bitcoin.taproot_signature_form(
+      bitcoin.deserialize(this.base_form),
+      index,
+      this.signing_redeem_scripts[index],
+      this.ins[index][1]
+    );
+  }
+
+  signatureIndex(in_index) {
+    const pub = this.keys["ins"][in_index][this.n];
+    const addr = this.wallet.pubkey_to_address(pub);
+    const privkey = this.wallet.get_key_from_addr(addr);
+
+    const tp = this.template.ins[in_index].spk_type;
 
     if (tp === "p2tr-p2wsh") {
-        // only one signer: apply immediately
-        this.signing_redeem_scripts[idx] = btc.pubkey_to_p2tr_p2wsh_script(key);
-    } else if (tp === "NN") {
-        // do we have N signers?
-        if (Object.keys(this.keys["ins"][idx]).length === this.n_counterparties) {
-            this.signing_redeem_scripts[idx] = NN_script_from_pubkeys(
-                Object.values(this.keys["ins"][idx])
-            );
-        }
-    }
-};
-class signature_form { 
-  constructor(self, index) {
-    if (!this.signing_redeem_scripts[index]) {
-    throw new Error("Signing redeem script not available");
-}
-
-return btc.taproot_signature_form(
-    btc.deserialize(this.base_form),
-    index,
-    this.signing_redeem_scripts[index],
-    this.ins[index][1]
-);
-  }
-}
-class singanture_index {
-  constructor(self, in_index) {
-    // The pubkey we're signing against
-const pub = this.keys["ins"][in_index][this.n];
-  }}
-// The wallet holds the keys for p2sh-p2wpkh addresses directly.
-// For p2wsh addresses, we must use the pubkey to construct
-// the corresponding p2sh-p2wpkh address in the wallet to extract
-// the key.
-const addr = this.wallet.pubkey_to_address(pub);
-const privkey = this.wallet.get_key_from_addr(addr);
-
-// Check whether we are multi-signing or single-signing
-const tp = this.template.ins[in_index].spk_type;
-
-if (tp === "p2tr-p2wsh") {
-    // The main (non-multisig) signing algo(s) return a signed
-    // tx, not a signature; extract from the temporary tx
-    const txwithsig = btc.deserialize(
+      const txwithsig = bitcoin.deserialize(
         this.wallet.sign(this.base_form, in_index, privkey, this.ins[in_index][1])
-    );
+      );
 
-    // Txinwitness field is [sig, pub]
-    const sig = txwithsig["ins"][in_index]["txinwitness"][0];
+      const sig = txwithsig.ins[in_index].txinwitness[0];
 
-    // Verification check
-    const scriptCode =
-        "76a914" + btc.hash160(Buffer.from(pub, 'hex')).toString('hex') + "88ac";
+      const scriptCode =
+        "76a914" + bitcoin.crypto.hash160(Buffer.from(pub, 'hex')).toString('hex') + "88ac";
 
-    if (!btc.verify_tx_input(
+      if (!bitcoin.verify_tx_input(
         this.base_form,
         in_index,
         scriptCode,
@@ -265,16 +152,44 @@ if (tp === "p2tr-p2wsh") {
         pub,
         'deadbeef',
         this.ins[in_index][1]
-    )) {
+      )) {
         throw new Error("Transaction input verification failed");
-    }
+      }
 
-    this.signatures[in_index] = [sig];
-    this.completed[in_index] = true;
-} else if (tp === "NN") {
-    if (this.signatures[in_index].length === 0) {
+      this.signatures[in_index] = [sig];
+      this.completed[in_index] = true;
+    } else if (tp === "NN") {
+      if (!this.signatures[in_index]) {
         this.signatures[in_index] = new Array(this.n_counterparties).fill(null);
+      }
+
+      const sig = bitcoin.p2wsh_multisign(
+        this.base_form,
+        in_index,
+        this.signing_redeem_scripts[in_index],
+        privkey,
+        this.ins[in_index][1]
+      );
+
+      if (!bitcoin.verify_tx_input(
+        this.base_form,
+        in_index,
+        this.signing_redeem_scripts[in_index],
+        sig,
+        pub,
+        'deadbeef',
+        this.ins[in_index][1]
+      )) {
+        throw new Error("Transaction input verification failed");
+      }
+
+      this.signatures[in_index][this.n] = sig;
+
+      if (this.signatures[in_index].every(x => x)) {
+        this.completed[in_index] = true;
+      }
     }
+  }
 
     const sig = btc.p2wsh_multisign(
         this.base_form,
