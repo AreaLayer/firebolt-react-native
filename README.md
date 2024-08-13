@@ -106,7 +106,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Unit tests
 -  [ ] NPM release 
 -  [x] Firebolt Electrum Plugin
--  [ ] ZK proof for CJ
+-  [ ] ZK proof for CJ (Groth16)
 -  [ ] BOLT12
 -  [x] BOLT11 (WIP)
 -  [ ] NWC (NDK)
