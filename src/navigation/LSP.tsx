@@ -8,7 +8,6 @@ export const LSP = () => {
     <View>
       <Text>Set LSP</Text>
       <Button>Set LSP</Button>
-      <LSP />
     </View>
   );
 };
