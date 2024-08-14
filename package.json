@@ -21,6 +21,7 @@
     "@breeztech/react-native-breez-sdk":"^0.5.2",
     "@nostr-dev-kit/ndk": "^2.9.1",
     "@github:BlueWallet/SilentPayments": "^1.0.0",
+    "@github:Portal-Software/libportal-react-native":"^0.1.0",
     "assert": "^2.0.0",
     "bip39": "^3.1.0",
     "bitcoinjs-lib": "^6.1.6",
@@ -42,7 +43,8 @@
     "stream-browserify": "^3.0.0",
     "vm-browserify": "^1.0.0",
     "ndk":"^2.10.0",
-    "react-native-breez-sdk":"^0.5.2"
+    "react-native-breez-sdk":"^0.5.2",
+    "libportal-react-native":"^0.1.0",
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
