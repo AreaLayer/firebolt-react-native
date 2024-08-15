@@ -118,7 +118,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
 -  [ ] Upgrade to 1.0.0 beta
--  [ ] Point of Sale
+-  [ ] Point of Sale (PoS)
 -  [ ] BIP-353 (DNS payments)
 -  [ ] XPUB compatible
 -  [x] Firebolt Plus
