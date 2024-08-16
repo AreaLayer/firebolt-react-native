@@ -16,11 +16,8 @@ export const SilentPaymentGroupObj = {
   Bech32m,
 };
 
-const SilentPaymentGroupObj = {
-  UTXO,
-  SilentPaymentGroup,
-  TaggedHash,
-  Bech32m,
+export const Bech32m = {
+  Bech32m, 
 };
 export default UTXOObj;
 
