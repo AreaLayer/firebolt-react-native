@@ -16,7 +16,7 @@ import javax.crypto.spec.CoinjoinSpec
 import javax.crypto.spec.Bip39Spec
 import javax.crypto.NostrSpec
 import javax.crypto.LightningSpec
-
+jmport javax.crypto.TaprootSpec 
 
 class MainActivity : ReactActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
