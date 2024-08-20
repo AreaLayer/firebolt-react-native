@@ -8,6 +8,7 @@ import OnBoardingHome from './src/screens/onboarding/CoinjoinMarket';
 import Balance from './src/components/Balance';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import BitcoinPrice from './src/components/BitcoinPrice';
+import { Bech32m } from './src/app/SP/send';
 
 function App(): React.JSX.Element {
   return (
@@ -22,6 +23,7 @@ function App(): React.JSX.Element {
     </GluestackUIProvider>
     </Balance>
     <BitcoinPrice/>
+    <Bech32m/>
     <HomeScreen/>
     <GluestackUIProvider config={config}></GluestackUIProvider>
     
