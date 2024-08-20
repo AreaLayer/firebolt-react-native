@@ -1,3 +1,5 @@
+import { bip39 } from 'bitcoinjs-lib';
+
 const bip39 = require('bip39');
 
 // Generate a random mnemonic (uses crypto.randomBytes under the hood), defaults to 128-bits of entropy
