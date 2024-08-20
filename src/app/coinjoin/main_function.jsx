@@ -632,28 +632,33 @@ function assert(condition, message = "Assertion failed") {
 // Static TX fee (for simplicity, set as a constant here)
 const STATIC_TX_FEE = 1000;
 
+class Dataset {
+    constructor(n, N, outList, inflows, txs) {
+        this.n = n; // Number of parties involved
+        this.N = N; // Total number of transactions
+        this.outList = outList; // List of outputs
+        this.inflows = inflows; // List of inflows
+        this.txs = txs; // List of transactions
+        this.backoutTxs = []; // List of backout transactions
+
+        this.generateBackoutTransactions();
+    }
+
+    generateBackoutTransactions() {
         // Automatically generate a second list of transactions: backout transactions
         // Find all txs in this.txs that have at least one outpoint that is not "NN".
         // Create a backout tx consuming the *previous* tx's NN outpoints.
         // Assign the balances in proportion to each party's owed coins.
 
-        this.backoutTxs = [];
-
         for (let i = 0; i < this.txs.length - 1; i++) {
             const currentTx = this.txs[i + 1];
 
-            if (currentTx.containsPromise()) {
+            if (currentTx.containsPromise()) { // Assuming containsPromise() is a function that checks for the condition
                 const backoutOuts = [];
-                const backoutIns = this.txs[i].coOwnedOutputs();
-
-                // Outputs pay to each counterparty what they are owed.
-                // Take the sum of the value of the outpoints being consumed.
-                // Subtract the fee. -> X.
-                // Take the proportions of what each party is owed.
-                // For each party j, assign an outpoint of value X*proportion_j
+                const backoutIns = this.txs[i].coOwnedOutputs(); // Assuming coOwnedOutputs() returns the NN outpoints
 
                 let idx = 0;
-                const X = backoutIns.reduce((sum, x) => sum + x.amount, 0);
+                const X = backoutIns.reduce((sum, x) => sum + x.amount, 0); // Sum of the value of the outpoints being consumed
                 const totalOwed = this.txs[i].postTxBalances.reduce((sum, owed) => sum + owed, 0);
 
                 for (let j = 0; j < this.n; j++) {
@@ -698,23 +703,15 @@ const STATIC_TX_FEE = 1000;
         return total;
     }
 }
+
 class Keys {
-    
-  get ourKeys() {
-        // This will simply source N new addresses from mixdepth 1,
-        // external branch (the branch for receiving), and return the
-        // pubkeys with the addresses
+    get ourKeys() {
         const ourAddresses = Array.from({ length: this.n }, () => wallet.getExternalAddr(1));
         const ourPubkeys = ourAddresses.map(addr => btc.privkeyToPubkey(wallet.getKeyFromAddr(addr)));
         return { pubkeys: ourPubkeys, addresses: ourAddresses };
     }
 
     getUTXOsFromWallet(wallet, amtData, sourceMixdepth = 0) {
-        // Retrieve utxos of specified range, from mixdepth 0 (source of funds)
-        // Returns a tuple per utxo: (hash, value, pubkey, index). Each utxo's
-        // value is in the range specified by that entry in amtData, which must
-        // be a list of tuples (min, max) each in satoshis.
-
         const utxosAvailable = wallet.getUtxosByMixdepth()[sourceMixdepth];
         cjxtlog.info("These utxos available: " + JSON.stringify(utxosAvailable));
 
@@ -730,8 +727,6 @@ class Keys {
                     if (!utxoCandidate) {
                         utxoCandidate = { hash: hsh, value: val, pubkey: pub, index: parseInt(idx) };
                     } else {
-                        // If the new candidate is closer to the center
-                        // of the range, replace the old one
                         if (Math.abs(val - (ad[0] + ad[1]) / 2.0) < Math.abs(utxoCandidate.value - (ad[0] + ad[1]) / 2.0)) {
                             utxoCandidate = { hash: hsh, value: val, pubkey: pub, index: parseInt(idx) };
                         }
@@ -755,14 +750,13 @@ class Keys {
 
         return [realTxs, realBackoutTxs];
     }
-
 }
+
 function applyKeys(wallet, realtxs, realbackouttxs, promiseIns, keys, ncp, cp) {
-    // Step 1 as above
     const promiseInsCopy = [...promiseIns];
     const keysCopy = [...keys];
+
     for (let i = 0; i < template.txs.length; i++) {
-        // first apply the keys for promises
         for (let j = 0; j < template.txs[i].ins.length; j++) {
             const tin = template.txs[i].ins[j];
             if (tin.counterparty === cp) {
@@ -771,15 +765,13 @@ function applyKeys(wallet, realtxs, realbackouttxs, promiseIns, keys, ncp, cp) {
         }
     }
 
-    // Step 2 and 2a as above
     for (let i = 0; i < txs.length; i++) {
         for (let j = 0; j < txs[i].outs.length; j++) {
-            const to =        txs[i].outs[j];
+            const to = txs[i].outs[j];
             if (to.spkType === "NN") {
                 const workingKey = keysCopy.shift();
                 realtxs[i].applyKey(workingKey, "outs", j, cp);
 
-                // search for the inpoint of the *next* transaction (assumption)
                 for (let k = 0; k < txs[i + 1].ins.length; k++) {
                     const tin = txs[i + 1].ins[k];
                     if (tin.amount === to.amount && tin.spkType === "NN") {
@@ -787,9 +779,6 @@ function applyKeys(wallet, realtxs, realbackouttxs, promiseIns, keys, ncp, cp) {
                     }
                 }
 
-                // do the same for any backout txs
-                // assumption of matching amount, as no other
-                // current way of finding backout's parents
                 for (let l = 0; l < backoutTxs.length; l++) {
                     const btx = backoutTxs[l];
                     for (let k = 0; k < btx.ins.length; k++) {
@@ -803,7 +792,6 @@ function applyKeys(wallet, realtxs, realbackouttxs, promiseIns, keys, ncp, cp) {
         }
     }
 
-    // Step 3 above
     for (let i = 0; i < template.txs.length; i++) {
         for (let j = 0; j < txs[i].outs.length; j++) {
             const to = txs[i].outs[j];
@@ -813,7 +801,6 @@ function applyKeys(wallet, realtxs, realbackouttxs, promiseIns, keys, ncp, cp) {
         }
     }
 
-    // Step 4 above
     for (let i = 0; i < backoutTxs.length; i++) {
         for (let j = 0; j < backoutTxs[i].outs.length; j++) {
             const to = backoutTxs[i].outs[j];
@@ -825,12 +812,13 @@ function applyKeys(wallet, realtxs, realbackouttxs, promiseIns, keys, ncp, cp) {
 
     return [realtxs, realbackouttxs];
 }
+
 class DummyWallet {
     constructor(vals) {
         this.vals = vals;
     }
 
-    getUtXOsByMixDepth() {
+    getUtxosByMixdepth() {
         return {
             0: {
                 "aa".repeat(32) + ":0": {
@@ -850,158 +838,124 @@ class DummyWallet {
     }
 
     getKeyFromAddr(addr) { 
-
-        const privs = [(x + 1).toString().repeat(64) + "01" , "for" , "x" in range(3)];
-        if (addr[1] === "A") {
+        const privs = [(x + 1).toString().repeat(64) + "01" , "bb".repeat(32) + "01", "cc".repeat(32) + "01"];
+        if (addr === "1Abc") {
             return privs[0];
-        } else if (addr[1] === "D") {
+        } else if (addr === "1Def") {
             return privs[1];
-        } else {
+        } else if (addr === "1Ghi") {
             return privs[2];
         }
+        throw new Error("No such key!");
     }
 }
 
-function getDataset(intendedIns, Inputs, counterpartyIns) {
-    const Round1InTotal = Inputs.reduce((acc, x) => acc + btcToSatoshis(x[1]), 0);
-    const Round2InTotal = counterpartyIns.reduce((acc, x) => acc + btcToSatoshis(x[1]), 0);
-    const Round1Tweak = aliceInTotal - intendedIns[0].reduce((acc, x) => acc + x, 0);
-    const Round2Tweak = bobInTotal - intendedIns[1].reduce((acc, x) => acc + x, 0);
+// Setup dummy data
+const template = new Dataset(
+    2,
+    2,
+    [
+        { pubkey: "pubkey1", index: 0, amount: 5000 },
+        { pubkey: "pubkey2", index: 1, amount: 3000 },
+        { pubkey: "pubkey3", index: 2, amount: 2000 }
+    ],
+    [
+        [5000, 3000, 2000]
+    ],
+    [
+        {
+            outs: [
+                { spk_type: "p2tr-p2wsh", counterparty: 0 },
+                { spk_type: "p2tr-p2wsh", counterparty: 1 }
+            ],
+            ins: [
+                { spk_type: "p2tr-p2wsh", counterparty: 0 },
+                { spk_type: "p2tr-p2wsh", counterparty: 1 }
+            ],
+            postTxBalances: [3000, 2000]
+        },
+        {
+            outs: [
+                { spk_type: "NN", counterparty: 0 },
+                { spk_type: "NN", counterparty: 1 }
+            ],
+            ins: [
+                { spk_type: "p2tr-p2wsh", counterparty: 0 },
+                { spk_type: "p2tr-p2wsh", counterparty: 1 }
+            ],
+            postTxBalances: [2000, 1000]
+        }
+    ]
+);
 
-    return {
-        "n": 2,
-        "N": 5,
-        "out_list": [
-            [0, 0, -1, 1.0], [1, 0, 0, 80000000 + aliceTweak], [1, 1, -1, 2], [1, 2, -1, 1],
-            [2, 0, 1, 20000000], [2, 1, 0, 20000000], [2, 2, -1, 1],
-            [3, 0, 1, 60000000 + bobTweak], [3, 1, -1, 1], [4, 0, 0, 3],
-            [4, 1, 1, 3], [4, 2, 1, 4]
-        ],
-        "inflows": [
-            [0, 0, Inputs[0][1], Inputs[0][0], Inputs[0][3]],
-            [0, 1, counterpartyIns[0][1], counterpartyIns[0][0], counterpartyIns[0][3]],
-            [2, 0, Inputs[1][1], Inputs[1][0], Inputs[1][3]],
-            [3, 1, counterpartyIns[1][1], counterpartyIns[1][0], counterpartyIns[1][3]]
-        ]
-    };
-}
+const wallet = new DummyWallet([10000, 20000, 30000]);
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        DummyWallet,
-        getDataset
-    };
-}
+const keys = new Keys();
+const ncp = 0;
+const cp = 1;
+const lt = 0;
 
-// Function to calculate dynamic fee 
-function calculateDynamicFee() {
-  tx.AddInput(input_value, 0);
-  tx.AddOutput(output_value, 0);
-  tx.feeInput(fee_value);
-   return 5000; 
-}
-const transactionAmount = 0;  
-const transacionCjxtRounds = 3
+const [realTxs, realBackoutTxs] = keys.createRealTxs(wallet, ncp, cp, lt);
+applyKeys(wallet, realTxs, realBackoutTxs, [1000, 2000, 3000], [4000, 5000, 6000], ncp, cp);
+
+// Initialize transaction details
+const transactionAmount = 0.001; // Example amount in BTC per output
+const numberOfOutputs = 5; // Number of outputs (participants in the CoinJoin)
+const totalAmount = transactionAmount * numberOfOutputs; // Total amount being transacted
+const fee = calculateDynamicFee(); // Replace with your fee calculation logic
 
 // Create a Bitcoin transaction
-const txb = new bitcoin.TransactionBuilder();
-txb.addInput('input_tx_value', 0);  
-txb.addOutput(recipientAddress, transactionAmount * 1e8);
+const txb = new bitcoin.TransactionBuilder(network);
+txb.addInput('input_tx_value', 0);  // Replace 'input_tx_value' with actual transaction ID and index
 
-// Calculate dynamic fee
-const dynamicFee = calculateDynamicFee();
+// Generate outputs dynamically
+for (let i = 0; i < numberOfOutputs; i++) {
+  const recipientAddress = `recipientAddress${i}`; // Replace with actual address logic or array of addresses
+  txb.addOutput(recipientAddress, transactionAmount * 1e8); // Convert BTC to satoshis
+}
 
-// Add dynamic fee to transaction output
-txb.addOutput(senderAddress, dynamicFee);
+// Add change output if necessary (replace changeAddress with actual address)
+const inputAmount = totalAmount + fee; // Assuming the input amount is equal to total output amount plus fee
+txb.addOutput('changeAddress', (inputAmount - totalAmount - fee) * 1e8); // Replace 'changeAddress' with the actual address
 
-// Sign the transaction (you need private key for signing)
+// Sign the transaction (uncomment after defining the private key)
 // txb.sign(0, privateKey);  // Uncomment and replace privateKey with the actual private key
 
 // Get the serialized transaction hex
 const rawTransaction = txb.build().toHex();
 
+// Each participant signs their input
+const nonWitnessUtxo = Buffer.from('TX_HEX', 'hex');
 
-// Forward to each final participant about UTXO
-let TX = bitcoin.Tx.fromWIF(network)
-TX = bitcoin.Tx.fromWIF(network)
-TX = bitcoin.Tx.FromWIF(network)
-
-
-
-/// Alice to Carol
-const keyPairRound1 = bitcoin.ECPair.fromWIF(round[1].wif, network)
-const keyPairRound2 = bitcoin.ECPair.fromWIF(round[1].wif, network)
-const keyPairRound3 = bitcoin.ECPair.fromWIF(round[1].wif, network)
-const keyPairRound4 = bitcoin.ECPair.fromWIF(round[1].wif, network)
-
-// Get TX
-const nonWitnessUtxo =  Buffer.from('TX_HEX', 'hex') 
-
-
-// Each participant signs their input.
-const psbt = new bitcoin.Psbt({network})
+const psbt = new bitcoin.Psbt({ network })
   .addInput({
-    hash: 'TX_ID',
-    index: TX_OUT,
-    nonWitnessUtxo
-  }) 
-  .addInput({
-    hash: 'TX_ID',
-    index: TX_OUT,
-    nonWitnessUtxo
-  })
-  .addInput({
-    hash: 'TX_ID',
-    index: TX_OUT,
-    nonWitnessUtxo
-  })
-  .addInput({
-    hash: 'TX_ID',
-    index: TX_OUT,
-    nonWitnessUtxo
-  })
-  .addOutput({
-    address: bob[1].p2tr,
-    value: 2e7,
-  }) 
-  .addOutput({
-    address: dave[1].p2tr,
-    value: 2e7,
-  })
-  .addOutput({
-    address: mallory[2].p2tr,
-    value: 2e7,
-  })
-  .addOutput({
-    address: alice[2].p2tr,
-    value: 2e7,
-  })
-  .addOutput({
-    address: eve[1].p2tr,
-    value: 5e6 - 5e4,
-  }) 
-  .addOutput({
-    address: mallory[1].p2tr,
-    value: 1e7 - 5e4,
-  })
+    hash: 'TX_ID', // Replace with the actual transaction ID
+    index: TX_OUT, // Replace with the actual index
+    nonWitnessUtxo,
+  });
+
+// Generate outputs dynamically for PSBT
+for (let i = 0; i < numberOfOutputs; i++) {
+  const recipientAddress = `recipientAddress${i}`; // Replace with actual address logic or array of addresses
+  psbt.addOutput({
+    address: recipientAddress, // Replace with actual address
+    value: transactionAmount * 1e8, // Convert BTC to satoshis
+  });
+}
+
+// Add change output to PSBT
+psbt.addOutput({
+  address: 'changeAddress', // Sender's address for change
+  value: (inputAmount - totalAmount - fee) * 1e8, // Replace with actual change calculation
+});
 
 // Finalize PSBT
+psbt.finalizeAllInputs();
 
-psbt.finalizeAllInputs()
-
-
+// Logging the results
 console.log('Transaction hexadecimal:');
 console.log(psbt.extractTransaction().toHex());
-console.log(taproot.extractTransaction().toHex());
-console.log(btc_to_sats.extractTransaction.toHex());
-console.log(`Transaction Amount: ${transactionAmount} BTC`);
-console.log(`Dynamic Fee: ${dynamicFee} satoshis`);
+console.log(`Transaction Amount: ${transactionAmount} BTC per output`);
+console.log(`Total Amount: ${totalAmount} BTC`);
+console.log(`Dynamic Fee: ${fee} satoshis`);
 console.log(`Raw Transaction Hex: ${rawTransaction}`);
-console.log(cxjt.extracTransactionn().toHex());
-console.log(tx.extractTransaction().toHex());
-console.log(output.extractTransaction().toHex());
-console.log(input.extractTansaction().toHex());
-console.log(utxo.extractTransaction().toHex());
-console.log(balance.extratracTransaction.toHex());
-console.log(paymentfee.extratracTransaction.toHex());
-console.log(coinjoinfee.extratracTransaction.toHex());
