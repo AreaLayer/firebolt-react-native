@@ -379,33 +379,10 @@ toString() {
     return JSON.stringify(dtx, null, 4) + "\n" + msg.join("\n");
 }
 
-serialize() {
-    const serialized = {};
-
-    for (const v of this.attr_list) {
-        serialized[v] = this[v];
-    }
-
-    return serialized;
-}
-
-deserialize(d) {
-    try {
-        for (const v of this.attr_list) {
-            this[v] = d[v];
-        }
-
-        return true;
-    } catch (error) {
-        console.error("Failed to deserialize OCCTx object");
-        return false;
-    }
-}
 class Outpoint {
     constructor(n, counterparty, amount = null, txobj = null, txid = null) {
         this.txobj = txobj;
         this.n = n;
-        // Used for pre-existing outpoints (inflows/promises)
         this.txid = txid;
         this.spk_type = (counterparty === -1) ? "NN" : "p2tr-p2wsh";
         this.counterparty = counterparty;
@@ -415,7 +392,23 @@ class Outpoint {
     toString() {
         return `Outpoint: ${this.n} ${this.counterparty} ${this.spk_type} ${this.amount}`;
     }
+
+    serialize() {
+        const serialized = {};
+        serialized.n = this.n;
+        serialized.counterparty = this.counterparty;
+        serialized.amount = this.amount;
+        serialized.txobj = this.txobj ? this.txobj.serialize() : null;
+        serialized.txid = this.txid;
+        serialized.spk_type = this.spk_type;
+        return serialized;
+    }
+
+    static deserialize(d) {
+        return new Outpoint(d.n, d.counterparty, d.amount, d.txobj, d.txid);
+    }
 }
+
 class TX {
     constructor(outsInfo, ins, preTxBalances, minFee = STATIC_TX_FEE, maxFee = 10 * STATIC_TX_FEE) {
         this.preTxBalances = preTxBalances;
@@ -492,7 +485,7 @@ class TX {
             }
 
             for (const o of this.outs) {
-                const outFrac = Decimal(o.amount) / Decimal(this.totalPayable);
+                const outFrac = o.amount / this.totalPayable;
                 const fee = Math.round(outFrac * this.minFee);
 
                 if (o.counterparty === i) {
@@ -501,80 +494,82 @@ class TX {
             }
         }
     }
-}
-containsPromise() {
-    // Return true if at least 1 of the inputs
-    // is a UTXO provided by a counterparty under exclusive
-    // ownership (a "promise"); these require backouts.
-    return this.ins.some(x => x.counterparty !== -1);
+
+    containsPromise() {
+        return this.ins.some(x => x.counterparty !== -1);
+    }
+
+    coOwnedOutputs() {
+        return this.outs.filter(x => x.counterparty === -1);
+    }
+
+    toString() {
+        return `Transaction: pre-tx balances: ${this.preTxBalances}\ninputs: ${this.ins}, outputs ${this.outs}\npost-tx balances: ${this.postTxBalances}`;
+    }
+
+    serialize() {
+        const serialized = {};
+        serialized.preTxBalances = this.preTxBalances;
+        serialized.minFee = this.minFee;
+        serialized.maxFee = this.maxFee;
+        serialized.ins = this.ins.map(input => input.serialize());
+        serialized.outs = this.outs.map(output => output.serialize());
+        serialized.totalPayable = this.totalPayable;
+        serialized.postTxBalances = this.postTxBalances;
+        return serialized;
+    }
+
+    static deserialize(d) {
+        const ins = d.ins.map(inputData => Outpoint.deserialize(inputData));
+        const outs = d.outs.map(outputData => Outpoint.deserialize(outputData));
+        return new TX(d.outsInfo, ins, d.preTxBalances, d.minFee, d.maxFee);
+    }
 }
 
-coOwnedOutputs() {
-    // Return true if at least 1 of the outputs is
-    // based on an N of N multisig between all participants.
-    return this.outs.filter(x => x.counterparty === -1);
-}
-
-toString() {
-    // Tx to mix
-    return `Transaction: pre-tx balances: ${this.preTxBalances}\ninputs: ${this.ins}, outputs ${this.outs}\npost-tx balances: ${this.postTxBalances}`;
-}
 class Data {
     constructor(templateDataSet) {
-        // Number of counterparties
         this.n = templateDataSet.n;
-        // Number of transactions
         this.N = templateDataSet.N;
-        // This lists the output indices for each transaction which are to be
-        // co-owned outputs and their relative proportions
-        // (Tx number, index, Counterparty number, amount fraction)
-        // -1 is used for the counterparty number when the output is co-owned by all.
         this.outList = templateDataSet.out_list;
-        // Inflows have structure: (tx number, counterparty, value in satoshis,
-        // hash, and index)
         this.inflows = templateDataSet.inflows;
-
-        // Process:
-        // Loop starting at 0 for N transactions
-        // For 0, we construct a transaction with inputs all Outpoints from
-        // inflows for index 0.
         this.fundingIns = this.inflows
             .filter(x => x[0] === 0)
             .map(x => new Outpoint(x[4], x[1], x[2], null, x[3]));
     }
-}
-containsPromise() {
-    // Return true if at least 1 of the inputs
-    // is a UTXO provided by a counterparty under exclusive
-    // ownership (a "promise"); these require backouts.
-    return this.ins.some(x => x.counterparty !== -1);
+
+    serialize() {
+        const serialized = {};
+        serialized.n = this.n;
+        serialized.N = this.N;
+        serialized.outList = this.outList;
+        serialized.inflows = this.inflows.map(inflow => inflow.serialize());
+        return serialized;
+    }
+
+    static deserialize(d) {
+        const inflows = d.inflows.map(inflowData => Outpoint.deserialize(inflowData));
+        return new Data({
+            n: d.n,
+            N: d.N,
+            out_list: d.outList,
+            inflows: inflows
+        });
+    }
 }
 
-coOwnedOutputs() {
-    // Return true if at least 1 of the outputs is
-    // based on an N of N multisig between all participants.
-    return this.outs.filter(x => x.counterparty === -1);
-}
-
-toString() {
-    // Human-readable representation.
-    return `Transaction: pre-tx balances: ${this.preTxBalances}\ninputs: ${this.ins}, outputs ${this.outs}\npost-tx balances: ${this.postTxBalances}`;
-}
 class DataSet {
-    constructor(DataSet) {
-        this.n = DataSet.n;
-        this.N = DataSet.N;
+    constructor(templateDataSet) {
+        this.n = templateDataSet.n;
+        this.N = templateDataSet.N;
         this.outList = templateDataSet.out_list;
         this.inflows = templateDataSet.inflows;
         this.txs = [];
 
-        // Loop starting at 0 for N transactions
-        // For 0, construct a transaction with inputs all Outpoints from inflows for index 0.
         const fundingIns = this.inflows
             .filter(x => x[0] === 0)
             .map(x => new Outpoint(x[4], x[1], x[2], null, x[3]));
 
-        const fundingTx = new OCCTemplateTX(
+        const fundingTx = new TX(
             this.outList.filter(x => x[0] === 0),
             fundingIns,
             [0, 0]
@@ -583,8 +578,6 @@ class DataSet {
         this.txs.push(fundingTx);
 
         for (let i = 1; i < this.N; i++) {
-            // source the inputs from: the inflow list, and the co-owned outpoints of the previous
-            // transaction (This is a restriction in the model)
             const ourInflows = this.inflows
                 .filter(x => x[0] === i)
                 .map(x => new Outpoint(x[4], x[1], x[2], null, x[3]));
@@ -600,6 +593,44 @@ class DataSet {
 
             this.txs.push(newTx);
         }
+    }
+
+    serialize() {
+        const serialized = {};
+        serialized.n = this.n;
+        serialized.N = this.N;
+        serialized.outList = this.outList;
+        serialized.inflows = this.inflows.map(inflow => inflow.serialize());
+        serialized.txs = this.txs.map(tx => tx.serialize());
+        return serialized;
+    }
+
+    static deserialize(d) {
+        const inflows = d.inflows.map(inflowData => Outpoint.deserialize(inflowData));
+        const txs = d.txs.map(txData => TX.deserialize(txData));
+        return new DataSet({
+            n: d.n,
+            N: d.N,
+            out_list: d.outList,
+            inflows: inflows,
+            txs: txs
+        });
+    }
+}
+
+// Utility functions (assuming you have implementations for them)
+function btc_to_satoshis(btc) {
+    return Math.round(btc * 100000000);
+}
+
+function assert(condition, message = "Assertion failed") {
+    if (!condition) {
+        throw new Error(message);
+    }
+}
+
+// Static TX fee (for simplicity, set as a constant here)
+const STATIC_TX_FEE = 1000;
 
         // Automatically generate a second list of transactions: backout transactions
         // Find all txs in this.txs that have at least one outpoint that is not "NN".
