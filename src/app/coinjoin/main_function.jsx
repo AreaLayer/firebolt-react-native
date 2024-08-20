@@ -1,5 +1,4 @@
-const bitcoin = require('bitcoinjs-lib');
-const { UTXO, PublicKey, PrivateKey, PSBT, P2TR, Payment } = bitcoin;
+const {Psbt, Transaction, p2wsh_multisign, P2TR, } = require('bitcoinjs-lib');
 const signet = bitcoin.networks.signet;
 const { Round1, Round2, Round3, Round4, Round5 } = require('./wallets.json');
 const { Input, Output } = require('./wallets.json');
