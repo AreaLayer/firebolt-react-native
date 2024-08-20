@@ -226,6 +226,7 @@ return sig;
   class include_signature {
     constructor(self, in_index, cp, sig) {
     }
+}
     // For receiving counterparty signatures, either
 // on promise inputs or NN multisigs. If valid,
 // mark that index as completed if appropriate,
@@ -290,6 +291,7 @@ include_signature(in_index, cp, sig) {
   class fully_signed() {
     if (this.completed.every(x => x === true)) {
     return true;
+}
 } else {
     return false;
 }
