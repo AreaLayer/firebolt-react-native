@@ -191,7 +191,7 @@ class CXJT {
     }
   }
 
-    const sig = btc.p2wsh_multisign(
+    let sig = btc.p2wsh_multisign(
         this.base_form,
         in_index,
         this.signing_redeem_scripts[in_index],
