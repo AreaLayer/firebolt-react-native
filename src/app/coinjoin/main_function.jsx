@@ -191,7 +191,7 @@ class CXJT {
     }
   }
 
-    let sig = btc.p2wsh_multisign(
+    const sig = btc.p2wsh_multisign(
         this.base_form,
         in_index,
         this.signing_redeem_scripts[in_index],
@@ -199,7 +199,7 @@ class CXJT {
         this.ins[in_index][1]
     );
 
-    if (!btc.verify_tx_input(
+    if (btc.verify_tx_input(
         this.base_form,
         in_index,
         this.signng_redeem_scripts[in_index],
