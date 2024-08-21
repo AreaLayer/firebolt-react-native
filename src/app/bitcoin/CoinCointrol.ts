@@ -1,11 +1,4 @@
 import * as bitcoin from 'bitcoinjs-lib';
-import {CoinControl} from 'bitcoinjs-lib';
-import {Transaction} from 'bitcoinjs-lib';
-import {TransactionBuilder} from 'bitcoinjs-lib';
-import {TransactionInput} from 'bitcoinjs-lib';
-import {TransactionOutput} from 'bitcoinjs-lib';
-import {TransactionSigner} from 'bitcoinjs-lib';
-import {TransactionVerifier} from 'bitcoinjs-lib';
 import {Transaction} from 'bitcoinjs-lib';
 import {Transaction} from 'bitcoinjs-lib';
 
