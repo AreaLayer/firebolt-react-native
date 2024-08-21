@@ -1,5 +1,6 @@
 import { IUser } from './user.interface';
 import { User } from './user.entity';
+import { Bitcoin } from './Watch-only';
 
 const user: IUser = {
   id: 1,
