@@ -1,5 +1,5 @@
 
-import {Fees, FeesMine} from 'bitcoinjs-lib';
+import {Fees, FeesMine, MinerFees} from 'bitcoinjs-lib';
 
 const Fees = {
 FeesMine: {
