@@ -67,7 +67,7 @@ async function run() {
   console.log('Input Address:', inputAddress.address);
 
   // Destination address for swapped coins
-  const outputAddress = 'YOUR_OUTPUT_ADDRESS';
+  const outputAddress = outputAddress();
 
   // Amount and fee for the swap transaction
   const amount = 0.01;
