@@ -44,7 +44,8 @@
     "vm-browserify": "^1.0.0",
     "ndk":"^2.10.0",
     "react-native-breez-sdk":"^0.5.2",
-    "libportal-react-native":"^0.1.0"
+    "libportal-react-native":"^0.1.0",
+    "coinjoin-client":"^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
