@@ -54,7 +54,7 @@
     "@react-native/babel-preset": "0.75.2",
     "@react-native/eslint-config": "0.75.2",
     "@react-native/metro-config": "0.75.2",
-    "@react-native/typescript-config": "0.75.1",
+    "@react-native/typescript-config": "0.75.2",
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
     "@breeztech/react-native-breez-sdk":"^0.5.2",
