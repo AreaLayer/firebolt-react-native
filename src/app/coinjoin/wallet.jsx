@@ -20,9 +20,6 @@ function load_wallet_dir() {
 function load_wallet(wallet_dir) {
     return new Wallet(wallet_dir);
 }
-function PrivateKey (key) {
-    return new PrivateKey(key);
-}
 
 function PublicKey (key) {
     return new PublicKey(key);
