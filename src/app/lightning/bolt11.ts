@@ -1,6 +1,5 @@
-import { Bolt11 } from '../lightning';
 import {sendPayment} from '../lightning';
-import { BOLT11 } from 'react-native-breez-sdk'
+import { Bolt11 } from '../lightning'
 
 const BOLT11 = {
 
