@@ -19,6 +19,8 @@ async function main() {
 
     await client.connect();
 
+    let nip05Result = await nip05.queryProfile(keys.publicKey.toBech32(), client.getRelays());
+
     let metadata = new Metadata()
         .name("username")
         .user("user")
@@ -44,5 +46,4 @@ async function main() {
     // Send custom event to a specific previously added relay
     // await client.sendEventTo("wss://relay.damus.io", event);
 }
-
 main();
