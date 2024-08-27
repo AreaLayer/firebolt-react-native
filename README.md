@@ -80,6 +80,8 @@ The other main features Firebolt supports are as follows:
 
 - Portal NFC
 
+- Silent Payments
+
 ## Core functions 
 
 The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/app)
