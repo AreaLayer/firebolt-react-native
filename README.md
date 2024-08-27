@@ -78,6 +78,8 @@ The other main features Firebolt supports are as follows:
 
 - Kotlin and Swift (iOS and Android)
 
+- Portal NFC
+
 ## Core functions 
 
 The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/app)
