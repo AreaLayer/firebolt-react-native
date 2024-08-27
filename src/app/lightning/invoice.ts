@@ -4,7 +4,8 @@ export class Invoice {
     id: string
     amount: number
     description: string
-    date: string
+    preimage: string
+    htlc:  string 
     status: string
     paid: boolean
 }
