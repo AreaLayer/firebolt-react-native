@@ -44,3 +44,9 @@ override fun createCoinjoinReactActivityDeledate(): {
 override fun crate NostrReactActivityDeledate(): {
 (mainCompoenetName, fabricEnabled)
 }
+override fun createLightningReactActivityDeledate(): {
+  (mainCompoenetName, fabricEnabled)
+  override fun createTaprootReactActivityDeledate(): {
+    (mainCompoenetName, fabricEnabled)
+    }
+    }
