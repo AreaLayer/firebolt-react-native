@@ -15,6 +15,12 @@ export class NFC {
   }
 }
 
+export class network {
+  static getNetwork(): Promise<string> {
+    return network.getNetwork();
+  }
+}
+
 export default NFC;
 
 const hww = new Hww();
