@@ -138,6 +138,10 @@ While our wallet is in development, you can test our Coinjoin using Electrum wal
 
 [Firebolt Electrum](https://github.com/AreaLayer/firebolt-electrum)
 
+## Simplex Chat
+
+Soon
+
 ## Contributors
 
 <a align="center" href="https://github.com/AreaLayer/firebolt-react-native aphs/contributors">
