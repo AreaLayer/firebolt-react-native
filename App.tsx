@@ -9,6 +9,7 @@ import Balance from './src/components/Balance';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import BitcoinPrice from './src/components/BitcoinPrice';
 import { Bech32m } from './src/app/SP/send';
+import Breez from './src/app/lightning/send';
 
 function App(): React.JSX.Element {
   return (
@@ -25,6 +26,7 @@ function App(): React.JSX.Element {
     <BitcoinPrice/>
     <Bech32m/>
     <HomeScreen/>
+    <Breez/>
     <GluestackUIProvider config={config}></GluestackUIProvider>
     
   );
