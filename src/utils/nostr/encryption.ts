@@ -1,5 +1,5 @@
 import {NDKUserProfile} from "./NDKUserProfile";
-import {Name, NIP05, ZapService} from "./NDKUserProfile";
+import {Name, NIP05} from "./NDKUserProfile";
 
 export const interface = {
     name: String,
@@ -12,7 +12,7 @@ export const profilefromevent = {
     zapService: String,
 }
 
-}
+
 
 export const encrypt = {
     name: String,
