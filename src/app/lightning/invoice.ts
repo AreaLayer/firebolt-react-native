@@ -1,13 +1,13 @@
 import { LightningInvoice } from '@/types/lightning'
 
 export class Invoice {
-    id: string
-    amount: number
-    description: string
-    preimage: string
-    htlc:  string 
-    status: string
-    paid: boolean
+    id: string;
+    amount: number;
+    description: string;
+    preimage: string;
+    htlc:  string;
+    status: string;
+    paid: boolean;
 }
 export interface LightningInvoiceState {
     invoices: LightningInvoice[]
