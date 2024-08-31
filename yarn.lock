@@ -3228,7 +3228,7 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^18.2.6":
-  version "18.3.4"
+  version "18.3.5"
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
