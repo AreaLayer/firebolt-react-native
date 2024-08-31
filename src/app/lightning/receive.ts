@@ -1,5 +1,4 @@
-import {Payment} from '@react-native-breez-sdk/NativeModules'
-import {Receive} from '@react-native-breez-sdk/NativeModules'
+import {Payment, Receive, GetInvoice, PayInvoice, ReceiveINvoice, PaymentRequest} from '@react-native-breez-sdk/NativeModules'
 
 export const payment = {
     getInvoice: async (amount: number, memo: string) => {
