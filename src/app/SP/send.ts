@@ -17,7 +17,7 @@ export const SilentPaymentGroupObj = {
 };
 
 export const Bech32m = {
-  Bech32m, 
+  Bech32m: string;
 };
 export default UTXOObj;
 
