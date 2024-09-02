@@ -1,4 +1,4 @@
-import {BOLT11, LSP, Network} from 'react-native-bree-sdk';
+import {BOLT11, LSP, Network, BOLT12} from 'react-native-bree-sdk';
 
 export const generateInvoice = async (amount: number, memo: string, network: Network) => {
   const invoice = await LSP.generateInvoice(amount, memo, network);
