@@ -3,28 +3,28 @@ import { GetBalance, Balance, Payment, BackupStatus, BitcoinAddressData, CheckMe
 export default class Breez {
   static async getBalance(): Promise<Balance> {
     // Removed the incorrect await syntax
-    return await BreezNative.getBalance();
+    return await GetBalance.getBalance();
   }
 
   static async getBackupStatus(): Promise<BackupStatus> {
-    return await BreezNative.getBackupStatus();
+    return await this.getBackupStatus.getBackupStatus();
   }
 
   static async getBitcoinAddress(): Promise<string> {
-    return await BreezNative.getBitcoinAddress();
+    return await getBitcoinAddress.getBitcoinAddress();
   }
 
   static async getVersion(): Promise<string> {
-    return await BreezNative.getVersion();
+    return await this.getVersion.getVersion();
   }
 }
 
 export async function getPayment(): Promise<Payment> {
   // Corrected the if statement syntax and added missing parentheses
   if (Platform.OS === 'android') {
-    await BreezNative.requestPermissions();
+    await requestPermissions.requestPermissions();
   }
-  return await BreezNative.getPayment();
+  return await getPayment.getPayment();
 }
 
 export async function getBitcoinAddressData(): Promise<BitcoinAddressData> {
