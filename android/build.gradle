@@ -6,6 +6,10 @@ buildscript {
         targetSdkVersion = 34
         ndkVersion "27.0.12077973"
         kotlinVersion = "2.0.20"
+        breez_sdk = "0.5.2"
+
+
+
     }
     repositories {
         google()
@@ -15,10 +19,9 @@ buildscript {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("breez_sdk:bindings-android:0.5.2")
+
     }
-    dependencies {
-  implementation files("../../node_modules/@synonymdev/react-native-ldk/android/libs/LDK-0.0.129")
-}}
-}
+   }
 
 apply plugin: "com.facebook.react.rootproject"
