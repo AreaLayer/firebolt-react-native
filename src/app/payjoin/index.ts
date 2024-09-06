@@ -4,4 +4,4 @@ import { index } from "../payjoin/index";
 
 export const payment {
     
-}
+};
