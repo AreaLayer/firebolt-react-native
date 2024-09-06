@@ -1,1 +1,1 @@
-const { Client, Request, Wallet } from 'payjoin-client';
+import { Client, Request, Wallet } from 'payjoin-client';
