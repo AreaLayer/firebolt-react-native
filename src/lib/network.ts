@@ -1,1 +1,1 @@
-import {Network, Bitcoin, Testnet, Signet} from 'bitcoinjs-lib'
+import {Network, Bitcoin, Testnet, Signet} from 'bitcoinjs-lib';    
