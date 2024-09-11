@@ -1,4 +1,4 @@
-## Firebolt React Native Development :zap:
+## Firebolt React Native Development
 
 
 See last development
