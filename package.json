@@ -32,7 +32,7 @@
     "react-native-randombytes": "^3.6.1",
     "react-native-safe-area-context": "4.11.0",
     "react-native-screens": "^3.29.0",
-    "react-native-storage": "^0.2.4",
+    "react-native-storage": "^1.0.0",
     "react-native-svg": "15.6.0",
     "readable-stream": "^4.5.2",
     "stream-browserify": "^3.0.0",
