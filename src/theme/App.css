@@ -38,3 +38,40 @@
   .key-manager button:hover {
     background-color: #0056b3;
   }
+
+  .key-manager ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .key-manager li {
+    margin-bottom: 5px;
+  }
+
+  .key-manager li button {
+    margin-left: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .key-manager li button:hover {
+    background-color: #c82333;
+  }
+
+  .key-manager li button:focus {
+    outline: none;
+  }
+
+  .key-manager li button:active {
+    background-color: #bd2130;
+  }
+
+  .key-manager li button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+
+  .key-manager li button:disabled:hover {
+    background-color: #6c757d;
