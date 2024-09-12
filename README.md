@@ -127,6 +127,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] XPUB compatible
 -  [x] Firebolt Plus
 -  [ ] Nodeless (Liquid)
+-  [ ] Liquid wallet
 
 
 ## Donations
