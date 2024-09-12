@@ -1,7 +1,8 @@
-import { NDK } from 'nostr-dev-kit';
+import { NDKNostrRpc, NostrEvent } from '@nostr-dev-kit/ndk';
 
 // Initialize the NDK
-const ndk = new NDK();
+const ndk = new NostrRpc();
+const ndkEvent = new NostrEvent();
 
 // Generate a new key pair
 const keyPair = ndk.keys.generate();
