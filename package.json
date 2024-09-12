@@ -25,7 +25,7 @@
     "assert": "^2.0.0",
     "bip39": "^3.1.0",
     "bitcoinjs-lib": "^6.1.6",
-    "silent-payments": "^1.0.0",
+    "silent-payments": "git+https://github.com/BlueWallet/SilentPayments.git#v1.0.0",
     "bitbox-api": "^0.6.0",
     "payjoin-client": "^1.0.1",
     "buffer": "^6.0.3",
