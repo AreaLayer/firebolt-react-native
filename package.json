@@ -20,7 +20,6 @@
     "@react-navigation/native-stack": "^6.9.17",
     "@breeztech/react-native-breez-sdk": "^0.5.2",
     "@nostr-dev-kit/ndk": "^2.10.0",
-    "@gihtub:portal-software/libportal-react-native":"^0.1.0",
     "assert": "^2.0.0",
     "bip39": "^3.1.0",
     "bitcoinjs-lib": "^6.1.6",
@@ -41,7 +40,6 @@
     "stream-browserify": "^3.0.0",
     "vm-browserify": "^1.0.0",
     "ndk": "^2.10.0",
-    "libportal-react-native": "github:Portal-Software/libportal-react-native#v0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
