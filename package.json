@@ -39,7 +39,7 @@
     "readable-stream": "^4.5.2",
     "stream-browserify": "^3.0.0",
     "vm-browserify": "^1.0.0",
-    "ndk": "^2.10.0",
+    "ndk": "^2.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
