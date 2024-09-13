@@ -190,7 +190,7 @@ class CXJT {
     }
   }
 
-    const sig = btc.p2wsh_multisign(
+    const sig = bitcoin.p2wsh_multisign(
         this.base_form,
         in_index,
         this.signing_redeem_scripts[in_index],
@@ -206,7 +206,7 @@ class CXJT {
         pub,
         'deadbeef',
         this.ins[in_index][1]
-    )) {
+    )); {
         throw new Error("Transaction input verification failed");
     }
 
