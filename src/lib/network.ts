@@ -1,9 +1,5 @@
-import {Network, Bitcoin, Testnet, Signet} from 'bitcoinjs-lib';    
+import { Network } from 'bitcoinjs-lib';
 
-export const network = Network.bitcoin;
+export const network = Network.bitcoin.Signet;
 
-const bitcoin = {
-    Bitcoin,
-    Testnet,
-    Signet
-}
+export const network = Network.bitcoin.Testnet;
