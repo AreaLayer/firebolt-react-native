@@ -1,5 +1,6 @@
 import { Coinjoin } from './coinjoin';
 import { lightning } from './lightning';
+import { client } from './client';
 
 export const Coinjoin = Coinjoin;
 
@@ -15,3 +16,5 @@ export { main_function };
 
 export const psbt = psbt;
 
+
+export const client = client;
