@@ -10,6 +10,7 @@ import HomeScreen from './src/screens/Home/HomeScreen';
 import BitcoinPrice from './src/components/BitcoinPrice';
 import { Bech32m } from './src/app/SP/send';
 import Breez from './src/app/lightning/send';
+import {it} from '@jest/globals';
 
 function App(): React.JSX.Element {
   return (
