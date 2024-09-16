@@ -201,12 +201,12 @@ class CXJT {
     if (btc.verify_tx_input(
         this.base_form,
         in_index,
-        this.signng_redeem_scripts[in_index],
+        this.signing_redeem_scripts[in_index],
         sig,
         pub,
         'deadbeef',
         this.ins[in_index][1]
-    )); {
+    )) {
         throw new Error("Transaction input verification failed");
     }
 
