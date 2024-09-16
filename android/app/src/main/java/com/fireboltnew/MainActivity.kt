@@ -50,3 +50,7 @@ override fun createLightningReactActivityDeledate(): {
     (mainCompoenetName, fabricEnabled)
     }
     }
+
+override fun createTaprootReactActivityDeledate(): {
+  (mainCompoenetName, fabricEnabled)
+}
