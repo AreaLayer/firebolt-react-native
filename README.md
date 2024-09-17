@@ -123,7 +123,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
--  [ ] Upgrade to 1.0.0 beta
+-  [ ] Upgrade to 1.0.0 beta in 2025
 -  [ ] Point of Sale (PoS)
 -  [ ] BIP-353 (DNS payments)
 -  [ ] XPUB compatible
