@@ -97,19 +97,17 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [x] API Peach Bitcoin/RoboSats/Bisq (WIP)
 -  [ ] Portal support (NFC)
 -  [x] Taproot functions (WIP)
--  [ ] Beta App (Android - via APK)
+-  [ ] Beta App (Android - via APK) in 2025
 -  [ ] HD Taproot Wallet
 -  [ ] Full RBF
 -  [x] Signet
 -  [ ] Submarine Swap 
--  [ ] Final App
 -  [ ] F-Droid
 -  [ ] BIP-352 (Silent Payments)
 -  [ ] Payjoin (React Native) 
 -  [x] Recompile code
--  [ ] Muntinynet
 -  [ ] Electrum server support
--  [ ] Unit tests
+-  [x] Unit tests
 -  [ ] NPM release 
 -  [x] Firebolt Electrum Plugin
 -  [ ] ZK proof for CJ (Groth16)
@@ -123,7 +121,6 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
--  [ ] Upgrade to 1.0.0 beta in 2025
 -  [ ] Point of Sale (PoS)
 -  [ ] BIP-353 (DNS payments)
 -  [ ] XPUB compatible
