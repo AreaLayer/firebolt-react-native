@@ -103,7 +103,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [x] Signet
 -  [ ] Submarine Swap 
 -  [ ] F-Droid
--  [ ] BIP-352 (Silent Payments)
+-  [x] BIP-352 (Silent Payments)
 -  [ ] Payjoin (React Native) 
 -  [x] Recompile code
 -  [ ] Electrum server support
@@ -112,7 +112,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [x] Firebolt Electrum Plugin
 -  [ ] ZK proof for CJ (Groth16)
 -  [ ] BOLT12
--  [x] BOLT11 (WIP)
+-  [x] BOLT11
 -  [ ] NWC (NDK)
 -  [ ] LNURL
 -  [ ] Zap
@@ -125,7 +125,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] BIP-353 (DNS payments)
 -  [ ] XPUB compatible
 -  [x] Firebolt Plus
--  [ ] Liquid wallet
+-  [x] iquid wallet
 
 
 ## Donations
