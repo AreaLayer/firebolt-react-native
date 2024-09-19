@@ -1,5 +1,4 @@
-const { Keys, Client, Metadata, EventId, PublicKey, EventBuilder, User, nip05 } = require("@nostr-dev-kit/ndk");
-const { Mnemonic, SeedSync } = require("@bitcoinjs-lib/bip39");
+const { Keys, Client, Metadata, EventId, PublicKey, EventBuilder } = require("@nostr-dev-kit/ndk");
 
 async function main() {
     let keys = Keys.generate();
@@ -19,7 +18,6 @@ async function main() {
 
     await client.connect();
 
-    let nip05Result = await nip05.queryProfile(keys.publicKey.toBech32(), client.getRelays());
 
     let metadata = new Metadata()
         .name("username")
