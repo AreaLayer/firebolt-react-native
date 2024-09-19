@@ -1,10 +1,9 @@
-import {Mainnet, Testnet, Signet} from ('bitcoinjs-lib');
-
+import { networks } from 'bitcoinjs-lib';
 
 export class Networks {
-    constructor(network: Mainnet, network: Testnet, network: Signet) {
-        this.network = network;
-        this.network = network;
-        this.network = network;
+    constructor(mainnet: Mainnet, testnet: Testnet, signet: Signet) {
+        this.mainnet = mainnet;
+        this.testnet = testnet;
+        this.signet = signet;
     }
 }
