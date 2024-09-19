@@ -1,4 +1,4 @@
-const {TransactionBuilder, Address, Script } = require('bitcoinjs-lib')
+const {generateAddress, addInput, addOutput} = require('bitcoinjs-lib')
 const axios = require('axios');
 
 // Bitcoin network configuration
@@ -15,7 +15,7 @@ function generateAddress() {
 
 // Fetch unspent transaction outputs (UTXOs) for an address
 async function getUTXOs(address) {
-  const response = await axios.get(`https://api.blockcypher.com/v1/btc/test3/addrs/${address}/full`);
+  const response = await axios.get(`https://api.blockcypher.com/v1/btc/test4/addrs/${address}/full`);
   return response.data.txrefs.filter(utxo => utxo.spent === false);
 }
 

@@ -1,16 +1,49 @@
-import {Payment, TXID, UTXO} from 'react-native-breez';
+import { TxMerkleProof } from '@mempool/mempool.js/lib/interfaces/bitcoin/transactions';
+import { sendOnchain, receiveOnchain } from '@breeztech/react-native-breez-sdk';
 import { Coinjoin } from './Coinjoin';
 
-const coinjoin = new Coinjoin();
+export const Lightning = ({
+  txMerkleProof,
+  txMerkleProofIndex,
+  txMerkleProofs,
+  txMerkleProofsIndex,
+  txMerkleProofsLength,
+});
 
-export { coinjoin };
-export { ract-breez-sdk } from 'react-native-breez';
+export const Onchain = ({
+  txMerkleProof,
+  txMerkleProofIndex,
+  txMerkleProofs,
+  txMerkleProofsIndex,
+  txMerkleProofsLength,
+});
 
-const Payment = {
-  Payment,
-  TXID,
-  UTXO
-  // Coinjoin
-};
+export const Coinjoin = ({
+  txMerkleProof,
+  txMerkleProofIndex,
+  txMerkleProofs,
+  txMerkleProofsIndex,
+  txMerkleProofsLength,
+});
 
-export default Payment;
+export const TxMerkleProof = ({
+  txMerkleProof,
+  txMerkleProofIndex,
+  txMerkleProofs,
+  txMerkleProofsIndex,
+  txMerkleProofsLength,
+});
+
+export const sendOnchain = ({
+  amount: Number,
+  destination: String,
+  utxo: Array<String>,
+  feerate: String,
+})
+
+export const receiveOnchain = ({
+  amount: Number,
+  destination: String,
+  utxo: Array<String>,
+  feerate: String,
+})

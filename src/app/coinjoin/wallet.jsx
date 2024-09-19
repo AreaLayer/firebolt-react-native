@@ -1,10 +1,6 @@
 import {coinjoinxt_config,lightning_confing} from './config.js';
-import {OptionParser} from 'node-getopt';
-import {Parser} from 'node-getopt';
-import path from 'path';
 import {Wallet} from 'wallet-tools';
-import {PrivateKey,PublicKey,WalletDir} from 'bitcoinjs-lib';
-import {TXID, UTXO, PaymentHash} from '@breeztech/react-native-breez-sdk'
+import {WalletDir} from 'bitcoinjs-lib';
 
 function load_coinjoinxt_config() {
     return coinjoinxt_config;
