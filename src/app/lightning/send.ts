@@ -25,7 +25,7 @@ export const initialState: SendState = {
 const bolt11: string = ''  
 const optionalAmountMsat = 3000000
   const optionalLabel = '<label>'
-  const _ = await sendPayment({
+  const sendPayment = ({
     bolt11,
     amountMsat: optionalAmountMsat,
     label: optionalLabel

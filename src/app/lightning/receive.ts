@@ -1,4 +1,4 @@
-import { ReceiveOnchainRequest, ReceivePaymentRequest, RedeemOnchainFundsRequest, ReceivePaymentResponse, RecommendedFees} from "@breeztech/react-native-breez-sdk";
+import { ReceiveOnchainRequest, ReceivePaymentRequest, RedeemOnchainFundsRequest, ReceivePaymentResponse, RecommendedFees } from "@breeztech/react-native-breez-sdk";
 import breez from "./breez";
 
 export const receiveOnchain = async (request: ReceiveOnchainRequest): Promise<ReceivePaymentResponse> => {
@@ -20,3 +20,23 @@ export const getRecommendedFees = async (): Promise<RecommendedFees> => {
 export const getWalletBalance = async (): Promise<number> => {
     return await breez.getWalletBalance();
 }
+class SwapInfo {
+  constructor() {
+    const address = SwapInfo.bitcoinAddress
+    console.log(`Minimum amount allowed to deposit in sats: ${SwapInfo.minAllowedDeposit}`)
+    console.log(`Maximum amount allowed to deposit in sats: ${SwapInfo.maxAllowedDeposit}`)
+  }
+}
+
+class Refudables {
+    const refundables = await listRefundables() {
+    const toAddress = '...'
+    const satPerVbyte = 5
+  
+    const refundResponse = await refund({
+      swapAddress: refundables[0].bitcoinAddress,
+      toAddress,
+      satPerVbyte
+    )
+    }
+    }
