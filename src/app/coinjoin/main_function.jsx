@@ -1,4 +1,4 @@
-const { Transaction, Psbt, txDetails, MinerFee } = require('bitcoinjs-lib');
+const { Adreess, Amount, txid} = require('@bitcoinjs/lib');
 const { TX } = require('@mempool/mempool.js');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { Coinjoin, CoinjoinTransaction, createMultisigTransaction, createP2PTransaction } = require('./main_function.jsx');
