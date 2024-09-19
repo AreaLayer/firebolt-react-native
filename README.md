@@ -105,6 +105,7 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [x] Bitcoin Widget
 -  [x] Firebolt Plus
 -  [x] Liquid wallet
+-  [x] LNURL (WIP)
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
@@ -112,7 +113,6 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] BIP-353 (DNS payments)
 -  [ ] XPUB compatible
 -  [ ] NWC (NDK)
--  [ ] LNURL
 -  [ ] Zap
 -  [ ] PSBT 
 -  [ ] ZK proof for CJ (Groth16)

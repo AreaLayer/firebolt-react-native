@@ -1,7 +1,5 @@
-import * as bitcoin from 'bitcoinjs-lib';
-import {Transaction} from 'bitcoinjs-lib';
-import {Transaction} from 'bitcoinjs-lib';
-
+import { Tx } from "@mempool/mempool.js/lib/interfaces/bitcoin/transactions";
+import { bitcoin, address, amount } from "bitcoinjs-lib";
 interface UTXO {
     txid: string;
     index: number;

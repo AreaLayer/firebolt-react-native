@@ -1,5 +1,5 @@
 import { Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendOnchainRequest, SendPaymentRequest, SendOnchainResponse } from '@breeztech/react-native-breez-sdk';
-
+import { LnUrlWithdrawRequest, LnUrlWithdrawResponse } from '@breeztech/react-native-breez-sdk';
 export interface SendState {
   payment: Payment | null;
   backupStatus: BackupStatus | null;
@@ -53,5 +53,15 @@ export const sendOnchainRequest: (request: SendOnchainRequest) => SendAction = (
 
 export const sendOnchainResponse: (response: SendOnchainResponse) => SendAction = (response) => ({
   type: 'SET_SEND_ONCHAIN_RESPONSE',
+  payload: response,
+});
+
+export const LnUrlWithdrawRequest: (request: LnUrlWithdrawRequest) => SendAction = (request) => ({
+  type: 'SET_LNURL_WITHDRAW_REQUEST',
+  payload: request,
+});
+
+export const LnUrlWithdrawResponse: (response: LnUrlWithdrawResponse) => SendAction = (response) => ({
+  type: 'SET_LNURL_WITHDRAW_RESPONSE',
   payload: response,
 });
