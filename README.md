@@ -91,42 +91,40 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 ## Roadmap
 
 -  [x] Core functions
--  [x] Breez (WIP)
+-  [x] Breez SDK 
 -  [x] Nostr (NDK)
 -  [x] UI 
 -  [x] API Peach Bitcoin/RoboSats/Bisq (WIP)
--  [ ] Portal support (NFC)
 -  [x] Taproot functions (WIP)
--  [ ] Beta App (Android - via APK) in 2025
--  [ ] HD Taproot Wallet
--  [ ] Full RBF
 -  [x] Signet
--  [ ] Submarine Swap 
--  [ ] F-Droid
 -  [x] BIP-352 (Silent Payments)
--  [ ] Payjoin (React Native) 
 -  [x] Recompile code
--  [ ] Electrum server support
 -  [x] Unit tests
--  [ ] NPM release 
 -  [x] Firebolt Electrum Plugin
--  [ ] ZK proof for CJ (Groth16)
--  [ ] BOLT12
--  [x] BOLT11
--  [ ] NWC (NDK)
--  [ ] LNURL
--  [ ] Zap
--  [ ] PSBT 
+-  [x] BOLT11 
 -  [x] Bitcoin Widget
+-  [x] Firebolt Plus
+-  [x] Liquid wallet
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
 -  [ ] Point of Sale (PoS)
 -  [ ] BIP-353 (DNS payments)
 -  [ ] XPUB compatible
--  [x] Firebolt Plus
--  [x] iquid wallet
-
+-  [ ] NWC (NDK)
+-  [ ] LNURL
+-  [ ] Zap
+-  [ ] PSBT 
+-  [ ] ZK proof for CJ (Groth16)
+-  [ ] BOLT12
+-  [ ] Electrum server support
+-  [ ] Beta App (Android - via APK) in 2025
+-  [ ] HD Taproot Wallet
+-  [ ] Full RBF
+-  [ ] Payjoin (React Native) 
+-  [ ] Submarine Swap 
+-  [ ] F-Droid
+-  [ ] Portal support (NFC)
 
 ## Donations
 

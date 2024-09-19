@@ -1,58 +1,21 @@
 import {mempoolJS, RBF, Address, AddressUTXO, BlockTransactionID, MempooBlockFees, MempoolRBFTransactions}  from '@mempool/mempool.js';
 
-const mempool = new mempoolJS();
-
-mempool.on('rbf_transactions',
-  (rbfTransactions: MempoolRBFTransactions) => {
-    console.log(rbfTransactions);
+class Mempool {
+  constructor() {
+      this.mempool = new mempoolJS.Mempool();
   }
-  );
+}
+const mempool = new mempoolJS.Mempool();
 
-  mempool.on('block_fees',
-  (blockFees: MempooBlockFees) => {
-    console.log(blockFees);
-  }
-  );
-const address = new Address('bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq');
+const mempoolBlockFees = new MempooBlockFees();
+const mempoolRBFTransactions = new MempoolRBFTransactions();
 
-mempool.subscribeToAddress(address);
+const BlockTransactionID = new BlockTransactionID();
+const Address = new Address();
+const AddressUTXO = new AddressUTXO();
 
-mempool.unsubscribeFromAddress(address);
+const RBF = new RBF();
 
-mempool.subscribeToBlockTransaction(new BlockTransactionID('0000000000000000000000000000000000000000000000000000000000000000', 0));
+constRBF.getRBFTransactions();
 
-mempool.AddressUTXO(address).then(
-  (utxos: AddressUTXO[]) => {
-    console.log(utxos);
-  }
-);
-
-mempool.AddressUTXO(address, 10).then(
-  (utxos: AddressUTXO[]) => {
-    console.log(utxos);
-  }
-);
-
-mempool.RBF(address).then(
-  (rbf: RBF) => {
-    console.log(rbf);
-  }
-);
-
-mempool.RBF(address, 10).then(
-  (rbf: RBF) => {
-    console.log(rbf);
-  }
-);
-
-mempool.RBF(address, 10, 10).then(
-  (rbf: RBF) => {
-    console.log(rbf);
-  }
-);
-
-mempool.RBF(address, 10, 10, 10).then(
-  (rbf: RBF) => {
-    console.log(rbf);
-  }
-);
+export {mempool, mempoolBlockFees, mempoolRBFTransactions, BlockTransactionID, Address, AddressUTXO, RBF};
