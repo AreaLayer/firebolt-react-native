@@ -37,13 +37,11 @@ export const TxMerkleProof = ({
 export const sendOnchain = ({
   amount: Number,
   destination: String,
-  utxo: Array<String>,
   feerate: String,
 })
 
 export const receiveOnchain = ({
   amount: Number,
   destination: String,
-  utxo: Array<String>,
   feerate: String,
 })

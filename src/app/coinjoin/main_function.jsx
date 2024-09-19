@@ -1,4 +1,4 @@
-const { Transaction, Psbt, txDetails } = require('bitcoinjs-lib');
+const { Transaction, Psbt, txDetails, MinerFee } = require('bitcoinjs-lib');
 const { TX } = require('@mempool/mempool.js');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { Coinjoin, CoinjoinTransaction, createMultisigTransaction, createP2PTransaction } = require('./main_function.jsx');
@@ -103,6 +103,7 @@ async function calculateTransactionFee(inputs, outputs, feeRatePerByte = 10) {
   const tx = new TX();
   const estimatedSize = tx.estimateTransactionSize(inputs, outputs);
   const fee = estimatedSize * feeRatePerByte;
+  const MinerFee = MinerFee * 100000000;
   return fee;
 }
 
