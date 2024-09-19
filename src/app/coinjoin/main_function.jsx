@@ -1,8 +1,6 @@
-const {Psbt, Transaction, p2wsh_multisign, P2TR, } = require('bitcoinjs-lib');
+const {Transaction} = require('bitcoinjs-lib');
+const {TX, }= require('@mempool/mempool.js');
 const signet = bitcoin.networks.signet;
-const { Input, Output } = require('./wallets.json');
-const { stats_tx_fee } = require('./stats.json');
-const { CoinJoinRound } = require('./coinjoin_round.json');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
 
 // Connect to the Bitcoin signet network
