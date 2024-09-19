@@ -1,4 +1,5 @@
 import { ReceiveOnchainRequest, ReceivePaymentRequest, RedeemOnchainFundsRequest, ReceivePaymentResponse, RecommendedFees} from "@breeztech/react-native-breez-sdk";
+import breez from "./breez";
 
 export const receiveOnchain = async (request: ReceiveOnchainRequest): Promise<ReceivePaymentResponse> => {
     return await breez.receiveOnchain(request);
