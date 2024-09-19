@@ -1,4 +1,4 @@
-import {Payment, Receive, GetInvoice, PayInvoice, ReceiveINvoice, PaymentRequest} from '@react-native-breez-sdk/NativeModules'
+import {Payment, Receive, BreezEvent} from '@breeztech/react-native-breez-sdk';
 
 export const payment = {
     getInvoice: async (amount: number, memo: string) => {
@@ -7,18 +7,29 @@ export const payment = {
     payInvoice: async (invoice: string) => {
         return await Payment.payInvoice(invoice)
     }
-    receiveInvoice: async (invoice: string) => {
-        return await Receive.receiveInvoice(invoice)
-    },
-
-    getPaymentRequest: async (amount: number, memo: string) => {
-        return await Payment.getPaymentRequest(amount, memo)
-    }
-
-    payPaymentRequest: async (paymentRequest: string) => {
-        return await Payment.payPaymentRequest(paymentRequest)
-    }
-
-
     
+}
+
+export const Receive = {
+    getInvoice: async (amount: number, memo: string) => {
+        return await Receive.getInvoice(amount, memo)
+    }
+}
+
+export const getBalance = async () => {
+    return await Payment.getBalance()
+}
+
+export const getInfo = async () => {
+    return await Payment.getInfo()
+}
+
+export const paymentStatus = async (paymentId: string) => {
+    return await Payment.paymentStatus(paymentId)
+}
+
+export const BreezEvent = {
+    onEvent: (callback: (event: BreezEvent) => void) => {
+        return BreezEvent.onEvent(callback)
+    }
 }

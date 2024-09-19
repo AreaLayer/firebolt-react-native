@@ -1,4 +1,4 @@
-import { GetBalance, Balance, Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendPaymentInfo, Interface } from '../react-native-breez-sdk';
+import { GetBalance, Balance, Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendPaymentInfo, Interface } from '@breeztech/react-native-breez-sdk';
 
 export default class Breez {
   static async getBalance(): Promise<Balance> {

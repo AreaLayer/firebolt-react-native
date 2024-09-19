@@ -125,7 +125,6 @@ The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/ap
 -  [ ] BIP-353 (DNS payments)
 -  [ ] XPUB compatible
 -  [x] Firebolt Plus
--  [ ] Nodeless (Liquid)
 -  [ ] Liquid wallet
 
 
