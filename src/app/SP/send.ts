@@ -1,23 +1,28 @@
-import { UTXO, SilentPaymentGroup, TaggedHash } from 'SilentPayments';
+import { UTXOType, UTXO} from "silent-payments";
 
-export { UTXO, SilentPaymentGroup, TaggedHash} from '/app/SilentPayments';
+export const send = async (
+  utxos: UTXO[],
+  amount: number,
+  address: string,
+  fee: number,
+  changeAddress: string,
+  network: string
+) => {
+  const utxosToSpend = utxos.filter((utxo) => utxo.value > amount + fee);
+  const utxosToChange = utxos.filter((utxo) => utxo.value <= amount + fee);
 
-export const UTXOObj = {
-  UTXO,
-  SilentPaymentGroup,
-  TaggedHash,
-};
-
-export const SilentPaymentGroupObj = {
-  UTXO,
-  SilentPaymentGroup,
-  TaggedHash,
-};
-
-export const Bech32m = {
-  Bech32m: require('bech32m'),
-};
-export default UTXOObj;
-
-
-
+  const utxoType = "SPEND" as UTXOType;
+  
+  // Remove the UTXO constructor call as it's being used as a type, not a value
+  // Instead, return an object that matches the UTXO type structure
+  return {
+    type: utxoType,
+    utxosToSpend,
+    utxosToChange,
+    amount,
+    fee,
+    address,
+    changeAddress,
+    network
+  };
+};  

@@ -1,69 +1,57 @@
-import { GetBalance, Balance, Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendPaymentInfo, Interface } from '@breeztech/react-native-breez-sdk';
+import { Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendOnchainRequest, SendPaymentRequest, SendOnchainResponse } from '@breeztech/react-native-breez-sdk';
 
-export default class Breez {
-  static async getBalance(): Promise<Balance> {
-    // Removed the incorrect await syntax
-    return await GetBalance.getBalance();
-  }
-
-  static async getBackupStatus(): Promise<BackupStatus> {
-    return await this.getBackupStatus.getBackupStatus();
-  }
-
-  static async getBitcoinAddress(): Promise<string> {
-    return await getBitcoinAddress.getBitcoinAddress();
-  }
-
-  static async getVersion(): Promise<string> {
-    return await this.getVersion.getVersion();
-  }
+export interface SendState {
+  payment: Payment | null;
+  backupStatus: BackupStatus | null;
+  bitcoinAddressData: BitcoinAddressData | null;
+  checkMessageRequest: CheckMessageRequest | null;
+  closedChannelPaymentDetails: ClosedChannelPaymentDetails | null;
+  checkMessageResponse: CheckMessageResponse | null;
+  sendOnchainRequest: SendOnchainRequest | null;
+  sendPaymentRequest: SendPaymentRequest | null;
+  sendOnchainResponse: SendOnchainResponse | null;
 }
 
-export async function getPayment(): Promise<Payment> {
-  // Corrected the if statement syntax and added missing parentheses
-  if (Platform.OS === 'android') {
-    await requestPermissions.requestPermissions();
-  }
-  return await getPayment.getPayment();
-}
+export const initialState: SendState = {
+  payment: null,
+  backupStatus: null,
+  bitcoinAddressData: null,
+  checkMessageRequest: null,
+  closedChannelPaymentDetails: null,
+  checkMessageResponse: null,
+  sendOnchainRequest: null,
+  sendPaymentRequest: null,
+  sendOnchainResponse: null,
+};
 
-export async function getBitcoinAddressData(): Promise<BitcoinAddressData> {
-  return await BreezNative.getBitcoinAddressData();
-}
+export const sendReducer = (state = initialState, action: SendAction): SendState => {
+  switch (action.type) {
+    case 'SET_PAYMENT':
+      return { ...state, payment: action.payload };
+    case 'SET_BACKUP_STATUS':
+      return { ...state, backupStatus: action.payload };
+    case 'SET_BITCOIN_ADDRESS_DATA':
+      return { ...state, bitcoinAddressData: action.payload };
+    case 'SET_CHECK_MESSAGE_REQUEST':
+      return { ...state, checkMessageRequest: action.payload };
+    case 'SET_CLOSED_CHANNEL_PAYMENT_DETAILS':
+      return { ...state, closedChannelPaymentDetails: action.payload };
+    case 'SET_CHECK_MESSAGE_RESPONSE':
+      return { ...state, checkMessageResponse: action.payload };
+    case 'SET_SEND_ONCHAIN_REQUEST':
+      return { ...state, sendOnchainRequest: action.payload };
+    case 'SET_SEND_PAYMENT_REQUEST':
+      return { ...state, sendPaymentRequest: action.payload };
+    case 'SET_SEND_ONCHAIN_RESPONSE':
+      return { ...state, sendOnchainResponse: action.payload
+    };
 
-export async function checkMessage(request: CheckMessageRequest): Promise<boolean> {
-  return await BreezNative.checkMessage(request);
-}
+export const sendOnchainRequest: (request: SendOnchainRequest) => SendAction = (request) => ({
+  type: 'SET_SEND_ONCHAIN_REQUEST',
+  payload: request,
+});
 
-export async function getClosedChannelPaymentDetails(): Promise<ClosedChannelPaymentDetails> {
-  return await BreezNative.getClosedChannelPaymentDetails();
-}
-
-export async function checkMessageResponse(request: CheckMessageResponse): Promise<boolean> {
-  return await BreezNative.checkMessageResponse(request);
-}
-
-export async function sendPayment(request: SendPaymentInfo): Promise<boolean> {
-  // Removed the 'readonly' keyword from the function body, which is not valid syntax here
-  // Corrected the function to actually send the payment request
-  return await BreezNative.sendPayment(request);
-}
-
-export async function getInterface(): Promise<Interface> {
-  // Added return statement and corrected the function definition to match the return type
-  return {
-    breezserver: '',
-    chainnotifierUrl: '',
-    mempoolspaceUrl: '',
-    workingDir: '',
-    network: Network,
-    paymentTimeoutSec: 0,
-    defaultLspId: '',
-    apiKey: '',
-    maxfeePercent: 0,
-    exemptfeeMsat: 0,
-    nodeConfig: {
-      // Add the properties of NodeConfig here
-    }
-  };
-}
+export const sendOnchainResponse: (response: SendOnchainResponse) => SendAction = (response) => ({
+  type: 'SET_SEND_ONCHAIN_RESPONSE',
+  payload: response,
+});

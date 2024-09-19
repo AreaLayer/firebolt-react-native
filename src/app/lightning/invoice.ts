@@ -1,31 +1,7 @@
-import { LightningInvoice } from '@/types/lightning'
+import { LnInvoice } from "@breeztech/react-native-breez-sdk";
+import { getInvoice } from "./bolt11";
 
-export class Invoice {
-    id: string;
-    amount: number;
-    description: string;
-    preimage: string;
-    htlc:  string;
-    status: string;
-    paid: boolean;
-}
-export interface LightningInvoiceState {
-    invoices: LightningInvoice[]
-}
+export default LnInvoice;
 
-export const state = (): LightningInvoiceState => ({
-    invoices: []
-})
-
-export const mutations = {
-    setInvoices(state: LightningInvoiceState, invoices: LightningInvoice[]) {
-        state.invoices = invoices
-    }
-}
-
-export const actions = {
-    async fetchInvoices({ commit }: any, { pubkey }: { pubkey: string }) {
-        const invoices = await this.$axios.$get(`/api/lightning/invoices/${pubkey}`)
-        commit('setInvoices', invoices)
-    }
-}
+export type Invoice = LnInvoice;
+export { getInvoice };
