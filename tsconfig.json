@@ -1,6 +1,8 @@
 { 
   "extends": "./node_modules/react-native/react-native-tsconfig.json",
   "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
     "lib": ["es6"],
     "jsx": "react-native",
     "esModuleInterop": true,

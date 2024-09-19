@@ -1,5 +1,4 @@
-import { Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendOnchainRequest, SendPaymentRequest, SendOnchainResponse } from '@breeztech/react-native-breez-sdk';
-import { LnUrlWithdrawRequest, LnUrlWithdrawResponse } from '@breeztech/react-native-breez-sdk';
+import { Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendOnchainRequest, SendPaymentRequest, SendOnchainResponse, sendPayment, sendSpontaneousPayment } from '@breeztech/react-native-breez-sdk';
 export interface SendState {
   payment: Payment | null;
   backupStatus: BackupStatus | null;
@@ -23,45 +22,11 @@ export const initialState: SendState = {
   sendPaymentRequest: null,
   sendOnchainResponse: null,
 };
-
-export const sendReducer = (state = initialState, action: SendAction): SendState => {
-  switch (action.type) {
-    case 'SET_PAYMENT':
-      return { ...state, payment: action.payload };
-    case 'SET_BACKUP_STATUS':
-      return { ...state, backupStatus: action.payload };
-    case 'SET_BITCOIN_ADDRESS_DATA':
-      return { ...state, bitcoinAddressData: action.payload };
-    case 'SET_CHECK_MESSAGE_REQUEST':
-      return { ...state, checkMessageRequest: action.payload };
-    case 'SET_CLOSED_CHANNEL_PAYMENT_DETAILS':
-      return { ...state, closedChannelPaymentDetails: action.payload };
-    case 'SET_CHECK_MESSAGE_RESPONSE':
-      return { ...state, checkMessageResponse: action.payload };
-    case 'SET_SEND_ONCHAIN_REQUEST':
-      return { ...state, sendOnchainRequest: action.payload };
-    case 'SET_SEND_PAYMENT_REQUEST':
-      return { ...state, sendPaymentRequest: action.payload };
-    case 'SET_SEND_ONCHAIN_RESPONSE':
-      return { ...state, sendOnchainResponse: action.payload
-    };
-
-export const sendOnchainRequest: (request: SendOnchainRequest) => SendAction = (request) => ({
-  type: 'SET_SEND_ONCHAIN_REQUEST',
-  payload: request,
-});
-
-export const sendOnchainResponse: (response: SendOnchainResponse) => SendAction = (response) => ({
-  type: 'SET_SEND_ONCHAIN_RESPONSE',
-  payload: response,
-});
-
-export const LnUrlWithdrawRequest: (request: LnUrlWithdrawRequest) => SendAction = (request) => ({
-  type: 'SET_LNURL_WITHDRAW_REQUEST',
-  payload: request,
-});
-
-export const LnUrlWithdrawResponse: (response: LnUrlWithdrawResponse) => SendAction = (response) => ({
-  type: 'SET_LNURL_WITHDRAW_RESPONSE',
-  payload: response,
-});
+const bolt11: string = ''  
+const optionalAmountMsat = 3000000
+  const optionalLabel = '<label>'
+  const _ = await sendPayment({
+    bolt11,
+    amountMsat: optionalAmountMsat,
+    label: optionalLabel
+})
