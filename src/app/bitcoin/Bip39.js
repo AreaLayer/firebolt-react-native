@@ -1,6 +1,4 @@
-const  { randomBytes } = require('crypto');
-const { bip39 } = require('bitcoinjs-lib');
-// Generate a random mnemonic (uses crypto.randomBytes under the hood), defaults to 128-bits of entropy
+const { randomBytes } = require('crypto');
 const bip39 = require('bip39');
 
 // Generate a random mnemonic (uses crypto.randomBytes under the hood), defaults to 128-bits of entropy
@@ -21,6 +19,8 @@ console.log("Corresponding Seed (256-bits): ", seed256);
 
 // Random byte array of 16 bytes (128-bits)
 const randomBytes128 = randomBytes(16);
+console.log("Random Bytes (128-bits): ", randomBytes128.toString('hex'));
 
 // Random byte array of 32 bytes (256-bits)
 const randomBytes256 = randomBytes(32);
+console.log("Random Bytes (256-bits): ", randomBytes256.toString('hex'));
