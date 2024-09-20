@@ -8,3 +8,13 @@ const app:::backup = () => {
   const [backupLoading, setBackupLoading] = useState(false);
   const [backupCompleted, setBackupCompleted] = useState(false);
 }
+
+const backup = () => {
+  setBackupLoading(true);
+  setBackupError('');
+  setBackupSuccess('');
+  setBackupCompleted(false);
+  const mnemonic = BIP39.generateMnemonic();
+};
+
+export default backup;

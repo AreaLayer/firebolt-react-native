@@ -84,10 +84,6 @@ The other main features Firebolt supports are as follows:
 
 - Liquid Network (Breez SDK)
 
-## Core functions 
-
-The main functions are [here](https://github.com/AreaLayer/FireBolt/tree/main/app)
-
 ## Roadmap
 
 -  [x] Core functions
