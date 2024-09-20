@@ -1,5 +1,5 @@
 { 
-  "extends": "./node_modules/react-native/react-native-tsconfig.json",
+  "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
@@ -14,6 +14,6 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   }
 }
