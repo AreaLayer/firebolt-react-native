@@ -30,3 +30,18 @@ const optionalAmountMsat = 3000000
     amountMsat: optionalAmountMsat,
     label: optionalLabel
 })
+
+const amountSat = currentLimits.minSat
+const satPerVbyte = 10
+
+const prepareResponse = await prepareOnchainPayment({
+  amountSat,
+  amountType: SwapAmountType.SEND,
+  claimTxFeerate: satPerVbyte
+})
+
+
+const swaps = await inProgressOnchainPayments()
+for (const swap of swaps) {
+  console.log(
+    `Onchain payment ${swap.id} in progress, status is ${swap.status}`

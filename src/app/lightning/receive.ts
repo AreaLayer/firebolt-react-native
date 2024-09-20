@@ -40,3 +40,11 @@ class Refudables {
     )
     }
     }
+  };
+
+  const amountMsat = 10000
+  const openChannelFeeResponse = await openChannelFee({
+    amountMsat
+  )}
+
+  

@@ -1,5 +1,5 @@
 // Import statement removed as all imports were unused
-
+import { LspInformation, lspId } from "@breeztech/react-native-breez-sdk";
 export const generateInvoice = async (amount: number, memo: string, network: Network) => {
   const invoice = await LSP.generateInvoice(amount, memo, network);
   return BOLT11.encode(invoice);

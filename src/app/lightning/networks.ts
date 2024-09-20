@@ -1,4 +1,5 @@
 import { networks } from 'bitcoinjs-lib';
+export { networks };
 
 export class Networks {
     constructor(mainnet: Mainnet, testnet: Testnet, signet: Signet) {
