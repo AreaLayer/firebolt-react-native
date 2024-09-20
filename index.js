@@ -8,5 +8,6 @@ import {name as appName} from './app.json';
 import {coinjoin as Coinjoin } from './src/coinjoin';
 import {firebolt as Firebolt } from './src/firebolt';
 import { SilentPaymentGroup } from './src/app/SP/send';
+import {liquidwallet as LiquidWallet } from './src/app/LW/send';
 
 AppRegistry.registerComponent(appName, () => App);
