@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import {View, Text, Button} from 'react-native';
 import * as bitcoin from 'bitcoinjs-lib';
 import QRCode from 'react-native-qrcode-svg';
-import bolt11 from 'light-bolt11-decoder';
+import * as bolt11 from 'light-bolt11-decoder';
+import * as LnIvoice from '@breeztech/react-native-breez-sdk';
 
 const CreateWallet = () => {
   const [segwitAddress, setSegwitAddress] = useState<string | null>(null);
