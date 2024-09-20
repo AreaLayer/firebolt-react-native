@@ -10,6 +10,7 @@ import Dashboard from '../screens/Home/Dashboard';
 import {useConnectionContext} from '../providers/ConnectionProvider';
 import {Splash} from '../components/Splash';
 import VerifyPin from '../screens/Home/VerifyPin';
+import CreateWallet from '../screens/Onboarding/CreateWallet'; // Already included
 
 export type RootStackParamList = {
   OnboardingHome: undefined;
@@ -75,6 +76,11 @@ function OnBoardingNavigation() {
             name={SCREEN_NAMES.Dashboard}
             component={Dashboard}
           />
+          <Stack.Screen
+           options={{headerShown: false}}
+           name={SCREEN_NAMES.CreateWallet}
+           component={CreateWallet}
+         />
         </Stack.Group>
       )}
     </Stack.Navigator>
