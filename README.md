@@ -124,7 +124,7 @@ The other main features Firebolt supports are as follows:
 
 ## Donations
 
-[Rsync](https://tourniquet.app/donate/Rsync)
+[Area Layer](https://www.arealayer.net/donation)
 
 ## Electrum Plugin
 
