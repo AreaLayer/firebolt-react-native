@@ -2,26 +2,39 @@ const { randomBytes } = require('crypto');
 const bip39 = require('bip39');
 const bip32 = require('bip32');
 
-// Generate a random mnemonic (uses crypto.randomBytes under the hood)
-const mnemonic = bip39.generateMnemonic();
-console.log("Generated Mnemonic: ", mnemonic);
+// Network
+const networks = bitcoin.networks.signet;
 
-// Convert mnemonic to seed
-const seed = bip39.mnemonicToSeedSync(mnemonic);
-console.log("Corresponding Seed: ", seed.toString('hex'));
+// Function to generate a mnemonic and derive keys
+function generateKeys(accountIndex) {
+    // Generate a random mnemonic
+    const mnemonic = bip39.generateMnemonic();
+    console.log("Generated Mnemonic: ", mnemonic);
 
-// Create a BIP32 root node
-const root = bip32.fromSeed(seed);
+    // Convert mnemonic to seed
+    const seed = bip39.mnemonicToSeedSync(mnemonic);
+    console.log("Corresponding Seed: ", seed.toString('hex'));
 
-// Derivation paths
-const segwitPath = "m/84'/0'/0'";  // Change 0 to your account index if needed
-const taprootPath = "m/86'/0'/0'";  // Change 0 to your account index if needed
+    // Create a BIP32 root node
+    const root = bip32.fromSeed(seed);
 
-// Derive SegWit key
-const segwitKey = root.derivePath(segwitPath);
-console.log("SegWit Public Key: ", segwitKey.publicKey.toString('hex'));
+    // Derivation paths for SegWit and Taproot
+    const segwitPath = `m/84'/0'/${accountIndex}'`;
+    const taprootPath = `m/86'/0'/${accountIndex}'`;
 
-// Derive Taproot key
-const taprootKey = root.derivePath(taprootPath);
-console.log("Taproot Public Key: ", taprootKey.publicKey.toString('hex'));
+    // Derive SegWit key
+    const segwitKey = root.derivePath(segwitPath);
+    const segwitAddress = bitcoin.payments.p2wpkh({ pubkey: segwitKey.publicKey }).address;
+    console.log("SegWit Public Key: ", segwitKey.publicKey.toString('hex'));
+    console.log("SegWit Address (P2WPKH): ", segwitAddress);
 
+    // Derive Taproot key
+    const taprootKey = root.derivePath(taprootPath);
+    const taprootAddress = bitcoin.payments.p2tr({ pubkey: taprootKey.publicKey }).address;
+    console.log("Taproot Public Key: ", taprootKey.publicKey.toString('hex'));
+    console.log("Taproot Address (P2TR): ", taprootAddress);
+}
+
+// Example usage with different account indices
+generateKeys(0); // Account 0
+generateKeys(1); // Account 1
