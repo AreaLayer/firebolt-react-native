@@ -103,11 +103,11 @@ The other main features Firebolt supports are as follows:
 -  [x] Liquid wallet
 -  [x] LNURL (WIP)
 -  [x] ZK proof for CJ (Groth16)
+-  [x] BIP-353 (DNS payments)
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
 -  [ ] Point of Sale (PoS)
--  [ ] BIP-353 (DNS payments)
 -  [ ] XPUB compatible
 -  [ ] NWC (NDK)
 -  [ ] Zap
