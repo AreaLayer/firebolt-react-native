@@ -1,26 +1,27 @@
 const { randomBytes } = require('crypto');
 const bip39 = require('bip39');
+const bip32 = require('bip32');
 
-// Generate a random mnemonic (uses crypto.randomBytes under the hood), defaults to 128-bits of entropy
-const mnemonic128 = bip39.generateMnemonic();
-console.log("Generated Mnemonic (128-bits): ", mnemonic128);
-
-// Convert mnemonic to seed
-const seed128 = bip39.mnemonicToSeedSync(mnemonic128).toString('hex');
-console.log("Corresponding Seed (128-bits): ", seed128);
-
-// Generate a random mnemonic with 256 bits of entropy
-const mnemonic256 = bip39.generateMnemonic(256);
-console.log("Generated Mnemonic (256-bits): ", mnemonic256);
+// Generate a random mnemonic (uses crypto.randomBytes under the hood)
+const mnemonic = bip39.generateMnemonic();
+console.log("Generated Mnemonic: ", mnemonic);
 
 // Convert mnemonic to seed
-const seed256 = bip39.mnemonicToSeedSync(mnemonic256).toString('hex');
-console.log("Corresponding Seed (256-bits): ", seed256);
+const seed = bip39.mnemonicToSeedSync(mnemonic);
+console.log("Corresponding Seed: ", seed.toString('hex'));
 
-// Random byte array of 16 bytes (128-bits)
-const randomBytes128 = randomBytes(16);
-console.log("Random Bytes (128-bits): ", randomBytes128.toString('hex'));
+// Create a BIP32 root node
+const root = bip32.fromSeed(seed);
 
-// Random byte array of 32 bytes (256-bits)
-const randomBytes256 = randomBytes(32);
-console.log("Random Bytes (256-bits): ", randomBytes256.toString('hex'));
+// Derivation paths
+const segwitPath = "m/84'/0'/0'";  // Change 0 to your account index if needed
+const taprootPath = "m/86'/0'/0'";  // Change 0 to your account index if needed
+
+// Derive SegWit key
+const segwitKey = root.derivePath(segwitPath);
+console.log("SegWit Public Key: ", segwitKey.publicKey.toString('hex'));
+
+// Derive Taproot key
+const taprootKey = root.derivePath(taprootPath);
+console.log("Taproot Public Key: ", taprootKey.publicKey.toString('hex'));
+

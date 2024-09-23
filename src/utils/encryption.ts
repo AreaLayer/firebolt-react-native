@@ -125,7 +125,7 @@ export function decryptAesGcm(
     decipher.setAuthTag(authTag);
 
     // Decrypt data
-    const decrypted = decipher.update(encryptedData, 'binary', 'utf-8') + decipher.final('utf-8');
+    const decrypted = decipher.update(encryptedData) + decipher.final('utf-8');
 
     try {
       return JSON.parse(decrypted);
@@ -138,4 +138,3 @@ export function decryptAesGcm(
     return undefined;
   }
 }
-
