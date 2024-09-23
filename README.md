@@ -102,6 +102,7 @@ The other main features Firebolt supports are as follows:
 -  [x] Firebolt Plus
 -  [x] Liquid wallet
 -  [x] LNURL (WIP)
+-  [x] ZK proof for CJ (Groth16)
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
@@ -111,7 +112,6 @@ The other main features Firebolt supports are as follows:
 -  [ ] NWC (NDK)
 -  [ ] Zap
 -  [ ] PSBT 
--  [ ] ZK proof for CJ (Groth16)
 -  [ ] BOLT12
 -  [ ] Electrum server support
 -  [ ] Beta App (Android - via APK) in 2025
