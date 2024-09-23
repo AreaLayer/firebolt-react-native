@@ -3,6 +3,9 @@ const { TX } = require('@mempool/mempool.js');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { Coinjoin, CoinjoinTransaction, createMultisigTransaction, createP2PTransaction } = require('./main_function.jsx');
 const { groth16 } = require('snarkjs'); // Import snarkjs
+const { p2tr } = require('bitcoinjs-lib/src/payments');
+const { payments } = require('bitcoinjs-lib');
+const { script } = require('bitcoinjs-lib');
 
 // Connect to the Bitcoin signet network
 const provider = 'https://signet.mempool.space/api';
@@ -25,6 +28,8 @@ class Coinjoin {
     this.vout = vout;
     this.amount = amount;
     this.address = address;
+    this.proof = null;
+    this.payments = null;
   }
 }
 
@@ -41,6 +46,10 @@ class CoinjoinTransaction {
 async function generateProof(inputs) {
   // Assumes your circuit has been compiled into circuit.wasm and zkey file is ready
   const { proof, publicSignals } = await groth16.fullProve(inputs, 'circuit.wasm', 'circuit_0000.zkey');
+  const { p2tr } = await p2tr.fromOutputScript(inputs[0].address);
+  const payments = payments.p2tr(p2tr);
+  const { output } = payments.addressToOutputScript(inputs[0].address);
+  const { script } = payments.outputToScript(output);
   return { proof, publicSignals };
 }
 
