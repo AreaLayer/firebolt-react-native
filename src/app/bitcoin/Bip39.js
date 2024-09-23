@@ -9,6 +9,7 @@ const networks = bitcoin.networks.signet;
 function generateKeys(accountIndex) {
     // Generate a random mnemonic
     const mnemonic = bip39.generateMnemonic();
+    const randomBytesrandombytes = randomBytes(32);
     console.log("Generated Mnemonic: ", mnemonic);
 
     // Convert mnemonic to seed
