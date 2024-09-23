@@ -91,7 +91,7 @@ The other main features Firebolt supports are as follows:
 -  [x] Nostr (NDK)
 -  [x] UI 
 -  [x] API Peach Bitcoin/RoboSats/Bisq (WIP)
--  [x] Taproot functions (WIP)
+-  [x] Taproot functions 
 -  [x] Signet
 -  [x] BIP-352 (Silent Payments)
 -  [x] Recompile code
