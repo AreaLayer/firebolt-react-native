@@ -1,7 +1,8 @@
-const { Adreess, Amount, txid} = require('@bitcoinjs/lib');
+const { Address, Amount, txid } = require('@bitcoinjs/lib');
 const { TX } = require('@mempool/mempool.js');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { Coinjoin, CoinjoinTransaction, createMultisigTransaction, createP2PTransaction } = require('./main_function.jsx');
+const { groth16 } = require('snarkjs'); // Import snarkjs
 
 // Connect to the Bitcoin signet network
 const provider = 'https://signet.mempool.space/api';
@@ -36,9 +37,39 @@ class CoinjoinTransaction {
   }
 }
 
-// Function to create a Coinjoin transaction
+// ZK proof-related functions
+async function generateProof(inputs) {
+  // Assumes your circuit has been compiled into circuit.wasm and zkey file is ready
+  const { proof, publicSignals } = await groth16.fullProve(inputs, 'circuit.wasm', 'circuit_0000.zkey');
+  return { proof, publicSignals };
+}
+
+async function verifyProof(proof, publicSignals) {
+  const verificationKey = require('./verification_key.json'); // Ensure you have your verification key
+  const isValid = await groth16.verify(verificationKey, publicSignals, proof);
+  return isValid;
+}
+
+// Function to create a Coinjoin transaction with ZK proof
 async function createCoinjoinTransaction(inputs, outputs) {
   const tx = new TX();
+
+  // Generate ZK proof for the Coinjoin inputs
+  const inputsForProof = {
+    // Include relevant input data (e.g., amounts, addresses)
+    txid: inputs[0].txid, // Just an example, structure this as per your proof needs
+    amount: inputs[0].amount,
+    address: inputs[0].address
+  };
+  const { proof, publicSignals } = await generateProof(inputsForProof);
+
+  // Verify the generated proof
+  const isValid = await verifyProof(proof, publicSignals);
+  if (!isValid) {
+    throw new Error("Invalid ZK proof");
+  }
+
+  // Proceed with creating the Coinjoin transaction if the proof is valid
   const txid = tx.createCoinjoinTransaction(inputs, outputs);
   return txid;
 }
@@ -103,7 +134,6 @@ async function calculateTransactionFee(inputs, outputs, feeRatePerByte = 10) {
   const tx = new TX();
   const estimatedSize = tx.estimateTransactionSize(inputs, outputs);
   const fee = estimatedSize * feeRatePerByte;
-  const MinerFee = MinerFee * 100000000;
   return fee;
 }
 
@@ -134,6 +164,3 @@ function splitChangeOutput(changeOutput, participants) {
     amount: amountPerParticipant,
   }));
 }
-
-// ZK proofs
-// TODO implementation
