@@ -35,7 +35,8 @@ const BreezEvent = (e: BreezEvent) => {
           liquidElectrumUrl: 'https://liquid-electrum-server.example.com',
           bitcoinElectrumUrl: 'https://bitcoin-electrum-server.example.com',
           zeroConfMinFeeRateMsat: 1000,
-          mempoolspaceUrl: config.mempoolspaceUrl || ''
+          mempoolspaceUrl: config.mempoolspaceUrl || '',
+          network: 'liquid' as const
         },
         seed
       }
