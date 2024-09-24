@@ -1,5 +1,4 @@
-import { Tx } from "@mempool/mempool.js/lib/interfaces/bitcoin/transactions";
-import { bitcoin, address, amount } from "bitcoinjs-lib";
+import * as bitcoin from "bitcoinjs-lib";
 interface UTXO {
     txid: string;
     index: number;
@@ -12,9 +11,12 @@ interface Wallet {
     utxos: UTXO[];
     privateKeys: Map<string, bitcoin.ECPair.ECPairInterface>;
       }
-      
+      function createWallet(): Wallet {
+    return {
+        utxos: [],
+        privateKeys: new Map(),
+    };
 }
-
 function addUTXO(wallet: Wallet, txid: string, index: number, txout: bitcoin.TxOut, address: bitcoin.Address) {
     wallet.utxos.({ txid, index, txout, address });
 }
