@@ -7,3 +7,8 @@ export const LiquidgetAddressData = async (network: LiquidNetwork, address: stri
 export const LiquidNetworkUtils = {
     LiquidgetAddressData,
 }
+
+export const LiquidNetworkConfig = {
+    mainnet: LiquidNetwork.mainnet,
+    testnet: LiquidNetwork.testnet,
+}
