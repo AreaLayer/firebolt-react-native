@@ -1174,7 +1174,7 @@
   resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.3.0.tgz"
   integrity sha512-dFST33/KSxS7a0zH88b4i0dyZcrcMmcWyB8RId2eay8tDc8HaGo84G+nQISRua+AwpilCHS9cGHAPL3vuqDynA==
 
-"@breeztech/react-native-breez-sdk@^0.6.0":
+"@breeztech/react-native-breez-sdk@^0.6.1":
   version "0.6.1"
   resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk/-/react-native-breez-sdk-0.6.1.tgz"
   integrity sha512-JxDyP8neDZH+XTSrWN3AE5AL39BTU2dfYhXeAa18jBywAsLkpur/qOxWFgvTP8K7gwwza/v45dYBjjDAAmaBcg==
