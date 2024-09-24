@@ -9,6 +9,6 @@ export const LiquidNetworkUtils = {
 }
 
 export const LiquidNetworkConfig = {
-    mainnet: LiquidNetwork.mainnet,
-    testnet: LiquidNetwork.testnet,
+    mainnet: LiquidNetwork.MAINNET,
+    testnet: LiquidNetwork.TESTNET,
 }
