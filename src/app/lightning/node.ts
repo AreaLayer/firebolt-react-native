@@ -32,11 +32,10 @@ const BreezEvent = (e: BreezEvent) => {
       const connectRequest: ConnectRequest = {
         config: {
           ...config,
-          liquidElectrumUrl: 'https://liquid-electrum-server.example.com',
-          bitcoinElectrumUrl: 'https://bitcoin-electrum-server.example.com',
+          liquidElectrumUrl: 'https://elements-testnet.blockstream.info::50002',
+          bitcoinElectrumUrl: 'https://bitcoin-testnet.blockstream.info::50002',
           zeroConfMinFeeRateMsat: 1000,
           mempoolspaceUrl: config.mempoolspaceUrl || '',
-          network: 'liquid' as const
         },
         seed
       }
