@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getOfferDetails, Order } from 'peach-api-ts/src/private/offer/getOfferDetails';
 
 const baseURL = 'https://api.peachbitcoin.com/v1'; // Peach API base URL
 
