@@ -1,4 +1,4 @@
-const {generateAddress, addInput, addOutput} = require('bitcoinjs-lib')
+const {generateAddress} = require('bitcoinjs-lib')
 const axios = require('axios');
 
 // Bitcoin network configuration
