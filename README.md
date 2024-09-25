@@ -105,6 +105,7 @@ The other main features Firebolt supports are as follows:
 -  [x] ZK proof for CJ (Groth16)
 -  [x] BIP-353 (DNS payments)
 -  [x] Electrum server support
+-  [x] HD Taproot Wallet
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
@@ -115,7 +116,6 @@ The other main features Firebolt supports are as follows:
 -  [ ] PSBT 
 -  [ ] BOLT12
 -  [ ] Beta App (Android - via APK) in 2025
--  [ ] HD Taproot Wallet
 -  [ ] Full RBF
 -  [ ] Payjoin (React Native) 
 -  [ ] Submarine Swap 
