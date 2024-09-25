@@ -110,7 +110,7 @@ The other main features Firebolt supports are as follows:
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
 -  [ ] Point of Sale (PoS)
--  [ ] XPUB compatible
+-  [x] XPUB compatible
 -  [ ] NWC (NDK)
 -  [ ] Zap
 -  [ ] PSBT 
