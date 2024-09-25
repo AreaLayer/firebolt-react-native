@@ -3,11 +3,7 @@ const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { groth16 } = require('snarkjs'); // Import snarkjs
 
 // Connect to the Bitcoin signet network
-const provider = 'https://signet.mempool.space/api';
-const explorer = 'https://mempool.space/signet/tx';
-
-// Stats fee
-const statsTxFee = 10000;
+const bitcoin = bitcoin.networks.signet;
 
 let converter = new BitcoinConverter();
 
