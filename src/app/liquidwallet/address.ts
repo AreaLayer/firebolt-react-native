@@ -12,3 +12,5 @@ export const LiquidNetworkConfig = {
     mainnet: LiquidNetwork.MAINNET,
     testnet: LiquidNetwork.TESTNET,
 }
+
+export const feeRate = 1000;
