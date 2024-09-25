@@ -1,11 +1,6 @@
-const { Address, Amount, txid } = require('@bitcoinjs/lib');
 const { TX } = require('@mempool/mempool.js');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
-const { Coinjoin, CoinjoinTransaction, createMultisigTransaction, createP2PTransaction } = require('./main_function.jsx');
 const { groth16 } = require('snarkjs'); // Import snarkjs
-const { p2tr } = require('bitcoinjs-lib/src/payments');
-const { payments } = require('bitcoinjs-lib');
-const { script } = require('bitcoinjs-lib');
 
 // Connect to the Bitcoin signet network
 const provider = 'https://signet.mempool.space/api';
