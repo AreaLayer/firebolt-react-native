@@ -40,7 +40,6 @@ async function generateProof(inputs) {
   const { p2tr } = await p2tr.fromOutputScript(inputs[0].address);
   const payments = payments.p2tr(p2tr);
   const { output } = payments.addressToOutputScript(inputs[0].address);
-  const { script } = payments.outputToScript(output);
   bitcoin.opcodes.OP_1;
   bitcoin.opcodes.OP_EQUAL;
   return { proof, publicSignals };
