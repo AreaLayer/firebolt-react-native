@@ -107,13 +107,13 @@ The other main features Firebolt supports are as follows:
 -  [x] Electrum server support
 -  [x] HD Taproot Wallet
 -  [x] XPUB compatible
+-  [x] PSBT
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
 -  [ ] Point of Sale (PoS)
 -  [ ] NWC (NDK)
--  [ ] Zap
--  [ ] PSBT 
+-  [ ] Zap 
 -  [ ] BOLT12
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Full RBF
