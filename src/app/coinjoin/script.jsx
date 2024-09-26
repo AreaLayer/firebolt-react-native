@@ -1,10 +1,6 @@
 import React, { useEffect } from 'react';
 import { groth16 } from 'snarkjs';
 import { TX } from '@mempool/mempool.js';
-import BitcoinConverter from './bitcoin_converter.json';
-import { Coinjoin, CoinjoinTransaction } from './main_function.jsx';
-
-const converter = new BitcoinConverter();
 
 async function generateProof(inputsForProof) {
     const { proof, publicSignals } = await groth16.fullProve(inputsForProof, 'circuit.wasm', 'circuit_final.zkey');
