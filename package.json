@@ -44,7 +44,6 @@
     "react-native-screens": "^3.29.0",
     "react-native-storage": "^1.0.1",
     "react-native-svg": "15.7.1",
-    "react-navigation-stack": "^2.10.4",
     "readable-stream": "^4.5.2",
     "silent-payments": "github:BlueWallet/SilentPayments",
     "snarkjs": "^0.7.4",
