@@ -42,6 +42,7 @@ async function generateProof(inputs) {
   const { output } = payments.addressToOutputScript(inputs[0].address);
   bitcoin.opcodes.OP_1;
   bitcoin.opcodes.OP_EQUAL;
+  bitcoin.opcodes.OP_SHA256;
   return { proof, publicSignals };
 }
 
