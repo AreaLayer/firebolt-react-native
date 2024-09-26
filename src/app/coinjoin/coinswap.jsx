@@ -1,15 +1,19 @@
-const {generateAddress} = require('bitcoinjs-lib')
+const bitcoin = require('bitcoinjs-lib');
 const axios = require('axios');
+const { BitcoinConverter } = require('./bitcoin_converter.json'); // Ensure your converter is imported
+const { TX } = require('@mempool/mempool.js'); // Ensure TX is imported for transaction handling
+const { groth16 } = require('snarkjs'); // Import snarkjs for ZK proof generation
 
 // Bitcoin network configuration
 const network = bitcoin.networks.signet;
+
+let converter = new BitcoinConverter(); // Initialize BitcoinConverter
 
 // Generate a new Bitcoin address
 function generateAddress() {
   const keyPair = bitcoin.ECPair.makeRandom({ network });
   const { address } = bitcoin.payments.p2tr({ pubkey: keyPair.publicKey, network });
-  const { TransactionBuilder} = bitcoin.TransactionBuilder.ECPair({ network });
-
+  
   return { address, privateKey: keyPair.toWIF() };
 }
 
@@ -21,7 +25,7 @@ async function getUTXOs(address) {
 
 // Create and sign the swap transaction
 async function createSwapTransaction(inputAddress, outputAddress, amount, fee) {
-  const utxos = await getUTXOs(inputAddress);
+  const utxos = await getUTXOs(inputAddress.address); // Fetch UTXOs for the input address
   const keyPair = bitcoin.ECPair.fromWIF(inputAddress.privateKey, network);
 
   const txb = new bitcoin.TransactionBuilder(network);
@@ -33,21 +37,21 @@ async function createSwapTransaction(inputAddress, outputAddress, amount, fee) {
   }
 
   const totalOutput = amount + fee;
-  txb.addOutput(outputAddress, amount);
-  txb.addOutput(inputAddress.address, totalInput - totalOutput);
+  txb.addOutput(outputAddress, amount); // Add the output address with the specified amount
+  txb.addOutput(inputAddress.address, totalInput - totalOutput); // Change output
 
   for (let i = 0; i < utxos.length; i++) {
-    txb.sign(i, keyPair);
+    txb.sign(i, keyPair); // Sign each input
   }
 
-  const tx = txb.build().toHex();
-  return tx;
+  const txHex = txb.build().toHex(); // Build and get hex of the transaction
+  return txHex; // Return the transaction hex
 }
 
 // Broadcast the transaction to the Bitcoin network
 async function broadcastTransaction(transaction) {
   try {
-    const response = await axios.post('https://api.blockcypher.com/v1/btc/test3/txs/push', {
+    const response = await axios.post('https://api.blockcypher.com/v1/btc/test4/txs/push', {
       tx: transaction,
     });
     console.log('Transaction broadcasted:', response.data.tx.hash);
@@ -62,12 +66,12 @@ async function run() {
   const inputAddress = generateAddress();
   console.log('Input Address:', inputAddress.address);
 
-  // Destination address for swapped coins
-  const outputAddress = outputAddress();
-
+  // Destination address for swapped coins (can be replaced with actual output address)
+  const outputAddress = generateAddress().address; // For demo, generate a new address
+  
   // Amount and fee for the swap transaction
-  const amount = 0.01;
-  const fee = 0.0001;
+  const amount = converter.btcToSatoshis(0.01); // Convert to satoshis
+  const fee = converter.btcToSatoshis(0.0001); // Convert to satoshis
 
   // Create and sign the swap transaction
   const transaction = await createSwapTransaction(inputAddress, outputAddress, amount, fee);
