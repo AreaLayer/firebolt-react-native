@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
-// Define the Stack navigator
+// Define the react nativation 
+const { createStackNavigator } = require('@react-navigation/stack');
 const Stack = createStackNavigator();
 
-const Home = ({ navigation }) => {
+const Home = ({ navigation }: { navigation: any }) => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Button
@@ -15,9 +16,8 @@ const Home = ({ navigation }) => {
     </View>
   );
 };
-
 // Screen for HD Wallet import
-const HDImport = ({ navigation }) => {
+const HDImport = ({ navigation }: { navigation: any }) => {
   const [mnemonic, setMnemonic] = useState('');
 
   const handleImport = () => {
@@ -38,7 +38,6 @@ const HDImport = ({ navigation }) => {
     </ScrollView>
   );
 };
-
 // Screen for displaying XPUB and derived addresses (UI only, no logic)
 const Addresses = () => {
   return (

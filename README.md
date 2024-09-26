@@ -106,11 +106,11 @@ The other main features Firebolt supports are as follows:
 -  [x] BIP-353 (DNS payments)
 -  [x] Electrum server support
 -  [x] HD Taproot Wallet
+-  [x] XPUB compatible
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
 -  [ ] Point of Sale (PoS)
--  [x] XPUB compatible
 -  [ ] NWC (NDK)
 -  [ ] Zap
 -  [ ] PSBT 
