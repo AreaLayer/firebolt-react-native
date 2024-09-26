@@ -13,5 +13,3 @@ TapscriptFinalizer.prototype.finalize = function() {    const psbt = this.psbt;
     return final_psbt;
 
 }
-
-const psbt = new Psbt();
