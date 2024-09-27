@@ -61,7 +61,16 @@ async function createCoinjoinTransaction(inputs, outputs) {
     // Include relevant input data (e.g., amounts, addresses)
     txid: inputs[0].txid, // Just an example, structure this as per your proof needs
     amount: inputs[0].amount,
-    address: inputs[0].address
+    address: inputs[0].address,
+    vout: inputs[0].vout,
+    outputs: outputs[0].vout
+    .map(output => {
+      return {
+         address: output.address,
+         amount: output.amount
+       };
+     })
+
   };
   const { proof, publicSignals } = await generateProof(inputsForProof);
 
