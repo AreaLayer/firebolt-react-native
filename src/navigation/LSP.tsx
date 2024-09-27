@@ -1,4 +1,4 @@
-import { LSP } from 'firebolt-react-native';
+import { LspInformation } from "@breeztech/react-native-breez-sdk";
 import { View, Text } from 'react-native';
 
 var LSP = new LSP();
@@ -8,6 +8,7 @@ export const LSP = () => {
     <View>
       <Text>Set LSP</Text>
       <Button>Set LSP</Button>
+
     </View>
   );
 };
