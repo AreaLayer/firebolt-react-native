@@ -4,7 +4,7 @@ import {config} from './src/theme/config';
 import { NavigationContainer } from '@react-navigation/native';
 import OnBoardingNavigation from './src/navigation/OnBoarding';
 import {ConnectionProvider} from './src/providers/ConnectionProvider';
-import OnBoardingHome from './src/screens/onboarding/CoinjoinMarket';
+import OnBoardingHome from './src/screens/onboarding/ZKPool';
 import Balance from './src/components/Balance';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import BitcoinPrice from './src/components/BitcoinPrice';
