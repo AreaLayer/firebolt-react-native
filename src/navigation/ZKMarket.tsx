@@ -10,8 +10,8 @@ import Dashboard from '../screens/Home/Dashboard';
 import { useConnectionContext } from '../providers/ConnectionProvider';
 import { Splash } from '../components/Splash';
 import VerifyPin from '../screens/Home/VerifyPin';
-import CoinjoinMarket from '../screens/CoinjoinMarket/CoinjoinMarket';
-import OfferDetails from '../screens/CoinjoinMarket/OfferDetails';
+import ZKPoolEnter from '../screens/ZKPool/ZKPoolEnter';  // New screen for ZK pool entry
+import ZKPoolExit from '../screens/ZKPool/ZKPoolExit';    // New screen for ZK pool exit
 
 export type RootStackParamList = {
   OnboardingHome: undefined;
@@ -21,21 +21,24 @@ export type RootStackParamList = {
   ConfirmPin: { words: string[]; walletPin: number[] };
   Dashboard: undefined;
   VerifyPin: undefined;
-  CoinjoinMarket: undefined;
-  OfferDetails: { offerId: string };
+  ZKPoolEnter: undefined;  // New route for entering ZK pool
+  ZKPoolExit: undefined;   // New route for exiting ZK pool
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function OnBoardingNavigation() {
   const { loading, isWalletConnected } = useConnectionContext();
+  
   if (loading) {
     return <Splash />;
   }
+
   return (
     <Stack.Navigator>
       {isWalletConnected ? (
         <Stack.Group>
+          {/* Verify Pin and Dashboard for authenticated users */}
           <Stack.Screen
             options={{ headerShown: false }}
             name={SCREEN_NAMES.VerifyPin}
@@ -46,19 +49,22 @@ function OnBoardingNavigation() {
             name={SCREEN_NAMES.Dashboard}
             component={Dashboard}
           />
+          
+          {/* ZK Pool Entry and Exit Screens */}
           <Stack.Screen
             options={{ headerShown: false }}
-            name={SCREEN_NAMES.CoinjoinMarket}
-            component={CoinjoinMarket}
+            name={SCREEN_NAMES.ZKPoolEnter}
+            component={ZKPoolEnter}
           />
           <Stack.Screen
             options={{ headerShown: false }}
-            name={SCREEN_NAMES.OfferDetails}
-            component={OfferDetails}
+            name={SCREEN_NAMES.ZKPoolExit}
+            component={ZKPoolExit}
           />
         </Stack.Group>
       ) : (
         <Stack.Group>
+          {/* Onboarding screens for users without a wallet */}
           <Stack.Screen
             options={{ headerShown: false }}
             name={SCREEN_NAMES.OnboardingHome}
@@ -89,15 +95,17 @@ function OnBoardingNavigation() {
             name={SCREEN_NAMES.Dashboard}
             component={Dashboard}
           />
+
+          {/* ZK Pool Entry and Exit Screens for users without a wallet */}
           <Stack.Screen
             options={{ headerShown: false }}
-            name={SCREEN_NAMES.CoinjoinMarket}
-            component={CoinjoinMarket}
+            name={SCREEN_NAMES.ZKPoolEnter}
+            component={ZKPoolEnter}
           />
           <Stack.Screen
             options={{ headerShown: false }}
-            name={SCREEN_NAMES.OfferDetails}
-            component={OfferDetails}
+            name={SCREEN_NAMES.ZKPoolExit}
+            component={ZKPoolExit}
           />
         </Stack.Group>
       )}
