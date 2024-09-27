@@ -136,6 +136,10 @@ While our wallet is in development, you can test our Coinjoin using Electrum wal
 
 Soon
 
+## ZK Proof Library Rust
+
+Soon
+
 ## Contributors
 
 <a align="center" href="https://github.com/AreaLayer/firebolt-react-native aphs/contributors">
