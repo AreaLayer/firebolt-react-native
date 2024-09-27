@@ -1,4 +1,4 @@
-### Firebolt Wallet - React Native Version ⚡🕵️
+### Firebolt Wallet - React Native Version ⚡🕵️🌀
 
 ⚠️**Wallet in WIP/development**
 
