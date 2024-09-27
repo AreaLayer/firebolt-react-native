@@ -23,7 +23,6 @@ export class network {
 
 export default NFC;
 
-const hww = new Hww();
 
 const NFC = new NFC();
 
