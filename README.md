@@ -54,7 +54,7 @@ The other main features Firebolt supports are as follows:
 
 - LSP
 
-- [CoinJoin powered by CoinjoinXT, Lightning Network, Taproot and Coinswap](https://github.com/AreaLayer/CoinjoinXT)
+- Coinjoin powered by ZK proof, Coinswap, Taproot and more
 
 - Multisig 
 
