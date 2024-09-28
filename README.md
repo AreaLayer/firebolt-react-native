@@ -108,6 +108,7 @@ The other main features Firebolt supports are as follows:
 -  [x] HD Taproot Wallet
 -  [x] XPUB compatible
 -  [x] PSBT
+-  [x] RBF
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog

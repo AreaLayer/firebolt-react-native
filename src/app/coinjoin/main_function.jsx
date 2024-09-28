@@ -167,6 +167,10 @@ async function finalizeCoinjoinTransaction(coinjoinTransaction) {
   return finalizedTx;
 }
 
+// RBF support
+tx.addInputToCoinjoin(coinjoinTransaction, newInput , 0, 0xfffffffd);
+tx.addInputToCoinjoin(coinjoinTransaction, newOutput , 0, 0xfffffffd);
+
 // Function to split the change output
 function splitChangeOutput(changeOutput, participants) {
   const amountPerParticipant = changeOutput.amount / participants.length;
