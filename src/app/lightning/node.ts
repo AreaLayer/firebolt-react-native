@@ -9,7 +9,7 @@ import {
 import { ConnectRequest, connect } from '@breeztech/react-native-breez-sdk-liquid';
 
 // SDK events listener
-const handleBreezEvent = (e: BreezEventType) => {
+export const handleBreezEvent = (e: BreezEventType) => {
   console.log(`Received event ${e.type}`);
 }
 
