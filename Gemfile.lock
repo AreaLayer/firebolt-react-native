@@ -110,7 +110,7 @@ DEPENDENCIES
   rexml (~> 3.3.8)
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.2.20
