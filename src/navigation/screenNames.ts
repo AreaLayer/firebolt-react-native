@@ -1,4 +1,6 @@
 interface IScreenNames {
+  ExitZKPool(ExitZKPool: any): unknown;
+  EnterZKPool(EnterZKPool: any): unknown;
   OnboardingHome: 'OnboardingHome';
   CreateWallet: 'CreateWallet';
   ConfirmSeed: 'ConfirmSeed';
