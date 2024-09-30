@@ -9,7 +9,6 @@ import {
 } from '@gluestack-ui/themed';
 import {SCREEN_NAMES} from '../../navigation/screenNames';
 import {NavigationProp} from '@react-navigation/native';
-import { MainFunction } from '../../src/coinjoin/main_function';
 
 const LogoImage = require('../../assets/images/logo.png');
 
