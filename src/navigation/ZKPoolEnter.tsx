@@ -1,7 +1,7 @@
 // ZKPoolEnter.tsx
 
 import React, { useState } from 'react';
-import { Box, Button, Input, Heading, Text, Center } from '@gluestack-ui/themed';
+import { Box, Button, Input, Heading, Text} from '@gluestack-ui/themed';
 import { useNavigation } from '@react-navigation/native';
 
 function ZKPoolEnter() {
