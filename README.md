@@ -109,6 +109,7 @@ The other main features Firebolt supports are as follows:
 -  [x] XPUB compatible
 -  [x] PSBT
 -  [x] RBF
+-  [x] Submarine Swap (WIP)
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Upgrade Changelog
@@ -118,7 +119,6 @@ The other main features Firebolt supports are as follows:
 -  [ ] BOLT12
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Payjoin (React Native) 
--  [ ] Submarine Swap 
 -  [ ] F-Droid
 -  [ ] Portal support (NFC)
 
