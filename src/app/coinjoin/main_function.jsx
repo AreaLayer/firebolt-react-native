@@ -1,6 +1,7 @@
 const { TX } = require('@mempool/mempool.js');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { groth16 } = require('snarkjs'); // Import snarkjs
+const { p2wsh } = require('bitcoinjs-lib/src/payments');
 
 // Connect to the Bitcoin signet network
 const bitcoin = bitcoin.networks.signet;
@@ -38,7 +39,11 @@ async function generateProof(inputs) {
   // Assumes your circuit has been compiled into circuit.wasm and zkey file is ready
   const { proof, publicSignals } = await groth16.fullProve(inputs, 'circuit.wasm', 'circuit_0000.zkey');
   const { p2tr } = await p2tr.fromOutputScript(inputs[0].address);
-  const payments = payments.p2tr(p2tr);
+  const { p2wsh } = await p2wsh.fromOutputScript(inputs[0].address);
+  const payments = {
+    p2wsh: payments.p2wsh(p2wsh),
+    p2tr: payments.p2tr(p2tr)
+  };  
   const { output } = payments.addressToOutputScript(inputs[0].address);
   bitcoin.opcodes.OP_1;
   bitcoin.opcodes.OP_EQUAL;

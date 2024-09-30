@@ -117,7 +117,6 @@ The other main features Firebolt supports are as follows:
 -  [ ] Zap 
 -  [ ] BOLT12
 -  [ ] Beta App (Android - via APK) in 2025
--  [ ] Full RBF
 -  [ ] Payjoin (React Native) 
 -  [ ] Submarine Swap 
 -  [ ] F-Droid
