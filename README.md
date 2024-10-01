@@ -112,7 +112,6 @@ The other main features Firebolt supports are as follows:
 -  [x] Submarine Swap (WIP)
 -  [ ] Miniscript
 -  [ ] Library for Wallet
--  [ ] Upgrade Changelog
 -  [ ] Point of Sale (PoS)
 -  [ ] NWC (NDK)
 -  [ ] Zap 
