@@ -24,7 +24,7 @@
     "@react-navigation/native-stack": "^6.9.17",
     "assert": "^2.0.0",
     "bech32": "^2.0.0",
-    "bip-353-lib": "^1.0.0-alpha",
+    "bip-353-lib": "^1.0.1-alpha",
     "bip21": "^3.0.0",
     "bip32": "^4.0.0",
     "bip39": "^3.1.0",
