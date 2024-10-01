@@ -1,0 +1,75 @@
+{
+    "protocol": "groth16",
+    "curve": "bn128",
+    "nPublic": 1,
+    "vk_alpha_1": [
+      "0x259f4d158e36b7e8f8d2d8f3c7957c9d0933be9074f544d53c22cf0c155510d9",
+      "0x2e053c8dbf2d06c840607b13c59c8f35489c798105f792d20f1a028ae52e0881",
+      "1"
+    ],
+    "vk_beta_2": [
+      [
+        "0x0c7ac17f3f5bdfd4c5b22fbbd4bb510e3fded297646802fcd79d5f40a0fa47a2",
+        "0x277aa7d0214e0c75e44c57a8f07bc88c54721a14f88b2efc39fc63c56fd24bff"
+      ],
+      [
+        "0x0b7ef6888f6c12e5305c43f6361b89b14b34ba1b5b4d4d2de92c9e7b7859bc68",
+        "0x25c774b2eb30f870de76fa1efcc0b9d7e7e33c1365f08d2c1af6fd9e50a26b34"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "vk_gamma_2": [
+      [
+        "0x0bc25f2a0f287edc8378bcd33ff63fb0b9a85028b86690717f92bc087e5a6171",
+        "0x25c25368840318e305402f6f91f6f77616bfe9f60cfc90f062ae245be778a628"
+      ],
+      [
+        "0x2b8b21bbd4b5f0ab802b6b0d80f9bde36267f720b9ccae87182a6078ed2b7d71",
+        "0x0ad31cb6f39bfa8722c02d6c6b4e1678af12391d02343e05d7e7e34c4f3b8fc6"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "vk_delta_2": [
+      [
+        "0x1d1ce2559d5a484e2744a9f598dbfbf0f4725b7487c21d6f7afc15d7c39b2ac8",
+        "0x2daaa83f14c60ab56ff881eb08b93f5bcdf1d03852a0e0e5d2441e0fa5cfaec7"
+      ],
+      [
+        "0x04ae7b9b15f726e6046217ec2826077f63770244607c3d6fe6070a90873f2d6e",
+        "0x09380f97b1014372fc85d81890f49818da11c76e8f29a7d1f08f7e1c4222e1a7"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "vk_alphabeta_12": [
+      [
+        [
+          "0x237d44ff2525e9e8f3dc71cc80c8367af57b7d5ec32f8fd2a994c89a011ab020",
+          "0x0d2b4fc3154a14f11a29d77f61ad0812a3cf6e8f18f4d0402cadddbb6c72202a"
+        ],
+        [
+          "0x296bd85886fb93c30bdf67a30a36721ab5070876fd307fc5e4adf6dc31a057be",
+          "0x23b15a68474d0411c6bce5196c3c2d94a14a4fbb0847f25b0b9d7a4728b9aa5f"
+        ]
+      ],
+      [
+        [
+          "0x1bc4f6bc97dd4c13da0140fa22a1562794e76af25ecdf9a4fa0f5e5128702302",
+          "0x0b69edfb3c849d69c6c53043aeae1ecac471de4e726dc65002bcf66e73f622f2"
+        ],
+        [
+          "0x225fe9ad3f7769c9491e06d2d51edfe4603db04819f48203a6dce8767c6c415a",
+          "0x1636f890c7d88e5fe18c204e2055287a1e94937e94e1b0efb36b139f902c7342"
+        ]
+      ]
+    ]
+  }
+  
