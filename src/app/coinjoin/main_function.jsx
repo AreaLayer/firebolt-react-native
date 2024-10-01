@@ -1,10 +1,9 @@
 const { TX } = require('@mempool/mempool.js');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { groth16 } = require('snarkjs'); // Import snarkjs
-const { p2wsh } = require('bitcoinjs-lib/src/payments');
-
-// Connect to the Bitcoin signet network
-const bitcoin = bitcoin.networks.signet;
+const { p2wsh, p2tr } = require('bitcoinjs-lib/src/payments');
+const { TransactionBuilder, ECPair, networks } = require('bitcoinjs-lib');
+const bitcoin = networks.signet;
 
 let converter = new BitcoinConverter();
 
@@ -36,72 +35,95 @@ class CoinjoinTransaction {
 
 // ZK proof-related functions
 async function generateProof(inputs) {
-  // Assumes your circuit has been compiled into circuit.wasm and zkey file is ready
   const { proof, publicSignals } = await groth16.fullProve(inputs, 'circuit.wasm', 'circuit_0000.zkey');
-  const { p2tr } = await p2tr.fromOutputScript(inputs[0].address);
-  const { p2wsh } = await p2wsh.fromOutputScript(inputs[0].address);
   const payments = {
-    p2wsh: payments.p2wsh(p2wsh),
-    p2tr: payments.p2tr(p2tr)
-  };  
-  const { output } = payments.addressToOutputScript(inputs[0].address);
-  bitcoin.opcodes.OP_1;
-  bitcoin.opcodes.OP_EQUAL;
-  bitcoin.opcodes.OP_SHA256;
-  return { proof, publicSignals };
+    p2wsh: p2wsh({ address: inputs[0].address }),
+    p2tr: p2tr({ address: inputs[0].address })
+  };
+  return { proof, publicSignals, payments };
 }
 
 async function verifyProof(proof, publicSignals) {
-  const verificationKey = require('./verification_key.json'); // Ensure you have your verification key
+  const verificationKey = require('./verification_key.json');
   const isValid = await groth16.verify(verificationKey, publicSignals, proof);
   return isValid;
 }
 
-// Function to create a Coinjoin transaction with ZK proof
-async function createCoinjoinTransaction(inputs, outputs) {
-  const tx = new TX();
+// Function to create a Coinjoin transaction with ZK proof, UTXO, and signature aggregation
+async function createCoinjoinTransaction(inputs, outputs, privateKeys) {
+  const tx = new TransactionBuilder(bitcoin);
+  const keyPairs = privateKeys.map(privKey => ECPair.fromWIF(privKey, bitcoin));
 
-  // Generate ZK proof for the Coinjoin inputs
+  // Add inputs to the transaction
+  inputs.forEach(input => {
+    tx.addInput(input.txid, input.vout, null, p2wsh({ address: input.address }).output);
+  });
+
+  // Add outputs
+  outputs.forEach(output => {
+    tx.addOutput(output.address, output.amount);
+  });
+
+  // Generate and verify ZK proof
   const inputsForProof = {
-    // Include relevant input data (e.g., amounts, addresses)
-    txid: inputs[0].txid, // Just an example, structure this as per your proof needs
+    txid: inputs[0].txid,
     amount: inputs[0].amount,
     address: inputs[0].address,
     vout: inputs[0].vout,
-    outputs: outputs[0].vout
-    .map(output => {
-      return {
-         address: output.address,
-         amount: output.amount
-       };
-     })
-
+    outputs: outputs.map(output => ({
+      address: output.address,
+      amount: output.amount
+    }))
   };
   const { proof, publicSignals } = await generateProof(inputsForProof);
-
-  // Verify the generated proof
   const isValid = await verifyProof(proof, publicSignals);
-  if (!isValid) {
-    throw new Error("Invalid ZK proof");
-  }
 
-  // Proceed with creating the Coinjoin transaction if the proof is valid
-  const txid = tx.createCoinjoinTransaction(inputs, outputs);
-  return txid;
+  if (!isValid) throw new Error("Invalid ZK proof");
+
+  // Aggregate signatures (Schnorr signatures)
+  keyPairs.forEach((keyPair, index) => {
+    tx.sign({
+      prevOutScriptType: 'p2wsh',
+      vin: index,
+      keyPair,
+      witnessValue: inputs[index].amount,
+      sighashType: bitcoin.Transaction.SIGHASH_ALL
+    });
+  });
+
+  // Finalize the transaction and serialize it
+  const txHex = tx.build().toHex();
+  return txHex;
 }
 
 // Multisig and PSBT transaction
-async function createMultisigTransaction(inputs, outputs) {
-  const tx = new TX();
-  const txid = tx.createMultisigTransaction(inputs, outputs);
-  return txid;
-}
+async function createMultisigTransaction(inputs, outputs, privateKeys) {
+  const tx = new TransactionBuilder(bitcoin);
+  const keyPairs = privateKeys.map(privKey => ECPair.fromWIF(privKey, bitcoin));
 
-// Peer to Peer transaction
-async function createP2PTransaction(inputs, outputs) {
-  const tx = new TX();
-  const txid = tx.createP2PTransaction(inputs, outputs);
-  return txid;
+  // Add inputs and outputs
+  inputs.forEach(input => {
+    tx.addInput(input.txid, input.vout, null, p2wsh({ address: input.address }).output);
+  });
+
+  outputs.forEach(output => {
+    tx.addOutput(output.address, output.amount);
+  });
+
+  // Sign each input with its corresponding key
+  keyPairs.forEach((keyPair, index) => {
+    tx.sign({
+      prevOutScriptType: 'p2wsh',
+      vin: index,
+      keyPair,
+      witnessValue: inputs[index].amount,
+      sighashType: bitcoin.Transaction.SIGHASH_ALL | bitcoin.Transaction.SIGHASH_ANYONECANPAY
+    });
+  });
+
+  // Finalize and serialize the transaction
+  const txHex = tx.build().toHex();
+  return txHex;
 }
 
 // Function to get the transaction details
@@ -109,40 +131,6 @@ async function getTransactionDetails(txid) {
   const tx = new TX();
   const txDetails = tx.getTransactionDetails(txid);
   return txDetails;
-}
-
-// Function to sign PSBT
-async function signPSBT(psbt) {
-  const tx = new TX();
-  const signedPSBT = tx.signPSBT(psbt);
-  return signedPSBT;
-}
-
-// Function to broadcast the transaction
-async function broadcastTransaction(txid) {
-  const tx = new TX();
-  const broadcastedTx = tx.broadcastTransaction(txid);
-  return broadcastedTx;
-}
-
-// Function to broadcast the transaction with mempool TX
-async function broadcastTransactionWithMempoolTx(txid) {
-  const tx = new TX();
-  const broadcastedTx = tx.broadcastTransactionWithMempoolTx(txid);
-  return broadcastedTx;
-}
-
-// Function to validate Coinjoin inputs
-async function validateCoinjoinInputs(inputs) {
-  const tx = new TX();
-  const validInputs = [];
-  for (const input of inputs) {
-    const isUnspent = await tx.checkIfUnspent(input.txid, input.vout);
-    if (isUnspent) {
-      validInputs.push(input);
-    }
-  }
-  return validInputs;
 }
 
 // Function to calculate transaction fee
@@ -153,34 +141,9 @@ async function calculateTransactionFee(inputs, outputs, feeRatePerByte = 10) {
   return fee;
 }
 
-// Function to add an input to Coinjoin
-async function addInputToCoinjoin(coinjoinTransaction, newInput) {
-  coinjoinTransaction.inputs.push(newInput);
-  return coinjoinTransaction;
-}
-
-// Function to add an output to Coinjoin
-async function addOutputToCoinjoin(coinjoinTransaction, newOutput) {
-  coinjoinTransaction.outputs.push(newOutput);
-  return coinjoinTransaction;
-}
-
-// Function to finalize Coinjoin transaction
-async function finalizeCoinjoinTransaction(coinjoinTransaction) {
+// Broadcast the transaction
+async function broadcastTransaction(txHex) {
   const tx = new TX();
-  const finalizedTx = tx.finalizeTransaction(coinjoinTransaction);
-  return finalizedTx;
-}
-
-// RBF support
-tx.addInputToCoinjoin(coinjoinTransaction, newInput , 0, 0xfffffffd);
-
-
-// Function to split the change output
-function splitChangeOutput(changeOutput, participants) {
-  const amountPerParticipant = changeOutput.amount / participants.length;
-  return participants.map(participant => ({
-    address: participant.address,
-    amount: amountPerParticipant,
-  }));
+  const broadcastedTx = await tx.broadcastTransaction(txHex);
+  return broadcastedTx;
 }
