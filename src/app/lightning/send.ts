@@ -1,4 +1,4 @@
-import { Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendOnchainRequest, SendPaymentRequest, SendOnchainResponse, sendPayment, sendSpontaneousPayment } from '@breeztech/react-native-breez-sdk';
+import { Payment, BackupStatus, BitcoinAddressData, CheckMessageRequest, ClosedChannelPaymentDetails, CheckMessageResponse, SendOnchainRequest, SendPaymentRequest, SendOnchainResponse, sendPayment, sendSpontaneousPayment , FeeratePreset } from '@breeztech/react-native-breez-sdk';
 export interface SendState {
   payment: Payment | null;
   backupStatus: BackupStatus | null;
@@ -22,26 +22,25 @@ export const initialState: SendState = {
   sendPaymentRequest: null,
   sendOnchainResponse: null,
 };
-const bolt11: string = ''  
-const optionalAmountMsat = 3000000
-  const optionalLabel = '<label>'
-  const sendPayment = ({
-    bolt11,
-    amountMsat: optionalAmountMsat,
-    label: optionalLabel
-})
+const FeeratePreset = 10;
 
-const amountSat = currentLimits.minSat
-const satPerVbyte = 10
-
-const prepareResponse = await prepareOnchainPayment({
-  amountSat,
-  amountType: SwapAmountType.SEND,
-  claimTxFeerate: satPerVbyte
-})
-
-
-const swaps = await inProgressOnchainPayments()
-for (const swap of swaps) {
-  console.log(
-    `Onchain payment ${swap.id} in progress, status is ${swap.status}`
+export const sendReducer = (state = initialState, action: any) => {
+  switch (action.type) {
+    case 'SET_PAYMENT':
+      return { ...state, payment: action.payload };
+    case 'SET_BACKUP_STATUS':
+      return { ...state, backupStatus: action.payload };
+    case 'SET_BITCOIN_ADDRESS_DATA':
+      return { ...state, bitcoinAddressData: action.payload };
+    case 'SET_CHECK_MESSAGE_REQUEST':
+      return { ...state, checkMessageRequest: action.payload };
+    case 'SET_CLOSED_CHANNEL_PAYMENT_DETAILS':
+      return { ...state, closedChannelPaymentDetails: action.payload };
+    case 'SET_CHECK_MESSAGE_RESPONSE':
+      return { ...state, checkMessageResponse: action.payload };
+    case 'SET_SEND_ONCHAIN_REQUEST':
+      return { ...state, sendOnchainRequest: action.payload };
+    case 'SET_SEND_PAYMENT_REQUEST':
+      return { ...state, sendPaymentRequest: action.payload };
+    case 'SET_SEND_ONCHAIN_RESPONSE':
+      return { ...state, sendOnchainResponse: action.payload
