@@ -2,9 +2,6 @@ const { randomBytes } = require('crypto');
 const bip39 = require('bip39');
 const bip32 = require('bip32');
 
-// Network
-const networks = bitcoin.networks.signet;
-
 // Function to generate a mnemonic and derive keys
 function generateKeys(accountIndex) {
     // Generate a random mnemonic
