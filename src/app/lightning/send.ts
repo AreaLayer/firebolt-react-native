@@ -22,7 +22,6 @@ export const initialState: SendState = {
   sendPaymentRequest: null,
   sendOnchainResponse: null,
 };
-const FeeratePreset = 10;
 
 export const sendReducer = (state = initialState, action: any) => {
   switch (action.type) {
