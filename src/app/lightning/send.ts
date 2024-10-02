@@ -42,4 +42,7 @@ export const sendReducer = (state = initialState, action: any) => {
     case 'SET_SEND_PAYMENT_REQUEST':
       return { ...state, sendPaymentRequest: action.payload };
     case 'SET_SEND_ONCHAIN_RESPONSE':
-      return { ...state, sendOnchainResponse: action.payload
+      return { ...state, sendOnchainResponse: action.payload };
+
+  }
+}
