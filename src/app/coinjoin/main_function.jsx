@@ -1,7 +1,7 @@
 const { TX } = require('@mempool/mempool.js');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { groth16 } = require('snarkjs');
-const { p2wsh } = require('bitcoinjs-lib/src/payments');
+const { Coinjoin, CoinjoinTransaction, createCoinjoinTransaction, finalizeCoinjoinTransaction} =  require('main_function.jsx');
 const bitcoin = bitcoin.networks.signet;
 
 let converter = new BitcoinConverter();
