@@ -1,4 +1,5 @@
 import * as bitcoin from "bitcoinjs-lib";
+import { TX  } from "bitcoinjs-lib";
 interface UTXO {
     txid: string;
     index: number;
