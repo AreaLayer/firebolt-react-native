@@ -1,4 +1,4 @@
-import { RefundableSwap } from "@breeztech/react-native-breez-sdk-liquid";
+import { RefundableSwap, SwapLiquid } from "@breeztech/react-native-breez-sdk-liquid";
 
 export interface SwapLiquid {
     swapLiquid: RefundableSwap;
@@ -15,6 +15,6 @@ swapLiquid.init({
     networkName: "Liquid",
 });
 
-swapLiquid.on("error", (error) => {
+swapLiquid.on("error", (error: any) => {
     console.log("Error: ", error);
 });

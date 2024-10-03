@@ -1,9 +1,7 @@
 import { SwapAmountType } from "@breeztech/react-native-breez-sdk";
-import { SwapStatus } from "@breeztech/react-native-breez-sdk";
 import { redeemSwap } from "@breeztech/react-native-breez-sdk";
 import { rescanSwaps} from "@breeztech/react-native-breez-sdk";
 import { ReverseSwapFeesRequest } from "@breeztech/react-native-breez-sdk";
-import { useEffect, useState } from "react";
 
 const swapBitcoin = new SwapBitcoin();
 
