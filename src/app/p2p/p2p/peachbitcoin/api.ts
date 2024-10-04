@@ -38,17 +38,3 @@ interface Order {
   
   createOrder(order);
   const apiKey = 'your-api-key-here';
-
-  async function getSecureData() {
-    try {
-      const response = await axios.get(`${baseURL}/secure-endpoint`, {
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-        },
-      });
-      console.log(response.data);
-    } catch (error) {
-      console.error('Error fetching secure data:', error);
-    }
-  }
-    
