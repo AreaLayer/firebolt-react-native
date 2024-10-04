@@ -1,29 +1,31 @@
 import * as bitcoin from "bitcoinjs-lib";
-import { TX  } from "bitcoinjs-lib";
+
 interface UTXO {
     txid: string;
     index: number;
     amount: number;
-    txout: bitcoin.TxOut;
+    txout: bitcoin.TxOutput;
     address: bitcoin.Address;
 }
 
 interface Wallet {
     utxos: UTXO[];
-    privateKeys: Map<string, bitcoin.ECPair.ECPairInterface>;
-      }
-      function createWallet(): Wallet {
+    privateKeys: Map<string, bitcoin.ECPairInterface>;
+}
+
+function createWallet(): Wallet {
     return {
         utxos: [],
         privateKeys: new Map(),
     };
 }
-function addUTXO(wallet: Wallet, txid: string, index: number, txout: bitcoin.TxOut, address: bitcoin.Address) {
-    wallet.utxos.({ txid, index, txout, address });
+
+function addUTXO(wallet: Wallet, txid: string, index: number, txout: bitcoin.TxOutput, address: bitcoin.Address) {
+    wallet.utxos.push({ txid, index, txout, address });
 }
 
 function removeUTXO(wallet: Wallet, txid: string) {
-    wallet.utxos = wallet.utxos(utxo => utxo.txid !== txid);
+    wallet.utxos = wallet.utxos.filter(utxo => utxo.txid !== txid);
 }
 
 function selectUTXOs(wallet: Wallet, amount: number): UTXO[] {
@@ -57,25 +59,24 @@ function createTransaction(selectedUTXOs: UTXO[], outputs: { address: bitcoin.Ad
 }
 
 function signTransaction(wallet: Wallet, transaction: bitcoin.Transaction, selectedUTXOs: UTXO[]) {
-    for (let i = 0; i < selectedUTXOs. i++) {
+    for (let i = 0; i < selectedUTXOs.length; i++) {
         const utxo = selectedUTXOs[i];
-        const key = wallet.privateKeys[utxo.address.toString()];
-        transaction.sign(i, key);
+        const key = wallet.privateKeys.get(utxo.address.toString());
+        if (key) {
+            transaction.sign(i, key);
+        }
     }
 }
 
 // Example usage
-const wallet: Wallet = {
-    utxos: [],
-    privateKeys: {}
-};
+const wallet: Wallet = createWallet();
 
 // Add UTXOs to the wallet
 // addUTXO(wallet, ...);
 
 // Specify the amount and recipient address
 const amount = 10000000; // satoshis
-const recipientAddress = 'recipient_address';
+const recipientAddress = "recipient_address"; // should be a valid bitcoin.Address
 
 // Select UTXOs for the transaction
 const selectedUTXOs = selectUTXOs(wallet, amount);
