@@ -1,6 +1,5 @@
-import React, { useEffect } from'react';
+import React from'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { FeesMempoolBlocks } from '@mempool/mempool.js/lib/interfaces/bitcoin/fees';
 
 const App = () => {
     return (
