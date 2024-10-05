@@ -1,6 +1,8 @@
+# Run Firebolt React Native App
 
+Steps to run the application on your device as developer
 
-# Getting Started
+## Getting Started with React Native
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
