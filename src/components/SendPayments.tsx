@@ -23,44 +23,37 @@ const SendPayment: React.FC = () => {
   };
 
   return (
-    <div className="send-payment">
+    <><div className="send-payment">
       <h2>Send Payment</h2>
       <input
         type="text"
         placeholder="Recipient Address"
         value={address}
-        onChange={e => setAddress(e.target.value)}
-      />
+        onChange={e => setAddress(e.target.value)} />
       <input
         type="number"
         placeholder="Amount (sats)"
         value={amount}
-        onChange={e => setAmount(parseInt(e.target.value))}
-      />
+        onChange={e => setAmount(parseInt(e.target.value))} />
       <div>
         <input
           type="checkbox"
           checked={useLightning}
-          onChange={e => setUseLightning(e.target.checked)}
-        />
+          onChange={e => setUseLightning(e.target.checked)} />
         <label>Use Lightning Network</label>
       </div>
       <div>
         <input
           type="checkbox"
           checked={useCoinjoin}
-          onChange={e => setUseCoinjoin(e.target.checked)}
-        />
+          onChange={e => setUseCoinjoin(e.target.checked)} />
         <label>Enable Coinjoin (On-chain only)</label>
       </div>
       <button onClick={handleSendPayment}>Send</button>
-    </div>
-    <label>Use Silent Payments</label>
-    <input
-    type="checkbox"
-    checked={useSilenPayments}
-    onChange={e => setUseSilentPayments(e.target.checked)}
-    />
+    </div><label>Use Silent Payments</label><input
+        type="checkbox"
+        checked={useSilenPayments}
+        onChange={e => setUseSilentPayments(e.target.checked)} /></>
   );
 };
 
