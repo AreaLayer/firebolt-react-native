@@ -7,6 +7,7 @@ buildscript {
         ndkVersion "27.0.12077973"
         kotlinVersion = "2.0.20"
         breez_sdk = "0.5.2"
+        bitcoin = 
 
 
 
