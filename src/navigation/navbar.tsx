@@ -29,8 +29,9 @@ const Navbar: React.FC = () => {
       <NavLinks>
         <NavLink href="#">Wallet</NavLink>
         <NavLink href="#">Payment</NavLink>
-        <NavLink href="#">Receive</NavLink>
-        <NavLink href="#">Maker</NavLink>
+        <NavLink href="#">ReceivePayment</NavLink>
+        <NavLink href="#">SendPayment</NavLink>
+        <NavLink href="#">Settings</NavLink>
         <NavLink href="#">Create Wallet</NavLink>
         <NavLink href="#">About</NavLink>
       </NavLinks>
