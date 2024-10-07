@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Invoice } from '../app/lightning/invoice';
 import axios from 'axios';
 
 const ReceivePayment: React.FC = () => {
@@ -8,6 +9,7 @@ const ReceivePayment: React.FC = () => {
   const handleGenerateInvoice = async () => {
     try {
       const response = await axios.post('/api/generate-invoice', { amount });
+      const invoice = response.data.invoice;
       setInvoice(response.data.invoice);
     } catch (error) {
       console.error(error);
