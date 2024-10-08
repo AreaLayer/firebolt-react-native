@@ -138,7 +138,7 @@ Soon
 
 ## ZK Proof Library Rust
 
-In 2025 we will release a library for ZK Proofs
+In 2025 we will release a library for ZK Proofs Coinjoin transactions
 
 ## Contributors
 
