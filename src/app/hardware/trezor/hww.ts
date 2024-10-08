@@ -1,8 +1,14 @@
-import TrezorConnect from '@trezor/connect';
-import { GetAddress } from '@trezor/connect/lib/types/api/getAddress';
+import { GetAddress } from "@trezor/connect";
 
-export const GetAdress = {
+export interface GetAddress {
   path: string;
+  showonTrezor: boolean;
+  chunkify: boolean;
+  useEventListener: boolean;
   address: string;
-
 }
+
+export interface Hww {
+  getAddress(params: GetAddress): Promise<any>;
+}
+
