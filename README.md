@@ -111,10 +111,10 @@ The other main features Firebolt supports are as follows:
 -  [x] RBF
 -  [x] Submarine Swap (WIP)
 -  [x] F-Droid
+-  [X] NWC (NDK)
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Point of Sale (PoS)
--  [ ] NWC (NDK)
 -  [ ] Zap 
 -  [ ] BOLT12
 -  [ ] Beta App (Android - via APK) in 2025
