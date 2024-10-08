@@ -1,13 +1,8 @@
 import TrezorConnect from '@trezor/connect';
-export class Hww {
-  public static async getAddress(path: string) {
-    return await TrezorConnect.SpendTaproot.getAddress({
-      path: path,
-      showOnTrezor: true,
-    });
-  }
+import { GetAddress } from '@trezor/connect/lib/types/api/getAddress';
+
+export const GetAdress = {
+  path: string;
+  address: string;
+
 }
-
-export const getAddress = Hww.getAddress;
-
-export default Hww;
