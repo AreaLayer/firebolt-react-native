@@ -46,3 +46,8 @@ export const reverseSwapFees = async (
   const reverseSwapFeesResponse = await reverseSwapFees(request);
   return reverseSwapFeesResponse;
 };
+
+export const getSwapStatus = async (swapId: string) => {
+  const swapStatus = await getSwapStatus(swapId);
+  return swapStatus;
+};
