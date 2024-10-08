@@ -110,6 +110,7 @@ The other main features Firebolt supports are as follows:
 -  [x] PSBT
 -  [x] RBF
 -  [x] Submarine Swap (WIP)
+-  [x] F-Droid
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Point of Sale (PoS)

@@ -1,0 +1,9 @@
+Categories:
+  - Connectivity
+License: MIT
+SourceCode: https://github.com/AreaLayer/firebolt-react-native
+IssueTracker: https://github.com/AreaLayer/firebolt-react-native/issues
+Changelog: https://github.com/AreaLayer/firebolt-react-native/CHANGELOG.md
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: 1.0.0
