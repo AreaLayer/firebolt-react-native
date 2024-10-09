@@ -3,7 +3,7 @@ import { redeemSwap } from "@breeztech/react-native-breez-sdk";
 import { rescanSwaps} from "@breeztech/react-native-breez-sdk";
 import { ReverseSwapFeesRequest } from "@breeztech/react-native-breez-sdk";
 
-const swapBitcoin = new SwapBitcoin();
+const swapBitcoin = new swapBitcoin();
 
 swapBitcoin.init({
     apiKey: "YOUR_API_KEY",
