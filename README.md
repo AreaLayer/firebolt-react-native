@@ -24,7 +24,7 @@ Each individual has their own identity using Nostr
 
 ### The problem
 
-Central Banks and centralized social media
+Central Banks, centralized social media and KYC platforms
 
 ### Firebolt's solution
 
