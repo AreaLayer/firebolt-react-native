@@ -2759,6 +2759,11 @@
     prompts "^2.4.2"
     semver "^7.5.2"
 
+"@react-native-picker/picker@2.8.1":
+  version "2.8.1"
+  resolved "https://registry.npmjs.org/@react-native-picker/picker/-/picker-2.8.1.tgz"
+  integrity sha512-iFhsKQzRh/z3GlmvJWSjJJ4333FdLE/PhXxlGlYllE7sFf+UTzziVY+ajatuJ+R5zDw2AxfJV4v/3tAzUJb0/A==
+
 "@react-native/assets-registry@0.75.4":
   version "0.75.4"
   resolved "https://registry.npmjs.org/@react-native/assets-registry/-/assets-registry-0.75.4.tgz"
