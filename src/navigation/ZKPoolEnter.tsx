@@ -1,7 +1,5 @@
-// ZKPoolEnter.tsx
-
 import React, { useState } from 'react';
-import { Box, Button, Input, Heading, Text} from '@gluestack-ui/themed';
+import { Box, Button, Input, Heading, Text } from '@gluestack-ui/themed';
 import { useNavigation } from '@react-navigation/native';
 
 function ZKPoolEnter() {
@@ -10,18 +8,25 @@ function ZKPoolEnter() {
   const navigation = useNavigation();
 
   const onEnterPool = async () => {
+    // Validate the input amount
+    const parsedAmount = parseFloat(amount);
+    if (isNaN(parsedAmount) || parsedAmount <= 0) {
+      alert('Please enter a valid positive Bitcoin amount.');
+      return;
+    }
+
     setLoading(true);
 
     try {
-      // Example function for creating ZK Proof of deposit
-      const zkProof = await createZKDepositProof(parseFloat(amount));
+      // Generate the ZK proof for the entered amount
+      const zkProof = await createZKDepositProof(parsedAmount);
 
-      // Broadcast or submit the transaction (depends on your integration logic)
+      // Broadcast or submit the transaction (depending on your integration logic)
       await broadcastZKPoolEntry(zkProof);
 
-      // Navigate to success screen or provide feedback
+      // Show success message and navigate (e.g., to a success screen)
       alert('ZK Pool Entry Successful!');
-      navigation.goBack();
+      navigation.goBack(); // Replace with a success screen navigation if needed
     } catch (error) {
       console.error('Error entering ZK pool:', error);
       alert('Failed to enter the ZK Pool.');
@@ -54,15 +59,14 @@ function ZKPoolEnter() {
 }
 
 async function createZKDepositProof(amount: number) {
-  // Here you would integrate with your ZK proof generation logic.
-  // This is a mock function to simulate generating a ZK deposit proof.
+  // Replace this mock function with your ZK proof generation logic
   return new Promise((resolve) => {
     setTimeout(() => resolve(`zk-proof-for-${amount}-btc`), 2000);
   });
 }
 
 async function broadcastZKPoolEntry(zkProof: string) {
-  // Here you would broadcast or submit the ZK proof and transaction to your pool
+  // Replace this mock function with your actual broadcasting logic
   console.log('Broadcasting ZK Pool Entry with proof:', zkProof);
 }
 

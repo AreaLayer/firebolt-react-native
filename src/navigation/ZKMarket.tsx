@@ -49,18 +49,6 @@ function OnBoardingNavigation() {
             name={SCREEN_NAMES.Dashboard}
             component={Dashboard}
           />
-          
-          {/* ZK Pool Entry and Exit Screens */}
-          <Stack.Screen
-            options={{ headerShown: false }}
-            name={SCREEN_NAMES.ZKPoolEnter}
-            component={ZKPoolEnter}
-          />
-          <Stack.Screen
-            options={{ headerShown: false }}
-            name={SCREEN_NAMES.ZKPoolExit}
-            component={ZKPoolExit}
-          />
         </Stack.Group>
       ) : (
         <Stack.Group>
@@ -90,27 +78,22 @@ function OnBoardingNavigation() {
             name={SCREEN_NAMES.ConfirmPin}
             component={ConfirmPin}
           />
-          <Stack.Screen
-            options={{ headerShown: false }}
-            name={SCREEN_NAMES.Dashboard}
-            component={Dashboard}
-          />
-
-          {/* ZK Pool Entry and Exit Screens for users without a wallet */}
-          <Stack.Screen
-            options={{ headerShown: false }}
-            name={SCREEN_NAMES.ZKPoolEnter}
-            component={ZKPoolEnter}
-          />
-          <Stack.Screen
-            options={{ headerShown: false }}
-            name={SCREEN_NAMES.ZKPoolExit}
-            component={ZKPoolExit}
-          />
         </Stack.Group>
       )}
+      {/* ZK Pool Entry and Exit Screens, common to both authenticated and unauthenticated users */}
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name={SCREEN_NAMES.ZKPoolEnter}
+        component={ZKPoolEnter}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name={SCREEN_NAMES.ZKPoolExit}
+        component={ZKPoolExit}
+      />
     </Stack.Navigator>
   );
 }
 
 export default OnBoardingNavigation;
+

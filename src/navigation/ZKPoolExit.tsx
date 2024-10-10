@@ -1,8 +1,7 @@
-// ZKPoolEnter.tsx
-
 import React, { useState } from 'react';
 import { Box, Button, Input, Heading, Text } from '@gluestack-ui/themed';
 import { useNavigation } from '@react-navigation/native';
+import { createZKDepositProof, broadcastZKPoolEntry } from '../services/zkPoolService'; // Service functions
 
 function ZKPoolEnter() {
   const [amount, setAmount] = useState('');
@@ -10,21 +9,28 @@ function ZKPoolEnter() {
   const navigation = useNavigation();
 
   const onEnterPool = async () => {
+    // Validate the amount before proceeding
+    const parsedAmount = parseFloat(amount);
+    if (isNaN(parsedAmount) || parsedAmount <= 0) {
+      alert('Please enter a valid amount greater than zero.');
+      return;
+    }
+
     setLoading(true);
 
     try {
-      // Example function for creating ZK Proof of deposit
-      const zkProof = await createZKDepositProof(parseFloat(amount));
+      // Generate ZK Proof of deposit
+      const zkProof = await createZKDepositProof(parsedAmount);
 
-      // Broadcast or submit the transaction (depends on your integration logic)
+      // Broadcast the transaction
       await broadcastZKPoolEntry(zkProof);
 
-      // Navigate to success screen or provide feedback
+      // Show success feedback and navigate back or to a success screen
       alert('ZK Pool Entry Successful!');
-      navigation.goBack();
+      navigation.goBack(); // Change this to navigate to a specific success screen if needed
     } catch (error) {
       console.error('Error entering ZK pool:', error);
-      alert('Failed to enter the ZK Pool.');
+      alert('Failed to enter the ZK Pool. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -51,19 +57,6 @@ function ZKPoolEnter() {
       </Button>
     </Box>
   );
-}
-
-async function createZKDepositProof(amount: number) {
-  // Here you would integrate with your ZK proof generation logic.
-  // This is a mock function to simulate generating a ZK deposit proof.
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(`zk-proof-for-${amount}-btc`), 2000);
-  });
-}
-
-async function broadcastZKPoolEntry(zkProof: string) {
-  // Here you would broadcast or submit the ZK proof and transaction to your pool
-  console.log('Broadcasting ZK Pool Entry with proof:', zkProof);
 }
 
 export default ZKPoolEnter;
