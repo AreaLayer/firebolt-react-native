@@ -32,11 +32,11 @@ const Swap = () => {
       />
       <select value={fromCurrency} onChange={e => setFromCurrency(e.target.value)}>
         <option value="BTC">BTC</option>
+        <option value="L-BTC">L-BTC</option>
       </select>
       <select value={toCurrency} onChange={e => setToCurrency(e.target.value)}>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="GBP">GBP</option>
+        <option value="BTC">BTC</option>
+        <option value="L-BTC">L-BTC</option>
       </select>
       <button onClick={handleSwap}>Swap</button>
       {rate && <p>Rate: {rate}</p>}
