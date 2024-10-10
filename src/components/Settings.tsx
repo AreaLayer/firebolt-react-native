@@ -13,7 +13,7 @@ const Settings: React.FC = () => (
       <button>Configure Tor</button>
       <button>Configure Lightning Network Node</button>
       <button>Configure Coinjoin</button>
-      <button>Manage UTXOs</button></>
+      <button>Manage UTXOs</button> {/* Removed extra closing tag */}
     </div>
     <div>
       <h3>Security Settings</h3>

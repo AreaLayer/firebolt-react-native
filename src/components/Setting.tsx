@@ -1,9 +1,10 @@
 import { IUser } from './user.interface';
-
-export interface 
-IUserModel extends IUser, Document {
-}
 import React from 'react';
+import { Document } from 'mongoose'; // Import Document if you are using mongoose
+
+export interface IUserModel extends IUser, Document {
+  // Add any additional properties if needed
+}
 
 const Settings: React.FC = () => (
   <div className="settings">
@@ -13,7 +14,7 @@ const Settings: React.FC = () => (
       <button>Configure Lightning Network Node</button>
       <button>Configure Coinjoin</button>
       <button>Nostr Backup</button>
-      <buton>Add Relay</buton>
+      <button>Add Relay</button> {/* Fixed typo here */}
     </div>
     <div>
       <h3>Security Settings</h3>
@@ -24,3 +25,4 @@ const Settings: React.FC = () => (
 );
 
 export default Settings;
+
