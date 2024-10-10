@@ -23,6 +23,9 @@ const Main: React.FC = () => {
     <MainContainer>
       <h1>wallet.jmdat</h1>
       <div>Total Balance: ********** BTC</div>
+      <div>Total Balance ****** L-BTC</div>
+      <Button>Send</Button>
+      <Button>Receive</Button>
       <Button>Maker Service</Button>
       <AccountCard accountName="Account 0" balance="**********" />
       <AccountCard accountName="Account 1" balance="**********" />
