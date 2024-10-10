@@ -49,6 +49,7 @@
     "silent-payments": "github:BlueWallet/SilentPayments",
     "snarkjs": "^0.7.4",
     "stream-browserify": "^3.0.0",
+    "styled-components": "^6.1.13",
     "vm-browserify": "^1.0.0"
   },
   "devDependencies": {
