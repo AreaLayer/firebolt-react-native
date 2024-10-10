@@ -1,5 +1,4 @@
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from 'react';
-import useState  from 'react-native';
+import React, { useState } from 'react'; // Correct import of useState
 
 const P2PApps = () => {
     const [appName, setAppName] = useState('');
@@ -22,9 +21,9 @@ const P2PApps = () => {
         <div>
             <h1>Buy your Bitcoin with P2P apps</h1>
             <ul>
-                {appList.map((app: { link: string | undefined; name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }, index: Key | null | undefined) => (
+                {appList.map((app, index) => ( // Simplified typing
                     <li key={index}>
-                        <a href={app.link} target="_blank">{app.name}</a>
+                        <a href={app.link} target="_blank" rel="noopener noreferrer">{app.name}</a>
                     </li>
                 ))}
             </ul>
@@ -34,7 +33,7 @@ const P2PApps = () => {
                 type="text"
                 id="appName"
                 value={appName}
-                onChange={(e) => setAppName(e.target.addEventListener)}
+                onChange={(e) => setAppName(e.target.value)} // Fixed to use e.target.value
                 required
             />
             <label htmlFor="appLink">Application Link:</label>
@@ -42,7 +41,7 @@ const P2PApps = () => {
                 type="url"
                 id="appLink"
                 value={appLink}
-                onChange={(e) => setAppLink(e.target.addEventListener)}
+                onChange={(e) => setAppLink(e.target.value)} // Fixed to use e.target.value
                 required
             />
             <button type="button" onClick={handleAddApp}>Add</button>
