@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Picker, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Alert, Button, StyleSheet } from 'react-native'; // Added Alert import
+import axios from 'axios'; // Added axios import
+import { Picker } from '@react-native-picker/picker'; // Ensure you have this package installed
 
 const ConversionTool: React.FC = () => {
   const [amount, setAmount] = useState('');
@@ -7,6 +9,11 @@ const ConversionTool: React.FC = () => {
   const [result, setResult] = useState('');
 
   const handleConvert = async () => {
+    if (!amount) {
+      Alert.alert('Input Error', 'Please enter a valid amount.');
+      return;
+    }
+
     try {
       const response = await axios.get('https://api.coingecko.com/api/v3/simple/price', {
         params: {
@@ -44,10 +51,15 @@ const ConversionTool: React.FC = () => {
         <Picker.Item label="CNY" value="cny" />
       </Picker>
       <Button title="Convert" onPress={handleConvert} />
-      <Text style={styles.result}>Equivalent Value: {result} {currency.toUpperCase()}</Text>
+      {result && (
+        <Text style={styles.result}>
+          Equivalent Value: {result} {currency.toUpperCase()}
+        </Text>
+      )}
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
