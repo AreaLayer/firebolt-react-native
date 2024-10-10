@@ -1,5 +1,12 @@
-import React from'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack'; // Import Stack Navigator
+import Fees from './path/to/Fees'; // Adjust paths as necessary
+import MinerFees from './path/to/MinerFees'; // Adjust paths as necessary
+import FeesMempoolBlocks from './path/to/FeesMempoolBlocks'; // Adjust paths as necessary
+import Home from './path/to/Home'; // Adjust paths as necessary
+
+const Stack = createStackNavigator(); // Create Stack Navigator
 
 const App = () => {
     return (
@@ -8,8 +15,10 @@ const App = () => {
                 <Stack.Screen name="Fees" component={Fees} />
                 <Stack.Screen name="Miner Fees" component={MinerFees} />
                 <Stack.Screen name="Fees Mempool Blocks" component={FeesMempoolBlocks} />
-                <App.Screen name="Home" component={Home} />
+                <Stack.Screen name="Home" component={Home} /> {/* Corrected here */}
             </Stack.Navigator>
         </NavigationContainer>
     );
 };
+
+export default App;
