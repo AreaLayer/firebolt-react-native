@@ -54,8 +54,8 @@
     "vm-browserify": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.7",
-    "@babel/preset-env": "^7.25.7",
+    "@babel/core": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
     "@babel/runtime": "^7.25.7",
     "@react-native/babel-preset": "0.75.4",
     "@react-native/eslint-config": "0.75.4",
