@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Bitcoin , Liquid } from '/.swap';
 import axios from 'axios';
 
 const Swap = () => {
@@ -20,7 +19,6 @@ const Swap = () => {
       setError('An error occurred while processing your request.');
     }
   };
-
   return (
     <div className="swap">
       <h2>Swap</h2>
@@ -33,13 +31,17 @@ const Swap = () => {
       <select value={fromCurrency} onChange={e => setFromCurrency(e.target.value)}>
         <option value="BTC">BTC</option>
         <option value="L-BTC">L-BTC</option>
+        <option value="BTC ⚡">BTC ⚡</option>
       </select>
       <select value={toCurrency} onChange={e => setToCurrency(e.target.value)}>
         <option value="BTC">BTC</option>
         <option value="L-BTC">L-BTC</option>
+        <option value="BTC ⚡">BTC ⚡</option>
       </select>
       <button onClick={handleSwap}>Swap</button>
       {rate && <p>Rate: {rate}</p>}
       {transactionId && <p>Transaction ID: {transactionId}</p>}
-      {error && <p>{error}</p
-      /div>
+      {error && <p>{error}</p>}
+    </div>
+  );
+}
