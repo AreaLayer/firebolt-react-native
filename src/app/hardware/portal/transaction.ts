@@ -1,6 +1,6 @@
-import { Transaction } from './Transaction';
+import { ITransaction } from '.ITransaction';
 
-export class Transaction implements Transaction {
+export class ITransaction implements ITransaction {
     id: number;
     name: string;
     description: string;
