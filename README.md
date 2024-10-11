@@ -112,6 +112,7 @@ The other main features Firebolt supports are as follows:
 -  [x] Submarine Swap (WIP)
 -  [x] F-Droid
 -  [X] NWC (NDK)
+-  [x] Portal support (NFC)
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Point of Sale (PoS)
@@ -120,7 +121,6 @@ The other main features Firebolt supports are as follows:
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Payjoin (React Native) 
 -  [ ] Ledger and Trezor
--  [ ] Portal support (NFC)
 
 ## Donations
 

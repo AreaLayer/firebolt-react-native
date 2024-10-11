@@ -1,4 +1,4 @@
-import { multiply, NFC } from 'libportal-react-native';
+import { multiply, NFC, Poll, Network, GetStatus, Bitcoin as BitcoinType, Signet as SignetType } from 'libportal-react-native';
 
 export class Hww {
   static multiply(a: number, b: number): Promise<number> {
@@ -6,24 +6,52 @@ export class Hww {
   }
 }
 
-export default Hww;
+export const poll = {
+  poll: Poll,
+  nfc: NFC,
+};
 
+export const newTag = {
+  poll: Poll,
+  nfc: NFC,
+};
 
-export class NFC {
-  static getNFC(): Promise<string> {
-    return NFC.getNFC();
-  }
-}
+export const IncomingData = {
+  poll: Poll,
+  nfc: NFC,
+};
 
-export class network {
-  static getNetwork(): Promise<string> {
-    return network.getNetwork();
-  }
-}
+export const GetStatus = {
+  getStatus: GetStatus, // Changed to avoid confusion
+  nfc: NFC,
+};
 
-export default NFC;
+export const NetworkConfig = {
+  Bitcoin: BitcoinType, // Renamed to avoid conflict with imported Bitcoin
+  Signet: SignetType,   // Renamed to avoid conflict with imported Signet
+};
 
+export const GenerateMnemonic = {
+  poll: Poll,
+  nfc: NFC,
+};
 
-const NFC = new NFC();
+export const Unlock = {
+  poll: Poll,
+  nfc: NFC,
+};
 
+export const DisplayAddress = {
+  poll: Poll,
+  nfc: NFC,
+};
 
+export const signPSBT = {
+  poll: Poll,
+  nfc: NFC,
+};
+
+export const PublicDescriptor = {
+  poll: Poll,
+  nfc: NFC,
+};
