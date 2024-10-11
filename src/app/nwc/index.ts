@@ -11,7 +11,7 @@ class Nwc {
   async getNwc(nwc: string): Promise<NDKNwcResponse> {
     try {
       // Assuming `nwc` is a method from `NDKNwc`, ensure this method exists
-      const response = await this.ndk.nwc(nwc); 
+      const response = await this.getNwc(nwc); 
       return response;
     } catch (error) {
       console.error("Error fetching NWC data:", error);
