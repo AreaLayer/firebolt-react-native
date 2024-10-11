@@ -48,7 +48,7 @@
     "react-native-svg": "15.7.1",
     "readable-stream": "^4.5.2",
     "silent-payments": "github:BlueWallet/SilentPayments",
-    "libportal-react-native": "github:BlueWallet/libportal-react-native#7a28253a10812fdad5dfda03ff34ef3b7f0dbca4",
+    "libportal-react-native": "github:BlueWallet/libportal-react-native#d9d85921793bd190c5224a94d7a89134f91cdd1e",
     "snarkjs": "^0.7.4",
     "stream-browserify": "^3.0.0",
     "styled-components": "^6.1.13",
