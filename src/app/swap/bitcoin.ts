@@ -1,53 +1,49 @@
-import { SwapAmountType } from "@breeztech/react-native-breez-sdk";
-import { redeemSwap } from "@breeztech/react-native-breez-sdk";
-import { rescanSwaps} from "@breeztech/react-native-breez-sdk";
-import { ReverseSwapFeesRequest } from "@breeztech/react-native-breez-sdk";
+import {
+  SwapAmountType,
+  redeemSwap,
+  rescanSwaps,
+  ReverseSwapFeesRequest,
+  getSwapStatus,
+  reverseSwapFees
+} from "@breeztech/react-native-breez-sdk";
 
-const swapBitcoin = new swapBitcoin();
+const breezSdk = new BreezSdk();
 
-swapBitcoin.init({
-    apiKey: "YOUR_API_KEY",
-    apiSecret: "YOUR_API_SECRET",
-    apiUrl: "https://api.breez.technology/v1",
-    websocketUrl: "wss://api.breez.technology/v1",
-    network: "bitcoin",
-    networkType: "bitcoin",
-    networkName: "Bitcoin",
+breezSdk.init({
+  apiKey: "YOUR_API_KEY",
+  apiUrl: "https://api.breez.technology/v1",
+  websocketUrl: "wss://api.breez.technology/v1",
+  network: "bitcoin",
+  networkType: "bitcoin",
+  networkName: "Bitcoin",
 });
 
-export const redeemSwap = async (swapId: string) => {
+// Redeem a swap
+export const redeemSwapById = async (swapId: string) => {
   const redeemSwapResponse = await redeemSwap(swapId);
   return redeemSwapResponse;
 };
 
-export const SwapAmountType = async (
-  swapAmountType: SwapAmountType
-) => {
-  const swapAmountTypeResponse = await swapAmountType(swapAmountType);
+// Handle Swap Amount Type
+export const handleSwapAmountType = async (swapAmountType: SwapAmountType) => {
+  const swapAmountTypeResponse = await someFunctionHandlingSwapAmountType(swapAmountType);
   return swapAmountTypeResponse;
 };
-export GetSwapStatus = async (swapId: string) => {
+
+// Get the status of a swap
+export const getSwapStatusById = async (swapId: string) => {
   const swapStatus = await getSwapStatus(swapId);
   return swapStatus;
 };
 
-export const getSwap = async (swapId: string) => {
-  const swap = await getSwap(swapId);
-  return swap;
-};
-export const rescanSwaps = async () => {
+// Rescan swaps
+export const rescanAllSwaps = async () => {
   const rescanSwapsResponse = await rescanSwaps();
   return rescanSwapsResponse;
 };
 
-export const reverseSwapFees = async (
-  request: ReverseSwapFeesRequest
-) => {
+// Get reverse swap fees
+export const getReverseSwapFees = async (request: ReverseSwapFeesRequest) => {
   const reverseSwapFeesResponse = await reverseSwapFees(request);
   return reverseSwapFeesResponse;
-};
-
-export const getSwapStatus = async (swapId: string) => {
-  const swapStatus = await getSwapStatus(swapId);
-  return swapStatus;
 };

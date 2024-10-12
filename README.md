@@ -109,7 +109,7 @@ The other main features Firebolt supports are as follows:
 -  [x] XPUB compatible
 -  [x] PSBT
 -  [x] RBF
--  [x] Submarine Swap (WIP)
+-  [x] Submarine Swap
 -  [x] F-Droid
 -  [X] NWC (NDK)
 -  [x] Portal support (NFC)
