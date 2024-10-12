@@ -10,27 +10,28 @@ import { ConnectRequest, connect } from '@breeztech/react-native-breez-sdk-liqui
 
 // SDK events listener
 export const handleBreezEvent = (e: BreezEventType) => {
-  console.log(`Received event ${e.type}`);
+  console.log(`Received event: ${e.type}`);
 }
 
-// Use the handleBreezEvent function
-// For example:
+// Example of how to attach event listener
 // breezSdk.addEventListener(handleBreezEvent);
 
 (async () => {
   try {
-    // Create the default config
-    const seed = await mnemonicToSeed('<mnemonics words>');
+    // Generate seed from mnemonic
+    const seed = await mnemonicToSeed('<mnemonic words>');
     const inviteCode = '<invite code>';
     const apiKey = '<8f8d008e70631589e7f73f451bf79b2b4ad34c1b65e75b8ede87c9653df82a8>';
-    
+
+    // Set up the node configuration
     const nodeConfig: NodeConfig = {
       type: NodeConfigVariant.GREENLIGHT,
       config: {
-        inviteCode
-      }
+        inviteCode,
+      },
     };
 
+    // Get the default configuration
     const config = await defaultConfig(
       EnvironmentType.PRODUCTION,
       apiKey,
@@ -38,23 +39,26 @@ export const handleBreezEvent = (e: BreezEventType) => {
     );
 
     console.log(`Working directory: ${config.workingDir}`);
-    // Optionally set a writable directory if needed
+
+    // Optional: Set a writable directory if needed
     // config.workingDir = "path to writable directory";
 
-    // Connect to the Breez SDK to make it ready for use
+    // Connect to the Breez SDK
     const connectRequest: ConnectRequest = {
       config: {
         ...config,
         liquidElectrumUrl: 'https://elements-testnet.blockstream.info:50002',
         bitcoinElectrumUrl: 'https://bitcoin-testnet.blockstream.info:50002',
         zeroConfMinFeeRateMsat: 1000,
-        mempoolspaceUrl: config.mempoolspaceUrl || '',
+        mempoolspaceUrl: config.mempoolspaceUrl || '', // Ensure default URL if it's missing
       },
-      seed
+      seed,
     };
 
     await connect(connectRequest);
+    console.log('Successfully connected to Breez SDK');
   } catch (err) {
     console.error('Error connecting to Breez SDK:', err);
   }
 })();
+
