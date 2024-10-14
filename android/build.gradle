@@ -4,6 +4,7 @@ buildscript {
         minSdkVersion = 21
         compileSdkVersion = 34
         targetSdkVersion = 34
+        verisonName = "1.0.16-alpha"
         ndkVersion "27.0.12077973"
         kotlinVersion = "2.0.20"
         breez_sdk = "0.5.2"
