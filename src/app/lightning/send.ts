@@ -70,5 +70,3 @@ export const sendReducer = (state = initialState, action: SendAction): SendState
       return state;  // Ensure the state is returned if action type doesn't match any case
   }
 };
-
-}
