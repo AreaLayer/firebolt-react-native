@@ -7,12 +7,12 @@ const PaymentForm: React.FC = () => {
 
     paymentForm.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const emailInput = document.getElementById('email') as HTMLInputElement;
+      const nostrInput = document.getElementById('nostr') as HTMLInputElement;
       const amountInput = document.getElementById('amount') as HTMLInputElement;
 
-      if (!emailInput || !amountInput) return;
+      if (!nostrInput || !amountInput) return;
 
-      const email = emailInput.value;
+      const nostr = nostrInput.value;
       const amount = amountInput.value;
 
       try {
@@ -33,7 +33,7 @@ const PaymentForm: React.FC = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ email, amount, invoice }),
+          body: JSON.stringify({ nostr, amount, invoice }),
         });
 
         const responseData = await paymentResponse.json();
