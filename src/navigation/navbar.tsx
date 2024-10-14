@@ -25,13 +25,16 @@ const NavLink = styled.a`
 const Navbar: React.FC = () => {
   return (
     <NavbarContainer>
-      <div>JoinMarket</div>
+      <div>Home</div>
       <NavLinks>
         <NavLink href="#">Wallet</NavLink>
         <NavLink href="#">Payment</NavLink>
         <NavLink href="#">ReceivePayment</NavLink>
         <NavLink href="#">SendPayment</NavLink>
         <NavLink href="#">Settings</NavLink>
+        <NavLink href="#">Swap</NavLink>
+        <NavLink href="#">Invoice</NavLink>
+        <NavLink href="#">NodeSettings</NavLink>
         <NavLink href="#">Create Wallet</NavLink>
         <NavLink href="#">About</NavLink>
       </NavLinks>
