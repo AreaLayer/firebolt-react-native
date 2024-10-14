@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import OnBoardingHome from '../screens/Onboarding/OnBoardingHome';
 import CreateWallet from '../screens/Onboarding/CreateWallet';
-import { SCREEN_NAMES } from './screenNames';
+import { SCREEN_NAMES } from './screenNames';  // Ensure this import is correct
 import ConfirmSeed from '../screens/Onboarding/ConfirmSeed';
 import PinSetup from '../screens/Onboarding/PinSetup';
 import ConfirmPin from '../screens/Onboarding/ConfirmPin';
@@ -10,8 +10,12 @@ import Dashboard from '../screens/Home/Dashboard';
 import { useConnectionContext } from '../providers/ConnectionProvider';
 import { Splash } from '../components/Splash';
 import VerifyPin from '../screens/Home/VerifyPin';
-import ZKPoolEnter from '../screens/ZKPool/ZKPoolEnter';  // New screen for ZK pool entry
-import ZKPoolExit from '../screens/ZKPool/ZKPoolExit';    // New screen for ZK pool exit
+import Dashboard from '../screens/Home/Dashboard';
+import { useConnectionContext } from '../providers/ConnectionProvider';
+import { Splash } from '../components/Splash';
+import VerifyPin from '../screens/Home/VerifyPin';
+import ZKPoolEnter from '../navigation/ZKPoolEnter';  // New screen for ZK pool entry
+import ZKPoolExit from '../navigation/ZKPoolExit';    // New screen for ZK pool exit
 
 export type RootStackParamList = {
   OnboardingHome: undefined;
@@ -96,4 +100,3 @@ function OnBoardingNavigation() {
 }
 
 export default OnBoardingNavigation;
-
