@@ -1,5 +1,8 @@
-import { PSBT  } from 'payjoin-react-native';
+import { PayJoin } from './payjoin';
+import { PayjoinURL } from 'payjoin-react-native';
 
-export const psbt = new PSBT();
+export default PayJoin;
 
-export default PSBT;
+export { PayjoinURL };
+
+
