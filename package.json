@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@bitcoin-js/tiny-secp256k1-asmjs": "^2.2.3",
-    "@breeztech/react-native-breez-sdk": "^0.6.1",
+    "@breeztech/react-native-breez-sdk": "^0.6.2",
     "@breeztech/react-native-breez-sdk-liquid": "^0.3.4",
     "@gluestack-style/react": "^1.0.45",
     "@gluestack-ui/config": "^1.1.2",
