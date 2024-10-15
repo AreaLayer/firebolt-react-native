@@ -2057,7 +2057,7 @@
   resolved "https://registry.npmjs.org/@legendapp/tools/-/tools-2.0.1.tgz"
   integrity sha512-Kxt0HWvWElRK6oybHRzcYxdgaKGwuaiRNreS7usW7QuHXRIHaH4yMcW2YNRG4DHE5fpefv+Bno/BohQcCE4FaA==
 
-"@mempool/mempool.js@^2.3.0":
+"@mempool/mempool.js@^2.2.4":
   version "2.3.0"
   resolved "https://registry.npmjs.org/@mempool/mempool.js/-/mempool.js-2.3.0.tgz"
   integrity sha512-FrN9WjZCEyyLodrTPQxmlWDh8B/UGK0jlKfVNzJxqzQ1IMPo/Hpdws8xwYEcsks5JqsaxbjLwaC3GAtJ6Brd0A==
