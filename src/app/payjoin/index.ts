@@ -1,7 +1,5 @@
-import { payment } from "../payjoin/receive";
-import { payment } from "../payjoin/send";
-import { index } from "../payjoin/index";
+import { PSBT  } from 'payjoin-react-native';
 
-export const payment {
-    
-};
+export const psbt = new PSBT();
+
+export default PSBT;

@@ -113,7 +113,7 @@ The other main features Firebolt supports are as follows:
 -  [x] F-Droid
 -  [X] NWC (NDK)
 -  [x] Portal support (NFC)
--  [x] Payjoin (React Native) [WIP]
+-  [x] Payjoin (React Native)
 -  [ ] Miniscript
 -  [ ] Library for Wallet
 -  [ ] Point of Sale (PoS)
