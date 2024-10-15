@@ -1,11 +1,9 @@
 import * as bitcoin from 'bitcoinjs-lib';
 import * as bip32 from 'bip32';
 import * as bip39 from 'bip39';
-import ECPairFactory from 'ecpair';
 import * as tinysecp from 'tiny-secp256k1';
 
 // Required for ECPairFactory to work
-const ECPairAPI = ECPairFactory(tinysecp);
 
 // Step 1: Generate a mnemonic and seed
 const mnemonic = bip39.generateMnemonic();
