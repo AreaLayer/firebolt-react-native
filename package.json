@@ -65,6 +65,7 @@
     "@react-native/typescript-config": "0.75.4",
     "@types/react": "^18.3.11",
     "@types/react-test-renderer": "^18.0.0",
+    "payjoin-react-native": "^1.0.0-alpha",
     "babel-jest": "^29.6.3",
     "core-js": "^3.23.3",
     "eslint": "^9.12.0",
