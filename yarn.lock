@@ -9496,10 +9496,10 @@ react-native-crypto@^2.2.0:
     public-encrypt "^4.0.0"
     randomfill "^1.0.3"
 
-react-native-qrcode-svg@^6.3.2:
-  version "6.3.2"
-  resolved "https://registry.npmjs.org/react-native-qrcode-svg/-/react-native-qrcode-svg-6.3.2.tgz"
-  integrity sha512-IJ0UoKd33ATm08K569SOAQx0tP/MTmSjwhIPfEfgbCUGQuU6JTfgDT7sm1TVgAwPbTuA10wwJJYgWXnnFBQ4FQ==
+react-native-qrcode-svg@^6.3.11:
+  version "6.3.11"
+  resolved "https://registry.npmjs.org/react-native-qrcode-svg/-/react-native-qrcode-svg-6.3.11.tgz"
+  integrity sha512-bhjh4KT8NTQjJyu/tGaplR53OIqtvUJcWZ713H++GLKRpldNDyywwLVW+HdlGZ3N7jk3TxCchQMDMzndLlV4sA==
   dependencies:
     prop-types "^15.8.0"
     qrcode "^1.5.1"
