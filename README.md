@@ -52,7 +52,7 @@ The other main features Firebolt supports are as follows:
 
 - Bitcoin
 
-- LSP
+- LSP (Breez List)
 
 - Coinjoin powered by ZK proof, Coinswap, Taproot and more
 
