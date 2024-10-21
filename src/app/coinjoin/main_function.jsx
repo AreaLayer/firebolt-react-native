@@ -13,13 +13,14 @@ let btcAmount = converter.satoshisToBtc(100000);
 console.log(btcAmount); // 0.001
 
 class Coinjoin {
-  constructor(txid, vout, amount, address) {
+  constructor(txid, vout, amount, address, isEntering) {
     this.txid = txid;
     this.vout = vout;
     this.amount = amount;
     this.address = address;
     this.proof = null;
     this.payments = null;
+    this.isEntering = isEntering; // Boolean flag to indicate whether the user is entering or exiting
   }
 }
 
@@ -108,31 +109,45 @@ async function handleRBF(coinjoinTransaction, newInput) {
   return finalizedTx;
 }
 
-// Finalize the Coinjoin transaction
+// Function to finalize the Coinjoin transaction
 async function finalizeCoinjoinTransaction(coinjoinTransaction) {
   const tx = new TX();
   const finalizedTx = tx.finalizeTransaction(coinjoinTransaction);
   return finalizedTx;
 }
 
-// Other supporting functions like Multisig, P2P, PSBT signing, etc., remain unchanged...
+// Handle entering the Coinjoin pool
+async function enterPool(inputs, outputs) {
+  // The user is entering the pool, their inputs become part of the Coinjoin
+  const enteredInputs = inputs.map(input => new Coinjoin(input.txid, input.vout, input.amount, input.address, true));
+  const txid = await createCoinjoinTransaction(enteredInputs, outputs);
+  return txid;
+}
+
+// Handle exiting the Coinjoin pool
+async function exitPool(inputs, outputs) {
+  // The user is exiting the pool, their outputs are returned after ZK proof
+  const exitedOutputs = outputs.map(output => new CoinjoinTransaction(output.txid, output.vout, output.amount, output.address));
+  const txid = await createCoinjoinTransaction(inputs, exitedOutputs);
+  return txid;
+}
 
 // Example usage
 (async () => {
   try {
-    // Create inputs and outputs for the Coinjoin
-    const inputs = [new Coinjoin('txid1', 0, 100000, 'address1')];
-    const outputs = [{ address: 'address2', amount: 50000 }, { address: 'address3', amount: 50000 }];
-
-    const coinjoinTxid = await createCoinjoinTransaction(inputs, outputs);
+    // User entering the pool
+    const enteringInputs = [new Coinjoin('txid1', 0, 100000, 'address1', true)];
+    const poolOutputs = [{ address: 'address2', amount: 50000 }, { address: 'address3', amount: 50000 }];
+    const coinjoinTxid = await enterPool(enteringInputs, poolOutputs);
     console.log(`Coinjoin transaction created with ID: ${coinjoinTxid}`);
 
-    // Example of handling RBF with a new input
-    const newInput = new Coinjoin('txid2', 1, 100000, 'address4');
-    const updatedTx = await handleRBF(coinjoinTxid, newInput);
-    console.log(`Updated Coinjoin transaction finalized: ${updatedTx}`);
+    // User exiting the pool
+    const exitingInputs = [new Coinjoin('txid2', 1, 100000, 'address4', false)];
+    const exitOutputs = [{ address: 'address5', amount: 50000 }, { address: 'address6', amount: 50000 }];
+    const updatedTx = await exitPool(exitingInputs, exitOutputs);
+    console.log(`Exit Coinjoin transaction finalized: ${updatedTx}`);
+
   } catch (error) {
     console.error(`Error: ${error.message}`);
   }
 })();
-
