@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button, Input, Heading, Text } from '@gluestack-ui/themed';
 import { useNavigation } from '@react-navigation/native';
-
+import { createZKDepositProof, broadcastZKPoolEntry } from '../app/coinjoin';
 function ZKPoolEnter() {
   const [amount, setAmount] = useState('');
   const [loading, setLoading] = useState(false);
