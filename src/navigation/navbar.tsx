@@ -37,6 +37,9 @@ const Navbar: React.FC = () => {
         <NavLink href="#">NodeSettings</NavLink>
         <NavLink href="#">Create Wallet</NavLink>
         <NavLink href="#">About</NavLink>
+        <NavLink href="#">ZkPoolEnter</NavLink>
+        <NavLink href="#">ZkPoolExit</NavLink>
+        
       </NavLinks>
       <div>1 wallet (wallet.jmdat active) · YG off</div>
     </NavbarContainer>
