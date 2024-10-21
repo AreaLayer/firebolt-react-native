@@ -35,7 +35,7 @@
     "buffer": "^6.0.3",
     "ecpair": "^2.1.0",
     "events": "^3.0.0",
-    "libportal-react-native": "github:BlueWallet/libportal-react-native#d9d85921793bd190c5224a94d7a89134f91cdd1e",
+    "libportal-react-native": "github:BlueWallet/libportal-react-native#f577c0ef8c905098604e323982bb92f5dd33c878",
     "light-bolt11-decoder": "^3.2.0",
     "payjoin-react-native": "^1.0.0-alpha",
     "peach-api-ts": "^0.4.0",
