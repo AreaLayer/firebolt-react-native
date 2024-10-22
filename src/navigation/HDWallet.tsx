@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, Button, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -61,14 +61,15 @@ const Addresses = ({ route }) => {
   // Derive different addresses
   const deriveAddress = (path) => {
     const accountNode = root.derivePath(path);
-    const keyPair = bitcoin.ECPair.fromPrivateKey(accountNode.privateKey as Buffer);
-
+    
     if (path.startsWith("m/49'")) {
       // SegWit P2SH-P2WPKH
+      const keyPair = bitcoin.ECPair.fromPrivateKey(accountNode.privateKey);
       const p2wpkh = bitcoin.payments.p2wpkh({ pubkey: keyPair.publicKey, network });
       return bitcoin.payments.p2sh({ redeem: p2wpkh, network }).address;
     } else if (path.startsWith("m/84'")) {
       // Native SegWit P2WPKH
+      const keyPair = bitcoin.ECPair.fromPrivateKey(accountNode.privateKey);
       return bitcoin.payments.p2wpkh({ pubkey: keyPair.publicKey, network }).address;
     } else if (path.startsWith("m/86'")) {
       // Taproot P2TR
