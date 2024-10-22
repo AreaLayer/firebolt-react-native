@@ -1,4 +1,4 @@
-import { LspInformation } from "@breeztech/react-native-breez-sdk";
+import React from "react";
 import { View, Text } from 'react-native';
 
 var LSP = new LSP();
