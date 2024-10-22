@@ -1,8 +1,6 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native'; // Ensure Button is imported
 
-// Rename the LSP variable to avoid conflict with the component
-var lspInstance = new SomeLSPClass(); // Assuming LSP is some class you're initializing
 
 export const LSPComponent = () => { // Renamed the component to avoid conflict
   const handleSetLSP = () => {
