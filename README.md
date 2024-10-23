@@ -128,7 +128,9 @@ The other main features Firebolt supports are as follows:
 
 ## Electrum Plugin
 
-While our wallet is in development, you can test our Coinjoin using Electrum wallet Plugin
+While our wallet is in development, you can test our Coinjoin using Electrum wallet Plugin.
+
+In 2025 will be released in mainnet 
 
 [Firebolt Electrum](https://github.com/AreaLayer/firebolt-electrum)
 
