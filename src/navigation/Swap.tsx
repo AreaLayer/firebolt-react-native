@@ -5,7 +5,7 @@ const SwapNavigation = () => {
   const [swapAmount, setSwapAmount] = useState('');
   const [status, setStatus] = useState('');
 
-  const handleNetworkChange = (event) => {
+  const handleNetworkChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setSelectedNetwork(event.target.value);
   };
 
