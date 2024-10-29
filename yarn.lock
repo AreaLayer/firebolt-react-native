@@ -2799,6 +2799,11 @@
   resolved "https://registry.npmjs.org/@react-native/js-polyfills/-/js-polyfills-0.76.0.tgz"
   integrity sha512-0UzEqvg85Bn0BpgNG80wzbiWvNypwdl64sbRs/sEvIDjzgq/tM+u3KoneSD5tP72BCydAqXFfepff3FZgImfbA==
 
+"@react-native/js-polyfills@0.76.1":
+  version "0.76.1"
+  resolved "https://registry.npmjs.org/@react-native/js-polyfills/-/js-polyfills-0.76.1.tgz"
+  integrity sha512-HO3fzJ0FnrnQGmxdXxh2lcGGAMfaX9h1Pg1Zh38MkVw35/KnZHxHqxg6cruze6iWwZdfqSoIcQoalmMuAHby7Q==
+
 "@react-native/metro-babel-transformer@0.76.0":
   version "0.76.0"
   resolved "https://registry.npmjs.org/@react-native/metro-babel-transformer/-/metro-babel-transformer-0.76.0.tgz"
@@ -2809,13 +2814,23 @@
     hermes-parser "0.23.1"
     nullthrows "^1.1.1"
 
-"@react-native/metro-config@0.76.0":
-  version "0.76.0"
-  resolved "https://registry.npmjs.org/@react-native/metro-config/-/metro-config-0.76.0.tgz"
-  integrity sha512-TYo7VKL/jjyMyToOThhfo1EzROjFYLIRCZFaUAYpX5vkOVGntdjJu0ELJIrsZVBW3Ncb0MFG6c+yqqpFpyciAw==
+"@react-native/metro-babel-transformer@0.76.1":
+  version "0.76.1"
+  resolved "https://registry.npmjs.org/@react-native/metro-babel-transformer/-/metro-babel-transformer-0.76.1.tgz"
+  integrity sha512-LUAKqgsrioXS2a+pE0jak8sutTbLo3T34KWv7mdVUZ5lUACpqkIql1EFtIQlWjIcR4oZE480CkPbRHBI681tkQ==
   dependencies:
-    "@react-native/js-polyfills" "0.76.0"
-    "@react-native/metro-babel-transformer" "0.76.0"
+    "@babel/core" "^7.25.2"
+    "@react-native/babel-preset" "0.76.1"
+    hermes-parser "0.23.1"
+    nullthrows "^1.1.1"
+
+"@react-native/metro-config@0.76.1":
+  version "0.76.1"
+  resolved "https://registry.npmjs.org/@react-native/metro-config/-/metro-config-0.76.1.tgz"
+  integrity sha512-RvsflPKsQ1tEaHDJksnMWwW5wtv8fskMRviL/jHlEW/ULEQ/MOE2yjuvJlRQkNvfqlJjkc1mczjy4+RO3mDQ6g==
+  dependencies:
+    "@react-native/js-polyfills" "0.76.1"
+    "@react-native/metro-babel-transformer" "0.76.1"
     metro-config "^0.81.0"
     metro-runtime "^0.81.0"
 
@@ -2829,10 +2844,10 @@
   resolved "https://registry.npmjs.org/@react-native/normalize-colors/-/normalize-colors-0.76.0.tgz"
   integrity sha512-r+pjeIhzehb+bJUUUrztOQb+n6J9DeaLbF6waLgiHa5mFOiwP/4/iWS68inSZnnBtmXHkN2IYiMXzExx8hieWA==
 
-"@react-native/typescript-config@0.76.0":
-  version "0.76.0"
-  resolved "https://registry.npmjs.org/@react-native/typescript-config/-/typescript-config-0.76.0.tgz"
-  integrity sha512-BgBZd5su6acl5f+xaKaD+vkuCSkgxc9PL53GMzCqulnKJTjAHpsqJJSzGu6S3RgikJE6tmEy+EhxjFJQ3KvxIw==
+"@react-native/typescript-config@0.76.1":
+  version "0.76.1"
+  resolved "https://registry.npmjs.org/@react-native/typescript-config/-/typescript-config-0.76.1.tgz"
+  integrity sha512-KcmgsFG/c3WdAqy7/06Zvfkye3XIc/0zItlFMSGMgAjFFuCTomXqpmJdrtTBheCDy+gbKaR/vWf+snL8C+OVvA==
 
 "@react-native/virtualized-lists@^0.72.4":
   version "0.72.8"
