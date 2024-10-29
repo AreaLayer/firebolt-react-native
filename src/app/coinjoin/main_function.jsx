@@ -3,6 +3,7 @@ const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { groth16 } = require('snarkjs');
 const { Coinjoin, CoinjoinTransaction, createCoinjoinTransaction, finalizeCoinjoinTransaction } = require('main_function.jsx');
 const bitcoin = require('bitcoinjs-lib').networks.signet;
+const mpc = require('mpc4j'); // Example library for MPC, replace with actual chosen library
 
 let converter = new BitcoinConverter();
 
@@ -36,13 +37,6 @@ class CoinjoinTransaction {
 // ZK proof-related functions
 async function generateProof(inputs) {
   const { proof, publicSignals } = await groth16.fullProve(inputs, 'circuit.wasm', 'circuit_0000.zkey');
-  const { p2tr } = await p2tr.fromOutputScript(inputs[0].address);
-  const { p2wsh } = await p2wsh.fromOutputScript(inputs[0].address);
-  const payments = {
-    p2wsh: payments.p2wsh(p2wsh),
-    p2tr: payments.p2tr(p2tr)
-  };
-  const { output } = payments.addressToOutputScript(inputs[0].address);
   return { proof, publicSignals };
 }
 
@@ -50,6 +44,17 @@ async function verifyProof(proof, publicSignals) {
   const verificationKey = require('./verification_key.json');
   const isValid = await groth16.verify(verificationKey, publicSignals, proof);
   return isValid;
+}
+
+// Setup MPC Ceremony
+async function setupMPCCeremony() {
+  const participants = await mpc.initiateKeyGeneration(); // Example initiation for distributed key gen
+  console.log(`MPC ceremony initiated with ${participants.length} participants`);
+  
+  const publicKey = await mpc.generateCollectivePublicKey(participants);
+  console.log(`Collective public key generated: ${publicKey}`);
+  
+  return { participants, publicKey };
 }
 
 // Function to create a Coinjoin transaction with ZK proof and RBF
@@ -90,6 +95,28 @@ async function createCoinjoinTransaction(inputs, outputs) {
   return txid;
 }
 
+// Example of creating a Coinjoin transaction with MPC ceremony
+async function createCoinjoinWithMPC(inputs, outputs) {
+  const { participants, publicKey } = await setupMPCCeremony();
+
+  // Generate ZK proof for the Coinjoin inputs
+  const { proof, publicSignals } = await generateProof(inputs);
+  const isValid = await verifyProof(proof, publicSignals);
+  if (!isValid) {
+    throw new Error("Invalid ZK proof");
+  }
+
+  const tx = new TX();
+  inputs.forEach(input => tx.addInput(input.txid, input.vout, 0xfffffffd));
+  outputs.forEach(output => tx.addOutput(output.address, output.amount));
+
+  // MPC-based signing
+  const signedTx = await mpc.signTransaction(tx, participants);
+  console.log(`Coinjoin transaction signed with MPC: ${signedTx}`);
+
+  return signedTx;
+}
+
 // Function to handle RBF and potential griefing attacks
 async function handleRBF(coinjoinTransaction, newInput) {
   const tx = new TX();
@@ -120,7 +147,7 @@ async function finalizeCoinjoinTransaction(coinjoinTransaction) {
 async function enterPool(inputs, outputs) {
   // The user is entering the pool, their inputs become part of the Coinjoin
   const enteredInputs = inputs.map(input => new Coinjoin(input.txid, input.vout, input.amount, input.address, true));
-  const txid = await createCoinjoinTransaction(enteredInputs, outputs);
+  const txid = await createCoinjoinWithMPC(enteredInputs, outputs); // Use MPC transaction creation
   return txid;
 }
 
@@ -128,7 +155,7 @@ async function enterPool(inputs, outputs) {
 async function exitPool(inputs, outputs) {
   // The user is exiting the pool, their outputs are returned after ZK proof
   const exitedOutputs = outputs.map(output => new CoinjoinTransaction(output.txid, output.vout, output.amount, output.address));
-  const txid = await createCoinjoinTransaction(inputs, exitedOutputs);
+  const txid = await createCoinjoinWithMPC(inputs, exitedOutputs); // Use MPC transaction creation
   return txid;
 }
 
