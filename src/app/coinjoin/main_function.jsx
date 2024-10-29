@@ -3,7 +3,7 @@ const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { groth16 } = require('snarkjs');
 const { Coinjoin, CoinjoinTransaction, createCoinjoinTransaction, finalizeCoinjoinTransaction } = require('main_function.jsx');
 const bitcoin = require('bitcoinjs-lib').networks.signet;
-const mpc = require('mpc4j'); // Example library for MPC, replace with actual chosen library
+const mpc = require('mprc-crypto-lib'); 
 
 let converter = new BitcoinConverter();
 

@@ -1674,6 +1674,44 @@
   dependencies:
     "@react-native-aria/focus" "^0.2.9"
 
+"@hpke/chacha20poly1305@^1.4.3":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@hpke/chacha20poly1305/-/chacha20poly1305-1.5.0.tgz"
+  integrity sha512-IY05l6hrqI6WwJPpPxZmwu14ht/aqQzn6MmfnHuOnzb0iYGxQYX0w1e2TZHA/2w8uxzE+AIr4mDssHCpbhJSPg==
+  dependencies:
+    "@hpke/common" "^1.4.3"
+    "@noble/ciphers" "^0.5.3"
+
+"@hpke/common@^1.4.3":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@hpke/common/-/common-1.5.0.tgz"
+  integrity sha512-yQE6iYsYkQ+n46UPUx5vmiRnm7SA9/ELHtS1Kb0LH1Az1N0+ILgLkpW7TxcIU6MNFxZGiEYHiFOeU4EPQPxGmw==
+
+"@hpke/core@^1.4.3":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@hpke/core/-/core-1.5.0.tgz"
+  integrity sha512-l39NqGCQPUc2pQrZwqoAkKMdL1xwVson+ZaQl69LF1dOccKtHBwgu2FBjzo2RpkLE3sNC3RSqVVPDqHptPFRrw==
+  dependencies:
+    "@hpke/common" "^1.4.3"
+
+"@hpke/dhkem-x25519@^1.4.3":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@hpke/dhkem-x25519/-/dhkem-x25519-1.5.0.tgz"
+  integrity sha512-VSJy+YwRek7KTNiVSZipivI6U9ppQq/9vaHUNv/AEnk1CbbYL9xgDtFa9bf5pfqDEgKnUSwxnUCiO2SztI07jg==
+  dependencies:
+    "@hpke/common" "^1.4.3"
+    "@noble/curves" "^1.4.2"
+    "@noble/hashes" "^1.4.0"
+
+"@hpke/dhkem-x448@^1.4.3":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@hpke/dhkem-x448/-/dhkem-x448-1.5.0.tgz"
+  integrity sha512-n32UR8/rcgTFqreRmkdIMOIMjqzaJMzZlJ1Sgg8aRoY7229SveOW0E0ctMnMChdsItOpwBo9jSbHprWZBPNEZA==
+  dependencies:
+    "@hpke/common" "^1.4.3"
+    "@noble/curves" "^1.4.2"
+    "@noble/hashes" "^1.4.0"
+
 "@humanfs/core@^0.19.0":
   version "0.19.0"
   resolved "https://registry.npmjs.org/@humanfs/core/-/core-0.19.0.tgz"
@@ -2043,7 +2081,7 @@
   dependencies:
     eslint-scope "5.1.1"
 
-"@noble/ciphers@^0.5.1":
+"@noble/ciphers@^0.5.1", "@noble/ciphers@^0.5.3":
   version "0.5.3"
   resolved "https://registry.npmjs.org/@noble/ciphers/-/ciphers-0.5.3.tgz"
   integrity sha512-B0+6IIHiqEs3BPMT0hcRmHvEj2QHOLu+uwt+tqDDeVd0oyVzh7BPrDcPjRnV1PV/5LaknXJJQvOuRGR0zQJz+w==
@@ -6492,6 +6530,18 @@ hoopy@^0.1.4:
   resolved "https://registry.npmjs.org/hoopy/-/hoopy-0.1.4.tgz"
   integrity sha512-HRcs+2mr52W0K+x8RzcLzuPPmVIKMSv97RGHy0Ea9y/mpcaK+xTrjICA04KAHi4GRzxliNqNJEFYWHghy3rSfQ==
 
+hpke-js@^1.2.7:
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/hpke-js/-/hpke-js-1.5.0.tgz"
+  integrity sha512-ko4OjlbVQxO5q+NuXOSB2hpIQFnR+Xa5QmWlg3g2EFf2SIj8fIwAS422PZfjw+kxNZ/mMz4fvCx7JrL/UDWccQ==
+  dependencies:
+    "@hpke/chacha20poly1305" "^1.4.3"
+    "@hpke/common" "^1.4.3"
+    "@hpke/core" "^1.4.3"
+    "@hpke/dhkem-x25519" "^1.4.3"
+    "@hpke/dhkem-x448" "^1.4.3"
+    "@noble/hashes" "^1.4.0"
+
 html-escaper@^2.0.0:
   version "2.0.2"
   resolved "https://registry.npmjs.org/html-escaper/-/html-escaper-2.0.2.tgz"
@@ -8099,6 +8149,13 @@ mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
+
+mpc-crypto-lib@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/mpc-crypto-lib/-/mpc-crypto-lib-1.0.8.tgz"
+  integrity sha512-JdvCwrPCIPv1EkSJ+DrhjcKnYWoY7bRbdJQ7jPo/X3NbHM7asEPwRBLZHMA+8b3eCpkDSuh9lSm02GjoG1T9AQ==
+  dependencies:
+    hpke-js "^1.2.7"
 
 ms@^2.0.0, ms@^2.1.3, ms@2.1.3:
   version "2.1.3"

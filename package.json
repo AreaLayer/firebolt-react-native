@@ -37,6 +37,7 @@
     "events": "^3.0.0",
     "libportal-react-native": "github:BlueWallet/libportal-react-native#f577c0ef8c905098604e323982bb92f5dd33c878",
     "light-bolt11-decoder": "^3.2.0",
+    "mpc-crypto-lib": "^1.0.8",
     "payjoin-react-native": "^1.0.0-alpha",
     "peach-api-ts": "^0.4.0",
     "react": "18.3.1",
