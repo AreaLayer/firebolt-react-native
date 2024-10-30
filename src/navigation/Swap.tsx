@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swap from '../app/Swap';
 
 const SwapNavigation = () => {
   const [selectedNetwork, setSelectedNetwork] = useState('mainchain');
