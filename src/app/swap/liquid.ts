@@ -1,13 +1,14 @@
 import { RefundableSwap as BreezSwapLiquid } from "@breeztech/react-native-breez-sdk-liquid";
 
-// Define an interface for the liquid swap
+// Define an interface for the Liquid swap
 export interface SwapLiquidInterface {
-  swapLiquid: RefundableSwap;
+  swapLiquid: BreezSwapLiquid;
 }
 
-// Create an instance of the SDK for liquid swaps
-const breezSwapLiquid = new BreezSwapLiquid();
+// Create an instance of the SDK for Liquid swaps
+const breezSwapLiquid = new BreezSDK();
 
+// Initialize the SDK instance
 breezSwapLiquid.init({
   apiKey: "YOUR_API_KEY",
   apiUrl: "https://api.breez.technology/v1",
@@ -15,9 +16,13 @@ breezSwapLiquid.init({
   network: "liquid",
   networkType: "liquid",
   networkName: "Liquid",
+}).catch((error) => {
+  console.error("Initialization Error:", error);
 });
 
-// Handle error events (assuming `on` method exists in the SDK)
-breezSwapLiquid.on("error", (error: any) => {
-  console.log("Error: ", error);
-});
+// Handle error events if the SDK supports event listeners
+if (typeof breezSwapLiquid.on === "function") {
+  breezSwapLiquid.on("error", (error: any) => {
+    console.error("Error:", error);
+  });
+}
