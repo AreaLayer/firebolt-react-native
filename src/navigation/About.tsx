@@ -6,7 +6,7 @@ const AboutScreen = () => {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={{ uri: 'https://example.com/logo.png' }} // Replace with your logo
+          source={{ uri: 'https://github.com/AreaLayer/FireBolt/raw/main/src/asset/firebolt_logo_readme.png' }} // Replace with your logo
           style={styles.logo}
         />
         <Text style={styles.title}>About Our App</Text>
@@ -18,7 +18,7 @@ const AboutScreen = () => {
         </Text>
 
         <Text style={styles.text}>
-          Version: 1.0.0
+          Version: 1.0.16-alpha
         </Text>
 
         <Text style={styles.text}>
