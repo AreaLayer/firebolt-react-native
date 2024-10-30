@@ -1,4 +1,4 @@
-import { RefundableSwap, SwapLiquid as BreezSwapLiquid } from "@breeztech/react-native-breez-sdk-liquid";
+import { RefundableSwap as BreezSwapLiquid } from "@breeztech/react-native-breez-sdk-liquid";
 
 // Define an interface for the liquid swap
 export interface SwapLiquidInterface {
