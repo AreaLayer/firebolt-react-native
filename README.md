@@ -46,7 +46,7 @@ The other main features Firebolt supports are as follows:
 
 ### Feature
 
-- Lightning Network (Breez)
+- Lightning Network (Breez SDK)
 
 - Nostr (create profiles)
 
