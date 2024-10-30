@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Swap from '../app/Swap';
+import Swap from '../app/swap'; // Ensure this component is implemented and exported correctly.
 
-const SwapNavigation = () => {
-  const [selectedNetwork, setSelectedNetwork] = useState('mainchain');
-  const [swapAmount, setSwapAmount] = useState('');
-  const [status, setStatus] = useState('');
+const SwapNavigation: React.FC = () => {
+  const [selectedNetwork, setSelectedNetwork] = useState<string>('mainchain');
+  const [swapAmount, setSwapAmount] = useState<string>('');
+  const [status, setStatus] = useState<string>('');
 
-  const handleNetworkChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+  const handleNetworkChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedNetwork(event.target.value);
   };
 
@@ -17,7 +17,7 @@ const SwapNavigation = () => {
     }
 
     // Logic to initiate the swap goes here
-    // Example: initiateSwap(selectedNetwork, swapAmount)
+    // Example: Swap.initiateSwap(selectedNetwork, swapAmount)
 
     setStatus(`Swapped ${swapAmount} on ${selectedNetwork}`);
   };
