@@ -5054,10 +5054,10 @@ core-js@^2.4.0:
   resolved "https://registry.npmjs.org/core-js/-/core-js-2.6.12.tgz"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
-core-js@^3.23.3:
-  version "3.38.1"
-  resolved "https://registry.npmjs.org/core-js/-/core-js-3.38.1.tgz"
-  integrity sha512-OP35aUorbU3Zvlx7pjsFdu1rGNnD4pgw/CWoYzRY3t2EzoVT7shKHY1dlAy3f41cGIO7ZDPQimhGFTlEYkG/Hw==
+core-js@^3.39.0:
+  version "3.39.0"
+  resolved "https://registry.npmjs.org/core-js/-/core-js-3.39.0.tgz"
+  integrity sha512-raM0ew0/jJUqkJ0E6e8UDtl+y/7ktFivgWvqw8dNSQeNWoSDLvQ1H/RN3aPXB9tBd4/FhyR4RDPGhsNIMsAn7g==
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -9119,10 +9119,10 @@ react-native-randombytes@^3.6.1, "react-native-randombytes@>=2.0.0 <4.0.0":
     buffer "^4.9.1"
     sjcl "^1.0.3"
 
-"react-native-safe-area-context@>= 3.0.0", react-native-safe-area-context@4.12.0:
-  version "4.12.0"
-  resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.12.0.tgz"
-  integrity sha512-ukk5PxcF4p3yu6qMZcmeiZgowhb5AsKRnil54YFUUAXVIS7PJcMHGGC+q44fCiBg44/1AJk5njGMez1m9H0BVQ==
+"react-native-safe-area-context@>= 3.0.0", react-native-safe-area-context@4.13.1:
+  version "4.13.1"
+  resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.13.1.tgz"
+  integrity sha512-SOXIQkHjOB5ZsRmJgaTfaKmzkrMIMmNEfg8vU6KAvgyEyQwXpXYCtS2dydusiX/a3uMDBxxTWv6WmCEFljiptw==
 
 react-native-screens@^3.29.0, "react-native-screens@>= 3.0.0":
   version "3.35.0"
