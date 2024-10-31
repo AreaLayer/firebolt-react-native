@@ -6,7 +6,7 @@ const AboutScreen = () => {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={{ uri: 'https://github.com/AreaLayer/FireBolt/raw/main/src/asset/firebolt_logo_readme.png' }} // Replace with your logo
+          source={{ uri: 'https://github.com/AreaLayer/FireBolt/raw/main/src/asset/firebolt_logo_readme.png' }} 
           style={styles.logo}
         />
         <Text style={styles.title}>About Our App</Text>
@@ -22,7 +22,7 @@ const AboutScreen = () => {
         </Text>
 
         <Text style={styles.text}>
-          For support or inquiries, please contact us at: support@example.com
+          For support or inquiries, please contact us at: arealayer@gmail.com
         </Text>
 
         <Text style={styles.text}>
