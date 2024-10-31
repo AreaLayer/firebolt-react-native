@@ -46,7 +46,7 @@ The other main features Firebolt supports are as follows:
 
 ### Feature
 
-- Lightning Network (Breez SDK)
+- Lightning Network/Liquid Network (Breez SDK)
 
 - Nostr (create profiles)
 
@@ -81,8 +81,6 @@ The other main features Firebolt supports are as follows:
 - Portal NFC
 
 - Silent Payments
-
-- Liquid Network (Breez SDK)
 
 ## Roadmap
 
