@@ -6,7 +6,7 @@ export const PayJoin = (url: string) => {
   const payjoinURL = new PayjoinURL(url);
 }
 // Create a PSBT instance from the PayjoinURL instance
-export const psbt = payjoinURL.psbt;
+export const psbt = PayjoinURL.psbt;
 
 // Export PayJoin and PayjoinURL
 export { PayjoinURL };
