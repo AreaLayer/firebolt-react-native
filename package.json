@@ -19,7 +19,7 @@
     "@gluestack-ui/themed": "^1.1.55",
     "@ledgerhq/react-native-hid": "^6.32.4",
     "@mempool/mempool.js": "^2.2.4",
-    "@nostr-dev-kit/ndk": "^2.10.4",
+    "@nostr-dev-kit/ndk": "^2.10.5",
     "@react-native-async-storage/async-storage": "^2.0.0",
     "@react-native-picker/picker": "2.9.0",
     "@react-navigation/native": "^6.1.9",
