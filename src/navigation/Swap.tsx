@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Swap from '../app/swap'; // Ensure this component is implemented and exported correctly.
 
 const SwapNavigation: React.FC = () => {
   const [selectedNetwork, setSelectedNetwork] = useState<string>('mainchain');
@@ -47,5 +46,4 @@ const SwapNavigation: React.FC = () => {
     </div>
   );
 };
-
 export default SwapNavigation;
