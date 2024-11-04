@@ -26,6 +26,7 @@ function App(): React.JSX.Element {
     </Balance>
     <BitcoinPrice/>
     <Bech32m/>
+    <AuthenticatorResponse/>
     <HomeScreen/>
     <Breez/>
     <GluestackUIProvider config={config}></GluestackUIProvider>
