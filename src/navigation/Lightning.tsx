@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 const Stack = createStackNavigator(); // Initialize the stack navigator
@@ -22,3 +22,7 @@ const LightningPaymentScreen = () => {
 };
 
 export default LightningPayment;
+function createStackNavigator() {
+  throw new Error('Function not implemented.');
+}
+
