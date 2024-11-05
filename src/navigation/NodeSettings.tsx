@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-const NodeSettings = () => {
+const NodeSettings: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text>Node Settings</Text>
@@ -7,3 +7,5 @@ const NodeSettings = () => {
     </View>
   );
 };
+
+export default NodeSettings;
