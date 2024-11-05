@@ -45,5 +45,4 @@ const SwapNavigation: React.FC = () => {
       {status && <div>Status: {status}</div>}
     </div>
   );
-};
-export default SwapNavigation;
+};export default SwapNavigation;
