@@ -1,4 +1,5 @@
 const { Keys, Client, Metadata, EventId, PublicKey, EventBuilder } = require("@nostr-dev-kit/ndk");
+const { NDKEvent, NDKEventId, NostrEvent , Decode, Encode} = require("@nostr-dev-kit/ndk-types");
 
 async function main() {
     let keys = Keys.generate();
@@ -41,7 +42,13 @@ async function main() {
     // Send custom event to all relays
     await client.sendEvent(event);
 
+    // Zaps the client to the relay that sent the event
+    await client.zapToRelay(event);
+    await client.zappe(event);
+    await client.zapper(event);
+    await client.amount(event);
+
+
     // Send custom event to a specific previously added relay
     // await client.sendEventTo("wss://relay.damus.io", event);
-}
-main();
+}main();

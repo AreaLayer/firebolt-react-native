@@ -114,9 +114,9 @@ The other main features Firebolt supports are as follows:
 -  [X] NWC (NDK)
 -  [x] Portal support (NFC)
 -  [x] Payjoin (React Native)
+-  [x] Zap 
 -  [x] Ledger and Trezor
 -  [ ] Miniscript
--  [ ] Zap 
 -  [ ] BOLT12
 -  [ ] Beta App (Android - via APK) in 2025
 
