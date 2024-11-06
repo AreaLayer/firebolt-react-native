@@ -116,7 +116,6 @@ The other main features Firebolt supports are as follows:
 -  [x] Payjoin (React Native)
 -  [x] Ledger and Trezor
 -  [ ] Miniscript
--  [ ] Library for Wallet
 -  [ ] Zap 
 -  [ ] BOLT12
 -  [ ] Beta App (Android - via APK) in 2025
