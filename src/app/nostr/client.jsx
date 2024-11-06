@@ -1,5 +1,4 @@
 const { Keys, Client, Metadata, EventId, PublicKey, EventBuilder } = require("@nostr-dev-kit/ndk");
-const { NDKEvent, NDKEventId, NostrEvent , Decode, Encode} = require("@nostr-dev-kit/ndk-types");
 
 async function main() {
     let keys = Keys.generate();
