@@ -46,6 +46,7 @@ async function main() {
     await client.zappe(event);
     await client.zapper(event);
     await client.amount(event);
+    await client.zap(event);
 
 
     // Send custom event to a specific previously added relay
