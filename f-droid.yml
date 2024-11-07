@@ -6,4 +6,4 @@ IssueTracker: https://github.com/AreaLayer/firebolt-react-native/issues
 Changelog: https://github.com/AreaLayer/firebolt-react-native/CHANGELOG.md
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
-CurrentVersion: 1.0.0
+CurrentVersion: 1.0.0-beta
