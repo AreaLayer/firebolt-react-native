@@ -16,7 +16,7 @@
     "@breeztech/react-native-breez-sdk-liquid": "^0.3.4",
     "@gluestack-style/react": "^1.0.45",
     "@gluestack-ui/config": "^1.1.2",
-    "@gluestack-ui/themed": "^1.1.58",
+    "@gluestack-ui/themed": "^1.1.59",
     "@ledgerhq/react-native-hid": "^6.32.4",
     "@mempool/mempool.js": "^2.2.4",
     "@nostr-dev-kit/ndk": "^2.10.5",
