@@ -66,8 +66,6 @@ The other main features Firebolt supports are as follows:
 
 - Backup using Nostr keys and BIP-39
 
-- Management Nostr Keys
-
 - Miniscript
 
 - Contact list via Nostr (NPub)
