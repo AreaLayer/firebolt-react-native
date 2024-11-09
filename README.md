@@ -44,7 +44,7 @@ The other main features Firebolt supports are as follows:
 
 🫂Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RoboSats)
 
-🔒Liquid Network support
+:ocean:Liquid Network support
 
 ### Feature
 
