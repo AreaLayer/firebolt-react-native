@@ -56,6 +56,8 @@ The other main features Firebolt supports are as follows:
 
 - LSP (Breez List)
 
+- Greenlight by Breez SDK
+
 - Coinjoin powered by ZK proof, Coinswap, Taproot and more
 
 - PayJoin
