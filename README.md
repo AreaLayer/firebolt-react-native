@@ -58,8 +58,6 @@ The other main features Firebolt supports are as follows:
 
 - Coinjoin powered by ZK proof, Coinswap, Taproot and more
 
-- Multisig 
-
 - PayJoin
 
 - Bitcoin-only
