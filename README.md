@@ -78,7 +78,9 @@ The other main features Firebolt supports are as follows:
 
 - Kotlin and Swift (iOS and Android)
 
-- Portal NFC
+- Portal NFC by TwentyTwo Hardwallet
+
+- Trezor and Ledger Hardwallet support
 
 - Silent Payments
 
