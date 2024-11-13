@@ -120,10 +120,6 @@ The other main features Firebolt supports are as follows:
 -  [ ] BOLT12
 -  [ ] Beta App (Android - via APK) in 2025
 
-## Donations
-
-[Area Layer](https://www.arealayer.net/donation)
-
 ## Electrum Plugin
 
 While our wallet is in development, you can test our Coinjoin using Electrum wallet Plugin.
