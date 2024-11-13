@@ -16,7 +16,12 @@ export const sendPSBT = async (psbt: string) => {
     method: 'POST',
     headers
   });
-}
+  return response;
+}// Reaceive the response from the payjoin server
+const response = await fetch('https://payjoin.example.com/payjoin', {
+  method: 'POST',
+  headers
+});
 
-// Export PayJoin and PayjoinURL
+return response;// Export PayJoin and PayjoinURL
 export { PayjoinURL };
