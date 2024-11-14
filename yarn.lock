@@ -9170,10 +9170,10 @@ react-native-randombytes@^3.6.1, "react-native-randombytes@>=2.0.0 <4.0.0":
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.14.0.tgz"
   integrity sha512-/SyYpCulWQOnnXhRq6wepkhoyQMowHm1ptDyRz20s+YS/R9mbd+mK+jFyFCyXFJn8jp7vFl43VUCgspuOiEbwA==
 
-react-native-screens@^4.0.0, "react-native-screens@>= 4.0.0":
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-4.0.0.tgz"
-  integrity sha512-QGQ8+d90chOZ9JwA2K01nFzrGCTMNjsiAKJGPUXcLEiIF77/VSjLjQE9ZluMtkva0gzGI9tb/yxETkJnkw1iag==
+react-native-screens@^4.1.0, "react-native-screens@>= 4.0.0":
+  version "4.1.0"
+  resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-4.1.0.tgz"
+  integrity sha512-tCBwe7fRMpoi/nIgZxE86N8b2SH8d5PlfGaQO8lgqlXqIyvwqm3u1HJCaA0tsacPyzhW7vVtRfQyq9e1j0S2gA==
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
