@@ -17,5 +17,9 @@ class Nwc {
     }
   }}
 
+function nwc(ndk: NDKNwc): Nwc {
+  return new Nwc(ndk);
+}
+
 export default Nwc;
 
