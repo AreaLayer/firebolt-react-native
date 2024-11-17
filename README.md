@@ -87,7 +87,7 @@ The other main features Firebolt supports are as follows:
 ## Roadmap
 
 -  [x] Core functions
--  [x] Breez SDK 
+-  [x] Breez SDK (Lightning) 
 -  [x] Nostr (NDK)
 -  [x] UI 
 -  [x] API Peach Bitcoin/RoboSats/Bisq 
