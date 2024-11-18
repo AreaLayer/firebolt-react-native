@@ -19,19 +19,16 @@ function App(): React.JSX.Element {
         <NavigationContainer>
           <OnBoardingNavigation />
           <OnBoardingHome>
-          <Balance> 
+            <Balance />
+          </OnBoardingHome>
         </NavigationContainer>
       </ConnectionProvider>
+      <BitcoinPrice/>
+      <Bech32m/>
+      <AuthenticatorResponse/>
+      <HomeScreen/>
+      <Breez/>
     </GluestackUIProvider>
-    </Balance>
-    <BitcoinPrice/>
-    <Bech32m/>
-    <AuthenticatorResponse/>
-    <HomeScreen/>
-    <Breez/>
-    <GluestackUIProvider config={config}></GluestackUIProvider>
-    
   );
 }
-
 export default App;
