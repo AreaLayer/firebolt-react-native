@@ -61,37 +61,8 @@ The other main features Firebolt supports are as follows:
 - Silent Payments
 
 ## Roadmap
--  [x] Core functions
--  [x] Breez SDK (Lightning) 
--  [x] Nostr (NDK)
--  [x] UI 
--  [x] API Peach Bitcoin/RoboSats/Bisq 
--  [x] Taproot functions 
--  [x] Signet
--  [x] BIP-352 (Silent Payments)
--  [x] Recompile code
--  [x] Unit tests
--  [x] Firebolt Electrum Plugin
--  [x] BOLT11 
--  [x] Bitcoin Widget
--  [x] Firebolt Plus
--  [x] Liquid wallet
--  [x] LNURL 
--  [x] ZK proof for CJ (Groth16)
--  [x] BIP-353 (DNS payments)
--  [x] Electrum server support
--  [x] HD Taproot Wallet
--  [x] XPUB compatible
--  [x] PSBT
--  [x] RBF
--  [x] Submarine Swap
--  [x] F-Droid
--  [X] NWC (NDK)
--  [x] Portal support (NFC)
--  [x] Payjoin (React Native)
--  [x] Zap 
--  [x] Ledger and Trezor
--  [x] Miniscript (WIP)
+
+-  [ ] Miniscript
 -  [ ] BOLT12
 -  [ ] Beta App (Android - via APK) in 2025
 
