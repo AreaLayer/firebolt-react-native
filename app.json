@@ -4,8 +4,6 @@
   "expo": {
     "name": "firebolt",
     "slug": "firebolt",
-    "privacy": "public",
-    "sdkVersion": "32.0.0",
     "platforms": [
       "ios",
       "android"
@@ -33,6 +31,5 @@
     "web": {
       "favicon": "./assets/favicon.png"
     }
-
-}
+  }
 }
