@@ -62,7 +62,7 @@ The other main features Firebolt supports are as follows:
 
 ## Roadmap
 
--  [ ] Miniscript
+-  [x] Miniscript (WIP)
 -  [ ] BOLT12
 -  [ ] Beta App (Android - via APK) in 2025
 
