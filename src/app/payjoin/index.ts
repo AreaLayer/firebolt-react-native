@@ -1,5 +1,5 @@
 // Import PayjoinURL from the 'payjoin-react-native' package
-import { PayjoinURL } from 'payjoin-react-native';
+import { PayjoinURL, UTXO } from 'payjoin-react-native';
 
 export const PayJoin = (url: string) => {
   // Create a PayjoinURL instance
@@ -23,5 +23,11 @@ const response = await fetch('https://payjoin.example.com/payjoin', {
   headers
 });
 
+const utxo: UTXO = {
+  txid: 'txid',
+  vout: 0,
+  value: 1000000,
+  script: 'scriptPubKey',
+}
 return response;// Export PayJoin and PayjoinURL
 export { PayjoinURL };
