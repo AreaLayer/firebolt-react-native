@@ -14,11 +14,14 @@
 >React native version for Firebolt wallet with Bitcoin, Lightning Network/LSP (Breez), Coinjoin, Nostr, Payjoin, Taproot
 
 ### Overview
+
 *Cypherpunk App*
+
 Firebolt is a wallet designed by a Bitcoiner for Bitcoiners looking for privacy using Payjoin, Lightning Network, Coinjoin, Bitcoin and Nostr
 Each individual has their own identity using Nostr
 
 ### The problem
+
 Central Banks, centralized social media and KYC platforms
 
 ### Firebolt's solution
@@ -63,7 +66,7 @@ The other main features Firebolt supports are as follows:
 ## Roadmap
 
 -  [x] Miniscript (WIP)
--  [ ] BOLT12
+-  [ ] BOLT12 
 -  [ ] Beta App (Android - via APK) in 2025
 
 ## Electrum Plugin
