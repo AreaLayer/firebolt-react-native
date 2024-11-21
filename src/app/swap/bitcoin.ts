@@ -3,8 +3,6 @@ import BreezSdk, {
   redeemSwap,
   rescanSwaps,
   ReverseSwapFeesRequest,
-  getSwapStatus,
-  reverseSwapFees
 } from "@breeztech/react-native-breez-sdk";
 
 // Initialize the SDK instance
