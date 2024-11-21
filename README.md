@@ -82,7 +82,7 @@ Soon
 
 ## ZK Proof Library Rust
 
-In 2025 we will release a library for ZK Proofs Coinjoin transactions
+In 2025 we will release a library for ZK Proofs Coinjoin transactions and additional features
 
 ## Contributors
 <a align="center" href="https://github.com/AreaLayer/firebolt-react-native aphs/contributors">
