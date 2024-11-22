@@ -34,6 +34,7 @@
     "bitcoinjs-lib": "^6.1.6",
     "bolt11": "^1.4.1",
     "buffer": "^6.0.3",
+    "dotenv": "^16.4.5",
     "ecpair": "^2.1.0",
     "events": "^3.0.0",
     "libportal-react-native": "github:BlueWallet/libportal-react-native#f577c0ef8c905098604e323982bb92f5dd33c878",
