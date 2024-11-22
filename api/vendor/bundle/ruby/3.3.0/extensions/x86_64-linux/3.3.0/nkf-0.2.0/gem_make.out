@@ -1,0 +1,18 @@
+current directory: /sysroot/home/rafael/Documents/firebolt 4/firebolt-react-native/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /sysroot/home/rafael/Documents/firebolt 4/firebolt-react-native/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241118-447-tgv3ru sitelibdir\=./.gem.20241118-447-tgv3ru clean
+
+current directory: /sysroot/home/rafael/Documents/firebolt 4/firebolt-react-native/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241118-447-tgv3ru sitelibdir\=./.gem.20241118-447-tgv3ru
+compiling nkf.c
+linking shared-object nkf.so
+
+current directory: /sysroot/home/rafael/Documents/firebolt 4/firebolt-react-native/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241118-447-tgv3ru sitelibdir\=./.gem.20241118-447-tgv3ru install
+/usr/bin/install -c -m 0755 nkf.so ./.gem.20241118-447-tgv3ru
+
+current directory: /sysroot/home/rafael/Documents/firebolt 4/firebolt-react-native/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241118-447-tgv3ru sitelibdir\=./.gem.20241118-447-tgv3ru clean
