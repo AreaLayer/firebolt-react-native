@@ -47,7 +47,7 @@ yarn-error.log
 
 # Ruby / CocoaPods
 /ios/Pods/
-api/vendor/bundle/ruby/3.3.0
+vendor/bundle/
 
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
