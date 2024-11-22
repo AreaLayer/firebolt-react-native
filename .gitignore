@@ -64,3 +64,6 @@ docker-compose.override.yml
 **/Dockerfile
 **/docker-compose.yml
 **/docker-compose.override.yml
+
+# env
+.env
