@@ -19,7 +19,7 @@
     "@gluestack-ui/themed": "^1.1.61",
     "@ledgerhq/react-native-hid": "^6.32.4",
     "@mempool/mempool.js": "^2.2.4",
-    "@nostr-dev-kit/ndk": "^2.10.6",
+    "@nostr-dev-kit/ndk": "^2.10.7",
     "@react-native-async-storage/async-storage": "^2.1.0",
     "@react-native-picker/picker": "2.9.0",
     "@react-navigation/native": "^7.0.4",
@@ -75,7 +75,7 @@
     "prettier": "3.3.3",
     "react-test-renderer": "18.3.1",
     "rn-nodeify": "^10.3.0",
-    "typescript": "5.6.3"
+    "typescript": "5.7.2"
   },
   "engines": {
     "node": ">=18"
