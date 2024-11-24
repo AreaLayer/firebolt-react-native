@@ -68,7 +68,7 @@ The other main features Firebolt supports are as follows:
 -  [x] Miniscript (WIP)
 -  [ ] BOLT12 
 -  [ ] Beta App (Android - via APK) in 2025
--  [ ] Reproducible builds
+-  [ ] Reproducible builds (Android)
 
 ## Electrum Plugin
 
