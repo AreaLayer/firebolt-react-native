@@ -42,6 +42,8 @@ The other main features Firebolt supports are as follows:
 
 :ocean:Liquid Network support
 
+🤫 Silent Payments
+
 ### Feature
 
 - Lightning Network/Liquid Network (Breez SDK)
