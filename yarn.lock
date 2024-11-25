@@ -1106,7 +1106,7 @@
   dependencies:
     uint8array-tools "0.0.7"
 
-"@breeztech/react-native-breez-sdk-liquid@^0.5.0":
+"@breeztech/react-native-breez-sdk-liquid@^0.5.1":
   version "0.5.1"
   resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.5.1.tgz"
   integrity sha512-1ZvcTE+ahEb79aMJXQjL1dvNCJyaTNtjOMcsFs2ivSD59/1efp5fpgJ0J7WUK/1ESJdxJeXXGXJoAB7TnNrFOg==
