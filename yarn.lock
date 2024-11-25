@@ -1106,15 +1106,15 @@
   dependencies:
     uint8array-tools "0.0.7"
 
-"@breeztech/react-native-breez-sdk-liquid@^0.3.4":
-  version "0.3.4"
-  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.3.4.tgz"
-  integrity sha512-c0L3n9suD1Y2poIfOyjSlWzCfNxy42TsZcAkvfG5uOEoAIZccTwPGHwHla+x/vZFugQ7QTBC+AGrJtTQKUZ+aQ==
+"@breeztech/react-native-breez-sdk-liquid@^0.5.0":
+  version "0.5.1"
+  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.5.1.tgz"
+  integrity sha512-1ZvcTE+ahEb79aMJXQjL1dvNCJyaTNtjOMcsFs2ivSD59/1efp5fpgJ0J7WUK/1ESJdxJeXXGXJoAB7TnNrFOg==
 
-"@breeztech/react-native-breez-sdk@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk/-/react-native-breez-sdk-0.6.2.tgz"
-  integrity sha512-g9N4z+lnfn3oxUnAFHGsqJy03BeL32Fi6Z6LI4g65GOZGQOkqAjRiOBla+z7Q6lCtJsP1L4kwX3fOObWjf7c/A==
+"@breeztech/react-native-breez-sdk@^0.6.4":
+  version "0.6.4"
+  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk/-/react-native-breez-sdk-0.6.4.tgz"
+  integrity sha512-OnRckjGAZBGAKP0XlyY9RPq5iXbFABzlFkFD/mF//yKuLymyvZjJVfLeU+9cPvbGpw27VP4sDEWK6b4PdRWmgA==
 
 "@emotion/is-prop-valid@1.2.2":
   version "1.2.2"
