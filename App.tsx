@@ -11,6 +11,7 @@ import BitcoinPrice from './src/components/BitcoinPrice';
 import Bech32m from './src/app/SP/send';
 import Breez from './src/app/lightning/send';
 import {it} from '@jest/globals';
+import React from 'react';
 
 function App(): React.JSX.Element {
   return (
