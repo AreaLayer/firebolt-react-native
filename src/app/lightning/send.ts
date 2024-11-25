@@ -7,9 +7,10 @@ import {
   CheckMessageResponse, 
   SendOnchainRequest, 
   SendPaymentRequest, 
-  SendOnchainResponse 
+  SendOnchainResponse,
 } from '@breeztech/react-native-breez-sdk';
 
+import { LnOffer, Bolt11, Bolt12Offer } from '@breeztech/react-native-breez-sdk-liquid';
 export interface SendState {
   payment: Payment | null;
   backupStatus: BackupStatus | null;
@@ -21,6 +22,16 @@ export interface SendState {
   sendPaymentRequest: SendPaymentRequest | null;
   sendOnchainResponse: SendOnchainResponse | null;
 }
+
+export interface LnOffer {
+  offer: string;
+  chains: string;
+  paths: LnOfferBlindedPath[];
+  minAmount: number;
+  bolt11: string;
+  bolt12Offer: string; 
+}
+
 
 export const initialState: SendState = {
   payment: null,
