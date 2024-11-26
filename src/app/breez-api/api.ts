@@ -8,10 +8,9 @@ import {
 const developerKey: number[] = []
 const developerCert: number[] = []
 const greenlightCredentials: GreenlightCredentials = {
-  developerKey,
-  developerCert
+  deviceKey: developerKey,
+  deviceCert: developerCert
 }
-
 // const nodeConfig: NodeConfig = {
 //   type: NodeConfigVariant.GREENLIGHT,
 //   config: {
