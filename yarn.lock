@@ -3369,9 +3369,9 @@
     buffer "~6.0.3"
 
 "@solana/web3.js@^1.95.4":
-  version "1.95.4"
-  resolved "https://registry.npmjs.org/@solana/web3.js/-/web3.js-1.95.4.tgz"
-  integrity sha512-sdewnNEA42ZSMxqkzdwEWi6fDgzwtJHaQa5ndUGEJYtoOnM6X5cvPmjoTUp7/k7bRrVAxfBgDnvQQHD6yhlLYw==
+  version "1.95.5"
+  resolved "https://registry.npmjs.org/@solana/web3.js/-/web3.js-1.95.5.tgz"
+  integrity sha512-hU9cBrbg1z6gEjLH9vwIckGBVB78Ijm0iZFNk4ocm5OD82piPwuk3MeQ1rfiKD9YQtr95krrcaopb49EmQJlRg==
   dependencies:
     "@babel/runtime" "^7.25.0"
     "@noble/curves" "^1.4.2"
@@ -3396,149 +3396,149 @@
   dependencies:
     tslib "^2.4.0"
 
-"@trezor/analytics@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@trezor/analytics/-/analytics-1.2.2.tgz"
-  integrity sha512-XQfgYZg71hIz8CEAIz0uwlAHfMU2Y3I9pFlk7KxZr8JIlbZsDa4bdC0wKHjb8RcHdhlZFtCBGcVdUUHWmH41Iw==
+"@trezor/analytics@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/@trezor/analytics/-/analytics-1.2.3.tgz"
+  integrity sha512-VMWDedeFnZEaJnZEYsSaxhU6fJjiNj7nyXu1m2ht+pA73GIoTTwAFAQGgbT4Fy4VdLmwI3AdwKvJTuA+ccFwpg==
   dependencies:
-    "@trezor/env-utils" "1.2.0"
-    "@trezor/utils" "9.2.2"
+    "@trezor/env-utils" "1.2.1"
+    "@trezor/utils" "9.2.3"
 
-"@trezor/blockchain-link-types@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@trezor/blockchain-link-types/-/blockchain-link-types-1.2.2.tgz"
-  integrity sha512-4oya0mwJwuloL8gw/6FPBcbp39Dwo/623X5/r4mpblDCAUWm9MvvKM0H2qvEhFhadCrcelZ1y6MF75X3pAQU6Q==
+"@trezor/blockchain-link-types@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/@trezor/blockchain-link-types/-/blockchain-link-types-1.2.3.tgz"
+  integrity sha512-ymH4R/fmmUmNKSIpItFONhvq4r9UjzIWNSX/Jqntf8X0Jb4/pMLLxY+ZJ+AK9mEvk9hVbf/TTa99gJ1XQ2SwnA==
   dependencies:
     "@solana/web3.js" "^1.95.4"
-    "@trezor/type-utils" "1.1.1"
-    "@trezor/utxo-lib" "2.2.2"
+    "@trezor/type-utils" "1.1.2"
+    "@trezor/utxo-lib" "2.2.3"
 
-"@trezor/blockchain-link-utils@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@trezor/blockchain-link-utils/-/blockchain-link-utils-1.2.2.tgz"
-  integrity sha512-WQ6sjSNESgaPweVMBl4NE8U5jVErJWLzml5+YOGmEB/aEuIfCW3jTL1v+ylYoE1N9CrJaHCXkh7ROS6IupST4A==
+"@trezor/blockchain-link-utils@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/@trezor/blockchain-link-utils/-/blockchain-link-utils-1.2.3.tgz"
+  integrity sha512-Q+G+o7LaWJWIlRR6VhIVYcNoWGbohv2ApSsT/8/7UQg9FHUqJa3x9z4ulU6mTGVf3XFm4fmRoFrYZJOj/2orDw==
   dependencies:
     "@mobily/ts-belt" "^3.13.1"
     "@solana/web3.js" "^1.95.4"
-    "@trezor/env-utils" "1.2.0"
-    "@trezor/utils" "9.2.2"
+    "@trezor/env-utils" "1.2.1"
+    "@trezor/utils" "9.2.3"
 
-"@trezor/blockchain-link@2.3.2":
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/@trezor/blockchain-link/-/blockchain-link-2.3.2.tgz"
-  integrity sha512-JPerEaaz8WVpAnPft0G3fy+OQlSRDo+UxU5Qx4d86ACYLzeOqQo1XYYLJEetCj9L3G1odjaApepJYv4w5gkIvg==
+"@trezor/blockchain-link@2.3.3":
+  version "2.3.3"
+  resolved "https://registry.npmjs.org/@trezor/blockchain-link/-/blockchain-link-2.3.3.tgz"
+  integrity sha512-njRNNGzFvyKzOSmtuhljbIfnL+eozqNY9DMQWbtMnLlKgQH6kwJTFfn5RsW7rKRTqd7I4DkKWRVT4VXIRJO1bw==
   dependencies:
     "@solana/buffer-layout" "^4.0.1"
     "@solana/web3.js" "^1.95.4"
-    "@trezor/blockchain-link-types" "1.2.2"
-    "@trezor/blockchain-link-utils" "1.2.2"
-    "@trezor/env-utils" "1.2.0"
-    "@trezor/utils" "9.2.2"
-    "@trezor/utxo-lib" "2.2.2"
+    "@trezor/blockchain-link-types" "1.2.3"
+    "@trezor/blockchain-link-utils" "1.2.3"
+    "@trezor/env-utils" "1.2.1"
+    "@trezor/utils" "9.2.3"
+    "@trezor/utxo-lib" "2.2.3"
     "@types/web" "^0.0.174"
     events "^3.3.0"
     ripple-lib "^1.10.1"
     socks-proxy-agent "8.0.4"
     ws "^8.18.0"
 
-"@trezor/connect-analytics@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@trezor/connect-analytics/-/connect-analytics-1.2.2.tgz"
-  integrity sha512-XeW5ojc15rRuW9KyAqy7VMyB6GC3EYP0wcX65dRZ/AeoOzvGTdjVBJf1nh6Z4Ns9e3S2oMwP+p9Y5vd8Ngc4AA==
+"@trezor/connect-analytics@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/@trezor/connect-analytics/-/connect-analytics-1.2.3.tgz"
+  integrity sha512-xUXBG7XyEoUdxsFjWG7F9RtzR6zqn34KGIh2ySmCRiz+YM6iDYCxkBZe/2hiaEWKzuCguYBvL7oelDT+CQZIGQ==
   dependencies:
-    "@trezor/analytics" "1.2.2"
+    "@trezor/analytics" "1.2.3"
 
-"@trezor/connect-common@0.2.3":
-  version "0.2.3"
-  resolved "https://registry.npmjs.org/@trezor/connect-common/-/connect-common-0.2.3.tgz"
-  integrity sha512-mdwpi6matjosL/AIQPXUYBWnYf3CXLIdblgHMgQlAtyQPxgKQrvUT5fBDYTYFe9uK2xuM11cfFKLjQ1xSK60sw==
+"@trezor/connect-common@0.2.4":
+  version "0.2.4"
+  resolved "https://registry.npmjs.org/@trezor/connect-common/-/connect-common-0.2.4.tgz"
+  integrity sha512-6sQlbnTa7KSjs6ZsfGPznYBXAOn4o2ylA0RHH5SOBdexXwx4+4XlEp2TvEpTCssFgtGONd6/Wwgbhb6MeDLkTA==
   dependencies:
-    "@trezor/env-utils" "1.2.0"
-    "@trezor/utils" "9.2.2"
+    "@trezor/env-utils" "1.2.1"
+    "@trezor/utils" "9.2.3"
 
-"@trezor/connect@^9.4.3":
-  version "9.4.3"
-  resolved "https://registry.npmjs.org/@trezor/connect/-/connect-9.4.3.tgz"
-  integrity sha512-wLsbZWHGWL4hvJ89IDG4rb0NhSTagaYdJnBk2U6Mk0mntV0uDlu9z/PtnEhMtyeVxCD2Z1SmPGHp2sIqK7muCg==
+"@trezor/connect@^9.4.4":
+  version "9.4.4"
+  resolved "https://registry.npmjs.org/@trezor/connect/-/connect-9.4.4.tgz"
+  integrity sha512-s9mnVwdxMQHBkzNj3KfcoVMZN8lwRzeVknrWOE0COZiD5TCyVirEVlaV7jXz95DU0yB7ke1mRDtSV1eRJD3XEA==
   dependencies:
     "@babel/preset-typescript" "^7.24.7"
     "@ethereumjs/common" "^4.4.0"
     "@ethereumjs/tx" "^5.4.0"
     "@fivebinaries/coin-selection" "2.2.1"
-    "@trezor/blockchain-link" "2.3.2"
-    "@trezor/blockchain-link-types" "1.2.2"
-    "@trezor/connect-analytics" "1.2.2"
-    "@trezor/connect-common" "0.2.3"
-    "@trezor/protobuf" "1.2.3"
-    "@trezor/protocol" "1.2.1"
-    "@trezor/schema-utils" "1.2.2"
-    "@trezor/transport" "1.3.3"
-    "@trezor/utils" "9.2.2"
-    "@trezor/utxo-lib" "2.2.2"
+    "@trezor/blockchain-link" "2.3.3"
+    "@trezor/blockchain-link-types" "1.2.3"
+    "@trezor/connect-analytics" "1.2.3"
+    "@trezor/connect-common" "0.2.4"
+    "@trezor/protobuf" "1.2.4"
+    "@trezor/protocol" "1.2.2"
+    "@trezor/schema-utils" "1.2.3"
+    "@trezor/transport" "1.3.4"
+    "@trezor/utils" "9.2.3"
+    "@trezor/utxo-lib" "2.2.3"
     blakejs "^1.2.1"
     bs58 "^6.0.0"
     bs58check "^4.0.0"
     cross-fetch "^4.0.0"
 
-"@trezor/env-utils@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@trezor/env-utils/-/env-utils-1.2.0.tgz"
-  integrity sha512-dbOR+PIeReZW4iooN+DQIMWloZAV92jMGOTzEdcY6NA63nCV8QUSxoNZwZtU9nVRPeJLrT6cVkVG80nZjlplow==
+"@trezor/env-utils@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/@trezor/env-utils/-/env-utils-1.2.1.tgz"
+  integrity sha512-ESBV+/AWpfJA6qnHk7BgBYFbhNtUKjPZZzQr1LOUiePwFITbVu421b5BHjTSPFVjpbrWo6Ob0IG7u8saJi0G5A==
   dependencies:
     ua-parser-js "^1.0.37"
 
-"@trezor/protobuf@1.2.3":
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/@trezor/protobuf/-/protobuf-1.2.3.tgz"
-  integrity sha512-EsIeScVL5mGj20ChCYWiw8mP/SENTO4qNi0fb3Z0wH/bSBGp4UAnvgrOag/alLCvHDEMtmZghyS7ALg/U/XddA==
+"@trezor/protobuf@1.2.4":
+  version "1.2.4"
+  resolved "https://registry.npmjs.org/@trezor/protobuf/-/protobuf-1.2.4.tgz"
+  integrity sha512-609Z8st6lL59DQoAb3XTwyNz3xxXBr1rgcAE6mB8LtVjo37YMO2IL2CXomk0ngybtfwkPq9tU1SgifMdAv0sVw==
   dependencies:
-    "@trezor/schema-utils" "1.2.2"
+    "@trezor/schema-utils" "1.2.3"
     protobufjs "7.4.0"
 
-"@trezor/protocol@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/@trezor/protocol/-/protocol-1.2.1.tgz"
-  integrity sha512-KGRtlizHk4nz7owhHH/gP3XfTbOGvD1Co3As1KOvVAA4+J+YJsk4ri84heJG9vb1Mi30rY2fvQ0TrxOL7bgsWQ==
-
-"@trezor/schema-utils@1.2.2":
+"@trezor/protocol@1.2.2":
   version "1.2.2"
-  resolved "https://registry.npmjs.org/@trezor/schema-utils/-/schema-utils-1.2.2.tgz"
-  integrity sha512-xEi5H0wkYB3UEfCOxpPpVIM8UHbd2CxEWdKpLVPxfKRUgZhq97UBSdMon/8hCl6UFuTXZR/g1RklyVGyL3rBDA==
+  resolved "https://registry.npmjs.org/@trezor/protocol/-/protocol-1.2.2.tgz"
+  integrity sha512-iXD+Wqpk0FpwJpQbAFKw+8AL6ipfDjQ7g+MYZ7lU1H7/gCxM2XqLI4eW7Il+FAwk7orepDuoSbJSVcsNJYKjOA==
+
+"@trezor/schema-utils@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/@trezor/schema-utils/-/schema-utils-1.2.3.tgz"
+  integrity sha512-+/GmaSTfUf8nEBSSWz/SV0W/0l37YQBfDMygAKXlKMbtXJI03PHqkEF/jQrt+BP2Gh24gjo5GNqCwx7EIlzZug==
   dependencies:
     "@sinclair/typebox" "^0.33.7"
     ts-mixer "^6.0.3"
 
-"@trezor/transport@1.3.3":
-  version "1.3.3"
-  resolved "https://registry.npmjs.org/@trezor/transport/-/transport-1.3.3.tgz"
-  integrity sha512-M8wwjlwCjN2qG5EHy0BS0ziMNH4ZhlOakJAr17wNBLqy46WYrsKhz8fC9U1/kuM8rx6ASQ0lc+/1mdDH9wOb4A==
+"@trezor/transport@1.3.4":
+  version "1.3.4"
+  resolved "https://registry.npmjs.org/@trezor/transport/-/transport-1.3.4.tgz"
+  integrity sha512-qKE2d7gML4uDNcTwPTJqgZ6gA79kXX61ZQknCyGXizW3oaTVCu7GP1wZxxW8plzRZVHNCAH9Wdc5mlrAkAooDQ==
   dependencies:
-    "@trezor/protobuf" "1.2.3"
-    "@trezor/protocol" "1.2.1"
-    "@trezor/utils" "9.2.2"
+    "@trezor/protobuf" "1.2.4"
+    "@trezor/protocol" "1.2.2"
+    "@trezor/utils" "9.2.3"
     cross-fetch "^4.0.0"
     long "^4.0.0"
     protobufjs "7.4.0"
     usb "^2.14.0"
 
-"@trezor/type-utils@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/@trezor/type-utils/-/type-utils-1.1.1.tgz"
-  integrity sha512-bsNe1oHif3UZnK3vSD0MeTfYySObmiOKJXkFb15M1u6PvcXZCJ4wdfdj3k7ti7RTKVh7s3YN7S/4IqsBv93tfw==
+"@trezor/type-utils@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/@trezor/type-utils/-/type-utils-1.1.2.tgz"
+  integrity sha512-48VUd5OwgqzsnShMDVxs6SyKrYdl+rQc23fKMNChpYM1Ilw7ea9uKvNN38pEvQHWERKKEtmiRJ8cQD4X9D9MVQ==
 
-"@trezor/utils@9.2.2":
-  version "9.2.2"
-  resolved "https://registry.npmjs.org/@trezor/utils/-/utils-9.2.2.tgz"
-  integrity sha512-eTKOXhJsqUObQiL4ccJvamuDe9YDt+QFPh25YG85fqUInN85H/dxRXiLEboeqkRHldP06+bG+e2t4iAnsWuINQ==
+"@trezor/utils@9.2.3":
+  version "9.2.3"
+  resolved "https://registry.npmjs.org/@trezor/utils/-/utils-9.2.3.tgz"
+  integrity sha512-nSuI87UUHKwh8loQDiBkvKE7yAQOnJKaxQ0MM45JocYZ/kyfKfipWSsmB1Rm/T6llgCnqHdCvirhfjEI18Zlxg==
   dependencies:
     bignumber.js "^9.1.2"
 
-"@trezor/utxo-lib@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.npmjs.org/@trezor/utxo-lib/-/utxo-lib-2.2.2.tgz"
-  integrity sha512-4MoHCSufO1AVzJmmflHT8F7CsinhjvSGO3iqz8EdPHN/AWZZdijPBpJZ/57cItbqusMbhZ+py3usy7DEoqu/rQ==
+"@trezor/utxo-lib@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.npmjs.org/@trezor/utxo-lib/-/utxo-lib-2.2.3.tgz"
+  integrity sha512-BtQHlFWb02FAtB13g23xsgEO1CJewKyRk0em00kGtpEeIBLLKRq/D1dj6o3B3ERUQHOFvoufZjcYJkJ/WExGWQ==
   dependencies:
-    "@trezor/utils" "9.2.2"
+    "@trezor/utils" "9.2.3"
     bchaddrjs "^0.5.2"
     bech32 "^2.0.0"
     bip66 "^2.0.0"
@@ -7179,9 +7179,9 @@ jake@^10.8.5:
     minimatch "^3.1.2"
 
 jayson@^4.1.1:
-  version "4.1.2"
-  resolved "https://registry.npmjs.org/jayson/-/jayson-4.1.2.tgz"
-  integrity sha512-5nzMWDHy6f+koZOuYsArh2AXs73NfWYVlFyJJuCedr93GpY+Ku8qq10ropSXVfHK+H0T6paA88ww+/dV+1fBNA==
+  version "4.1.3"
+  resolved "https://registry.npmjs.org/jayson/-/jayson-4.1.3.tgz"
+  integrity sha512-LtXh5aYZodBZ9Fc3j6f2w+MTNcnxteMOrb+QgIouguGOulWi0lieEkOUg+HkjjFs0DGoWDds6bi4E9hpNFLulQ==
   dependencies:
     "@types/connect" "^3.4.33"
     "@types/node" "^12.12.54"
@@ -8940,10 +8940,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.1.2.tgz"
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
 
-prettier@>=2, prettier@3.4.0:
-  version "3.4.0"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-3.4.0.tgz"
-  integrity sha512-/OXNZcLyWkfo13ofOW5M7SLh+k5pnIs07owXK2teFpnfaOEcycnSy7HQxldaVX1ZP/7Q8oO1eDuQJNwbomQq5Q==
+prettier@>=2, prettier@3.4.1:
+  version "3.4.1"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-3.4.1.tgz"
+  integrity sha512-G+YdqtITVZmOJje6QkXQWzl3fSfMxFwm1tjTyo9exhkmWSqC4Yhd1+lug++IlR2mvRVAxEDDWYkQdeSztajqgg==
 
 pretty-format@^29.7.0:
   version "29.7.0"
