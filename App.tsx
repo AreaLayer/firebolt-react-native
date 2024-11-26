@@ -20,7 +20,7 @@ function App(): React.JSX.Element {
         <NavigationContainer>
           <OnBoardingNavigation />
           <OnBoardingHome>
-            <Balance />
+            <Balance balance={0} fiatEquivalent={0} satsEquivalent={0} lbtcEquivalent={0} />
           </OnBoardingHome>
         </NavigationContainer>
       </ConnectionProvider>
