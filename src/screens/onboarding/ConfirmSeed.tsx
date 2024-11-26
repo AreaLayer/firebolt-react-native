@@ -1,5 +1,4 @@
-import * as React from 'react';
-import {useState, useMemo} from 'react';
+import React, {useState, useMemo} from 'react';
 import {
   Box,
   Text,
@@ -19,8 +18,7 @@ import {RootStackParamList} from '../../navigation/OnBoarding';
 
 const HEADING_TEXT_1 = 'Confirm';
 const HEADING_TEXT_2 = 'Seed Phrase';
-const COPY_SEED_TEXT = 'Please select each words in the correct order!';
-
+const COPY_SEED_TEXT = 'Please select each word in the correct order!';
 const STORE_SEED_BTN_TEXT = 'Confirm Seed Phrase';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'ConfirmSeed'>;
@@ -29,10 +27,15 @@ function ConfirmSeed({navigation, route}: Props) {
   const {words} = route.params;
   const toast = useToast();
 
-  const randomShuffledWords = useMemo(
-    () => [...words].sort(() => Math.random() - 0.5),
-    [words],
-  );
+  const randomShuffledWords = useMemo(() => {
+    const shuffled = [...words];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }, [words]);
+
   const [selectedSeedWords, setSelectedSeedWords] = useState<(string | null)[]>(
     Array(12).fill(null),
   );
@@ -45,9 +48,9 @@ function ConfirmSeed({navigation, route}: Props) {
       index === pressedIndex ? null : word,
     );
     const updatedSelectedSeedWords = [...selectedSeedWords];
-    for (let seedWordIndex in updatedSelectedSeedWords) {
-      if (!updatedSelectedSeedWords[seedWordIndex]) {
-        updatedSelectedSeedWords[seedWordIndex] = pressedWord;
+    for (let i = 0; i < updatedSelectedSeedWords.length; i++) {
+      if (!updatedSelectedSeedWords[i]) {
+        updatedSelectedSeedWords[i] = pressedWord;
         break;
       }
     }
@@ -57,18 +60,13 @@ function ConfirmSeed({navigation, route}: Props) {
 
   const onResetPress = () => {
     setSelectedSeedWords(Array(12).fill(null));
-    setShuffledSeedWords(words);
+    setShuffledSeedWords(randomShuffledWords);
   };
 
   const compareStoredSeed = () => {
-    let isSame = true;
-    words.forEach((item, index) => {
-      if (item !== selectedSeedWords[index]) {
-        isSame = false;
-      }
-    });
-    return isSame;
+    return words.every((word, index) => word === selectedSeedWords[index]);
   };
+
   const onSubmit = () => {
     const isSameAsStoredSeed = compareStoredSeed();
     if (isSameAsStoredSeed) {
@@ -80,13 +78,16 @@ function ConfirmSeed({navigation, route}: Props) {
           <ShowToast
             id={id}
             action="error"
-            description="Please choose the correct order and try again!"
+            description="Incorrect order, please try again!"
+            accessibilityLabel="Error toast: Incorrect order."
           />
         ),
       });
       onResetPress();
     }
   };
+
+  const isSubmitDisabled = selectedSeedWords.includes(null);
 
   return (
     <Box py={'10%'} px={'$8'} bg="$primary400" flex={1}>
@@ -111,8 +112,7 @@ function ConfirmSeed({navigation, route}: Props) {
           mt={'$4'}
           variant="outline"
           action="secondary"
-          isDisabled={false}
-          isFocusVisible={false}>
+          accessibilityLabel="Reset seed phrase order">
           <ButtonIcon color="white" as={RepeatIcon} />
         </Button>
       </Box>
@@ -121,7 +121,6 @@ function ConfirmSeed({navigation, route}: Props) {
         mt={'$4'}
         justifyContent="space-between"
         alignItems="center"
-        reversed={false}
         flexWrap="wrap"
         borderWidth="$2"
         borderRadius="$md"
@@ -143,7 +142,6 @@ function ConfirmSeed({navigation, route}: Props) {
                   color="$primary500"
                   size="xs"
                   textTransform="uppercase"
-                  borderRadius={'$lg'}
                   fontWeight="$bold"
                   textAlign="left">
                   {`${index + 1}. ${word}`}
@@ -163,7 +161,6 @@ function ConfirmSeed({navigation, route}: Props) {
                   color="white"
                   size="xs"
                   textTransform="uppercase"
-                  borderRadius={'$lg'}
                   fontWeight="$bold"
                   textAlign="left">
                   {`${index + 1}.`}
@@ -178,7 +175,6 @@ function ConfirmSeed({navigation, route}: Props) {
         mt={'$4'}
         justifyContent="space-between"
         alignItems="center"
-        reversed={false}
         flexWrap="wrap">
         {shuffledSeedWords.map((word, index) => (
           <Center key={index}>
@@ -189,8 +185,7 @@ function ConfirmSeed({navigation, route}: Props) {
                 w="$24"
                 variant="solid"
                 action="secondary"
-                isDisabled={false}
-                isFocusVisible={false}>
+                accessibilityLabel={`Select word: ${word}`}>
                 <ButtonText
                   fontSize="$xs"
                   textTransform="uppercase"
@@ -222,8 +217,8 @@ function ConfirmSeed({navigation, route}: Props) {
           variant="solid"
           action="secondary"
           onPress={onSubmit}
-          isDisabled={false}
-          isFocusVisible={false}>
+          isDisabled={isSubmitDisabled}
+          accessibilityLabel="Confirm seed phrase order">
           <ButtonText color="black" fontWeight="$bold">
             {STORE_SEED_BTN_TEXT}
           </ButtonText>

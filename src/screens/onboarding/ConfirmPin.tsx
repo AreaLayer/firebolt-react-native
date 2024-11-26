@@ -1,5 +1,4 @@
-import * as React from 'react';
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect, useMemo} from 'react';
 import {
   Box,
   Text,
@@ -17,7 +16,6 @@ import {
 import {SCREEN_NAMES} from '../../navigation/screenNames';
 import {RootStackParamList} from '../../navigation/OnBoarding';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
-
 import ShowToast from '../../components/ShowToast';
 import {mnemonicToSeed} from 'bip39';
 import {encryptAesGcm} from '../../utils/encryption';
@@ -27,7 +25,6 @@ import storage from '../../utils/storage';
 const HEADING_TEXT_1 = 'Confirm';
 const HEADING_TEXT_2 = 'Your PIN code';
 const COPY_SEED_TEXT = 'Please re-enter your 5 digit PIN code!';
-
 const STORE_SEED_BTN_TEXT = 'Finish';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'ConfirmPin'>;
@@ -39,23 +36,15 @@ function ConfirmPin({navigation, route}: Props) {
   );
   const [buttonLoading, setButtonLoading] = useState(false);
   const toast = useToast();
-  const digits = React.useMemo(
-    () => [1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, 'X'],
-    [],
-  );
+
+  const digits = useMemo(() => [1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, 'X'], []);
 
   const onResetPress = () => {
     setConfirmWalletPin(Array(5).fill(null));
   };
 
   const compareWalletPins = () => {
-    let isSamePin = true;
-    confirmWalletPin.forEach((digit, index) => {
-      if (digit !== walletPin[index]) {
-        isSamePin = false;
-      }
-    });
-    return isSamePin;
+    return confirmWalletPin.every((digit, index) => digit === walletPin[index]);
   };
 
   const onDigitPress = (digit: number | string) => {
@@ -68,25 +57,37 @@ function ConfirmPin({navigation, route}: Props) {
       }
     } else if (digit === 'X') {
       const emptyIndex = confirmWalletPin.findIndex(item => item === null);
-      if (emptyIndex !== 0) {
-        const digitRemovalIndex = emptyIndex === -1 ? 4 : emptyIndex - 1;
+      const lastFilledIndex = emptyIndex === -1 ? 4 : emptyIndex - 1;
+      if (lastFilledIndex >= 0) {
         const newWalletPin = [...confirmWalletPin];
-        newWalletPin[digitRemovalIndex] = null;
+        newWalletPin[lastFilledIndex] = null;
         setConfirmWalletPin(newWalletPin);
       }
     }
   };
 
   const saveEncryptedMnemonic = async () => {
-    const mnemonic = words.join(' ');
-    const seed = await mnemonicToSeed(mnemonic);
-    const hexSeed = seed.toString('hex');
-    const password = walletPin.join('').toString();
-    const encryptedSeedCipher = encryptAesGcm(hexSeed, password);
-    await storage.save({
-      key: STORAGE_KEYS.seedCipher,
-      data: encryptedSeedCipher,
-    });
+    try {
+      const mnemonic = words.join(' ');
+      const seed = await mnemonicToSeed(mnemonic);
+      const hexSeed = seed.toString('hex');
+      const password = walletPin.join('');
+      const encryptedSeedCipher = encryptAesGcm(hexSeed, password);
+      await storage.save({
+        key: STORAGE_KEYS.seedCipher,
+        data: encryptedSeedCipher,
+      });
+    } catch (error) {
+      toast.show({
+        placement: 'top',
+        render: ({id}) => (
+          <ShowToast
+            id={Number(id)}
+            action="error"
+            description="Error saving wallet, please try again!"
+          />
+        ),      });
+    }
   };
 
   const encryptAndSaveWallet = async () => {
@@ -99,25 +100,31 @@ function ConfirmPin({navigation, route}: Props) {
         placement: 'top',
         render: ({id}) => (
           <ShowToast
-            id={id}
+            id={Number(id)}
             action="error"
-            description="Pin didn't match, please try again!"
+            description="PIN didn't match, please try again!"
           />
         ),
       });
+      onResetPress();
     }
     setButtonLoading(false);
   };
-  useEffect(() => {
-    if (buttonLoading) {
-      setTimeout(encryptAndSaveWallet, 1000);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [buttonLoading]);
 
   const onSubmit = () => {
     setButtonLoading(true);
   };
+
+  useEffect(() => {
+    if (buttonLoading) {
+      const timeout = setTimeout(encryptAndSaveWallet, 1000);
+      return () => clearTimeout(timeout);
+    }
+    return undefined;
+  }, [buttonLoading]);
+
+  const isSubmitDisabled = confirmWalletPin.includes(null);
+
   return (
     <Box py={'10%'} px={'$8'} bg="$primary400" flex={1}>
       <Heading fontWeight="400" w={'$3/5'} size="lg" color="white">
@@ -141,70 +148,45 @@ function ConfirmPin({navigation, route}: Props) {
           mt={'$4'}
           variant="outline"
           action="secondary"
-          isDisabled={false}
-          isFocusVisible={false}>
+          accessibilityLabel="Reset PIN code">
           <ButtonIcon color="white" as={RepeatIcon} />
         </Button>
       </Box>
-      <HStack
-        space="lg"
-        mt={'$8'}
-        justifyContent="space-between"
-        alignItems="center"
-        reversed={false}
-        flexWrap="wrap">
+      <HStack space="lg" mt={'$8'} justifyContent="space-between">
         {confirmWalletPin.map((item, index) => (
-          <Box
+          <Center
             key={index}
-            borderRadius={'$md'}
+            borderRadius="$md"
             borderColor="$secondary500"
             w="$12"
             h="$12"
-            bg="$secondary500"
-            px="$1"
-            alignItems="center"
-            justifyContent="center">
+            bg="$secondary500">
             <Text fontWeight="$bold" size="xl">
-              {item}
+              {item ?? ''}
             </Text>
-          </Box>
+          </Center>
         ))}
       </HStack>
-      <HStack
-        space="lg"
-        mt={'$10'}
-        justifyContent="center"
-        alignItems="center"
-        reversed={false}
-        flexWrap="wrap">
+      <HStack space="lg" mt={'$10'} justifyContent="center" flexWrap="wrap">
         {digits.map((item, index) => (
-          <Box key={index} alignItems="center" width="30%">
+          <Center key={index} width="30%">
             <Button
-              borderRadius={'$full'}
-              width="$20"
-              maxWidth={'100%'}
+              borderRadius="$full"
+              w="$20"
               h="$20"
-              px="$1"
               variant="solid"
               action="secondary"
               onPress={() => onDigitPress(item)}
-              isDisabled={false}
-              isFocusVisible={false}>
+              accessibilityLabel={`Key ${item}`}>
               {item === 'X' ? (
-                <ButtonIcon
-                  color="$black"
-                  as={CloseIcon}
-                  m="$2"
-                  w="$8"
-                  h="$8"
-                />
+                <ButtonIcon color="black" as={CloseIcon} />
               ) : (
-                <ButtonText color="$black" size="3xl">
+                <ButtonText color="black" size="3xl">
                   {item}
                 </ButtonText>
               )}
             </Button>
-          </Box>
+          </Center>
         ))}
       </HStack>
       <Center>
@@ -215,12 +197,12 @@ function ConfirmPin({navigation, route}: Props) {
           variant="solid"
           action="secondary"
           onPress={onSubmit}
-          isDisabled={false}
-          isFocusVisible={false}>
+          isDisabled={isSubmitDisabled || buttonLoading}
+          accessibilityLabel="Submit PIN">
           {buttonLoading ? (
             <>
-              <ButtonSpinner color="black" mr="$3" />
-              <ButtonText color="black" fontWeight="$bold">
+              <ButtonSpinner color="black" />
+              <ButtonText color="black" ml="$2">
                 Please wait...
               </ButtonText>
             </>
