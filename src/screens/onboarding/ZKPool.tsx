@@ -33,12 +33,12 @@ function OnBoardingHome({navigation}: Props) {
 
   // Navigate to Enter ZK Pool Screen
   const onEnterZKPoolButtonPress = () => {
-    navigation.navigate(SCREEN_NAMES.EnterZKPool as keyof typeof SCREEN_NAMES);
+    navigation.navigate(SCREEN_NAMES.EnterZKPool as unknown as keyof typeof SCREEN_NAMES);
   };
 
   // Navigate to Exit ZK Pool Screen
   const onExitZKPoolButtonPress = () => {
-    navigation.navigate(SCREEN_NAMES.ExitZKPool);
+    navigation.navigate(SCREEN_NAMES.ExitZKPool as unknown as keyof typeof SCREEN_NAMES);
   };
 
   return (
