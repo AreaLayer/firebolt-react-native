@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Swap = () => {
+const Swap: React.FC = () => {
   const [amount, setAmount] = useState(0);
   const [fromCurrency, setFromCurrency] = useState('BTC');
   const [toCurrency, setToCurrency] = useState('USD');
@@ -19,6 +19,7 @@ const Swap = () => {
       setError('An error occurred while processing your request.');
     }
   };
+
   return (
     <div className="swap">
       <h2>Swap</h2>
@@ -44,4 +45,6 @@ const Swap = () => {
       {error && <p>{error}</p>}
     </div>
   );
-}
+};
+
+export default Swap;
