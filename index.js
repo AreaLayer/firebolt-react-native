@@ -11,5 +11,6 @@ import { SilentPaymentGroup } from './src/app/SP/send';
 import {liquidwallet as LiquidWallet } from './src/app/LW/send';
 import {wallet as Wallet } from './src/app/W/send';
 import {SilentPaymentGroup as SilentPaymentGroup } from './src/app/SP/send';
+import {HDWallet as HDWallet} from '.src/app/HDWallet';
 
 AppRegistry.registerComponent(appName, () => App);
