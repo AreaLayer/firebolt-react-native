@@ -6,7 +6,7 @@ import {
   RecommendedFees,
 } from "@breeztech/react-native-breez-sdk";
 
-import { bolt12 , lnoffer } from "@breeztech/react-native-breez-sdk-liqud';
+import { bolt12 , lnoffer } from "@breeztech/react-native-breez-sdk-liquid';
 
 // Async functions for handling requests
 export const receiveOnchain = async (request: ReceiveOnchainRequest): Promise<ReceivePaymentResponse> => {
