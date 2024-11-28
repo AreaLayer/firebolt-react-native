@@ -1,4 +1,5 @@
 import { networks } from 'bitcoinjs-lib'; 
+import { LiquidMainnet, LiquidTestnet } from '@breeztech/react-native-breez-sdk-liquid';
 export { networks };
 
 // Define types/interfaces for each network type
@@ -13,7 +14,29 @@ interface Mainnet {
   scriptHash: number;
   wif: number;
 }
+interface LiquidMainnet {
+  messagePrefix: string;
+  bech32: string;
+  bip32: {
+    public: number;
+    private: number;
+  };
+  pubKeyHash: number;
+  scriptHash: number;
+  wif: number;
+}
 
+interface LiquidTestnet {
+  messagePrefix: string;
+  bech32: string;
+  bip32: {
+    public: number;
+    private: number;
+  };
+  pubKeyHash: number;
+  scriptHash: number;
+  wif: number;
+}
 interface Testnet {
   messagePrefix: string;
   bech32: string;
