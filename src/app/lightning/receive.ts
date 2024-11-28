@@ -3,7 +3,7 @@ import {
   ReceivePaymentRequest, 
   RedeemOnchainFundsRequest, 
   ReceivePaymentResponse, 
-  RecommendedFees,
+  RecommendedFees
 } from "@breeztech/react-native-breez-sdk";
 
 import { bolt12 , lnoffer } from "@breeztech/react-native-breez-sdk-liquid';
