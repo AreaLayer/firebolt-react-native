@@ -10,8 +10,9 @@ import HomeScreen from './src/screens/Home/HomeScreen';
 import BitcoinPrice from './src/components/BitcoinPrice';
 import Bech32m from './src/app/SP/send';
 import Breez from './src/app/lightning/send';
-import {it} from '@jest/globals';
 import React from 'react';
+
+import { GluestackUIProvider } from '@gluestack-ui/themed';
 
 function App(): React.JSX.Element {
   return (
@@ -19,7 +20,7 @@ function App(): React.JSX.Element {
       <ConnectionProvider>
         <NavigationContainer>
           <OnBoardingNavigation />
-          <OnBoardingHome navigation={undefined}>
+          <OnBoardingHome>
             <Balance balance={0} fiatEquivalent={0} satsEquivalent={0} lbtcEquivalent={0} />
           </OnBoardingHome>
         </NavigationContainer>
@@ -30,4 +31,5 @@ function App(): React.JSX.Element {
       <Breez/>
     </GluestackUIProvider>
   );
-}export default App;
+}
+export default App;
