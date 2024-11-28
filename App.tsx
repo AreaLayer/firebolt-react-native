@@ -19,7 +19,7 @@ function App(): React.JSX.Element {
       <ConnectionProvider>
         <NavigationContainer>
           <OnBoardingNavigation />
-          <OnBoardingHome>
+          <OnBoardingHome navigation={undefined}>
             <Balance balance={0} fiatEquivalent={0} satsEquivalent={0} lbtcEquivalent={0} />
           </OnBoardingHome>
         </NavigationContainer>
