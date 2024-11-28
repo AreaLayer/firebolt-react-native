@@ -3,8 +3,10 @@ import {
   ReceivePaymentRequest, 
   RedeemOnchainFundsRequest, 
   ReceivePaymentResponse, 
-  RecommendedFees 
+  RecommendedFees,
 } from "@breeztech/react-native-breez-sdk";
+
+import { bolt12 , lnoffer } from "@breeztech/react-native-breez-sdk-liqud';
 
 // Async functions for handling requests
 export const receiveOnchain = async (request: ReceiveOnchainRequest): Promise<ReceivePaymentResponse> => {
@@ -32,6 +34,9 @@ class SwapInfo {
   static bitcoinAddress: string;
   static minAllowedDeposit: number;
   static maxAllowedDeposit: number;
+  static feeRate: number;
+  static swapAmount: number;
+  static lnoffer:string;
 
   constructor() {
     const address = SwapInfo.bitcoinAddress;
