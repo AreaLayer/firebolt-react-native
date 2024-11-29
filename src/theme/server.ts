@@ -1,6 +1,7 @@
 import express from 'express';
+import type { Express } from 'express';
 import bodyParser from 'body-parser';
-
+import type { Request, Response } from 'express';
 const app = express();
 app.use(bodyParser.json());
 
