@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import './src/components/Transactions.tsx';
 const SendPayment: React.FC = () => {
   const [address, setAddress] = useState('');
   const [amount, setAmount] = useState(0);
