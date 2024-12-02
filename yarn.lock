@@ -2827,10 +2827,10 @@
     invariant "^2.2.4"
     nullthrows "^1.1.1"
 
-"@react-navigation/core@^7.1.2":
-  version "7.1.2"
-  resolved "https://registry.npmjs.org/@react-navigation/core/-/core-7.1.2.tgz"
-  integrity sha512-oqp5gxITz33uRjVOx86TQHslwhruGNPjago/fBmOb6LNWi0HwKgiExo9FEfx8lp9pXKtKW0HBZJscUGVvPWYhA==
+"@react-navigation/core@^7.2.2":
+  version "7.2.2"
+  resolved "https://registry.npmjs.org/@react-navigation/core/-/core-7.2.2.tgz"
+  integrity sha512-jAcwLkcNer8//udCsCftkQfa6/jEiv4IdF/gjXTqrBiNGvDUGUqxjr3J2LR4vATz/sFxAOjimEYctgNRnpk6+Q==
   dependencies:
     "@react-navigation/routers" "^7.1.1"
     escape-string-regexp "^4.0.0"
@@ -2840,27 +2840,27 @@
     use-latest-callback "^0.2.1"
     use-sync-external-store "^1.2.2"
 
-"@react-navigation/elements@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.npmjs.org/@react-navigation/elements/-/elements-2.2.0.tgz"
-  integrity sha512-+DIVCwaJsVCk/yPf5N1NKyRkQ8/jrLh8FRfqgzxAygrOgAYuqI6cZGvAJvOhNTbbgek1Lq1J2UOWn1wIDxPwag==
+"@react-navigation/elements@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.npmjs.org/@react-navigation/elements/-/elements-2.2.3.tgz"
+  integrity sha512-xelp+OCIfyKe1d3DOPuHybwVtYQt85njz38WOVteZIyJf7Xmp4HehELz6bL2yS7C3gVHXPPoempHuaat+te3Jg==
   dependencies:
     color "^4.2.3"
 
-"@react-navigation/native-stack@^7.1.10":
-  version "7.1.10"
-  resolved "https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-7.1.10.tgz"
-  integrity sha512-z3VQJ4Y5AeUgkhzvcGHop9Rke/prm9vXbh89q18Gxh4JAfmO1wrAhWYuWuJw9ObjeVp4oe9NUyD6wtuwWHskZQ==
+"@react-navigation/native-stack@^7.1.13":
+  version "7.1.13"
+  resolved "https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-7.1.13.tgz"
+  integrity sha512-0myuifLuDzKxM4qF4dHZ/6HQ7qjocN4ic1NdzgrYbXMXaGsv85qU5nCecrKiFLvcMwy4en6X1UTmlAFPTLaM0A==
   dependencies:
-    "@react-navigation/elements" "^2.2.0"
+    "@react-navigation/elements" "^2.2.3"
     warn-once "^0.1.1"
 
-"@react-navigation/native@^7.0.9":
-  version "7.0.9"
-  resolved "https://registry.npmjs.org/@react-navigation/native/-/native-7.0.9.tgz"
-  integrity sha512-VR2TSUCfYYNrql8VMkt4jajchUe24bOeUuj1ReaD7qFLxyT3/vxI/x8gDbf6lLIKo3KBS8g1JEA9rt48PO/Mmw==
+"@react-navigation/native@^7.0.12":
+  version "7.0.12"
+  resolved "https://registry.npmjs.org/@react-navigation/native/-/native-7.0.12.tgz"
+  integrity sha512-FRn0mts152pb8rM4DChb7v71QhSmdt6MdVEX+5dz88vtLdHvLKm9i/8IiBU9oCGN9yGlfWMyd16xMPAa5PTskQ==
   dependencies:
-    "@react-navigation/core" "^7.1.2"
+    "@react-navigation/core" "^7.2.2"
     escape-string-regexp "^4.0.0"
     fast-deep-equal "^3.1.3"
     nanoid "3.3.7"
