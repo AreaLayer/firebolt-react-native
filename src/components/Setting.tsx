@@ -1,4 +1,4 @@
-import { IUser } from './user.interface';
+import { IUser } from '../interfaces/user.interface';
 import React from 'react';
 import { Document } from 'mongoose'; // Import Document if you are using mongoose
 
