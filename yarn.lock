@@ -1404,10 +1404,10 @@
   resolved "https://registry.npmjs.org/@gluestack-ui/hooks/-/hooks-0.1.12.tgz"
   integrity sha512-jMZS+aIPYvouRKkWUzOYFKeWyt+YFIojYFuSq8sNZTjAq72xtiKZQKxNwOgTorEDD4CAIk0bncRS0TneNSuMAA==
 
-"@gluestack-ui/icon@0.1.23":
-  version "0.1.23"
-  resolved "https://registry.npmjs.org/@gluestack-ui/icon/-/icon-0.1.23.tgz"
-  integrity sha512-au4WIwtAQRsvXV9rSZEvLvv4w8O2ikaTQjaCmF1poZyZabeEIXjun7qFIRTKmJsxoRmWK7ziM22i4OER/BlTCQ==
+"@gluestack-ui/icon@0.1.25":
+  version "0.1.25"
+  resolved "https://registry.npmjs.org/@gluestack-ui/icon/-/icon-0.1.25.tgz"
+  integrity sha512-HCyiHHHZzHpP5MIy5F2hP8iBc+0yt2NNM+jhbPYeoRG4WY7wc1whaUs9EIQvj880cq/zxOQP0Bz4mnyhuKsEKQ==
   dependencies:
     "@gluestack-ui/provider" "^0.1.13"
     "@gluestack-ui/utils" "^0.1.14"
@@ -1595,10 +1595,10 @@
     "@gluestack-ui/utils" "^0.1.14"
     "@react-native-aria/focus" "^0.2.9"
 
-"@gluestack-ui/themed@^1.1.61", "@gluestack-ui/themed@>=1.1.43":
-  version "1.1.61"
-  resolved "https://registry.npmjs.org/@gluestack-ui/themed/-/themed-1.1.61.tgz"
-  integrity sha512-ZL0tiHWaf0UO2Q4wJJVgTSjsP+x13uMpgb2WfHqWQWTROTggXl0Gsl9Zh6n0HTpqErp9NuqMMIztgkn5QjtnVw==
+"@gluestack-ui/themed@^1.1.62", "@gluestack-ui/themed@>=1.1.43":
+  version "1.1.62"
+  resolved "https://registry.npmjs.org/@gluestack-ui/themed/-/themed-1.1.62.tgz"
+  integrity sha512-EwLC9edkcqYPrcFgLnhqcdIZbq4c1V38Y6u/uk9+nxXO1iP8NL+8hnXZ6FFmo0wWZ3cishY5Wv3bYko2pI60AQ==
   dependencies:
     "@expo/html-elements" latest
     "@gluestack-style/animation-resolver" "1.0.4"
@@ -1613,7 +1613,7 @@
     "@gluestack-ui/divider" "0.1.10"
     "@gluestack-ui/fab" "0.1.22"
     "@gluestack-ui/form-control" "0.1.19"
-    "@gluestack-ui/icon" "0.1.23"
+    "@gluestack-ui/icon" "0.1.25"
     "@gluestack-ui/image" "0.1.11"
     "@gluestack-ui/input" "0.1.32"
     "@gluestack-ui/link" "0.1.23"
@@ -1632,7 +1632,7 @@
     "@gluestack-ui/tabs" "0.1.18"
     "@gluestack-ui/textarea" "0.1.24"
     "@gluestack-ui/toast" "1.0.8"
-    "@gluestack-ui/tooltip" "0.1.35"
+    "@gluestack-ui/tooltip" "0.1.37"
     "@legendapp/motion" latest
 
 "@gluestack-ui/toast@1.0.8":
@@ -1646,10 +1646,10 @@
     "@gluestack-ui/utils" "^0.1.14"
     "@react-native-aria/focus" "^0.2.9"
 
-"@gluestack-ui/tooltip@0.1.35":
-  version "0.1.35"
-  resolved "https://registry.npmjs.org/@gluestack-ui/tooltip/-/tooltip-0.1.35.tgz"
-  integrity sha512-hS+xv4wOm8vuDvzeRMt+wuGNGTCk7WSABR2wNCgMj8NEhJiaKAwLSBYwkzA01SRJxjGP64uMk8scPUdrnaw8MQ==
+"@gluestack-ui/tooltip@0.1.37":
+  version "0.1.37"
+  resolved "https://registry.npmjs.org/@gluestack-ui/tooltip/-/tooltip-0.1.37.tgz"
+  integrity sha512-rdvz9dzpWulvY23VCC9sSO3IwljYRdT4/IMbz3W2wR/S3Uo1fZa/bCyFCoLuvOVebKuzGMdAHJFrZCsgea91/A==
   dependencies:
     "@gluestack-ui/hooks" "0.1.12"
     "@gluestack-ui/overlay" "^0.1.16"
@@ -2621,10 +2621,10 @@
   dependencies:
     merge-options "^3.0.4"
 
-"@react-native-picker/picker@2.10.1":
-  version "2.10.1"
-  resolved "https://registry.npmjs.org/@react-native-picker/picker/-/picker-2.10.1.tgz"
-  integrity sha512-OOcvPl+JrvobwjNREO1A9gxc+5mD74gp2ZcUJf/wcKtgNByS6XBxwiOwaCRvVbIcb6NQN06bMVVqjJEA0X+Tlg==
+"@react-native-picker/picker@2.10.2":
+  version "2.10.2"
+  resolved "https://registry.npmjs.org/@react-native-picker/picker/-/picker-2.10.2.tgz"
+  integrity sha512-kr3OvCRwTYjR/OKlb52k4xmQVU7dPRIALqpyiihexdJxEgvc1smnepgqCeM9oXmNSG4YaV5/RSxFlLC5Z/T/Eg==
 
 "@react-native/assets-registry@0.76.3":
   version "0.76.3"
