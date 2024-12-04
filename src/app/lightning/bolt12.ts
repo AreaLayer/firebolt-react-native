@@ -1,11 +1,9 @@
-import { Bolt12 } from "@breeztech/react-native-breez-sdk-liquid";
+import { LnInvoice } from "@breeztech/react-native-breez-sdk";
 
 const LnOffer = {
-  bolt12: Bolt12,
+  LnInvoice,
 };
 
 export type LnOffer = typeof LnOffer;
-
-export const bolt12 = LnOffer.bolt12;
 
 export default LnOffer;

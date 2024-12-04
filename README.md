@@ -69,6 +69,7 @@ The other main features Firebolt supports are as follows:
 
 -  [x] Miniscript (WIP)
 -  [x] BOLT12 (WIP)
+-  [x] APIs Breez SDK tested
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Reproducible builds (Android)
 
