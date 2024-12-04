@@ -1,5 +1,6 @@
 
 import {Fees} from 'bitcoinjs-lib';
+import {FeeEstimator} from 'bitcoinjs-lib';
 
 const Fees = {
 FeesMine: {
@@ -8,4 +9,12 @@ FeesMine: {
     high: 30000,
 }
 }
-export default Fees;
+
+const FeeEstimator = {
+    getFee: function(feeRate) {
+        return feeRate * 1000;
+    }
+}
+export { Fees, FeeEstimator };
+
+export default FeeEstimator;
