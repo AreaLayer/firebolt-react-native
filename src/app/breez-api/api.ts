@@ -1,22 +1,20 @@
+import { GreenlightCredentials, NodeConfig, NodeConfigVariant } from '@breeztech/react-native-breez-sdk';
+import dotenv from 'dotenv';
+dotenv.config(); // Load .env variables
 
-import {
-  GreenlightCredentials,
-  NodeConfig,
-  NodeConfigVariant
-  developerCert,
-  developerKey,
-} from '@breeztech/react-native-breez-sdk';
+const developerKey: number[] = process.env.GREENLIGHT_DEVELOPER_KEY ? process.env.GREENLIGHT_DEVELOPER_KEY.split(',').map(Number) : [];
+const developerCert: number[] = process.env.GREENLIGHT_DEVELOPER_CERT ? process.env.GREENLIGHT_DEVELOPER_CERT.split(',').map(Number) : [];
 
 const greenlightCredentials: GreenlightCredentials = {
-  apiKey: '1234567890',
-  apiSecret: '1234567890',
-  apiUrl: 'https://api.greenlight.app',
-  apiVersion: 'v1',
+  developerKey,
+  developerCert
 };
-const developerKey: number[] = []
-const developerCert: number[] = []
-//   type: NodeConfigVariant.GREENLIGHT,
-//   config: {
-//     partnerCredentials: greenlightCredentials
-//   }
-// }
+
+const nodeConfig: NodeConfig = {
+  type: NodeConfigVariant.GREENLIGHT,
+  config: {
+    partnerCredentials: greenlightCredentials
+  }
+};
+export default nodeConfig;
+
