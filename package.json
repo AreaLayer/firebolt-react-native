@@ -34,7 +34,7 @@
     "bitcoinjs-lib": "^6.1.7",
     "bolt11": "^1.4.1",
     "buffer": "^6.0.3",
-    "dotenv": "^16.4.6",
+    "dotenv": "^16.4.7",
     "ecpair": "^2.1.0",
     "events": "^3.0.0",
     "libportal-react-native": "github:BlueWallet/libportal-react-native#f577c0ef8c905098604e323982bb92f5dd33c878",
@@ -72,7 +72,7 @@
     "core-js": "^3.39.0",
     "eslint": "^9.16.0",
     "jest": "^29.6.3",
-    "prettier": "3.4.1",
+    "prettier": "3.4.2",
     "react-test-renderer": "18.3.1",
     "rn-nodeify": "^10.3.0",
     "typescript": "5.7.2"
