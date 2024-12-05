@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'; // Import Stack Navigator
 import Fees from './path/to/Fees'; // Adjust paths as necessary
 import MinerFees from '../components/MinerFees';
-import FeesMempoolBlocks from './path/to/FeesMempoolBlocks'; // Adjust paths as necessary
+import FeesMempoolBlocks from '../components/FeesMempoolBlocks';
 import Home from './path/to/Home'; // Adjust paths as necessary
 
 const Stack = createStackNavigator(); // Create Stack Navigator
