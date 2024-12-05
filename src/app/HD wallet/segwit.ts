@@ -9,7 +9,7 @@ console.log('Mnemonic:', mnemonic);
 const seed = bip39.mnemonicToSeedSync(mnemonic);
 
 // Create the root node from the seed
-const root = bip32.fromSeed(seed);
+const root = bip32.BIP32Factory.fromSeed(seed);
 
 // Networks (mainnet by default, change to bitcoin.networks.testnet for testnet)
 const network = bitcoin.networks.bitcoin;
@@ -21,19 +21,17 @@ function deriveAccountNode(root: bip32.BIP32Interface, path: string): bip32.BIP3
 
 // Generate P2SH-P2WPKH (SegWit) address
 function generateP2SH_P2WPKH(accountNode: bip32.BIP32Interface): string {
-  const keyPair = bitcoin.ECPair.fromPrivateKey(accountNode.privateKey as Buffer);
+  const keyPair = bitcoin.ECPairFactory.fromPrivateKey(accountNode.privateKey as Buffer);
   const p2wpkh = bitcoin.payments.p2wpkh({ pubkey: keyPair.publicKey, network });
   const p2sh = bitcoin.payments.p2sh({ redeem: p2wpkh, network });
   return p2sh.address as string;
 }
-
 // Generate P2WPKH (Native SegWit) address
 function generateP2WPKH(accountNode: bip32.BIP32Interface): string {
-  const keyPair = bitcoin.ECPair.fromPrivateKey(accountNode.privateKey as Buffer);
+  const keyPair = bitcoin.ECPair.fromPrivateKey(accountNode.privateKey as Buffer, network);
   const p2wpkh = bitcoin.payments.p2wpkh({ pubkey: keyPair.publicKey, network });
   return p2wpkh.address as string;
-}
-// BIP paths
+}// BIP paths
 const paths = {
   p2sh_p2wpkh: "m/49'/0'/0'/0/0", // BIP-49 path
   p2wpkh: "m/84'/0'/0'/0/0",      // BIP-84 path
