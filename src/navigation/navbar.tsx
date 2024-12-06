@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReceivePayjoin from './ReceivePayjoin';
 
 const NavbarContainer = styled.div`
   background-color: #333;
@@ -38,11 +39,15 @@ const Navbar: React.FC = () => {
         <NavLink href="#">About</NavLink>
         <NavLink href="#">ZkPoolEnter</NavLink>
         <NavLink href="#">ZkPoolExit</NavLink>
+        <NavLink href="#">ZkMarket</NavLink>
+        <NavLink href="#">SP</NavLink>
+        <NavLink href="#">NWC</NavLink>
+        <NavLink href="#">SendPayjoin</NavLink>
+        <NavLink href="#"><ReceivePayjoin /></NavLink>
         
       </NavLinks>
       <div>1 wallet (wallet.jmdat active) · YG off</div>
     </NavbarContainer>
   );
 };
-
 export default Navbar;

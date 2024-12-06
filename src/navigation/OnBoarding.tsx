@@ -20,6 +20,12 @@ export type RootStackParamList = {
   ConfirmPin: {words: string[]; walletPin: number[]};
   Dashboard: undefined;
   VerifyPin: undefined;
+  ZKPool: undefined;
+  XPub: undefined;
+  Send: undefined;
+  Receive: undefined;
+  Settings: undefined;
+  FireboltPlus: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
