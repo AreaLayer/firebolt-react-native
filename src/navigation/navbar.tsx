@@ -28,7 +28,6 @@ const Navbar: React.FC = () => {
       <div>Home</div>
       <NavLinks>
         <NavLink href="#">Wallet</NavLink>
-        <NavLink href="#">Payment</NavLink>
         <NavLink href="#">ReceivePayment</NavLink>
         <NavLink href="#">SendPayment</NavLink>
         <NavLink href="#">Settings</NavLink>
