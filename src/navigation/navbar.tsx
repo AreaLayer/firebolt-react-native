@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReceivePayjoin from './ReceivePayjoin';
+import SendPayjoin from './SendPayjoin';
+import Settings from './Settings';
+import Swap from './Swap';
+import Invoice from './Invoice';
+import Wallet from './Wallet';
+import ReceivePayment from './ReceivePayment';
+import  SendPayment from './SendPayment';
+
 
 const NavbarContainer = styled.div`
   background-color: #333;
