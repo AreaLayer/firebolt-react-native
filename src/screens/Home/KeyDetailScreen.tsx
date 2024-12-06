@@ -5,7 +5,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 const KeyDetailScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
-  const { keyId } = route.params;
+  const { keyId } = route.params as { keyId: string };
 
   const [keyType, setKeyType] = useState('');
   const [keyValue, setKeyValue] = useState('');
@@ -44,5 +44,4 @@ const KeyDetailScreen = () => {
     </View>
   );
 };
-
 export default KeyDetailScreen;

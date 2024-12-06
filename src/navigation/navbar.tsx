@@ -44,6 +44,12 @@ const Navbar: React.FC = () => {
         <NavLink href="#">NWC</NavLink>
         <NavLink href="#">SendPayjoin</NavLink>
         <NavLink href="#"><ReceivePayjoin /></NavLink>
+        <NavLink href="/hardware-wallet-import">Hardware Wallet Import</NavLink>
+        <NavLink href="/trezor-import">Trezor Import</NavLink>
+        <NavLink href="/bitbox-import">Bitbox Import</NavLink>
+        <NavLink href="/ledger-import">Ledger Import</NavLink>
+        <NavLink href="/hd-import">HD Import</NavLink>
+         <NavLink href="/addresses">Addresses</NavLink>
         
       </NavLinks>
       <div>1 wallet (wallet.jmdat active) · YG off</div>

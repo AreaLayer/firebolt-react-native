@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
-  const [keys, setKeys] = useState<{ id: string; type: string; value: string }[]>([
+  const [keys] = useState<{ id: string; type: string; value: string }[]>([
     { id: '1', type: 'npub', value: 'npub1...' },
     { id: '2', type: 'nsec', value: 'nsec1...' }
   ]);
@@ -20,7 +20,7 @@ const HomeScreen = () => {
             <Text>{item.type}: {item.value}</Text>
             <Button
               title="Edit"
-              onPress={() => navigation.navigate('KeyDetail', { keyId: item.id })}
+              onPress={() => navigation.navigate('KeyDetail' as never, { keyId: item.id } as never)}
             />
           </View>
         )}
@@ -32,5 +32,4 @@ const HomeScreen = () => {
     </View>
   );
 };
-
 export default HomeScreen;
