@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const ReceivePayJoin: React.FC = () => {
-  const [bitcoinAddress, setBitcoinAddress] = useState('bc1q1234...');
+  const [bitcoinAddress] = useState('bc1q1234...');
   const [expectedAmount, setExpectedAmount] = useState('');
   const [showAdvanced, setShowAdvanced] = useState(false);
 
