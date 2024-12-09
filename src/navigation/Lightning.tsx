@@ -8,11 +8,28 @@ const LightningPayment = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="LightningPayment" component={LightningPaymentScreen} />
+        <Stack.Screen name="PaymentConfirmation" component={PaymentConfirmationScreen} />
+        <Stack.Screen name="PaymentHistory" component={PaymentHistoryScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
+// Define PaymentConfirmationScreen component
+const PaymentConfirmationScreen = () => {
+  return (
+    // Your screen content here
+    <></>
+  );
+};
+
+// Define PaymentHistoryScreen component
+const PaymentHistoryScreen = () => {
+  return (
+    // Your screen content here
+    <></>
+  );
+};
 // Define the LightningPaymentScreen component
 const LightningPaymentScreen = () => {
   return (
