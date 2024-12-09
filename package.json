@@ -64,7 +64,7 @@
     "@babel/runtime": "^7.25.7",
     "@react-native-community/cli": "^16.0.0",
     "@react-native/babel-preset": "0.76.4",
-    "@react-native/eslint-config": "0.76.4",
+    "@react-native/eslint-config": "0.76.5",
     "@react-native/metro-config": "0.76.4",
     "@react-native/typescript-config": "0.76.4",
     "@types/react": "^18.3.1",
