@@ -8,8 +8,7 @@ import OnBoardingHome from './src/screens/onboarding/ZKPool';
 import Balance from './src/components/Balance';
 import HomeScreen from './src/screens/Home/HomeScreen';
 import BitcoinPrice from './src/components/BitcoinPrice';
-import { Bech32m } from './src/components/Bech32m.tsx';
-// import { lightning } from './src/app/lightning/send';
+import { Bech32m } from './src/components/Bech32m';// import { lightning } from './src/app/lightning/send';
 import React from 'react';
 
 import { GluestackUIProvider } from '@gluestack-ui/themed';
