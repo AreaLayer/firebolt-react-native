@@ -13,8 +13,8 @@ ENV PATH=/opt/gradle/gradle-7.4.2/bin:$PATH
 WORKDIR /app
 COPY . /app
 
-# Ensure gradlew is executable
-RUN chmod +x ./gradlew
+# Ensure gradlew is present and executable
+RUN ls -l ./gradlew && chmod +x ./gradlew
 
 # Build Kotlin app
 RUN ./gradlew build
