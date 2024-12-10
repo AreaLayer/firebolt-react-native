@@ -1,0 +1,7 @@
+# Ignore everything in the root directory
+*
+!gradlew
+!gradle/
+!src/
+!build.gradle
+!settings.gradle
