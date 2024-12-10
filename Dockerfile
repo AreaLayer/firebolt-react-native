@@ -1,5 +1,4 @@
-# Stage 1: Kotlin Build
-FROM openjdk:21 AS kotlin-build
+FROM openjdk:21-slim AS kotlin-build
 
 # Install necessary tools and Gradle
 RUN apt-get update && \
@@ -37,7 +36,7 @@ COPY . /app
 RUN ./gradlew build
 
 # Final Stage: Combine Artifacts
-FROM ubuntu:22.04 AS final
+FROM ubuntu:24.04 AS final
 
 # Copy Kotlin build artifacts
 COPY --from=kotlin-build /app /final/kotlin
