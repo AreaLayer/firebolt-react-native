@@ -57,10 +57,8 @@ vendor/bundle/
 
 ## Docker
 # Ignore Docker files
-Dockerfile
 docker-compose.yml
 docker-compose.override.yml
-**/Dockerfile
 **/docker-compose.yml
 **/docker-compose.override.yml
 

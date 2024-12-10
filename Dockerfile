@@ -11,10 +11,14 @@ ENV PATH=/opt/gradle/gradle-7.4.2/bin:$PATH
 
 # Set up Kotlin app build environment
 WORKDIR /app
+
+# Explicitly copy gradlew and gradle directory (in case copy context is problematic)
+COPY gradlew /app/gradlew
+COPY gradle /app/gradle
 COPY . /app
 
 # Ensure gradlew is present and executable
-RUN ls -l ./gradlew && chmod +x ./gradlew
+RUN ls -l /app/gradlew && chmod +x /app/gradlew
 
 # Build Kotlin app
 RUN ./gradlew build
