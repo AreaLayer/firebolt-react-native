@@ -37,7 +37,7 @@ COPY . /app
 RUN ./gradlew build
 
 # Final Stage: Combine Artifacts
-FROM ubuntu:22.04 AS final
+FROM ubuntu:24.04 AS final
 
 # Copy Kotlin build artifacts
 COPY --from=kotlin-build /app /final/kotlin
