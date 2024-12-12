@@ -72,6 +72,7 @@ The other main features Firebolt supports are as follows:
 -  [x] APIs Breez SDK tested
 -  [x] Greenlight APIs added
 -  [x] Build.graldle tested
+-  [ ] Pre-beta app phase
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Reproducible builds (Android)
 
