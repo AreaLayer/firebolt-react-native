@@ -1,18 +1,19 @@
-import {NDKUserProfile} from "./NDKUserProfile";
 import {Name, NIP05} from "./NDKUserProfile";
 
-export const interface = {
+import {Name, NIP05} from "./NDKUserProfile";
+
+export const interfaceObj = {
     name: String,
     nip05: String,
     zapService: String,
-
-const profilefromevent = {
+}
+export const profilefromevent = {
     name: String,
     nip05: String,
     zapService: String,
 }
 
-const encrypt = {
+export const encrypt = {
     name: String,
     nip05: String,
     zapService: String,
@@ -28,5 +29,4 @@ export const random = {
     name: String,
     nip05: String,
     zapService: String,
-}
 }
