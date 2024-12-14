@@ -6,15 +6,13 @@ export const interface = {
     nip05: String,
     zapService: String,
 
-export const profilefromevent = {
+const profilefromevent = {
     name: String,
     nip05: String,
     zapService: String,
 }
 
-
-
-export const encrypt = {
+const encrypt = {
     name: String,
     nip05: String,
     zapService: String,
@@ -30,4 +28,5 @@ export const random = {
     name: String,
     nip05: String,
     zapService: String,
+}
 }
