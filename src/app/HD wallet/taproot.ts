@@ -21,7 +21,7 @@ const accountNode = root.derivePath(taprootPath);
 // Step 4: Generate the Taproot (P2TR) address
 const taprootPublicKey = accountNode.publicKey;
 const { address: taprootAddress } = bitcoin.payments.p2tr({
-  internalPubkey: taprootPublicKey.subarray(1), // Use the x-only pubkey
+  internalPubkey: Buffer.from(taprootPublicKey.subarray(1)), // Use the x-only pubkey
   network: bitcoin.networks.bitcoin,
 });
 
