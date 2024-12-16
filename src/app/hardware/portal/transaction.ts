@@ -1,4 +1,4 @@
-import { ITransaction } from '.ITransaction';
+import { ITransaction } from './ITransaction';
 
 export class ITransaction implements ITransaction {
     id: number;
