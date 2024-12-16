@@ -1,4 +1,5 @@
-import { multiply, NFC, Poll, Network, GetStatus, Bitcoin as BitcoinType, Signet as SignetType } from 'libportal-react-native';
+import { multiply, NFC, Poll, Network, Bitcoin as BitcoinType, Signet as SignetType } from 'libportal-react-native';
+import { GetStatus } from './types'; // Assuming GetStatus is defined in a separate 'types' file
 
 export class Hww {
   static multiply(a: number, b: number): Promise<number> {
