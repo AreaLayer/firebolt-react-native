@@ -6,7 +6,8 @@
     "slug": "firebolt",
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "web"
     ],
     "version": "1.0.19-alpha",
     "orientation": "portrait",
@@ -26,7 +27,14 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.firebolt.app"
+      "package": "com.firebolt.app",
+      "versionCode": 19,
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
