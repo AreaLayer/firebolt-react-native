@@ -1,4 +1,3 @@
-import {Name, NIP05} from "./NDKUserProfile";
 
 import {Name, NIP05} from "./NDKUserProfile";
 
