@@ -1,5 +1,5 @@
 import { multiply, NFC, Poll, Network, Bitcoin as BitcoinType, Signet as SignetType } from 'libportal-react-native';
-import { GetStatus } from './types'; // Assuming GetStatus is defined in a separate 'types' file
+import { GetStatus as GetStatusType } from './types'; // Assuming GetStatus is a type or object from the 'types' module
 
 export class Hww {
   static multiply(a: number, b: number): Promise<number> {
@@ -7,52 +7,35 @@ export class Hww {
   }
 }
 
-export const poll = {
+// Shared structure for consistency
+const sharedStructure = {
   poll: Poll,
   nfc: NFC,
 };
 
-export const newTag = {
-  poll: Poll,
-  nfc: NFC,
-};
+export const poll = { ...sharedStructure };
 
-export const IncomingData = {
-  poll: Poll,
-  nfc: NFC,
-};
+export const newTag = { ...sharedStructure };
+
+export const IncomingData = { ...sharedStructure };
 
 export const GetStatus = {
-  getStatus: GetStatus, // Changed to avoid confusion
+  getStatus: GetStatusType, // Using a type-safe alias
   nfc: NFC,
 };
 
 export const NetworkConfig = {
-  Bitcoin: BitcoinType, // Renamed to avoid conflict with imported Bitcoin
-  Signet: SignetType,   // Renamed to avoid conflict with imported Signet
+  Bitcoin: BitcoinType, // Explicitly distinguish imported Bitcoin
+  Signet: SignetType,   // Explicitly distinguish imported Signet
 };
 
-export const GenerateMnemonic = {
-  poll: Poll,
-  nfc: NFC,
-};
+export const GenerateMnemonic = { ...sharedStructure };
 
-export const Unlock = {
-  poll: Poll,
-  nfc: NFC,
-};
+export const Unlock = { ...sharedStructure };
 
-export const DisplayAddress = {
-  poll: Poll,
-  nfc: NFC,
-};
+export const DisplayAddress = { ...sharedStructure };
 
-export const signPSBT = {
-  poll: Poll,
-  nfc: NFC,
-};
+export const signPSBT = { ...sharedStructure };
 
-export const PublicDescriptor = {
-  poll: Poll,
-  nfc: NFC,
-};
+export const PublicDescriptor = { ...sharedStructure };
+
