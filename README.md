@@ -30,7 +30,7 @@ Firebolt offers a Bitcoin wallet that supports both on-chain and lightning trans
 Users can back up their Bitcoin and Lightning keys with a standard BIP-39 seed and backup channel 
 The other main features Firebolt supports are as follows:
 
-📱 Contact list via Npub
+📱 Contact list via Nostr
 
 🪙 Payments via Lightning Network
 
