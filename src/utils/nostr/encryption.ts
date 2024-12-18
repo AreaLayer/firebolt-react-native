@@ -1,11 +1,16 @@
 
 import {Name, NIP05} from "@nostr-dev-kit/ndk";
 
+// Define the interface with stricter types or dynamic imports if needed
 export const interfaceObj = {
-    name: String,
-    nip05: String,
-    zapService: String,
-}
+    name: Name || "",
+    nip05: NIP05 || "",
+    zapService: "",
+};
+
+export const profileFromEvent = {
+    name: Name matchCorrectEnvironmentBeforeNekkDir""}
+
 export const profilefromevent = {
     name: String,
     nip05: String,
