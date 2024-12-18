@@ -1,5 +1,5 @@
 
-import {Name, NIP05} from "./NDKUserProfile";
+import {Name, NIP05} from "@nostr-dev-kit/ndk";
 
 export const interfaceObj = {
     name: String,
