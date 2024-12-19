@@ -5,7 +5,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { Hardwallets } from '../screens/Hardwallets';
 
-
 const Stack = createStackNavigator();
 export const HardwalletsNavigator = () => {
   return (
