@@ -64,6 +64,9 @@ The other main features Firebolt supports are as follows:
 - Portal NFC by TwentyTwo Hardwallet
 - Trezor and Ledger Hardwallet support
 - Silent Payments
+- Watch only wallet
+- Bitcoin converter Tool
+-  XPub support
 
 ## Roadmap
 
