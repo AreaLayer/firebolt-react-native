@@ -78,6 +78,7 @@ The other main features Firebolt supports are as follows:
 -  [ ] Pre-beta app phase
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Reproducible builds (Android)
+-  [ ] Offline signing, payments on-chain 
 
 ## Electrum Plugin
 
