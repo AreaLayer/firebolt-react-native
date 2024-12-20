@@ -4751,10 +4751,10 @@ available-typed-arrays@^1.0.5, available-typed-arrays@^1.0.7:
   dependencies:
     possible-typed-array-names "^1.0.0"
 
-axios@^1.7.7:
-  version "1.7.7"
-  resolved "https://registry.npmjs.org/axios/-/axios-1.7.7.tgz"
-  integrity sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==
+axios@^1.7.9:
+  version "1.7.9"
+  resolved "https://registry.npmjs.org/axios/-/axios-1.7.9.tgz"
+  integrity sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.0"
@@ -4991,10 +4991,10 @@ bindings@^1.3.0:
   dependencies:
     file-uri-to-path "1.0.0"
 
-bip-353-lib@^1.0.3-alpha:
-  version "1.0.3-alpha"
-  resolved "https://registry.npmjs.org/bip-353-lib/-/bip-353-lib-1.0.3-alpha.tgz"
-  integrity sha512-pwhx16eQsYVpAzDdhd+kiNmMxIqGj+hBsv7cXj8oUTeBatVhw9ifyC5rElnP65JxUn8liV3FEtSZvJK0xPAukw==
+bip-353-lib@^1.0.4-alpha:
+  version "1.0.4-alpha"
+  resolved "https://registry.npmjs.org/bip-353-lib/-/bip-353-lib-1.0.4-alpha.tgz"
+  integrity sha512-79h2OyX37JKwyRXRD3w2Ub4UQnUtGl1VQtugORgWGhWDuQpCfzd/LpGDZsdDtfd74RyxOA3qFAD2Jip8bgUP4w==
   dependencies:
     bip21 "^3.0.0"
     react-native-crypto "^2.2.0"
@@ -8477,6 +8477,13 @@ light-bolt11-decoder@^3.2.0:
   dependencies:
     "@scure/base" "1.1.1"
 
+light-bolt12-decoder@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/light-bolt12-decoder/-/light-bolt12-decoder-1.0.1.tgz"
+  integrity sha512-xmbcFgbxRJBJcZNcweJJxKJYGAMWbEXcwdq2zK+ukbsGanSKhjB1yzrzzU45z8R29boo0fxiK8eMEkxVYIQ+/w==
+  dependencies:
+    "@scure/base" "1.1.1"
+
 lighthouse-logger@^1.0.0:
   version "1.4.2"
   resolved "https://registry.npmjs.org/lighthouse-logger/-/lighthouse-logger-1.4.2.tgz"
@@ -9561,15 +9568,16 @@ path-type@^4.0.0:
   resolved "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-payjoin-react-native@^1.0.2-alpha:
-  version "1.0.2-alpha"
-  resolved "https://registry.npmjs.org/payjoin-react-native/-/payjoin-react-native-1.0.2-alpha.tgz"
-  integrity sha512-ucaag4IFODHzWmznC7FrSk7KFKyBz17/9rhUXaEbBgZMwWvB4enirkKm59JSMMQOoR7xpKRRKwUGUmECn47IwA==
+payjoin-react-native@^1.0.4-alpha:
+  version "1.0.4-alpha"
+  resolved "https://registry.npmjs.org/payjoin-react-native/-/payjoin-react-native-1.0.4-alpha.tgz"
+  integrity sha512-iJ/pnFc+RSx7jqvKXBIQIBvf+6SxsquyI1eXhC6Rljb8T5HQ2D8L8HbQyukdfayfc6Bi8SLZXge4jaj0cA/YRQ==
   dependencies:
-    axios "^1.7.7"
+    axios "^1.7.9"
     bip32 "^5.0.0-rc.0"
     bip39 "^3.1.0"
     bitcoinjs-lib "^7.0.0-rc.0"
+    react-native "^0.76.5"
     react-native-crypto "^2.2.0"
 
 pbkdf2@^3.0.3, pbkdf2@3.0.8:
@@ -10066,7 +10074,7 @@ react-native-web@>=0.19:
     postcss-value-parser "^4.2.0"
     styleq "^0.1.3"
 
-react-native@*, "react-native@^0.0.0-0 || >=0.65 <1.0", react-native@>=0.63.4, react-native@>=0.72, react-native@0.76.5:
+react-native@*, "react-native@^0.0.0-0 || >=0.65 <1.0", react-native@^0.76.5, react-native@>=0.63.4, react-native@>=0.72, react-native@0.76.5:
   version "0.76.5"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.76.5.tgz"
   integrity sha512-op2p2kB+lqMF1D7AdX4+wvaR0OPFbvWYs+VBE7bwsb99Cn9xISrLRLAgFflZedQsa5HvnOGrULhtnmItbIKVVw==
