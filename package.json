@@ -1,6 +1,6 @@
 {
   "name": "firebolt",
-  "version": "1.0.19-alpha",
+  "version": "1.0.20-alpha",
   "private": true,
   "scripts": {
     "android": "react-native run-android",

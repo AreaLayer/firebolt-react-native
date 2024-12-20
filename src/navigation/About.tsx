@@ -18,7 +18,7 @@ const AboutScreen = () => {
         </Text>
 
         <Text style={styles.text}>
-          Version: 1.0.19-alpha
+          Version: 1.0.20-alpha
         </Text>
 
         <Text style={styles.text}>
