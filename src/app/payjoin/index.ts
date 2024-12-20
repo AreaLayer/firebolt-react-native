@@ -1,5 +1,6 @@
 // Import PayjoinURL from the 'payjoin-react-native' package
-import { PayjoinURL, UTXO } from 'payjoin-react-native';
+import { PayjoinURL } from 'payjoin-react-native';
+import { UTXO } from 'silent-payments';
 
 export const PayJoin = (url: string) => {
   // Create a PayjoinURL instance
@@ -14,7 +15,7 @@ export const sendPSBT = async (psbt: string) => {
   // Send the PSBT to the payjoin server
   const response = await fetch('https://payjoin.example.com/payjoin', {
     method: 'POST',
-    headers
+    Headers
   });
   return response;
 }// Reaceive the response from the payjoin server
@@ -29,5 +30,8 @@ const utxo: UTXO = {
   value: 1000000,
   script: 'scriptPubKey',
 }
+
+// Use the utxo variable
+console.log(utxo)
 return response;// Export PayJoin and PayjoinURL
 export { PayjoinURL };
