@@ -1,3 +1,7 @@
+// Copyright (c) 2025 Area Layer Developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 const { TX } = require('@mempool/mempool.js');
 const { BitcoinConverter } = require('./bitcoin_converter.json');
 const { groth16 } = require('snarkjs');
