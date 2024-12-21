@@ -66,7 +66,7 @@ The other main features Firebolt supports are as follows:
 - Silent Payments
 - Watch only wallet
 - Bitcoin converter Tool
--  XPub support
+- XPub support
 
 ## Roadmap
 
