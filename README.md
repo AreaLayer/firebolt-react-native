@@ -79,7 +79,7 @@ The other main features Firebolt supports are as follows:
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Reproducible builds (Android)
 -  [ ] Offline signing, payments on-chain 
--  [ ] Post Quantum Resistence Coinjoin
+-  [ ] Post Quantum Resistence Coinjoin (beta)
 ## Electrum Plugin
 
 [Firebolt Electrum](https://github.com/AreaLayer/firebolt-electrum)
