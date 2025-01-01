@@ -1,6 +1,6 @@
 ### Firebolt Wallet - React Native Version ⚡🕵️🌀
 
-⚠️**Alpha and pre-beta phase**
+⚠️**Pre-beta phase**
 
 **Contributions are welcome**
 
@@ -75,7 +75,7 @@ The other main features Firebolt supports are as follows:
 -  [x] APIs Breez SDK tested
 -  [x] Greenlight APIs added
 -  [x] Build.graldle tested
--  [ ] Pre-beta app phase
+-  [x] Pre-beta app phase
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Reproducible builds (Android)
 -  [ ] Offline signing, payments on-chain 
