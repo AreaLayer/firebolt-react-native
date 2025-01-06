@@ -1090,10 +1090,10 @@
   resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.5.1.tgz"
   integrity sha512-1ZvcTE+ahEb79aMJXQjL1dvNCJyaTNtjOMcsFs2ivSD59/1efp5fpgJ0J7WUK/1ESJdxJeXXGXJoAB7TnNrFOg==
 
-"@breeztech/react-native-breez-sdk@^0.6.4":
-  version "0.6.4"
-  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk/-/react-native-breez-sdk-0.6.4.tgz"
-  integrity sha512-OnRckjGAZBGAKP0XlyY9RPq5iXbFABzlFkFD/mF//yKuLymyvZjJVfLeU+9cPvbGpw27VP4sDEWK6b4PdRWmgA==
+"@breeztech/react-native-breez-sdk@^0.6.6":
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/@breeztech/react-native-breez-sdk/-/react-native-breez-sdk-0.6.6.tgz#b951a3ad575e5e56b9c1521f796542e9bc8a262d"
+  integrity sha512-ESeMApLf7Pa1pdYV4d/Tp7bEdAhJxOwvqhhTfcb86uCq4O620QVtPADSdsvXSvpzW7FAjyOV/GVrKCgDP9dXWw==
 
 "@emotion/is-prop-valid@1.2.2":
   version "1.2.2"
