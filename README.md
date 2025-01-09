@@ -60,7 +60,7 @@ The other main features Firebolt supports are as follows:
 - Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RoboSats)
 - RBF
 - User friendly
-- Kotlin and Swift (iOS and Android)
+- iOS and Android
 - Portal NFC by TwentyTwo Hardwallet
 - Trezor and Ledger Hardwallet support
 - Silent Payments
