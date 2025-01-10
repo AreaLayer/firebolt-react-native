@@ -45,7 +45,7 @@
     "light-bolt12-decoder": "^1.0.1",
     "mpc-crypto-lib": "^1.0.8",
     "nanoid": "^5.0.9",
-    "payjoin-react-native": "^1.0.4-alpha",
+    "payjoin-react-native": "^1.0.5-alpha",
     "peach-api-ts": "^0.4.0",
     "react": "18.3.1",
     "react-native": "0.76.6",
