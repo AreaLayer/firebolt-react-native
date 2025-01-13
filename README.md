@@ -81,7 +81,7 @@ The other main features Firebolt supports are as follows:
 -  [ ] Offline signing, payments on-chain 
 -  [ ] Post Quantum Resistence Coinjoin (beta)
 -  [ ] iOs app
--  [ ] Others hardwallets support
+-  [ ] Others hardwallets support (Green)
 -  [ ] Payjoin V2 (Payjoin React Native)
 
 ## Electrum Plugin
