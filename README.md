@@ -71,7 +71,7 @@ The other main features Firebolt supports are as follows:
 ## Roadmap
 
 -  [x] Miniscript (WIP)
--  [x] BOLT12 (WIP)
+-  [x] BOLT12 
 -  [x] APIs Breez SDK tested
 -  [x] Greenlight APIs added
 -  [x] Build.graldle tested
