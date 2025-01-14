@@ -36,7 +36,7 @@ The other main features Firebolt supports are as follows:
 
 ⚡Non custodial via on-chain and Lightning Network
 
-⚛️ Coinjoin and Payjoin for privacy
+⚛️ Coinjoin & Payjoin for privacy
 
 🫂Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RoboSats)
 
