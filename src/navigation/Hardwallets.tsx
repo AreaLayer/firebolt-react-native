@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Hardwallets } from '../screens/Hardwallets';
-
+import { Hardwallets } from '../screens/Hardwallets.tsx';
 // Importing assets
 import LedgerLogo from '../assets/Ledger-logo.png';
 import BitboxLogo from '../assets/Bitbox-logo.png';
