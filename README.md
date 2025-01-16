@@ -48,7 +48,7 @@ The other main features Firebolt supports are as follows:
 
 - Lightning Network/Liquid Network (Breez SDK)
 - Nostr (create profiles)
-- Bitcoin
+- Bitcoin (on-chain)
 - LSP (Breez List)
 - Greenlight by Breez SDK
 - Coinjoin powered by ZK proof, Coinswap, Taproot and more
