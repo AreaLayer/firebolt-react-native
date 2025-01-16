@@ -53,7 +53,7 @@ The other main features Firebolt supports are as follows:
 - Greenlight by Breez SDK
 - Coinjoin powered by ZK proof, Coinswap, Taproot and more
 - PayJoin V1
-- Bitcoin-only
+- Bitcoin-only (Lightning Network, Liquid)
 - Backup using Nostr keys and BIP-39
 - Miniscript
 - Contact list via Nostr (NPub)
