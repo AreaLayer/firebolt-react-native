@@ -29,4 +29,5 @@ currently being supported with security updates.
 |v1.0.19-alpha  | :white_check_mark: |
 |v1.0.20-alpha  | :white_check_mark: |
 |v1.0.21-alpha  | :white_check_mark: |
+|v1.0.22-alpha  | :white_check_mark: |
 
