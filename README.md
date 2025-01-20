@@ -83,6 +83,7 @@ The other main features Firebolt supports are as follows:
 -  [ ] iOs app
 -  [ ] Others hardwallets support (Green)
 -  [ ] Payjoin V2 (Payjoin React Native)
+-  [ ] YPub
 
 ## Electrum Plugin
 
