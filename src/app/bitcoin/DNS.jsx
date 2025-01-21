@@ -1,5 +1,5 @@
 import Bip353 from 'bip353-react-native';
-
+import { AesSuccessActionDataResult } from '@breeztech/react-native-breez-sdk-liquid';
 const Bip353 = {
     getDNS: async () => {
         return await Bip353.getDNS();
