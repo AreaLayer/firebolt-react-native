@@ -18,4 +18,9 @@ const Bip353 = {
     }
 }
 
+const AesSuccessActionDataResult = {
+    getAesSuccessActionDataResult: async (data) => {
+        return await AesSuccessActionDataResult.getAesSuccessActionDataResult(data);
+    }
+}
 export default Bip353;

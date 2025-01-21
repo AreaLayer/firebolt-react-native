@@ -11,6 +11,8 @@ import {
 } from '@breeztech/react-native-breez-sdk';
 
 import { LnOffer, Bolt11, Bolt12Offer } from '@breeztech/react-native-breez-sdk-liquid';
+
+import { GreenlightNodeConfig } from '@breeztech/react-native-breez-sdk';
 export interface SendState {
   payment: Payment | null;
   backupStatus: BackupStatus | null;
