@@ -10,6 +10,7 @@ const bitcoin = require('bitcoinjs-lib').networks.signet;
 const mpc = require('mprc-crypto-lib'); 
 const { setupMPCCeremony } = require('./mpc_ceremony.jsx');
 const { rescanOnchainSwaps} = require('@breeztech/react-native-breez-sdk-liquid');
+const { LiquidNetwork } = require('@breeztech/react-native-breez-sdk-liquid')
 
 let converter = new BitcoinConverter();
 
@@ -27,6 +28,7 @@ class Coinjoin {
     this.address = address;
     this.proof = null;
     this.payments = null;
+    this.LiquidNetwork = LiquidNetwork;
     this.rescanOnchainSwaps = rescanOnchainSwaps;
     this.isEntering = isEntering; // Boolean flag to indicate whether the user is entering or exiting
   }
@@ -38,6 +40,9 @@ class CoinjoinTransaction {
     this.vout = vout;
     this.amount = amount;
     this.address = address;
+    this.proof = null;
+    this.rescanOnchainSwaps = rescanOnchainSwaps;
+    this.LiquidNetwork = LiquidNetwork;
   }
 }
 
