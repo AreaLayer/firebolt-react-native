@@ -2,6 +2,7 @@ import { RefundableSwap as BreezSwapLiquid } from "@breeztech/react-native-breez
 
 // Define an interface for the Liquid swap
 export interface SwapLiquidInterface {
+  swap(): unknown;
   swapLiquid: BreezSwapLiquid;
 }
 
