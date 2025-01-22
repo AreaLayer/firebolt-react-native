@@ -8,6 +8,8 @@ const { groth16 } = require('snarkjs');
 const { Coinjoin, CoinjoinTransaction, createCoinjoinTransaction, finalizeCoinjoinTransaction } = require('main_function.jsx');
 const bitcoin = require('bitcoinjs-lib').networks.signet;
 const mpc = require('mprc-crypto-lib'); 
+const { setupMPCCeremony } = require('./mpc_ceremony.jsx');
+const { rescanOnchainSwaps} = require('@breeztech/react-native-breez-sdk-liquid');
 
 let converter = new BitcoinConverter();
 
@@ -25,6 +27,7 @@ class Coinjoin {
     this.address = address;
     this.proof = null;
     this.payments = null;
+    this.rescanOnchainSwaps = rescanOnchainSwaps;
     this.isEntering = isEntering; // Boolean flag to indicate whether the user is entering or exiting
   }
 }
