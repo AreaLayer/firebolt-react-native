@@ -6,8 +6,20 @@ export interface SwapLiquidInterface {
   swapLiquid: BreezSwapLiquid;
 }
 
-// Create an instance of the SDK for Liquid swaps
-const breezSwapLiquid = new RefundableSwap();
+const swapLiquid: SwapLiquidInterface = {
+  swap: ()
+  .then(() => {
+      console.log("Swap successful");
+    })
+    .catch((error) => {
+      console.error("Swap error:", error);
+    }),
+  swapLiquid: breezSwapLiquid,
+};
+
+const RefundableSwap = {
+  swapLiquid,
+};
 
 // Initialize the SDK instance
 breezSwapLiquid.init({
