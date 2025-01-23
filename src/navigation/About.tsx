@@ -16,7 +16,10 @@ const AboutScreen = () => {
         <Text style={styles.text}>
             Firebolt Wallet is an app that allows you to manage your Bitcoin and transactions securely. You can create a new wallet, import an existing wallet, and manage your funds. Beyond allow Lightning Network, Coinjoin, Payjoin and more.
         </Text>
-
+        
+        <Text style={styles.text}>
+          Check our GitHub repository: https://github.com/AreaLayer/firebolt-react-native
+        </Text>
         <Text style={styles.text}>
           Version: 1.0.22-alpha
         </Text>
@@ -32,7 +35,6 @@ const AboutScreen = () => {
     </ScrollView>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
