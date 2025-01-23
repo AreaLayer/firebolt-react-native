@@ -21,6 +21,9 @@ const AboutScreen = () => {
           Check our GitHub repository: https://github.com/AreaLayer/firebolt-react-native
         </Text>
         <Text style={styles.text}>
+          Created by: AreaLayer
+          </Text>
+        <Text style={styles.text}>
           Version: 1.0.22-alpha
         </Text>
 
