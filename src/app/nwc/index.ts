@@ -1,4 +1,4 @@
-import { NDKNwc } from "@nostr-dev-kit/ndk";
+import NDKNwc from "@nostr-dev-kit/ndk";
 import { NDKNwcResponse } from "@nostr-dev-kit/ndk";
 
 class Nwc {
@@ -11,6 +11,7 @@ class Nwc {
       // Assuming `nwc` is a method from `NDKNwc`, ensure this method exists
       const response = await this.getNwc(nwc); 
       console.log("NWC response:", response);
+      // Handle the response as needed
       return response;
     } catch (error) {
       console.error("Error fetching NWC data:", error);
