@@ -1,12 +1,12 @@
 import NDKNwc from "@nostr-dev-kit/ndk";
-import { NDKNwcResponse } from "@nostr-dev-kit/ndk";
+import { NDKRpcResponse } from "@nostr-dev-kit/ndk";
 
 class Nwc {
 
   constructor(_ndk: NDKNwc) {
   }
 
-  async getNwc(nwc: string): Promise<NDKNwcResponse> {
+  async getNwc(nwc: string): Promise<NDKRpcResponse> {
     try {
       // Assuming `nwc` is a method from `NDKNwc`, ensure this method exists
       const response = await this.getNwc(nwc); 
