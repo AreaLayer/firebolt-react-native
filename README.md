@@ -85,6 +85,7 @@ The other main features Firebolt supports are as follows:
 -  [ ] Payjoin V2 (Payjoin React Native)
 -  [ ] YPub
 -  [ ] BTCPayServer Plugin
+-  [ ] Ark Wallet SDK
 
 ## Electrum Plugin
 
@@ -93,6 +94,10 @@ The other main features Firebolt supports are as follows:
 ## ZK Proof Library Rust
 
 [ZK Proof Library Rust:  ZK Proof Library for Coinjoin transactions](https://github.com/AreaLayer/zk-proof-rust)
+
+## BTCPayServer Plugin
+
+Coming soon
 
 ## Contributors
 <a align="center" href="https://github.com/AreaLayer/firebolt-react-native aphs/contributors">
