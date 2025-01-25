@@ -1,4 +1,4 @@
-import { UTXOType, UTXO} from "silent-payments";
+import { UTXOType, UTXO } from "silent-payments";
 
 export const send = async (
   utxos: UTXO[],
@@ -8,8 +8,8 @@ export const send = async (
   changeAddress: string,
   network: string
 ) => {
-  const utxosToSpend = utxos.filter((utxo) => utxo.value > amount + fee);
-  const utxosToChange = utxos.filter((utxo) => utxo.value <= amount + fee);
+  const utxosToSpend = utxos.filter((utxo) => utxo.vout> amount + fee);
+  const utxosToChange = utxos.filter((utxo) => utxo.vout <= amount + fee);
 
   const utxoType = "SPEND" as UTXOType;
   
