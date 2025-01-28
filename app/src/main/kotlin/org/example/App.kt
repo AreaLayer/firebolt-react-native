@@ -25,7 +25,7 @@ class ZKCoinJoin {
 class App {
     val greeting: String
         get() {
-            return "Hello World!"
+            return "ZK Proof Coinjoin"
         }
 }
 
