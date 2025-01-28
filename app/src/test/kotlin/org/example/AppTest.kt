@@ -3,6 +3,12 @@ package org.example
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
+class App {
+    val greeting: String
+        get() = "Hello World!"
+}
+
+
 class AppTest {
 
     private val zkCoinJoin = ZKCoinJoin()
