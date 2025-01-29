@@ -1,6 +1,6 @@
 ### Firebolt Wallet - React Native Version ⚡🕵️🌀
 
-⚠️**Pre-beta phase**
+⚠️**Pre-beta phase Android**
 
 **Contributions are welcome**
 
