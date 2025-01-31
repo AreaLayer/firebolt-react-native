@@ -19,7 +19,7 @@
 
 Firebolt is a wallet designed by a Bitcoiner for Bitcoiners looking for privacy using Payjoin, Lightning Network, Coinjoin, Bitcoin and Nostr.
 
-Each individual has their own identity using Nostr
+Each individual has their own identity using Nostr.
 
 ### The problem
 
