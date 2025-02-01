@@ -85,7 +85,7 @@ The other main features Firebolt supports are as follows:
 -  [ ] Others hardwallets support (Green, OneKey, etc)
 -  [ ] Payjoin V2 (Payjoin React Native)
 -  [ ] YPub
--  [ ] BTCPayServer Plugin
+-  [ ] BTCPayServer Plugin (2025-2026)
 -  [ ] Ark Wallet SDK
 
 ## Electrum Plugin
