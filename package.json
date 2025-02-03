@@ -52,7 +52,7 @@
     "react-native-crypto": "^2.2.0",
     "react-native-qrcode-svg": "^6.3.14",
     "react-native-randombytes": "^3.6.1",
-    "react-native-safe-area-context": "5.1.0",
+    "react-native-safe-area-context": "5.2.0",
     "react-native-screens": "^4.6.0",
     "react-native-storage": "^1.0.1",
     "react-native-svg": "15.11.1",
