@@ -77,6 +77,7 @@ The other main features Firebolt supports are as follows:
 -  [x] Greenlight APIs added
 -  [x] Build.graldle tested
 -  [x] Pre-beta app phase
+-  [x] Coinjoin ZK Proof tested into Android app
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Reproducible builds (Android)
 -  [ ] Offline signing, payments on-chain 
