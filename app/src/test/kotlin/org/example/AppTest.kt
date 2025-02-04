@@ -44,7 +44,7 @@ fun String.sha256(): String {
 
 class Blockchain(private val difficulty: Int = 4) {
     val chain: MutableList<Block> = mutableListOf()
-    val pendingTransactions: MutableList<Transaction> = mutableListOf()
+    private val pendingTransactions: MutableList<Transaction> = mutableListOf()
     private val miningReward: Double = 50.0
 
     init {
@@ -56,7 +56,7 @@ class Blockchain(private val difficulty: Int = 4) {
         return Block(0, "0", System.currentTimeMillis(), listOf(Transaction("0", "Genesis", 0.0)))
     }
 
-    fun getLatestBlock(): Block = chain.last()
+    private fun getLatestBlock(): Block = chain.last()
 
     fun addTransaction(transaction: Transaction) {
         // In a real blockchain, you would include validations (e.g., digital signatures, balance checks).
