@@ -1,6 +1,7 @@
 import { coinjoinxt_config, lightning_confing } from './config.js';
 import { Wallet } from 'wallet-tools';
 import { WalletDir } from 'bitcoinjs-lib';
+import * as bitcoin from 'bitcoinjs-lib';
 
 // Load the CoinjoinXT configuration
 function load_coinjoinxt_config() {
