@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { getOfferDetails, Order as PeachOrder } from 'peach-api-ts/src/private/offer/getOfferDetails';
-
+import { getOfferDetails } from 'peach-api-ts/src/private/offer/getOfferDetails';
 const baseURL = 'https://api.peachbitcoin.com/v1'; // Peach API base URL
 const apiKey = 'your-api-key-here'; // Make sure to replace this with your actual API key
 

@@ -37,15 +37,3 @@ interface Order {
   
   createOrder(order);
 
-async function getSecureData() {
-  try {
-    const response = await axios.get(`${baseURL}/secure-endpoint`, {
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-      },
-    });
-    console.log(response.data);
-  } catch (error) {
-    console.error('Error fetching secure data:', error);
-  }
-}
