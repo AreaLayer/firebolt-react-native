@@ -21,6 +21,15 @@ export const LiquidNetworkConfig = {
 
 export const feeRate = 1000;
 
+export const feeRateTestnet = 1000;
+
+export const feeRateMainnet = 1000;
+
+export const explorer = {
+    mainnet: "https://blockstream.info/liquid",
+    testnet: "https://blockstream.info/liquidtestnet",
+}
+
 export const BreezAPI = {
     mainnet: "https://api.breez.technology/v2",
     testnet: "https://api.breez.technology/v1",
