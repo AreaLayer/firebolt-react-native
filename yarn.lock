@@ -2250,10 +2250,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nostr-dev-kit/ndk@^2.11.0":
-  version "2.11.0"
-  resolved "https://registry.npmjs.org/@nostr-dev-kit/ndk/-/ndk-2.11.0.tgz"
-  integrity sha512-FKIMtcVsVcquzrC+yir9lOXHCIHmQ3IKEVCMohqEB7N96HjP2qrI9s5utbjI3lkavFNF5tXg1Gp9ODEo7XCfLA==
+"@nostr-dev-kit/ndk@^2.11.2":
+  version "2.11.2"
+  resolved "https://registry.npmjs.org/@nostr-dev-kit/ndk/-/ndk-2.11.2.tgz"
+  integrity sha512-DNrodIBC0j2MqEUQ5Mqaa671iZiRiKluu0c/wLkX7PCva07KSPyvcuyGp5fhk+/EZBurwZccMaML0syH0Qu8kQ==
   dependencies:
     "@noble/curves" "^1.6.0"
     "@noble/hashes" "^1.5.0"
