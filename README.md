@@ -68,6 +68,9 @@ The other main features Firebolt supports are as follows:
 - Watch only wallet
 - Bitcoin converter Tool
 - XPub support
+- Ark protocol (soon)
+- Offline payments (soon)
+- Coinjoin resistence to the Quantum Computer
 
 ## Roadmap
 
