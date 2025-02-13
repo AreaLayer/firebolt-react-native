@@ -101,7 +101,7 @@ The other main features Firebolt supports are as follows:
 
 ## BTCPayServer Plugin
 
-Coming soon
+Coming soon in 2025 or 2026
 
 ## Contributors
 <a align="center" href="https://github.com/AreaLayer/firebolt-react-native aphs/contributors">
