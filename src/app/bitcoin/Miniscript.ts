@@ -1,4 +1,4 @@
-import { Miniscript } from './Miniscript';
+import Miniscript from './Miniscript';
 
 export { Miniscript as MiniscriptType };
 
