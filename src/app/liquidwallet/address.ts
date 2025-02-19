@@ -1,6 +1,7 @@
-import { LiquidNetwork, LiquidAddressData } from "@breeztech/react-native-breez-sdk-liquid";
+import { LiquidNetwork, LiquidAddressData, ListPaymentsRequest } from "@breeztech/react-native-breez-sdk-liquid";
 
 import { SwapLiquidInterface } from "../swap/liquid";
+
 
 export const LiquidgetAddressData = async (network: LiquidNetwork, address: string): Promise<LiquidAddressData> => {
     return await LiquidAddressData.getAddressData(network, address);
@@ -14,6 +15,9 @@ export const LiquidNetworkUtils = {
     LiquidgetAddressData,
 }
 
+export const ListPayments = async (request: ListPaymentsRequest): Promise<any> => {
+    return await ListPayments(request);
+}
 export const LiquidNetworkConfig = {
     mainnet: LiquidNetwork.MAINNET,
     testnet: LiquidNetwork.TESTNET,
