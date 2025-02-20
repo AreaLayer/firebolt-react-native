@@ -54,7 +54,7 @@
     "react-native-qrcode-svg": "^6.3.14",
     "react-native-randombytes": "^3.6.1",
     "react-native-safe-area-context": "5.2.0",
-    "react-native-screens": "^4.7.0",
+    "react-native-screens": "^4.8.0",
     "react-native-storage": "^1.0.1",
     "react-native-svg": "15.11.1",
     "readable-stream": "^4.7.0",
