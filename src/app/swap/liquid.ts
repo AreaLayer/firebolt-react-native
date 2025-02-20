@@ -7,23 +7,29 @@ export interface SwapLiquidInterface {
 }
 
 const swapLiquid: SwapLiquidInterface = {
-  swap: ()
-  .then(() => {
+  swap: () => {
+    return new Promise((resolve, reject) => {
+      // Perform swap operation here
+      // For example: breezSwapLiquid.performSwap()
+      // If successful, call resolve()
+      // If error occurs, call reject(error)
+    })
+    .then(() => {
       console.log("Swap successful");
     })
-    .catch((error) => {
+    .catch((error: any) => {
       console.error("Swap error:", error);
-    }),
-  swapLiquid: breezSwapLiquid,
+    });
+  },
+  swapLiquid: BreezSwapLiquid,
 };
 
-const RefundableSwap = {
+export const RefundableSwap = {
   swapLiquid,
 };
-
 // Initialize the SDK instance
 breezSwapLiquid.init({
-  apiKey: "YOUR_API_KEY",
+  apiKey.env: "YOUR_API_KEY",
   apiUrl: "https://api.breez.technology/v1",
   websocketUrl: "wss://api.breez.technology/v1",
   network: "liquid",
