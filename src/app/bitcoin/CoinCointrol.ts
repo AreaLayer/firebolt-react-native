@@ -60,34 +60,6 @@ function selectUTXOs(wallet: Wallet, amount: number): UTXO[] {
     return selectedUTXOs;
 }
 
-// Create a transaction
-function createTransaction(
-    selectedUTXOs: UTXO[],
-    outputs: { address: string; value: number }[],
-    network: bitcoin.Network = bitcoin.networks.bitcoin
-): bitcoin.Psbt {
-    const psbt = new bitcoin.Psbt({ network });
-    
-    // Add inputs
-    for (const utxo of selectedUTXOs) {
-        psbt.addInput({
-            hash: utxo.txid,
-            index: utxo.vout,
-            nonWitnessUtxo: Buffer.from(utxo.scriptPubKey), // Simplified for example
-        });
-    }
-
-    // Add outputs
-    for (const output of outputs) {
-        psbt.addOutput({
-            address: output.address,
-            value: output.value,
-        });
-    }
-
-    return psbt;
-}
-
 // Sign the transaction
 function signTransaction(
     wallet: Wallet,
@@ -139,15 +111,79 @@ try {
     const outputs = [{ address: recipientAddress, value: amount }];
 
     // Create and sign transaction
-    const psbt = createTransaction(selectedUTXOs, outputs);
+    const psbt = createTransaction(selectedUTXOs, outputs, address!);
     const signedTx = signTransaction(wallet, psbt, selectedUTXOs);
 
     // Get the transaction hex
     const txHex = signedTx.toHex();
     console.log('Transaction hex:', txHex);
 
+    // Add this function to estimate fees (very basic example)
+function estimateFee(inputs: number, outputs: number): number {
+    const byteSize = (inputs * 148) + (outputs * 34) + 10; // Rough estimate
+    const satPerByte = 20; // Adjust based on network conditions
+    return byteSize * satPerByte;
+}
+
+// Modified createTransaction function with fees and change
+function createTransaction(
+    selectedUTXOs: UTXO[],
+    outputs: { address: string; value: number }[],
+    changeAddress: string,
+    network: bitcoin.Network = bitcoin.networks.bitcoin
+): bitcoin.Psbt {
+    const psbt = new bitcoin.Psbt({ network });
+    
+    // Add inputs
+    for (const utxo of selectedUTXOs) {
+        psbt.addInput({
+            hash: utxo.txid,
+            index: utxo.vout,
+            nonWitnessUtxo: Buffer.from(utxo.scriptPubKey),
+        });
+    }
+
+    // Calculate total input amount
+    const totalInput = selectedUTXOs.reduce((sum, utxo) => sum + utxo.value, 0);
+    const totalOutput = outputs.reduce((sum, output) => sum + output.value, 0);
+    const fee = estimateFee(selectedUTXOs.length, outputs.length + 1); // +1 for change
+
+    // Add outputs
+    for (const output of outputs) {
+        psbt.addOutput({
+            address: output.address,
+            value: output.value,
+        });
+    }
+
+    // Add change output if necessary
+    const change = totalInput - totalOutput - fee;
+    if (change > 0) {
+        psbt.addOutput({
+            address: changeAddress,
+            value: change,
+        });
+    } else if (change < 0) {
+        throw new Error('Insufficient funds including fees');
+    }
+
+    return psbt;
+}
+
+// Updated example usage
+try {
+    const selectedUTXOs = selectUTXOs(wallet, amount + estimateFee(1, 2));
+    const outputs = [{ address: recipientAddress, value: amount }];
+    const changeAddress = address!; // Using the same address for simplicity
+    const psbt = createTransaction(selectedUTXOs, outputs, changeAddress);
+    const signedTx = signTransaction(wallet, psbt, selectedUTXOs);
+    console.log('Transaction hex:', signedTx.toHex());
+} catch (error) {
+    console.error('Transaction failed:', error);
+}
+
     // Note: To broadcast, you'd need to use a Bitcoin node API or service
     // await broadcastTransaction(txHex);
 } catch (error) {
     console.error('Transaction failed:', error);
-}
+}    console.error('Transaction failed:', Error);
