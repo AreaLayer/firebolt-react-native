@@ -1,5 +1,5 @@
-import Miniscript from './Miniscript';
+const { compilePolicy } = require('@bitcoinerlab/miniscript');
 
-export { Miniscript as MiniscriptType };
+const policy = 'or(and(pk(A),older(8640)),pk(B))';
 
-export default Miniscript;
+const { miniscript, asm, issane } = compilePolicy(policy);
