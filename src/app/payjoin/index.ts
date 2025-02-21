@@ -1,49 +1,96 @@
 import { PayjoinURL } from 'payjoin-react-native';
 import { UTXO } from 'silent-payments';
 
-export const PayJoin = (url: string) => {
-  // Create a PayjoinURL instance
+// Interface definitions for better type safety
+interface PSBTResponse extends Response {
+  json(): Promise<any>;
+}
+
+interface SendPSBTConfig {
+  endpoint?: string;
+  timeout?: number;
+}
+
+// Payjoin URL creation function with input validation
+export const createPayjoin = (url: string): PayjoinURL => {
+  if (!url || typeof url !== 'string') {
+    throw new Error('Invalid URL provided');
+  }
   const payjoinURL = new PayjoinURL(url);
   return payjoinURL;
 };
 
-// Function to create a PSBT instance
-export const createPSBT = (url: string) => {
-  const payjoinURL = new PayjoinURL(url);
-  return payjoinURL.psbt; // Assuming `psbt` is a property of PayjoinURL
+// Function to create a PSBT instance with input validation
+export const createPSBT = (url: string): string => {
+  if (!url || typeof url !== 'string') {
+    throw new Error('Invalid URL provided');
+  }
+  // Access the static member PayjoinURL.psbt
+  return PayjoinURL.psbt;
 };
 
-// Send the PSBT to the payjoin server
-export const sendPSBT = async (psbt: string): Promise<Response> => {
+// Function to send PSBT to the payjoin server with config options
+export const sendPSBT = async (
+  psbt: string,
+  config: SendPSBTConfig = {}
+): Promise<PSBTResponse> => {
+  const { 
+    endpoint = 'https://payjoin.example.com/payjoin', 
+    timeout = 30000 
+  } = config;
+
+  if (!psbt || typeof psbt !== 'string') {
+    throw new Error('Invalid PSBT provided');
+  }
+
   try {
-    const response = await fetch('https://payjoin.example.com/payjoin', {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+    const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
       body: JSON.stringify({ psbt }),
+      signal: controller.signal,
     });
 
+    clearTimeout(timeoutId);
+
     if (!response.ok) {
-      throw new Error(`Error: ${response.status} - ${response.statusText}`);
+      const errorText = await response.text();
+      throw new Error(`HTTP Error ${response.status}: ${errorText}`);
     }
 
-    return response;
+    return response as PSBTResponse;
   } catch (error) {
     console.error('Failed to send PSBT:', error);
-    throw error;
+    throw error instanceof Error ? error : new Error('Unknown error occurred');
   }
 };
 
-// Example usage of UTXO
-const utxo: UTXO = {
+// UTXO constant with proper typing
+export const demoUTXO: UTXO = {
   txid: 'txid',
   vout: 0,
-  scriptPubKey: 'scriptPubKey',
-  amount: 1000000
+  amount: 1000000,
 };
-// Log the UTXO for demonstration purposes
-console.log(utxo);
+// Utility function to log UTXO
+export const logUTXO = (utxo: UTXO): void => {
+  if (!utxo || typeof utxo !== 'object') {
+    throw new Error('Invalid UTXO provided');
+  }
+  console.log('UTXO Details:', utxo);
+};
 
-// Export the PayjoinURL for external use
+// Example usage with error handling
+try {
+  logUTXO(demoUTXO);
+} catch (error) {
+  console.error('Error logging UTXO:', error);
+}
+
+// Export PayjoinURL class
 export { PayjoinURL };
