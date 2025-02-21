@@ -1,18 +1,25 @@
-import * as bitcoin from "bitcoinjs-lib";
+import * as bitcoin from 'bitcoinjs-lib';
+import { ECPairInterface, ECPairFactory } from 'ecpair';
+import * as tinysecp from '@bitcoin-js/tiny-secp256k1-asmjs';
 
+// Initialize ECPair with tinysecp256k1-asmjs
+const ECPair = ECPairFactory(tinysecp);
+
+// Define interfaces
 interface UTXO {
     txid: string;
-    index: number;
-    amount: number;
-    txout: bitcoin.TxOutput;
-    address: bitcoin.Address;
+    vout: number;
+    value: number;
+    scriptPubKey: Buffer;
+    address: string;
 }
 
 interface Wallet {
     utxos: UTXO[];
-    privateKeys: Map<string, bitcoin.ECPairInterface>;
+    privateKeys: Map<string, ECPairInterface>;
 }
 
+// Create a new wallet
 function createWallet(): Wallet {
     return {
         utxos: [],
@@ -20,75 +27,127 @@ function createWallet(): Wallet {
     };
 }
 
-function addUTXO(wallet: Wallet, txid: string, index: number, txout: bitcoin.TxOutput, address: bitcoin.Address) {
-    wallet.utxos.push({ txid, index, txout, address });
+// Add a UTXO to the wallet
+function addUTXO(
+    wallet: Wallet,
+    txid: string,
+    vout: number,
+    value: number,
+    scriptPubKey: Buffer,
+    address: string
+) {
+    wallet.utxos.push({ txid, vout, value, scriptPubKey, address });
 }
 
-function removeUTXO(wallet: Wallet, txid: string) {
-    wallet.utxos = wallet.utxos.filter(utxo => utxo.txid !== txid);
-}
-
+// Select UTXOs sufficient to cover the amount
 function selectUTXOs(wallet: Wallet, amount: number): UTXO[] {
-    let selectedUTXOs: UTXO[] = [];
-    let totalAmount = 0;
+    const selectedUTXOs: UTXO[] = [];
+    let totalValue = 0;
 
     for (const utxo of wallet.utxos) {
-        totalAmount += utxo.txout.value;
-
+        totalValue += utxo.value;
         selectedUTXOs.push(utxo);
 
-        if (totalAmount >= amount) {
+        if (totalValue >= amount) {
             break;
         }
+    }
+
+    if (totalValue < amount) {
+        throw new Error('Insufficient funds');
     }
 
     return selectedUTXOs;
 }
 
-function createTransaction(selectedUTXOs: UTXO[], outputs: { address: bitcoin.Address; amount: number }[]): bitcoin.Transaction {
-    const txb = new bitcoin.TransactionBuilder();
+// Create a transaction
+function createTransaction(
+    selectedUTXOs: UTXO[],
+    outputs: { address: string; value: number }[],
+    network: bitcoin.Network = bitcoin.networks.bitcoin
+): bitcoin.Psbt {
+    const psbt = new bitcoin.Psbt({ network });
+    
+    // Add inputs
     for (const utxo of selectedUTXOs) {
-        txb.addInput(utxo.txid, utxo.index);
+        psbt.addInput({
+            hash: utxo.txid,
+            index: utxo.vout,
+            nonWitnessUtxo: Buffer.from(utxo.scriptPubKey), // Simplified for example
+        });
     }
 
-    for (const { address, amount } of outputs) {
-        txb.addOutput(address, amount);
+    // Add outputs
+    for (const output of outputs) {
+        psbt.addOutput({
+            address: output.address,
+            value: output.value,
+        });
     }
 
-    return txb.buildIncomplete();
+    return psbt;
 }
 
-function signTransaction(wallet: Wallet, transaction: bitcoin.Transaction, selectedUTXOs: UTXO[]) {
-    for (let i = 0; i < selectedUTXOs.length; i++) {
-        const utxo = selectedUTXOs[i];
-        const key = wallet.privateKeys.get(utxo.address.toString());
-        if (key) {
-            transaction.sign(i, key);
+// Sign the transaction
+function signTransaction(
+    wallet: Wallet,
+    psbt: bitcoin.Psbt,
+    selectedUTXOs: UTXO[]
+) {
+    selectedUTXOs.forEach((utxo, index) => {
+        const keyPair = wallet.privateKeys.get(utxo.address);
+        if (!keyPair) {
+            throw new Error(`No private key found for address: ${utxo.address}`);
         }
-    }
+
+        psbt.signInput(index, {
+            publicKey: Buffer.from(keyPair.publicKey),
+            sign: (hash: Buffer) => Buffer.from(keyPair.sign(hash))
+        });
+    });    
+    psbt.finalizeAllInputs();
+    return psbt.extractTransaction();
 }
 
 // Example usage
 const wallet: Wallet = createWallet();
 
-// Add UTXOs to the wallet
-// addUTXO(wallet, ...);
+// Generate a key pair for testing
+const keyPair = ECPair.makeRandom();
+const { address } = bitcoin.payments.p2pkh({ pubkey: Buffer.from(keyPair.publicKey) });
+// Add a test private key
+wallet.privateKeys.set(address!, keyPair);
 
-// Specify the amount and recipient address
-const amount = 10000000; // satoshis
-const recipientAddress = "recipient_address"; // should be a valid bitcoin.Address
+// Add a test UTXO
+addUTXO(
+    wallet,
+    '0000000000000000000000000000000000000000000000000000000000000000',
+    0,
+    15000000, // 0.15 BTC in satoshis
+    Buffer.from('76a914' + '0'.repeat(40) + '88ac', 'hex'), // Dummy scriptPubKey
+    address!
+);
 
-// Select UTXOs for the transaction
-const selectedUTXOs = selectUTXOs(wallet, amount);
+const amount = 10000000; // 0.1 BTC in satoshis
+const recipientAddress = '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa'; // Example recipient (Satoshi's address)
 
-// Create transaction outputs
-const outputs = [{ address: recipientAddress, amount }];
+try {
+    // Select UTXOs
+    const selectedUTXOs = selectUTXOs(wallet, amount);
 
-// Create the transaction
-const transaction = createTransaction(selectedUTXOs, outputs);
+    // Create transaction outputs
+    const outputs = [{ address: recipientAddress, value: amount }];
 
-// Sign the transaction
-signTransaction(wallet, transaction, selectedUTXOs);
+    // Create and sign transaction
+    const psbt = createTransaction(selectedUTXOs, outputs);
+    const signedTx = signTransaction(wallet, psbt, selectedUTXOs);
 
-// Broadcast the transaction
-// broadcastTransaction(transaction);
+    // Get the transaction hex
+    const txHex = signedTx.toHex();
+    console.log('Transaction hex:', txHex);
+
+    // Note: To broadcast, you'd need to use a Bitcoin node API or service
+    // await broadcastTransaction(txHex);
+} catch (error) {
+    console.error('Transaction failed:', error);
+}
