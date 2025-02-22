@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import * as bitcoin from 'bitcoinjs-lib';
 import QRCode from 'react-native-qrcode-svg';
-import * as bolt11 from 'light-bolt11-decoder';
+import { encode } from 'light-bolt11-decoder'; // Changed import to get encode directly
 
 const CreateWallet = () => {
   const [segwitAddress, setSegwitAddress] = useState<string | null>(null);
@@ -11,53 +11,103 @@ const CreateWallet = () => {
 
   // Function to generate SegWit and Taproot addresses
   const generateAddresses = () => {
-    const keyPair = bitcoin.ECPair.makeRandom();
-    const { address: segwitAddr } = bitcoin.payments.p2wpkh({
-      pubkey: keyPair.publicKey,
-    });
-    const { address: taprootAddr } = bitcoin.payments.p2tr({
-      pubkey: keyPair.publicKey,
-    });
+    try {
+      const keyPair = bitcoin.ECPair.makeRandom({ network: bitcoin.networks.bitcoin });
+      const { address: segwitAddr } = bitcoin.payments.p2wpkh({
+        pubkey: keyPair.publicKey,
+        network: bitcoin.networks.bitcoin,
+      });
+      const { address: taprootAddr } = bitcoin.payments.p2tr({
+        pubkey: keyPair.publicKey,
+        network: bitcoin.networks.bitcoin,
+      });
 
-    setSegwitAddress(segwitAddr || null); // Ensure it's null if undefined
-    setTaprootAddress(taprootAddr || null); // Ensure it's null if undefined
+      setSegwitAddress(segwitAddr || null);
+      setTaprootAddress(taprootAddr || null);
+    } catch (error) {
+      console.error('Error generating addresses:', error);
+    }
   };
 
   // Function to create a Lightning invoice (BOLT11)
   const generateBolt11Invoice = () => {
-    const amountSats = 10000; // Example amount in satoshis
-    const invoice = bolt11.encode({
-      millisatoshis: amountSats * 1000,
-      tags: [{ tagName: 'purpose', data: 'Payment for goods' }],
-    });
-    setInvoice(invoice || null); // Ensure it's null if undefined
+    try {
+      const amountSats = 10000; // Example amount in satoshis
+      const paymentRequest = encode({
+        paymentHash: Buffer.from('00'.repeat(32), 'hex'), // Dummy payment hash
+        amount: amountSats.toString(), // Amount in satoshis as string
+        timestamp: Math.floor(Date.now() / 1000),
+        tags: [
+          {
+            tagName: 'payment_hash',
+            data: '00'.repeat(32), // 32 bytes of zeros
+          },
+          {
+            tagName: 'description',
+            data: 'Payment for goods',
+          },
+        ],
+      });
+      setInvoice(paymentRequest || null);
+    } catch (error) {
+      console.error('Error generating invoice:', error);
+    }
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Button title="Generate Wallet Addresses" onPress={generateAddresses} />
+      
       {segwitAddress && (
-        <View>
-          <Text>SegWit Address: {segwitAddress}</Text>
+        <View style={styles.addressContainer}>
+          <Text style={styles.label}>SegWit Address:</Text>
+          <Text style={styles.address}>{segwitAddress}</Text>
           <QRCode value={segwitAddress} size={150} />
         </View>
       )}
+
       {taprootAddress && (
-        <View>
-          <Text>Taproot Address: {taprootAddress}</Text>
+        <View style={styles.addressContainer}>
+          <Text style={styles.label}>Taproot Address:</Text>
+          <Text style={styles.address}>{taprootAddress}</Text>
           <QRCode value={taprootAddress} size={150} />
         </View>
       )}
+
       <Button title="Generate Lightning Invoice" onPress={generateBolt11Invoice} />
+      
       {invoice && (
-        <View>
-          <Text>Lightning Invoice: {invoice}</Text>
+        <View style={styles.addressContainer}>
+          <Text style={styles.label}>Lightning Invoice:</Text>
+          <Text style={styles.address}>{invoice}</Text>
           <QRCode value={invoice} size={150} />
         </View>
       )}
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+    alignItems: 'center',
+  },
+  addressContainer: {
+    marginVertical: 16,
+    alignItems: 'center',
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  address: {
+    fontSize: 14,
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+});
 
 export default CreateWallet;
 
