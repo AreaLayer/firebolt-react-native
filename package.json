@@ -57,7 +57,7 @@
     "react-native-safe-area-context": "5.2.0",
     "react-native-screens": "^4.9.0",
     "react-native-storage": "^1.0.1",
-    "react-native-svg": "15.11.1",
+    "react-native-svg": "15.11.2",
     "readable-stream": "^4.7.0",
     "silent-payments": "github:BlueWallet/SilentPayments",
     "snarkjs": "^0.7.5",
