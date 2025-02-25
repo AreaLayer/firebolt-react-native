@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import GetAddressParams from '@trezor/connect'// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 export interface GetAddressParams {
   path: string;
