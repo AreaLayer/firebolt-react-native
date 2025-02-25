@@ -1,6 +1,5 @@
-import { multiply, NFC, Network, Bitcoin as BitcoinType, GetStatus as GetStatusType } from 'libportal-react-native';
-import { GetStatus as GetStatusType, Poll } from '../types'; // Assuming GetStatus is a type or object from the 'types' module
-export class Hww {
+import { NFC, GetStatus as GetStatusType } from 'libportal-react-native';
+import { Bitcoin as BitcoinType } from 'libportal-react-native/bitcoin';import { multiply } from '../utils/math';export class Hww {
   static multiply(a: number, b: number): Promise<number> {
     return multiply(a, b);
   }
