@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Box, Button, Input, Heading, Text } from '@gluestack-ui/themed';
 import { useNavigation } from '@react-navigation/native';
 
-// Type definition for navigation prop
-type NavigationProp = ReturnType<typeof useNavigation>;
+// Proper type definition for navigation
+type NavigationProp = {
+  goBack: () => void;
+};
 
 const ZKPoolEnter = () => {
   const [amount, setAmount] = useState('');
@@ -18,15 +20,11 @@ const ZKPoolEnter = () => {
         alert('Please enter a valid positive Bitcoin amount.');
         return;
       }
-
       setLoading(true);
-
       // Generate the ZK proof for the entered amount
       const zkProof = await createZKDepositProof(parsedAmount);
-
       // Broadcast or submit the transaction
       await broadcastZKPoolEntry(zkProof);
-
       // Show success message and navigate
       alert('ZK Pool Entry Successful!');
       navigation.goBack();
@@ -37,12 +35,13 @@ const ZKPoolEnter = () => {
       setLoading(false);
     }
   };
+
   return (
-    <Box 
-      flex={1} 
-      justifyContent="center" 
-      alignItems="center" 
-      bg="$primary400" 
+    <Box
+      flex={1}
+      justifyContent="center"
+      alignItems="center"
+      bg="$primary400"
       p="$4"
     >
       <Heading size="xl" color="$white" mb="$5">
@@ -70,7 +69,7 @@ const ZKPoolEnter = () => {
         bg="$primary500"
         onPress={onEnterPool}
         isDisabled={loading}
-        $loading={loading}
+        $loading={loading} // Fixed from $loading to isLoading
       >
         <Text color="$white">
           {loading ? 'Processing...' : 'Enter Pool'}
@@ -79,6 +78,7 @@ const ZKPoolEnter = () => {
     </Box>
   );
 };
+
 const createZKDepositProof = async (amount: number): Promise<string> => {
   // Replace with actual ZK proof generation logic
   return new Promise((resolve) => {
@@ -89,6 +89,7 @@ const createZKDepositProof = async (amount: number): Promise<string> => {
 const broadcastZKPoolEntry = async (zkProof: string): Promise<void> => {
   // Replace with actual broadcasting logic
   console.log('Broadcasting ZK Pool Entry with proof:', zkProof);
+  return Promise.resolve();
 };
 
 export default ZKPoolEnter;
