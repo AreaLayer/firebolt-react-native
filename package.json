@@ -27,7 +27,7 @@
     "@react-native-picker/picker": "2.11.0",
     "@react-navigation/native": "^7.0.14",
     "@react-navigation/native-stack": "^7.2.0",
-    "@trezor/connect": "^9.4.7",
+    "@trezor/connect": "^9.5.0",
     "assert": "^2.0.0",
     "bech32": "^2.0.0",
     "bip-353-lib": "^1.0.6-alpha",
