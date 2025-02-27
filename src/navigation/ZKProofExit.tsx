@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Box, Button, Input, Heading, Text } from '@gluestack-ui/themed';
 import { useNavigation } from '@react-navigation/native';
-// import { createZKDepositProof, broadcastZKPoolEntry } from '../services/zkPoolService';
 
 // Type definition for navigation prop
-type NavigationProp = ReturnType<typeof useNavigation>;
+type NavigationProp = {
+  goBack: () => void;
+};
 
 const ZKPoolExit = () => {
   const [amount, setAmount] = useState('');
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation<NavigationProp>();
 
   const onEnterPool = async () => {
@@ -23,10 +24,10 @@ const ZKPoolExit = () => {
       setLoading(true);
 
       // Generate ZK Proof of deposit
-      // const zkProof = await createZKDepositProof(parsedAmount);
+      const zkProof = await createZKDepositProof(parsedAmount);
 
       // Broadcast the transaction
-      // await broadcastZKPoolEntry(zkProof);
+      await broadcastZKPoolEntry(zkProof);
 
       // Success feedback and navigation
       alert('ZK Pool Exit Successful!');
@@ -93,4 +94,5 @@ const broadcastZKPoolEntry = async (zkProof: string): Promise<void> => {
   // Replace with actual broadcasting logic
   console.log('Broadcasting ZK Pool Entry with proof:', zkProof);
 };
+
 export default ZKPoolExit;

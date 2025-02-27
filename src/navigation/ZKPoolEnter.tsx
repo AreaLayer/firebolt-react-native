@@ -21,10 +21,13 @@ const ZKPoolEnter = () => {
         return;
       }
       setLoading(true);
+
       // Generate the ZK proof for the entered amount
       const zkProof = await createZKDepositProof(parsedAmount);
+
       // Broadcast or submit the transaction
       await broadcastZKPoolEntry(zkProof);
+
       // Show success message and navigate
       alert('ZK Pool Entry Successful!');
       navigation.goBack();
@@ -53,7 +56,6 @@ const ZKPoolEnter = () => {
       <Input
         variant="outline"
         size="md"
-        placeholderTextColor="$gray400"
         placeholder="Amount (BTC)"
         value={amount}
         onChangeText={setAmount}
@@ -62,14 +64,16 @@ const ZKPoolEnter = () => {
         w="80%"
         bg="$white"
         borderColor="$gray300"
-      />
+        color="$black"
+      >
+        <Input.Input placeholder="Amount (BTC)" />
+      </Input>
       <Button
         size="md"
         variant="solid"
         bg="$primary500"
         onPress={onEnterPool}
         isDisabled={loading}
-        $loading={loading} // Fixed from $loading to isLoading
       >
         <Text color="$white">
           {loading ? 'Processing...' : 'Enter Pool'}
@@ -78,7 +82,6 @@ const ZKPoolEnter = () => {
     </Box>
   );
 };
-
 const createZKDepositProof = async (amount: number): Promise<string> => {
   // Replace with actual ZK proof generation logic
   return new Promise((resolve) => {
