@@ -23,7 +23,7 @@ Each individual has their own identity using Nostr.
 
 ### The problem
 
-Central Banks, centralized social media and KYC platforms
+Central Banks, centralized social media, non-coinjoin wallets and KYC platforms
 
 ### Firebolt's solution
 Firebolt offers a Bitcoin wallet that supports both on-chain and lightning transactions. The application runs a custom, non-routing Lightning node created with the Breez SDK on the user's mobile phone. 
