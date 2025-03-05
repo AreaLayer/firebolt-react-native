@@ -94,7 +94,7 @@ The other main features Firebolt supports are as follows:
 -  [ ] Payjoin V2 (Payjoin React Native)
 -  [ ] YPub
 -  [ ] Ark Wallet SDK
--  [ ] USDT?
+-  [ ] USDT support
 
 ## Electrum Plugin
 
