@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import AccountCard from '../AccountCard';
-import { mainFunction } from './src/app/coinjoin/main_function.jsx';
+import AccountCard from '../components/AccountCard';
 
 const MainContainer = styled.div`
   padding: 2rem;
