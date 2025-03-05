@@ -1,18 +1,11 @@
 // Settings.jsx
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components'; // Added for better styling
 
-// Fixed interface import - using IUser instead of User component
+// Fixed interface import issues
 // Assuming this is the correct path - adjust if needed
-import { IUser } from '../interfaces/user.interface';
+import { User } from './User';
 
-// If you meant to import the User component, uncomment this and adjust path:
-// import User from '../components/User';
-
-// Define the interface properly
-export interface IUserModel extends IUser {
-  // Add any additional properties if needed
-}
 
 // Styled components for better organization
 const SettingsContainer = styled.div`
