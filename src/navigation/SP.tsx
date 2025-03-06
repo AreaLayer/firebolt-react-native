@@ -1,76 +1,148 @@
 import * as bitcoin from "bitcoinjs-lib";
-import { UTXOType, UTXO} from "silent-payments";
+import { UTXOType, UTXO } from "silent-payments";
+
 // Silent payment address generation using Diffie-Hellman
 function generateSilentPaymentAddress(
     recipientPublicKey: bitcoin.ECPairInterface,
     senderPrivateKey: bitcoin.ECPairInterface
-): bitcoin.Address {
-    // Diffie-Hellman shared secret (recipient's public key, sender's private key)
-    const sharedSecret = bitcoin.crypto.sha256(
-        bitcoin.ECPair.fromPublicKey(
-            recipientPublicKey.publicKey
-        ).publicKey.mul(senderPrivateKey.privateKey!)
-    );
+): string {  // Changed return type from bitcoin.Address to string
+    try {
+        // Validate inputs
+        if (!recipientPublicKey.publicKey) {
+            throw new Error("Invalid recipient public key");
+        }
+        if (!senderPrivateKey.privateKey) {
+            throw new Error("Invalid sender private key");
+        }
 
-    // Generate new stealth address using shared secret
-    const newKeyPair = bitcoin.ECPair.makeRandom({ rng: () => sharedSecret });
-    const { address } = bitcoin.payments.p2wpkh({ pubkey: newKeyPair.publicKey });
+        // Diffie-Hellman shared secret (recipient's public key, sender's private key)
+        const sharedSecret = bitcoin.crypto.sha256(
+            recipientPublicKey.publicKey // .mul() not available on Buffer directly
+                // Create temporary keypair for multiplication
+                .constructor.fromPublicKey(recipientPublicKey.publicKey)
+                .publicKey.mul(senderPrivateKey.privateKey)
+        );
 
-    return address!;
+        // Generate new stealth address using shared secret
+        const newKeyPair = bitcoin.ECPair.makeRandom({ rng: () => sharedSecret });
+        const { address } = bitcoin.payments.p2wpkh({ 
+            pubkey: newKeyPair.publicKey,
+            network: bitcoin.networks.bitcoin // Specify network explicitly
+        });
+
+        if (!address) {
+            throw new Error("Failed to generate stealth address");
+        }
+
+        return address;
+    } catch (error) {
+        throw new Error(`Silent payment address generation failed: ${error.message}`);
+    }
 }
 
 // Example usage of silent payment address generation
-const recipientKey = ECPair.fromPublicKey(/* recipient public key */);
-const senderKey = ECPair.fromWIF(/* sender private key */);
-const stealthAddress = generateSilentPaymentAddress(recipientKey, senderKey);
-
-console.log("Stealth Address:", stealthAddress);
+try {
+    const recipientKey = bitcoin.ECPair.makeRandom(); // For demo - replace with actual key
+    const senderKey = bitcoin.ECPair.makeRandom();    // For demo - replace with actual key
+    const stealthAddress = generateSilentPaymentAddress(recipientKey, senderKey);
+    console.log("Stealth Address:", stealthAddress);
+} catch (error) {
+    console.error(error.message);
+}
 
 // Function to estimate the fee based on transaction size and fee rate
 function estimateTransactionFee(transactionSize: number, feeRate: number): number {
-    return transactionSize * feeRate; // satoshis per byte
+    if (transactionSize <= 0 || feeRate <= 0) {
+        throw new Error("Invalid transaction size or fee rate");
+    }
+    return Math.ceil(transactionSize * feeRate); // Round up satoshis
 }
 
-// Allow users to set custom fee rates
+// Interface for transaction output
+interface TransactionOutput {
+    address: string;  // Changed from bitcoin.Address to string
+    amount: number;   // In satoshis
+}
+
 function createTransactionWithFee(
     selectedUTXOs: UTXO[],
-    outputs: { address: bitcoin.Address; amount: number }[],
-    feeRate: number
+    outputs: TransactionOutput[],
+    feeRate: number,
+    changeAddress?: string // Optional change address parameter
 ): bitcoin.Transaction {
-    const txb = new bitcoin.TransactionBuilder();
-    
-    let totalInputAmount = 0;
-    for (const utxo of selectedUTXOs) {
-        txb.addInput(utxo.txid, utxo.index);
-        totalInputAmount += utxo.txout.value;
-    }
+    try {
+        const txb = new bitcoin.TransactionBuilder();
 
-    let totalOutputAmount = outputs.reduce((sum, output) => sum + output.amount, 0);
+        // Validate inputs
+        if (!selectedUTXOs.length) throw new Error("No UTXOs provided");
+        if (!outputs.length) throw new Error("No outputs provided");
+        if (feeRate <= 0) throw new Error("Invalid fee rate");
 
-    // Estimate transaction size (simplified, can adjust for more accuracy)
-    const estimatedTxSize = selectedUTXOs.length * 180 + outputs.length * 34 + 10;
+        // Add inputs and calculate total
+        let totalInputAmount = 0;
+        for (const utxo of selectedUTXOs) {
+            txb.addInput(utxo.txid, utxo.index);
+            totalInputAmount += utxo.txout.value;
+        }
 
-    const fee = estimateTransactionFee(estimatedTxSize, feeRate);
+        const totalOutputAmount = outputs.reduce((sum, output) => sum + output.amount, 0);
 
-    // If inputs cover outputs and fee, add outputs
-    if (totalInputAmount >= totalOutputAmount + fee) {
+        // More accurate size estimation (vbytes)
+        const estimatedTxSize = 
+            selectedUTXOs.length * 148 + // Inputs (P2PKH)
+            outputs.length * 34 +        // Outputs (P2WPKH)
+            10 +                         // Base transaction overhead
+            selectedUTXOs.length;        // Witness data overhead
+
+        const fee = estimateTransactionFee(estimatedTxSize, feeRate);
+
+        // Validate funds
+        if (totalInputAmount < totalOutputAmount + fee) {
+            throw new Error(
+                `Insufficient funds: ${totalInputAmount} available, ` +
+                `${totalOutputAmount + fee} needed`
+            );
+        }
+
+        // Add outputs
         for (const { address, amount } of outputs) {
             txb.addOutput(address, amount);
         }
 
-        // Add change output (if needed)
+        // Add change output if applicable
         const change = totalInputAmount - totalOutputAmount - fee;
         if (change > 0) {
-            const changeAddress = /* user's change address */;
+            if (!changeAddress) {
+                throw new Error("Change address required for transaction with change");
+            }
             txb.addOutput(changeAddress, change);
         }
-    } else {
-        throw new Error("Insufficient funds to cover the transaction fee.");
-    }
 
-    return txb.buildIncomplete();
+        return txb.buildIncomplete();
+    } catch (error) {
+        throw new Error(`Transaction creation failed: ${error.message}`);
+    }
 }
 
 // Example usage
-const feeRate = 20; // Satoshis per byte, chosen by the user from UI
-const transactionWithFee = createTransactionWithFee(selectedUTXOs, outputs, feeRate);
+try {
+    const feeRate = 20; // Satoshis per byte
+    const sampleUTXOs: UTXO[] = [
+        // Replace with real UTXO data
+        { txid: "1234...", index: 0, txout: { value: 100000 } }
+    ];
+    const sampleOutputs: TransactionOutput[] = [
+        { address: "bc1q...", amount: 50000 }
+    ];
+    const changeAddress = "bc1q..."; // Add your change address
+    
+    const transactionWithFee = createTransactionWithFee(
+        sampleUTXOs,
+        sampleOutputs,
+        feeRate,
+        changeAddress
+    );
+    console.log("Transaction created successfully");
+} catch (error) {
+    console.error(error.message);
+}
