@@ -3,8 +3,8 @@ import { UTXOType, UTXO } from "silent-payments";
 
 // Silent payment address generation using Diffie-Hellman
 function generateSilentPaymentAddress(
-    recipientPublicKey: bitcoin.ECPairInterface,
-    senderPrivateKey: bitcoin.ECPairInterface
+    recipientPublicKey: bitcoin.ECPair.ECPairInterface,
+    senderPrivateKey: bitcoin.ECPair.ECPairInterface
 ): string {  // Changed return type from bitcoin.Address to string
     try {
         // Validate inputs
@@ -39,7 +39,6 @@ function generateSilentPaymentAddress(
         throw new Error(`Silent payment address generation failed: ${error.message}`);
     }
 }
-
 // Example usage of silent payment address generation
 try {
     const recipientKey = bitcoin.ECPair.makeRandom(); // For demo - replace with actual key
@@ -129,7 +128,7 @@ try {
     const feeRate = 20; // Satoshis per byte
     const sampleUTXOs: UTXO[] = [
         // Replace with real UTXO data
-        { txid: "1234...", index: 0, txout: { value: 100000 } }
+        { txid: "1234...", vout: 0, txout: { value: 100000 } }
     ];
     const sampleOutputs: TransactionOutput[] = [
         { address: "bc1q...", amount: 50000 }
@@ -142,7 +141,12 @@ try {
         feeRate,
         changeAddress
     );
-    console.log("Transaction created successfully");
-} catch (error) {
-    console.error(error.message);
+
+
+    console.log("Transaction created successfully:", transactionWithFee);
+} catch (error) {    if (error instanceof Error) {
+        console.error(error.message);
+    } else {
+        console.error("An unknown error occurred");
+    }
 }
