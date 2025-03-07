@@ -1,30 +1,27 @@
 import * as bitcoin from "bitcoinjs-lib";
-import { UTXOType, UTXO } from "silent-payments";
+import { UTXO } from "silent-payments";
 
 // Silent payment address generation using Diffie-Hellman
 function generateSilentPaymentAddress(
-    recipientPublicKey: bitcoin.ECPair.ECPairInterface,
-    senderPrivateKey: bitcoin.ECPair.ECPairInterface
-): string {  // Changed return type from bitcoin.Address to string
+    recipientPublicKey: bitcoin.Signer,
+    senderPrivateKey: bitcoin.Signer
+): string {
     try {
         // Validate inputs
         if (!recipientPublicKey.publicKey) {
             throw new Error("Invalid recipient public key");
         }
-        if (!senderPrivateKey.privateKey) {
+        if (!senderPrivateKey.publicKey) {
             throw new Error("Invalid sender private key");
         }
 
         // Diffie-Hellman shared secret (recipient's public key, sender's private key)
         const sharedSecret = bitcoin.crypto.sha256(
-            recipientPublicKey.publicKey // .mul() not available on Buffer directly
-                // Create temporary keypair for multiplication
-                .constructor.fromPublicKey(recipientPublicKey.publicKey)
-                .publicKey.mul(senderPrivateKey.privateKey)
+            bitcoin.ecc.pointMultiply(recipientPublicKey.publicKey, senderPrivateKey.publicKey)
         );
 
         // Generate new stealth address using shared secret
-        const newKeyPair = bitcoin.ECPair.makeRandom({ rng: () => sharedSecret });
+        const newKeyPair = bitcoin.ECPair.fromPrivateKey(sharedSecret);
         const { address } = bitcoin.payments.p2wpkh({ 
             pubkey: newKeyPair.publicKey,
             network: bitcoin.networks.bitcoin // Specify network explicitly
@@ -38,9 +35,7 @@ function generateSilentPaymentAddress(
     } catch (error) {
         throw new Error(`Silent payment address generation failed: ${error.message}`);
     }
-}
-// Example usage of silent payment address generation
-try {
+}// Example usage of silent payment address generationtry {
     const recipientKey = bitcoin.ECPair.makeRandom(); // For demo - replace with actual key
     const senderKey = bitcoin.ECPair.makeRandom();    // For demo - replace with actual key
     const stealthAddress = generateSilentPaymentAddress(recipientKey, senderKey);
