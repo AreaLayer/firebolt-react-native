@@ -75,7 +75,7 @@ The other main features Firebolt supports are as follows:
 
 ## Roadmap
 
--  [x] Miniscript (WIP)
+
 -  [x] BTCPayServer Plugin (2025-2026) [WIP]
 -  [x] BOLT12 
 -  [x] APIs Breez SDK tested
