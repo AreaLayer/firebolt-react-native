@@ -34,7 +34,7 @@
     "bip21": "^3.0.0",
     "bip32": "^5.0.0-rc.0",
     "bip39": "^3.1.0",
-    "bitbox-api": "^0.9.0",
+    "bitbox-api": "^0.9.1",
     "bitcoinjs-lib": "^6.1.7",
     "bolt11": "^1.4.1",
     "buffer": "^6.0.3",
@@ -66,10 +66,10 @@
     "vm-browserify": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.9",
+    "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
-    "@babel/runtime": "^7.26.9",
-    "@react-native-community/cli": "^17.0.0",
+    "@babel/runtime": "^7.26.10",
+    "@react-native-community/cli": "^18.0.0",
     "@react-native/babel-preset": "0.78.0",
     "@react-native/eslint-config": "0.78.0",
     "@react-native/metro-config": "0.78.0",
