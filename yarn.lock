@@ -1054,10 +1054,10 @@
   dependencies:
     bip68 "^1.0.4"
 
-"@breeztech/react-native-breez-sdk-liquid@^0.7.0":
-  version "0.7.1"
-  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.7.1.tgz"
-  integrity sha512-B0q4VYuQ54VMyhYevwhGbJXc35Wb8xwbY049lgE06LnQ+VwYkkxi1184wTHXY+3BQLcpo6mW94Am0NJtRc3FDw==
+"@breeztech/react-native-breez-sdk-liquid@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.7.2.tgz"
+  integrity sha512-sPQ0J1wnOm3m7cHXpbxiSUL+xCT4BWCtT4Y/WdWXrQQFIXi/FUYkUnxpS4EMkFTPrvj7OjQSvrevSjL3X2lwWw==
 
 "@breeztech/react-native-breez-sdk@^0.6.6":
   version "0.6.6"
@@ -10189,10 +10189,10 @@ react-native-reanimated@>=3.6.2:
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.3.0.tgz"
   integrity sha512-glV9bwuozTjf/JDBIBm+ITnukHNaUT3nucgdeADwjtHsfEN3RL5UO6nq99vvdWv5j/O9yCZBvFncM1BBQ+UvpQ==
 
-react-native-screens@^4.9.1, "react-native-screens@>= 4.0.0":
-  version "4.9.1"
-  resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-4.9.1.tgz"
-  integrity sha512-3pIOu1YXTDClQfkgk2t7rIr7unrV6bviaXRJsOq1APNHLeCPrJ6m5Gy3pW5Ty+XBm9jRAbMqhpjiXZIjesOR6A==
+react-native-screens@^4.9.2, "react-native-screens@>= 4.0.0":
+  version "4.9.2"
+  resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-4.9.2.tgz"
+  integrity sha512-87gR7XRIirACYxtYltEl1BbUo5r0W4AFPckUDDzATAN6LIUZ2PC3bX6UAFeoEBEqBbfaemRZTWSYHl6MCZFSgw==
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
