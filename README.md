@@ -84,6 +84,7 @@ The other main features Firebolt supports are as follows:
 -  [x] Pre-beta app phase
 -  [x] ZK Proof (Coinjoin) tested into Android app
 -  [x] App running locally (Android)
+-  [ ] Mainnet
 -  [ ] Tor Daemon (Android)
 -  [ ] VPN (Wireguard)
 -  [ ] Beta App (Android - via APK) in 2025
