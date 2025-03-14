@@ -1,23 +1,18 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, createNavigationContainerRef } from '@react-navigation/native';
 
-const Stack = createStackNavigator(); // Initialize the stack navigator
 
-import { createStackNavigator } from '@react-navigation/stack';
+// Initialize the stack navigator
+const Stack = createNavigationContainer();
 
-const Stack = createStackNavigator();
-
-const LightningPayment = () => {
+// Define the LightningPaymentScreen component
+const LightningPaymentScreen = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="LightningPayment" component={LightningPaymentScreen} />
-        <Stack.Screen name="PaymentConfirmation" component={PaymentConfirmationScreen} />
-        <Stack.Screen name="PaymentHistory" component={PaymentHistoryScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // Your screen content here
+    <></>
   );
 };
+
 // Define PaymentConfirmationScreen component
 const PaymentConfirmationScreen = () => {
   return (
@@ -33,16 +28,17 @@ const PaymentHistoryScreen = () => {
     <></>
   );
 };
-// Define the LightningPaymentScreen component
-const LightningPaymentScreen = () => {
+
+const LightningPayment = () => {
   return (
-    // Your screen content here
-    <></>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="LightningPayment" component={LightningPaymentScreen} />
+        <Stack.Screen name="PaymentConfirmation" component={PaymentConfirmationScreen} />
+        <Stack.Screen name="PaymentHistory" component={PaymentHistoryScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
 export default LightningPayment;
-function createStackNavigator() {
-  throw new Error('Function not implemented.');
-}
-
