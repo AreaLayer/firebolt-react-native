@@ -3,6 +3,10 @@ import { NavigationContainer } from '@react-navigation/native';
 
 const Stack = createStackNavigator(); // Initialize the stack navigator
 
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
 const LightningPayment = () => {
   return (
     <NavigationContainer>
@@ -14,7 +18,6 @@ const LightningPayment = () => {
     </NavigationContainer>
   );
 };
-
 // Define PaymentConfirmationScreen component
 const PaymentConfirmationScreen = () => {
   return (
