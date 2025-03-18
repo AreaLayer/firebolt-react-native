@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { generateInvoice } from "../app/lightning";
 import { SCREEN_ONX_ADDRESS } from "../app/constants";
-import * as nostrInterface from "../utils/nostr/encryption"; // Evita conflito de palavras-chave
 
 // Navigation
 interface NavigationParams {
