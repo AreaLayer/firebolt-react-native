@@ -5,7 +5,7 @@ import { generateInvoice } from "../app/lightning";
 import { SCREEN_ONX_ADDRESS } from "../app/constants";
 import * as nostrInterface from "../utils/nostr/encryption"; // Evita conflito de palavras-chave
 
-// Tipagem correta dos parâmetros de navegação
+// Navigation
 interface NavigationParams {
   OnboardingHome: undefined;
   Send: undefined;
@@ -14,7 +14,7 @@ interface NavigationParams {
   generateAddress: undefined;
 }
 
-// Tipagem para armazenamento de invoice na blockchain
+// Storage Invoice
 interface ScreenOnChain {
   [key in typeof SCREEN_ONX_ADDRESS]: {
     invoice: string;
@@ -28,7 +28,7 @@ export const Receive: React.FC = () => {
   );
   const [invoice, setInvoice] = useState<string | null>(null);
 
-  // Copiar endereço para área de transferência
+  // Copy Adress
   const handleCopyAddress = () => {
     if (bitcoinAddress !== "Generate an address to receive Bitcoin") {
       console.log("Address copied to clipboard:", bitcoinAddress);
@@ -37,13 +37,13 @@ export const Receive: React.FC = () => {
     }
   };
 
-  // Gerar novo endereço Bitcoin
+  // New Adrress Bitcoin
   const handleGenerateAddress = () => {
     const newAddress = "bc1q" + Math.random().toString(36).substring(2, 15);
     setBitcoinAddress(newAddress);
   };
 
-  // Gerar fatura Lightning
+  // Generate Invoice Lightning
   const handleGenerateInvoice = async () => {
     try {
       const newInvoice = await generateInvoice();
