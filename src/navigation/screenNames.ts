@@ -17,4 +17,10 @@ export const SCREEN_NAMES: IScreenNames = {
   ConfirmPin: 'ConfirmPin',
   Dashboard: 'Dashboard',
   VerifyPin: 'VerifyPin',
+  ExitZKPool: function (_ExitZKPool: any): unknown {
+    throw new Error("Function not implemented.");
+  },
+  EnterZKPool: function (_EnterZKPool: any): unknown {
+    throw new Error("Function not implemented.");
+  }
 };
