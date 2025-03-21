@@ -24,7 +24,7 @@ const TermsOfServiceScreen = () => {
 
       <Text style={styles.sectionTitle}>4. User Responsibility</Text>
       <Text style={styles.text}>
-        You are responsible for ensuring your use of the App complies with all applicable laws, regulations, and rules in your jurisdiction. The App does not guarantee anonymity or protection from legal consequences arising from your actions.
+        You are responsible for ensuring your use of the App complies with all applicable laws, regulations, and rules in your jurisdiction. The App does guarantee anonymity or protection from legal consequences arising from your actions.
       </Text>
 
       <Text style={styles.sectionTitle}>5. Prohibited Use</Text>
