@@ -2,6 +2,8 @@
 
 ⚠️**Pre-beta phase Android**
 
+**Soon iOs version**
+
 **Contributions are welcome**
 
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
