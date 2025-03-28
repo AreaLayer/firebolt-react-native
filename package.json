@@ -29,6 +29,7 @@
     "@react-navigation/native-stack": "^7.3.3",
     "@trezor/connect": "^9.5.3",
     "assert": "^2.0.0",
+    "axios": "^1.8.4",
     "bech32": "^2.0.0",
     "bip-353-lib": "^1.0.6-alpha",
     "bip21": "^3.0.0",

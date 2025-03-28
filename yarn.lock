@@ -5251,10 +5251,10 @@ available-typed-arrays@^1.0.5, available-typed-arrays@^1.0.7:
   dependencies:
     possible-typed-array-names "^1.0.0"
 
-axios@^1.7.9:
-  version "1.8.3"
-  resolved "https://registry.npmjs.org/axios/-/axios-1.8.3.tgz"
-  integrity sha512-iP4DebzoNlP/YN2dpwCgb8zoCmhtkajzS48JvwmkSkXvPI3DHc7m+XYL5tGnSlJtR6nImXZmdCuN5aP8dh1d8A==
+axios@^1.7.9, axios@^1.8.4:
+  version "1.8.4"
+  resolved "https://registry.npmjs.org/axios/-/axios-1.8.4.tgz"
+  integrity sha512-eBSYY4Y68NNlHbHBMdeDmKNtDgXWhQsJcGqzO3iLUM0GraQFSS9cVgPX5I9b3lbdFKyYoAEGAZF1DwhTaljNAw==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.0"
