@@ -30,7 +30,7 @@ COPY . /app
 RUN chmod +x ./gradlew && ./gradlew build
 
 # Stage 3: Swift Build
-FROM swift:6.0 AS swift-build
+FROM swift:6.1 AS swift-build
 
 # Copy Gradle installation from base stage
 COPY --from=gradle-base /opt/gradle /opt/gradle
