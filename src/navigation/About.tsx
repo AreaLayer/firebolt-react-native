@@ -24,7 +24,7 @@ const AboutScreen = () => {
           Created by: AreaLayer
           </Text>
         <Text style={styles.text}>
-          Version: 1.0.24-alpha
+          Version: 1.0.25-alpha
         </Text>
 
         <Text style={styles.text}>
