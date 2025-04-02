@@ -75,7 +75,7 @@ export const sendPSBT = async (
 export const demoUTXO: UTXO = {
   txid: 'txid',
   vout: 0,
-  amount: 1000000,
+  amount: 10000,
 };
 // Utility function to log UTXO
 export const logUTXO = (utxo: UTXO): void => {
