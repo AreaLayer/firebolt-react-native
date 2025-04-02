@@ -2059,10 +2059,10 @@
   resolved "https://registry.npmjs.org/@ledgerhq/errors/-/errors-6.19.1.tgz"
   integrity sha512-75yK7Nnit/Gp7gdrJAz0ipp31CCgncRp+evWt6QawQEtQKYEDfGo10QywgrrBBixeRxwnMy1DP6g2oCWRf1bjw==
 
-"@ledgerhq/hw-app-btc@^10.6.0":
-  version "10.6.0"
-  resolved "https://registry.npmjs.org/@ledgerhq/hw-app-btc/-/hw-app-btc-10.6.0.tgz"
-  integrity sha512-Lm4zM10Vz+D1Ic0kOzYHRojponwVnp7YWlD0oTv7Nfq4+Fp1ipsvaIC07E6UqZ+rC7OlUJf3T3VNYTiwgDN+PQ==
+"@ledgerhq/hw-app-btc@^10.7.0":
+  version "10.7.0"
+  resolved "https://registry.npmjs.org/@ledgerhq/hw-app-btc/-/hw-app-btc-10.7.0.tgz"
+  integrity sha512-zVvxPGh48zuFpv3bfWGFYxleVr0qXXMwe2+mqfTS1T9zfNBMtiDIpn6F84zM156uoftGj8O9BNu5DSy5mztGpA==
   dependencies:
     "@ledgerhq/hw-transport" "^6.31.4"
     "@ledgerhq/logs" "^6.12.0"
@@ -3087,12 +3087,12 @@
     invariant "^2.2.4"
     nullthrows "^1.1.1"
 
-"@react-navigation/core@^7.7.0":
-  version "7.7.0"
-  resolved "https://registry.npmjs.org/@react-navigation/core/-/core-7.7.0.tgz"
-  integrity sha512-u8GaO4QuX5VyfLk7s6dw10W/zl5c0NKOPocjYfWO4Wiaq4VROY00jjVcc1oYPEhDn5XXonx7U0l7jYYUA0cHlQ==
+"@react-navigation/core@^7.8.0":
+  version "7.8.0"
+  resolved "https://registry.npmjs.org/@react-navigation/core/-/core-7.8.0.tgz"
+  integrity sha512-eKHe3ZEVsAHalMdugaCIhc2bUTYI7am9oT8CIhOQg2xiZ9OlT6eKYQacby6gVCHLJWNBOawrtENhuFJervkLRw==
   dependencies:
-    "@react-navigation/routers" "^7.3.1"
+    "@react-navigation/routers" "^7.3.2"
     escape-string-regexp "^4.0.0"
     nanoid "3.3.8"
     query-string "^7.1.3"
@@ -3100,36 +3100,36 @@
     use-latest-callback "^0.2.1"
     use-sync-external-store "^1.2.2"
 
-"@react-navigation/elements@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.npmjs.org/@react-navigation/elements/-/elements-2.3.1.tgz"
-  integrity sha512-94lFVh/yjqPjahHo8zQBggooXVHr791Frpp0v/3idsn9J8tRrzTMQVgjDNNNbSPj7PZtvh/N9EiEq5sVf/vmxA==
+"@react-navigation/elements@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.npmjs.org/@react-navigation/elements/-/elements-2.3.2.tgz"
+  integrity sha512-8MWcL/TVCg3MTOaAXMSPM8OrvZFQ16EPj/a+wVRDKiyl/GFnchu3ho3tsP+4odAMbWXNRsHMdHNxgFVCmPhNNA==
   dependencies:
     color "^4.2.3"
 
-"@react-navigation/native-stack@^7.3.3":
-  version "7.3.3"
-  resolved "https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-7.3.3.tgz"
-  integrity sha512-piUO4MzYPrdiolrB/FKU25216MPQHd+90tIE2uwqioRLzEAcv78f0Pugi2Hp7RSOMmNjLIIGk6QMwZqr/ot9KQ==
+"@react-navigation/native-stack@^7.3.4":
+  version "7.3.4"
+  resolved "https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-7.3.4.tgz"
+  integrity sha512-quu6nfQf8zHqOQMvIyAJf+Wxx1ItoynakI4ZwHpbC77kiIUkzpHCAScnJ+ZE8bjkUpuWm5ugXo8AUNo4DWHJBQ==
   dependencies:
-    "@react-navigation/elements" "^2.3.1"
+    "@react-navigation/elements" "^2.3.2"
     warn-once "^0.1.1"
 
-"@react-navigation/native@^7.0.19":
-  version "7.0.19"
-  resolved "https://registry.npmjs.org/@react-navigation/native/-/native-7.0.19.tgz"
-  integrity sha512-6UDTFVM91FIUaXF5OZ7GHb+XZK6yAktqdTOBOtn3goIyafKz0OUo+ukxe+tPGpr+E9ZQjdZDCseIH6HOI/k8rw==
+"@react-navigation/native@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.npmjs.org/@react-navigation/native/-/native-7.1.0.tgz"
+  integrity sha512-7ScBWNca2jEcfkekMHp6/NJbLADgRKRYEXZ2gILR/riM0Yq8by4RyHmdgXT70oYRUT+MQ/tm70YBFv/4ubAzVg==
   dependencies:
-    "@react-navigation/core" "^7.7.0"
+    "@react-navigation/core" "^7.8.0"
     escape-string-regexp "^4.0.0"
     fast-deep-equal "^3.1.3"
     nanoid "3.3.8"
     use-latest-callback "^0.2.1"
 
-"@react-navigation/routers@^7.3.1":
-  version "7.3.1"
-  resolved "https://registry.npmjs.org/@react-navigation/routers/-/routers-7.3.1.tgz"
-  integrity sha512-d0hJi4eZJQB84JtHlA3HDR9VHoKDfyknSCdz/7a3Mdz1OJDZsvU+qjfK2c9mxNFd+ak/ekLhEkwwh8QtVF0faw==
+"@react-navigation/routers@^7.3.2":
+  version "7.3.2"
+  resolved "https://registry.npmjs.org/@react-navigation/routers/-/routers-7.3.2.tgz"
+  integrity sha512-FZsMPbFP8FubdlA0oa+2bLhgwDNSk+ezIUETxIvMazoz715LTpXzPNBiQ29AMfZztADAWniTjotWSOREwKETkA==
   dependencies:
     nanoid "3.3.8"
 
@@ -12383,9 +12383,9 @@ use-latest-callback@^0.2.1:
   integrity sha512-7vI3fBuyRcP91pazVboc4qu+6ZqM8izPWX9k7cRnT8hbD5svslcknsh3S9BUhaK11OmgTV4oWZZVSeQAiV53SQ==
 
 use-sync-external-store@^1.2.2:
-  version "1.4.0"
-  resolved "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.4.0.tgz"
-  integrity sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.5.0.tgz"
+  integrity sha512-Rb46I4cGGVBmjamjphe8L/UnvJD+uPPtTkNvX5mZgqdbavhI4EbgIWJiIHXJ8bc/i9EQGPRh4DwEURJ552Do0A==
 
 utf-8-validate@^5.0.2, utf-8-validate@>=5.0.2:
   version "5.0.10"
