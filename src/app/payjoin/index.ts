@@ -9,6 +9,7 @@ interface PSBTResponse extends Response {
 interface SendPSBTConfig {
   endpoint?: string;
   timeout?: number;
+  [key: string]: any;
 }
 
 // Payjoin URL creation function with input validation
