@@ -107,7 +107,7 @@ The other main features Firebolt supports are as follows:
 
 [ZK Proof Library Rust:  ZK Proof Library for Coinjoin transactions](https://github.com/AreaLayer/zk-proof-rust)
 
-## BTCPayServer Plugin
+## BTCPayServer Plugin (Coinjoin Server)
 
 Coming soon in 2025 or 2026
 
