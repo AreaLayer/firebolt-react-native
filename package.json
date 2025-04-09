@@ -76,7 +76,7 @@
     "@react-native/metro-config": "0.79.0",
     "@react-native/typescript-config": "0.79.0",
     "@types/react": "^18.3.20",
-    "@types/react-test-renderer": "^18.3.1",
+    "@types/react-test-renderer": "^19.0.0",
     "babel-jest": "^29.6.3",
     "core-js": "^3.41.0",
     "eslint": "^9.24.0",
