@@ -39,7 +39,7 @@
     "bitcoinjs-lib": "^6.1.7",
     "bolt11": "^1.4.1",
     "buffer": "^6.0.3",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.5.0",
     "ecpair": "^3.0.0",
     "elliptic": "^6.6.1",
     "events": "^3.0.0",
