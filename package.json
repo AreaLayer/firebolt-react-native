@@ -18,7 +18,7 @@
     "@gluestack-style/react": "^1.0.45",
     "@gluestack-ui/config": "^1.1.2",
     "@gluestack-ui/themed": "^1.1.62",
-    "@ledgerhq/hw-app-btc": "^10.8.0",
+    "@ledgerhq/hw-app-btc": "^10.9.0",
     "@ledgerhq/hw-transport-webhid": "^6.30.0",
     "@ledgerhq/react-native-hid": "^6.32.4",
     "@mempool/mempool.js": "^3.0.0",
