@@ -6,7 +6,8 @@ export const send = async (
   address: string,
   fee: number,
   changeAddress: string,
-  network: string
+  network: string,
+  mempool: string
 ) => {
   const utxosToSpend = utxos.filter((utxo) => utxo.vout> amount + fee);
   const utxosToChange = utxos.filter((utxo) => utxo.vout <= amount + fee);
@@ -23,6 +24,7 @@ export const send = async (
     fee,
     address,
     changeAddress,
-    network
+    network,
+    mempool
   };
 };  
