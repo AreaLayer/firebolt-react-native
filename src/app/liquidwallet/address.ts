@@ -58,8 +58,8 @@ async function getAddressDataFromNetwork(_network: LiquidNetwork, _address: stri
   
   // Breez API endpoints
   export const BREEZ_API = {
-    mainnet: "https://api.breez.technology/v2",
-    testnet: "https://api.breez.technology/v1",
+    mainnet: "https://staging.cryptoqr.net/.well-known/lnurlp/<input>",
+    testnet: "https://staging.cryptoqr.net/.well-known/lnurlp/<input>"
   } as const;
   
   // Asset metadata
