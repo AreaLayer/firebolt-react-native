@@ -1139,10 +1139,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@eslint/js@9.25.0":
-  version "9.25.0"
-  resolved "https://registry.npmjs.org/@eslint/js/-/js-9.25.0.tgz"
-  integrity sha512-iWhsUS8Wgxz9AXNfvfOPFSW4VfMXdVhp1hjkZVhXCrpgh/aLcc45rX6MPu+tIVUWDw0HfNwth7O28M1xDxNf9w==
+"@eslint/js@9.25.1":
+  version "9.25.1"
+  resolved "https://registry.npmjs.org/@eslint/js/-/js-9.25.1.tgz"
+  integrity sha512-dEIwmjntEx8u3Uvv+kr3PDeeArL8Hw07H9kyYxCjnM9pBjfEhk6uLXSchxxzgiwtRhhzVzqmUSDFBOi1TuZ7qg==
 
 "@eslint/object-schema@^2.1.6":
   version "2.1.6"
@@ -2234,10 +2234,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nostr-dev-kit/ndk@^2.14.1":
-  version "2.14.1"
-  resolved "https://registry.npmjs.org/@nostr-dev-kit/ndk/-/ndk-2.14.1.tgz"
-  integrity sha512-ko7Z9CKrHr8+rHctzNeLzydY4KYZ7XbSZWHi560SPmoNCfZnAbQ9yNhvWVJkLNUJT4cynb+jsJM6hp5bn2oUtw==
+"@nostr-dev-kit/ndk@^2.14.2":
+  version "2.14.2"
+  resolved "https://registry.npmjs.org/@nostr-dev-kit/ndk/-/ndk-2.14.2.tgz"
+  integrity sha512-dRifDiq7aSEZKXTbHRv5UqqUSZxNbbZxWPasuooI7bv2JdeYaSPuRhk5sHPqqOqlW/zNDzSYXcFj/i+Wcwz+Tg==
   dependencies:
     "@noble/curves" "^1.6.0"
     "@noble/hashes" "^1.5.0"
@@ -6904,10 +6904,10 @@ eslint-visitor-keys@^4.2.0:
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-4.2.0.tgz"
   integrity sha512-UyLnSehNt62FFhSwjZlHmeokpRK59rcz29j+F1/aDgbkbRTk7wIc9XzdoasMUbRNKDM0qQt/+BJ4BrpFeABemw==
 
-"eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", "eslint@^3.17.0 || ^4 || ^5 || ^6 || ^7 || ^8", "eslint@^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^6.0.0 || ^7.0.0 || >=8.0.0", "eslint@^7.0.0 || ^8.0.0", "eslint@^7.5.0 || ^8.0.0 || ^9.0.0", eslint@^8.1.0, eslint@^8.56.0, eslint@^9.25.0, eslint@>=4.19.1, eslint@>=7.0.0, eslint@>=8:
-  version "9.25.0"
-  resolved "https://registry.npmjs.org/eslint/-/eslint-9.25.0.tgz"
-  integrity sha512-MsBdObhM4cEwkzCiraDv7A6txFXEqtNXOb877TsSp2FCkBNl8JfVQrmiuDqC1IkejT6JLPzYBXx/xAiYhyzgGA==
+"eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", "eslint@^3.17.0 || ^4 || ^5 || ^6 || ^7 || ^8", "eslint@^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^6.0.0 || ^7.0.0 || >=8.0.0", "eslint@^7.0.0 || ^8.0.0", "eslint@^7.5.0 || ^8.0.0 || ^9.0.0", eslint@^8.1.0, eslint@^8.56.0, eslint@^9.25.1, eslint@>=4.19.1, eslint@>=7.0.0, eslint@>=8:
+  version "9.25.1"
+  resolved "https://registry.npmjs.org/eslint/-/eslint-9.25.1.tgz"
+  integrity sha512-E6Mtz9oGQWDCpV12319d59n4tx9zOTXSTmc8BLVxBx+G/0RdM5MvEEJLU9c0+aleoePYYgVTOsRblx433qmhWQ==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@eslint-community/regexpp" "^4.12.1"
@@ -6915,7 +6915,7 @@ eslint-visitor-keys@^4.2.0:
     "@eslint/config-helpers" "^0.2.1"
     "@eslint/core" "^0.13.0"
     "@eslint/eslintrc" "^3.3.1"
-    "@eslint/js" "9.25.0"
+    "@eslint/js" "9.25.1"
     "@eslint/plugin-kit" "^0.2.8"
     "@humanfs/node" "^0.16.6"
     "@humanwhocodes/module-importer" "^1.0.1"
