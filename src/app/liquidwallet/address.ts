@@ -1,15 +1,16 @@
 import { 
     LiquidNetwork, 
     LiquidAddressData, 
-    ListPaymentsRequest, 
-    AssetMetadata 
+    ListPaymentsRequest,
+    AssetMetadata,
   } from "@breeztech/react-native-breez-sdk-liquid";
   import { SwapLiquidInterface } from "../swap/liquid";
   
   // Get address data function
   export const getLiquidAddressData = async (
     network: LiquidNetwork, 
-    address: string
+    address: string,
+    _mnemonicToSeed: string
   ): Promise<LiquidAddressData> => {
     // Assuming there's a function to get address data from the network
     // You might need to import or define this function elsewhere
