@@ -1,6 +1,11 @@
 import crypto, { CipherGCM, CipherGCMTypes, DecipherGCM } from 'crypto';
+import { mnemonicToSeed } from '@breeztech/react-native-breez-sdk';
 
-/**
+
+
+export const mnemonicToSeedObj = {
+  
+}/**
  * Get encryption/decryption algorithm
  */
 function getAlgorithm(): CipherGCMTypes {
