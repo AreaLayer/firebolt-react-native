@@ -3,7 +3,7 @@ import { mnemonicToSeed } from '@breeztech/react-native-breez-sdk';
 
 
 
-export const mnemonicToSeedObj = {
+export const mnemonicToSeed = {
   
 }/**
  * Get encryption/decryption algorithm
