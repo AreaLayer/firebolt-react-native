@@ -33,4 +33,6 @@ currently being supported with security updates.
 |v1.0.23-alpha  | :white_check_mark: |
 |v1.0.24-alpha  | :white_check_mark: |
 |v1.0.25-alpha  | :white_check_mark: |
+|v1.0.26-alpha  | :white_check_mark: |
+
 
