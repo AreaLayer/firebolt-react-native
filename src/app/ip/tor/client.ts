@@ -1,5 +1,4 @@
 import { RnTor } from 'react-native-nitro-tor';
-import { InitTor, CreateService, CheckSatus, Shutdown} from ''
 
 // Initialize Tor service
 const initTor = async () => {
