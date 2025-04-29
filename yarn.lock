@@ -10392,6 +10392,16 @@ react-native-css-interop@0.1.22:
     lightningcss "^1.27.0"
     semver "^7.6.3"
 
+react-native-nitro-modules@^0.25.2:
+  version "0.25.2"
+  resolved "https://registry.npmjs.org/react-native-nitro-modules/-/react-native-nitro-modules-0.25.2.tgz"
+  integrity sha512-rL+X0LzB8BXvpdrUE/+oZ5v4qS/1nZIq0M8Uctbvqq2q53sVCHX4995ffT8+lGIJe/f0QcBvvrEeXtBPl86iwQ==
+
+react-native-nitro-tor@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.npmjs.org/react-native-nitro-tor/-/react-native-nitro-tor-0.2.4.tgz"
+  integrity sha512-2zAkTMOpCiFJO7/H6lIMDVxkn1MJMfg9wSjU+xKpccmhNpNxh/AM1cn7YAAs7QWdgek/KtST8mL4jTRpBAXzBQ==
+
 react-native-qrcode-svg@^6.3.15:
   version "6.3.15"
   resolved "https://registry.npmjs.org/react-native-qrcode-svg/-/react-native-qrcode-svg-6.3.15.tgz"
