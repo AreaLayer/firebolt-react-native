@@ -34,8 +34,8 @@ class Coinjoin {
     this.LiquidAddress = LiquidAddress;
     this.rescanOnchainSwaps = rescanOnchainSwaps;
     this.isEntering = isEntering; // Boolean flag to indicate whether the user is entering or exiting
-  }
-}
+    this.bitcoinAddress = bitcoin.address.toOutputScript(address);
+  }}
 
 class CoinjoinTransaction {
   constructor(txid, vout, amount, address) {
@@ -47,6 +47,7 @@ class CoinjoinTransaction {
     this.rescanOnchainSwaps = rescanOnchainSwaps;
     this.LiquidNetwork = LiquidNetwork;
     this.LiquidAddress = LiquidAddress;
+    this.bitcoinAddress = bitcoin.address.toOutputScript(address);
   }
 }
 
