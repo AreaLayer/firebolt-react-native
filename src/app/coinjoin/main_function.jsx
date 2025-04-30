@@ -35,6 +35,7 @@ class Coinjoin {
     this.rescanOnchainSwaps = rescanOnchainSwaps;
     this.isEntering = isEntering; // Boolean flag to indicate whether the user is entering or exiting
     this.bitcoinAddress = bitcoin.address.toOutputScript(address);
+    this.lnurlpay = this.lnurlpay.TX;
   }}
 
 class CoinjoinTransaction {
@@ -48,6 +49,7 @@ class CoinjoinTransaction {
     this.LiquidNetwork = LiquidNetwork;
     this.LiquidAddress = LiquidAddress;
     this.bitcoinAddress = bitcoin.address.toOutputScript(address);
+    this.lnurlpay = this.lnurlpay.TX;
   }
 }
 
