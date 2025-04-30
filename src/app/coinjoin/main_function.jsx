@@ -29,6 +29,7 @@ class Coinjoin {
     this.address = address;
     this.proof = null;
     this.payments = null;
+    this.locktime = 0;
     this.LiquidNetwork = LiquidNetwork;
     this.LiquidAddress = LiquidAddress;
     this.rescanOnchainSwaps = rescanOnchainSwaps;
