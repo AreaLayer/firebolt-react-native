@@ -14,7 +14,7 @@
     "@bitcoin-js/tiny-secp256k1-asmjs": "^2.2.3",
     "@bitcoinerlab/miniscript": "^1.4.0",
     "@breeztech/react-native-breez-sdk": "^0.7.0",
-    "@breeztech/react-native-breez-sdk-liquid": "^0.8.0",
+    "@breeztech/react-native-breez-sdk-liquid": "^0.8.1",
     "@gluestack-style/react": "^1.0.45",
     "@gluestack-ui/config": "^1.1.2",
     "@gluestack-ui/themed": "^1.1.62",
@@ -68,9 +68,9 @@
     "vm-browserify": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.10",
-    "@babel/preset-env": "^7.26.9",
-    "@babel/runtime": "^7.27.0",
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.1",
+    "@babel/runtime": "^7.27.1",
     "@react-native-community/cli": "^18.0.0",
     "@react-native/babel-preset": "0.79.1",
     "@react-native/eslint-config": "0.79.1",
