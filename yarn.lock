@@ -2231,7 +2231,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nostr-dev-kit/ndk@^2.14.8":
+"@nostr-dev-kit/ndk@^2.14.9":
   version "2.14.9"
   resolved "https://registry.npmjs.org/@nostr-dev-kit/ndk/-/ndk-2.14.9.tgz"
   integrity sha512-6a1rP/sXHSJ9kwyvp/zdN6zvpyUE0UFSXfoze1SCGKsjqtJkUj07MqcezbWMhJRwcwU1kULXChKo1F3Z5nJmVQ==
