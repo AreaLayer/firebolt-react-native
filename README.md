@@ -86,8 +86,8 @@ The other main features Firebolt supports are as follows:
 -  [x] ZK Proof (Coinjoin) tested into Android app
 -  [x] App running locally (Android)
 -  [ ] Mainnet after beta version
--  [ ] Tor Daemon (Android)
--  [ ] VPN (Wireguard)
+-  [x] Tor Daemon (Android)
+-  [x] VPN (Wireguard)
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Reproducible builds (Android)
 -  [ ] Offline signing, payments on-chain 
