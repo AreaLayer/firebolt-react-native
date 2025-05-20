@@ -14,7 +14,7 @@
     "@bitcoin-js/tiny-secp256k1-asmjs": "^2.2.3",
     "@bitcoinerlab/miniscript": "^1.4.0",
     "@breeztech/react-native-breez-sdk": "^0.7.2",
-    "@breeztech/react-native-breez-sdk-liquid": "^0.8.3",
+    "@breeztech/react-native-breez-sdk-liquid": "^0.9.0",
     "@gluestack-style/react": "^1.0.45",
     "@gluestack-ui/config": "^1.1.2",
     "@gluestack-ui/themed": "^1.1.62",
