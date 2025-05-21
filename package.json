@@ -13,7 +13,7 @@
   "dependencies": {
     "@bitcoin-js/tiny-secp256k1-asmjs": "^2.2.3",
     "@bitcoinerlab/miniscript": "^1.4.0",
-    "@breeztech/react-native-breez-sdk": "^0.7.2",
+    "@breeztech/react-native-breez-sdk": "^0.8.0",
     "@breeztech/react-native-breez-sdk-liquid": "^0.9.0",
     "@gluestack-style/react": "^1.0.45",
     "@gluestack-ui/config": "^1.1.2",
@@ -22,7 +22,7 @@
     "@ledgerhq/hw-transport-webhid": "^6.30.0",
     "@ledgerhq/react-native-hid": "^6.32.4",
     "@mempool/mempool.js": "^3.0.0",
-    "@nostr-dev-kit/ndk": "^2.14.12",
+    "@nostr-dev-kit/ndk": "^2.14.15",
     "@react-native-async-storage/async-storage": "^2.1.2",
     "@react-native-picker/picker": "2.11.0",
     "@react-navigation/native": "^7.1.9",
