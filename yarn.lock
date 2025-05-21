@@ -2232,10 +2232,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nostr-dev-kit/ndk@^2.14.15":
-  version "2.14.15"
-  resolved "https://registry.npmjs.org/@nostr-dev-kit/ndk/-/ndk-2.14.15.tgz"
-  integrity sha512-AjAZJ+azuuiKVO4qQe+cBkKmzc58L28GDjtr3UZiNM1XdCDrkVY5u5/Bg0Od47taTdubmo1WRbynLWgVPhrb1A==
+"@nostr-dev-kit/ndk@^2.14.17":
+  version "2.14.17"
+  resolved "https://registry.npmjs.org/@nostr-dev-kit/ndk/-/ndk-2.14.17.tgz"
+  integrity sha512-hnI0H6bk4/M2z+lM/JfkQbLnMQvH+es0mndCkWo9zbWoSMj05VWzzcJapGyhP4Fm+WJIpAkVa6aCk9l9p0J86A==
   dependencies:
     "@noble/curves" "^1.6.0"
     "@noble/hashes" "^1.5.0"
@@ -4428,10 +4428,10 @@
   dependencies:
     "@types/react" "^18"
 
-"@types/react@*", "@types/react@^18", "@types/react@^18.2.6", "@types/react@^18.3.21":
-  version "18.3.21"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.21.tgz"
-  integrity sha512-gXLBtmlcRJeT09/sI4PxVwyrku6SaNUj/6cMubjE6T6XdY1fDmBL7r0nX0jbSZPU/Xr0KuwLLZh6aOYY5d91Xw==
+"@types/react@*", "@types/react@^18", "@types/react@^18.2.6", "@types/react@^18.3.22":
+  version "18.3.22"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.22.tgz"
+  integrity sha512-vUhG0YmQZ7kL/tmKLrD3g5zXbXXreZXB3pmROW8bg3CnLnpjkRVwUlLne7Ufa2r9yJ8+/6B73RzhAek5TBKh2Q==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
