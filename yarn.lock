@@ -1052,10 +1052,10 @@
   dependencies:
     bip68 "^1.0.4"
 
-"@breeztech/react-native-breez-sdk-liquid@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.9.0.tgz"
-  integrity sha512-Cj6aPi6zi/ZPtBRT8pWTMB44ejcj+Hqp7+LX0KW9IF6oYnzLhbAo+BBStYtIV5DpcHAlDGUUnfAACoTO72DpkA==
+"@breeztech/react-native-breez-sdk-liquid@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.9.1.tgz"
+  integrity sha512-A0HtzoOsV3PXo8uv2/NI1czyCRd/EznreyaCOlGTtt6WOIbACB7K7ZEWQO0O/1N3AP3pcdB39x/4a4vUgbsnyA==
 
 "@breeztech/react-native-breez-sdk@^0.8.0":
   version "0.8.0"
