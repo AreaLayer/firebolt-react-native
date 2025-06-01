@@ -78,16 +78,7 @@ The other main features Firebolt supports are as follows:
 
 
 -  [x] BTCPayServer Plugin (2025-2026) [WIP]
--  [x] BOLT12 
--  [x] APIs Breez SDK tested
--  [x] Greenlight APIs added
--  [x] Build.graldle tested
--  [x] Pre-beta app phase
--  [x] ZK Proof (Coinjoin) tested into Android app
--  [x] App running locally (Android)
 -  [ ] Mainnet after beta version
--  [x] Tor Daemon (Android)
--  [x] VPN (Wireguard)
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Reproducible builds (Android)
 -  [ ] Offline signing, payments on-chain 
