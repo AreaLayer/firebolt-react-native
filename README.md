@@ -72,6 +72,7 @@ The other main features Firebolt supports are as follows:
 - XPub support
 - Ark protocol (soon)
 - Offline payments (soon)
+- Spark wallet (soon)
 - Coinjoin resistence to the Quantum Computer (soon)
 
 ## Roadmap
