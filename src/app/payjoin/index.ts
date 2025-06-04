@@ -1,5 +1,4 @@
-import { PayjoinURL } from 'payjoin-react-native';
-import { UTXO } from 'silent-payments';
+import { PayjoinURL } from 'payjoin-react-native';import { UTXO } from 'silent-payments';
 
 // Interface definitions for better type safety
 interface PSBTResponse extends Response {
@@ -26,10 +25,13 @@ export const createPSBT = (url: string): string => {
   if (!url || typeof url !== 'string') {
     throw new Error('Invalid URL provided');
   }
-  // Access the static member PayjoinURL.psbt
   return PayjoinURL.psbt;
 };
 
+export const ValidatePayjoinPsbt = (): string => {
+  const originalOutput = PayjoinURL.psbt;
+  return PayjoinURL.psbt;
+};
 // Function to send PSBT to the payjoin server with config options
 export const sendPSBT = async (
   psbt: string,

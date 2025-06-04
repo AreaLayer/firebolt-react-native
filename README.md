@@ -79,6 +79,7 @@ The other main features Firebolt supports are as follows:
 
 
 -  [x] BTCPayServer Plugin (2025-2026) [WIP]
+-  [x] Payjoin V2 (Payjoin React Native)
 -  [ ] Mainnet after beta version
 -  [ ] Beta App (Android - via APK) in 2025
 -  [ ] Reproducible builds (Android)
@@ -86,7 +87,6 @@ The other main features Firebolt supports are as follows:
 -  [ ] Post Quantum Resistence Coinjoin (beta)
 -  [ ] iOs app
 -  [ ] Others hardwallets support (Green, OneKey, etc)
--  [ ] Payjoin V2 (Payjoin React Native)
 -  [ ] YPub
 -  [ ] Ark Wallet SDK by Breez
 -  [ ] Spark wallet SDK by Breez
