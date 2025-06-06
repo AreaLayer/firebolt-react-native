@@ -2033,16 +2033,6 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@ledgerhq/devices@8.4.5":
-  version "8.4.5"
-  resolved "https://registry.npmjs.org/@ledgerhq/devices/-/devices-8.4.5.tgz"
-  integrity sha512-wzfX7JRfTPXJl+4BUXxwUFUGghtqQA6V1I6xNxGfXKHjd51rjijL+9xcfZ1oj66dNNm9wiCBBZhMXXusYDUjWg==
-  dependencies:
-    "@ledgerhq/errors" "^6.21.0"
-    "@ledgerhq/logs" "^6.12.0"
-    rxjs "^7.8.1"
-    semver "^7.3.5"
-
 "@ledgerhq/devices@8.4.6":
   version "8.4.6"
   resolved "https://registry.npmjs.org/@ledgerhq/devices/-/devices-8.4.6.tgz"
@@ -2086,7 +2076,7 @@
     "@ledgerhq/hw-transport" "^6.31.6"
     "@ledgerhq/logs" "^6.13.0"
 
-"@ledgerhq/hw-transport@^6.31.5", "@ledgerhq/hw-transport@^6.31.6":
+"@ledgerhq/hw-transport@^6.31.6":
   version "6.31.6"
   resolved "https://registry.npmjs.org/@ledgerhq/hw-transport/-/hw-transport-6.31.6.tgz"
   integrity sha512-wXycgy21wdwdr9s2fz7K96aDqnsPXPT15E6GlNrYJ0C36tAQcHOtI+XWZ1A8J4cMlRRh6siGWsEymziOdFBPCQ==
@@ -2096,20 +2086,20 @@
     "@ledgerhq/logs" "^6.13.0"
     events "^3.3.0"
 
-"@ledgerhq/logs@^6.12.0", "@ledgerhq/logs@^6.13.0":
+"@ledgerhq/logs@^6.13.0":
   version "6.13.0"
   resolved "https://registry.npmjs.org/@ledgerhq/logs/-/logs-6.13.0.tgz"
   integrity sha512-4+qRW2Pc8V+btL0QEmdB2X+uyx0kOWMWE1/LWsq5sZy3Q5tpi4eItJS6mB0XL3wGW59RQ+8bchNQQ1OW/va8Og==
 
-"@ledgerhq/react-native-hid@^6.32.5":
-  version "6.32.5"
-  resolved "https://registry.npmjs.org/@ledgerhq/react-native-hid/-/react-native-hid-6.32.5.tgz"
-  integrity sha512-jKMbHMTlNtis9+xv/dqGYHnE16v1NsxiO10+0FaK0PLqxqfnzDJ61gcUDxulkHGKBoiTRc3PvvSvoeqQjwsnNw==
+"@ledgerhq/react-native-hid@^6.32.6":
+  version "6.32.6"
+  resolved "https://registry.npmjs.org/@ledgerhq/react-native-hid/-/react-native-hid-6.32.6.tgz"
+  integrity sha512-Zy+7KPwlTX3wWlWYsh/IR/0/agXB0XwmQvAqWOiGbINdhX5G3UTtmW7fIKFCsHXqzgyEtI+snqDkRfJQJ7N2yA==
   dependencies:
-    "@ledgerhq/devices" "8.4.5"
+    "@ledgerhq/devices" "8.4.6"
     "@ledgerhq/errors" "^6.21.0"
-    "@ledgerhq/hw-transport" "^6.31.5"
-    "@ledgerhq/logs" "^6.12.0"
+    "@ledgerhq/hw-transport" "^6.31.6"
+    "@ledgerhq/logs" "^6.13.0"
     rxjs "^7.8.1"
 
 "@legendapp/motion@>=2.2", "@legendapp/motion@latest":

@@ -20,7 +20,7 @@
     "@gluestack-ui/themed": "^1.1.62",
     "@ledgerhq/hw-app-btc": "^10.9.2",
     "@ledgerhq/hw-transport-webhid": "^6.30.2",
-    "@ledgerhq/react-native-hid": "^6.32.5",
+    "@ledgerhq/react-native-hid": "^6.32.6",
     "@mempool/mempool.js": "^3.0.0",
     "@nostr-dev-kit/ndk": "^2.14.24",
     "@react-native-async-storage/async-storage": "^2.2.0",
