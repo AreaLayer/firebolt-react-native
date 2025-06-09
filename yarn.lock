@@ -8824,10 +8824,10 @@ light-bolt11-decoder@^3.2.0:
   dependencies:
     "@scure/base" "1.1.1"
 
-light-bolt12-decoder@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/light-bolt12-decoder/-/light-bolt12-decoder-1.0.2.tgz"
-  integrity sha512-WeYp6BKWnfMCz7Dfbl4MsaUizCE2Y84fI3H93K6HnQosIU4vWPml2DPKz9yBMpPVT42+1SihpxyR5Qgm2NXgyw==
+light-bolt12-decoder@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/light-bolt12-decoder/-/light-bolt12-decoder-1.0.3.tgz"
+  integrity sha512-j4CWJ4yKtFA7Y1fST2IvqudD65ABNf7XmvQbyA/h0KHryYv6jid+G4VjT5/prQdw27eLBcqKUXHDcmPKLS+HIA==
   dependencies:
     "@scure/base" "1.1.1"
 
