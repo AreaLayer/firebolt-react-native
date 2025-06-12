@@ -39,6 +39,7 @@
     "bitbox-api": "^0.9.1",
     "bitcoinjs-lib": "^6.1.7",
     "bolt11": "^1.4.1",
+    "brace-expansion": "^4.0.1",
     "buffer": "^6.0.3",
     "dotenv": "^16.5.0",
     "ecpair": "^3.0.0",
