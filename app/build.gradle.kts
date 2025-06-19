@@ -25,6 +25,8 @@ dependencies {
     // Use the JUnit 5 integration.
     testImplementation(libs.junit.jupiter.engine)
 
+      implementation("org.breez:libbreez-sdk-jvm:<version>")
+
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
