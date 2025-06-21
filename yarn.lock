@@ -1052,10 +1052,10 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bitcoin-js/tiny-secp256k1-asmjs@^2.2.3":
-  version "2.2.3"
-  resolved "https://registry.npmjs.org/@bitcoin-js/tiny-secp256k1-asmjs/-/tiny-secp256k1-asmjs-2.2.3.tgz"
-  integrity sha512-arFPdEZi9RIiaG76OZswTnAU0KfuiLwGw2VNfD66LKhzlbfOnX1o1WI/GI3qm9UbjG/0QOzZu/KmTNvL79x/DQ==
+"@bitcoin-js/tiny-secp256k1-asmjs@^2.2.4":
+  version "2.2.4"
+  resolved "https://registry.npmjs.org/@bitcoin-js/tiny-secp256k1-asmjs/-/tiny-secp256k1-asmjs-2.2.4.tgz"
+  integrity sha512-Lo62disBIDwPrYAmMsSjEmqak41yb0OFGQVLdktXmcQLgtC1BI5Sd1eHSxNREKZmxMUXevtsgEhGB1DvvatRmQ==
   dependencies:
     uint8array-tools "0.0.7"
 
