@@ -3280,10 +3280,10 @@
     invariant "^2.2.4"
     nullthrows "^1.1.1"
 
-"@react-navigation/core@^7.12.0":
-  version "7.12.0"
-  resolved "https://registry.npmjs.org/@react-navigation/core/-/core-7.12.0.tgz"
-  integrity sha512-Ldy0WBoK39F/7uxnfTMefqjw37iU2Hmx6Eh1vn3g2dHkHYnkoxBJQGbqB49QWsFVOgbxr74tt1Dpg7o4ILEiXg==
+"@react-navigation/core@^7.12.1":
+  version "7.12.1"
+  resolved "https://registry.npmjs.org/@react-navigation/core/-/core-7.12.1.tgz"
+  integrity sha512-ir6s25CDkReufi0vQhSIAe+AAHHJN9zTgGlS6iDS1yqbwgl2MiBAZzpaOL1T5llYujie2jF/bODeLz2j4k80zw==
   dependencies:
     "@react-navigation/routers" "^7.4.1"
     escape-string-regexp "^4.0.0"
@@ -3293,29 +3293,29 @@
     use-latest-callback "^0.2.4"
     use-sync-external-store "^1.5.0"
 
-"@react-navigation/elements@^2.4.6":
-  version "2.4.6"
-  resolved "https://registry.npmjs.org/@react-navigation/elements/-/elements-2.4.6.tgz"
-  integrity sha512-G9J9BjR3YNrPbWtjLKBY2pxN9rNYM6Xxyr/LTWK+Ke6UIk2UA4pWFw52WhenWyZw+zFk2wyj1G+VS7UNO40NKQ==
+"@react-navigation/elements@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.npmjs.org/@react-navigation/elements/-/elements-2.5.0.tgz"
+  integrity sha512-ZYAq6MZexQZXT7YOMEST8ZGoVWJGtjGq0joEV/XRt2DNBRAx6B+tBlU7cHFmEkqmeRDNUADBrV/+uCSpz0sQMw==
   dependencies:
     color "^4.2.3"
     use-latest-callback "^0.2.4"
     use-sync-external-store "^1.5.0"
 
-"@react-navigation/native-stack@^7.3.18":
-  version "7.3.18"
-  resolved "https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-7.3.18.tgz"
-  integrity sha512-Zy7uma4C0tKoNoXtNzmIdpbun0W9azWmhgMPL5e7ppHuPIIYAoFzm2VfNCI4jz4pApu12VX+U446jwmzgqF9GA==
+"@react-navigation/native-stack@^7.3.19":
+  version "7.3.19"
+  resolved "https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-7.3.19.tgz"
+  integrity sha512-w/RTezjphI2EaQHqWWDyVL3+aFkhASWx9eQv57J9SQX9LNa8lsWq37Q2wCbB5U+H79bP8OGj+4P6wVJ4y/OZgA==
   dependencies:
-    "@react-navigation/elements" "^2.4.6"
+    "@react-navigation/elements" "^2.5.0"
     warn-once "^0.1.1"
 
-"@react-navigation/native@^7.1.13":
-  version "7.1.13"
-  resolved "https://registry.npmjs.org/@react-navigation/native/-/native-7.1.13.tgz"
-  integrity sha512-d00S5iAxv1QMBMrg+oTRv0QvAccrFROhzWWi6fZDWQUtu5OHA6sduzgkp/bQQQqWCAKUVHCSVaWeXJ12Dm6POw==
+"@react-navigation/native@^7.1.14":
+  version "7.1.14"
+  resolved "https://registry.npmjs.org/@react-navigation/native/-/native-7.1.14.tgz"
+  integrity sha512-X233/CNx41FpshlWe4uEAUN8CNem3ju4t5pnVKcdhDR0cTQT1rK6P0ZwjSylD9zXdnHvJttFjBhKTot6TcvSqA==
   dependencies:
-    "@react-navigation/core" "^7.12.0"
+    "@react-navigation/core" "^7.12.1"
     escape-string-regexp "^4.0.0"
     fast-deep-equal "^3.1.3"
     nanoid "^3.3.11"
@@ -11028,15 +11028,15 @@ react-native-is-edge-to-edge@^1.1.7:
   resolved "https://registry.npmjs.org/react-native-is-edge-to-edge/-/react-native-is-edge-to-edge-1.1.7.tgz"
   integrity sha512-EH6i7E8epJGIcu7KpfXYXiV2JFIYITtq+rVS8uEb+92naMRBdxhTuS8Wn2Q7j9sqyO0B+Xbaaf9VdipIAmGW4w==
 
-react-native-nitro-modules@^0.25.2:
-  version "0.25.2"
-  resolved "https://registry.npmjs.org/react-native-nitro-modules/-/react-native-nitro-modules-0.25.2.tgz"
-  integrity sha512-rL+X0LzB8BXvpdrUE/+oZ5v4qS/1nZIq0M8Uctbvqq2q53sVCHX4995ffT8+lGIJe/f0QcBvvrEeXtBPl86iwQ==
+react-native-nitro-modules@^0.26.2:
+  version "0.26.2"
+  resolved "https://registry.npmjs.org/react-native-nitro-modules/-/react-native-nitro-modules-0.26.2.tgz"
+  integrity sha512-PvTUOryU/J1RDsPh1IvmAEDkYVVL32wCIYxkg6HsKgq+Dl+C8lth/MtW7cRZ+fJ0qW21NILbhBdhSXFzBx51fA==
 
-react-native-nitro-tor@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.npmjs.org/react-native-nitro-tor/-/react-native-nitro-tor-0.2.4.tgz"
-  integrity sha512-2zAkTMOpCiFJO7/H6lIMDVxkn1MJMfg9wSjU+xKpccmhNpNxh/AM1cn7YAAs7QWdgek/KtST8mL4jTRpBAXzBQ==
+react-native-nitro-tor@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.npmjs.org/react-native-nitro-tor/-/react-native-nitro-tor-0.2.5.tgz"
+  integrity sha512-os5/3tZGlkbd4Lr+kr9xnhYAp4p6JWqVOPvpdNLX+6v2z7v4sXM2341AD6HsdH6TSPTuZkHpovFIZRKi5E4EaQ==
 
 react-native-qrcode-svg@^6.3.15:
   version "6.3.15"
@@ -11072,10 +11072,10 @@ react-native-reanimated@>=3.6.2:
     convert-source-map "^2.0.0"
     invariant "^2.2.4"
 
-"react-native-safe-area-context@>= 4.0.0", react-native-safe-area-context@5.4.1:
-  version "5.4.1"
-  resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.4.1.tgz"
-  integrity sha512-x+g3NblZ9jof8y+XkVvaGlpMrSlixhrJJ33BRzhTAKUKctQVecO1heSXmzxc5UdjvGYBKS6kPZVUw2b8NxHcPg==
+"react-native-safe-area-context@>= 4.0.0", react-native-safe-area-context@5.5.0:
+  version "5.5.0"
+  resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.5.0.tgz"
+  integrity sha512-BQcSvVEJj3T4zBQH9YrnlfcLGHiVOsmeiE10PSBsmI/xyzULSZdJISFOH0HLcLU7/nePC+HsaaVzIsEa1CVBYw==
 
 react-native-screens@^4.11.1, "react-native-screens@>= 4.0.0":
   version "4.11.1"
