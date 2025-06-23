@@ -90,7 +90,6 @@ The other main features Firebolt supports are as follows:
 -  [ ] YPub
 -  [ ] Ark Wallet SDK by Breez
 -  [ ] Spark wallet SDK by Breez
--  [ ] USDT support
 
 ## Electrum Plugin
 
