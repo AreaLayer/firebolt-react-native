@@ -2894,7 +2894,7 @@
   dependencies:
     joi "^17.2.1"
 
-"@react-native-community/cli@*":
+"@react-native-community/cli@*", "@react-native-community/cli@^18.0.0":
   version "18.0.0"
   resolved "https://registry.npmjs.org/@react-native-community/cli/-/cli-18.0.0.tgz"
   integrity sha512-DyKptlG78XPFo7tDod+we5a3R+U9qjyhaVFbOPvH4pFNu5Dehewtol/srl44K6Cszq0aEMlAJZ3juk0W4WnOJA==
