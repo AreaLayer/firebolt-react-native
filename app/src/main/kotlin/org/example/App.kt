@@ -102,7 +102,11 @@ class MempoolSignet {
 
     // Placeholder: Simulate broadcasting a transaction to the Mempool Signet.
     fun broadcastTransaction(transaction: String): String {
-        return "Transaction '$transaction' broadcasted to Mempool Signet."
+        return kotlin.text.buildString {
+            append("Transaction '")
+            append(transaction)
+            append("' broadcasted to Mempool Signet.")
+        }
     }
 }
 
