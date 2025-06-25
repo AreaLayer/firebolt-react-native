@@ -27,7 +27,7 @@
     "@react-native-picker/picker": "2.11.1",
     "@react-navigation/native": "^7.1.14",
     "@react-navigation/native-stack": "^7.3.21",
-    "@trezor/connect": "^9.6.0",
+    "@trezor/connect": "^9.6.1",
     "assert": "^2.0.0",
     "axios": "^1.10.0",
     "base-x": "^5.0.1",
@@ -85,7 +85,7 @@
     "core-js": "^3.43.0",
     "eslint": "^9.29.0",
     "jest": "^30.0.3",
-    "prettier": "3.6.0",
+    "prettier": "3.6.1",
     "react-test-renderer": "18.3.1",
     "rn-nodeify": "^10.3.0",
     "typescript": "5.8.3"
