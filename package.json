@@ -85,7 +85,7 @@
     "core-js": "^3.43.0",
     "eslint": "^9.29.0",
     "jest": "^30.0.3",
-    "prettier": "3.6.1",
+    "prettier": "3.6.2",
     "react-test-renderer": "18.3.1",
     "rn-nodeify": "^10.3.0",
     "typescript": "5.8.3"
