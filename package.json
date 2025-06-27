@@ -41,7 +41,7 @@
     "bolt11": "^1.4.1",
     "brace-expansion": "^4.0.1",
     "buffer": "^6.0.3",
-    "dotenv": "^16.6.0",
+    "dotenv": "^17.0.0",
     "ecpair": "^3.0.0",
     "elliptic": "^6.6.1",
     "events": "^3.0.0",
