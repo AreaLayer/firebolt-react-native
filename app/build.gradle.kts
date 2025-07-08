@@ -26,8 +26,7 @@ dependencies {
     testImplementation(libs.junit.jupiter.engine)
 
       dependencies {
-    implementation("org.breez:libbreez-sdk-jvm:0.10.1")
-
+implementation("breez_sdk_liquid:bindings-android:0.10.1")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
