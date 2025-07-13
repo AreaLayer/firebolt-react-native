@@ -48,7 +48,7 @@
     "libportal-react-native": "github:BlueWallet/libportal-react-native#9d9b138db60386e9b1f8297a60011ea7e9a33508",
     "light-bolt11-decoder": "^3.2.0",
     "light-bolt12-decoder": "^1.0.3",
-    "metro": "^0.82.5",
+    "metro": "^0.83.0",
     "mpc-crypto-lib": "^1.0.8",
     "nanoid": "^5.1.5",
     "payjoin-react-native": "^1.1.0-beta",
