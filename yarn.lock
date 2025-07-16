@@ -11248,10 +11248,10 @@ react-native-nitro-modules@^0.26.2:
   resolved "https://registry.npmjs.org/react-native-nitro-modules/-/react-native-nitro-modules-0.26.2.tgz"
   integrity sha512-PvTUOryU/J1RDsPh1IvmAEDkYVVL32wCIYxkg6HsKgq+Dl+C8lth/MtW7cRZ+fJ0qW21NILbhBdhSXFzBx51fA==
 
-react-native-nitro-tor@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.npmjs.org/react-native-nitro-tor/-/react-native-nitro-tor-0.2.5.tgz"
-  integrity sha512-os5/3tZGlkbd4Lr+kr9xnhYAp4p6JWqVOPvpdNLX+6v2z7v4sXM2341AD6HsdH6TSPTuZkHpovFIZRKi5E4EaQ==
+react-native-nitro-tor@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.npmjs.org/react-native-nitro-tor/-/react-native-nitro-tor-0.2.7.tgz"
+  integrity sha512-4OdWuIEuAuaHGyEuOLQ6+LugOeyxJEUiF2KN0rIXOp73GxH7FIrSGyBcih1xpp1Vk9xWFa+ouaEEzDfkyFRuOA==
 
 react-native-qrcode-svg@^6.3.15:
   version "6.3.15"
@@ -11292,10 +11292,10 @@ react-native-reanimated@>=3.6.2:
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.5.2.tgz"
   integrity sha512-t4YVbHa9uAGf+pHMabGrb0uHrD5ogAusSu842oikJ3YKXcYp6iB4PTGl0EZNkUIR3pCnw/CXKn42OCfhsS0JIw==
 
-react-native-screens@^4.11.1, "react-native-screens@>= 4.0.0":
-  version "4.11.1"
-  resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-4.11.1.tgz"
-  integrity sha512-F0zOzRVa3ptZfLpD0J8ROdo+y1fEPw+VBFq1MTY/iyDu08al7qFUO5hLMd+EYMda5VXGaTFCa8q7bOppUszhJw==
+react-native-screens@^4.12.0, "react-native-screens@>= 4.0.0":
+  version "4.12.0"
+  resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-4.12.0.tgz"
+  integrity sha512-T2KL6RcDSYDRZswh9glRe600Hvaeq240U21eaqv0uxCNmJz05UeFc4YGQgbFPI8XsakPKx3HjNonItxElFy+QA==
   dependencies:
     react-freeze "^1.0.0"
     react-native-is-edge-to-edge "^1.1.7"
