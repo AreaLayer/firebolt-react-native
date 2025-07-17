@@ -10698,7 +10698,7 @@ react-devtools-core@^6.0.1, react-devtools-core@^6.1.1:
 
 react-freeze@^1.0.0:
   version "1.0.4"
-  resolved "https://registry.npmjs.org/react-freeze/-/react-freeze-1.0.4.tgz"
+  resolved "https://registry.yarnpkg.com/react-freeze/-/react-freeze-1.0.4.tgz#cbbea2762b0368b05cbe407ddc9d518c57c6f3ad"
   integrity sha512-r4F0Sec0BLxWicc7HEyo2x3/2icUTrRmDjaaRyzzn+7aDyFZliszMDOgLVwSnQnYENOlL1o569Ze2HZefk8clA==
 
 "react-is@^16.12.0 || ^17.0.0 || ^18.0.0", react-is@^18.3.1:
@@ -10742,10 +10742,10 @@ react-native-crypto@^2.2.1:
     public-encrypt "^4.0.0"
     randomfill "^1.0.3"
 
-react-native-is-edge-to-edge@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.npmjs.org/react-native-is-edge-to-edge/-/react-native-is-edge-to-edge-1.1.7.tgz"
-  integrity sha512-EH6i7E8epJGIcu7KpfXYXiV2JFIYITtq+rVS8uEb+92naMRBdxhTuS8Wn2Q7j9sqyO0B+Xbaaf9VdipIAmGW4w==
+react-native-is-edge-to-edge@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-is-edge-to-edge/-/react-native-is-edge-to-edge-1.2.1.tgz#64e10851abd9d176cbf2b40562f751622bde3358"
+  integrity sha512-FLbPWl/MyYQWz+KwqOZsSyj2JmLKglHatd3xLZWskXOpRaio4LfEDEz8E/A6uD8QoTHW6Aobw1jbEwK7KMgR7Q==
 
 react-native-nitro-tor@^0.2.7:
   version "0.2.7"
@@ -10774,13 +10774,13 @@ react-native-safe-area-context@5.5.2:
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.5.2.tgz"
   integrity sha512-t4YVbHa9uAGf+pHMabGrb0uHrD5ogAusSu842oikJ3YKXcYp6iB4PTGl0EZNkUIR3pCnw/CXKn42OCfhsS0JIw==
 
-react-native-screens@^4.12.0:
-  version "4.12.0"
-  resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-4.12.0.tgz"
-  integrity sha512-T2KL6RcDSYDRZswh9glRe600Hvaeq240U21eaqv0uxCNmJz05UeFc4YGQgbFPI8XsakPKx3HjNonItxElFy+QA==
+react-native-screens@^4.13.1:
+  version "4.13.1"
+  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-4.13.1.tgz#bf19f09b76dee90b5f7bd8aab3c951a565dd111d"
+  integrity sha512-EESsMAtyzYcL3gpAI2NKKiIo+Ew0fnX4P4b3Zy/+MTc6SJIo3foJbZwdIWd/SUBswOf7IYCvWBppg+D8tbwnsw==
   dependencies:
     react-freeze "^1.0.0"
-    react-native-is-edge-to-edge "^1.1.7"
+    react-native-is-edge-to-edge "^1.2.1"
     warn-once "^0.1.0"
 
 react-native-storage@^1.0.1:
