@@ -5687,10 +5687,10 @@ bip68@^1.0.4:
   resolved "https://registry.npmjs.org/bip68/-/bip68-1.0.4.tgz"
   integrity sha512-O1htyufFTYy3EO0JkHg2CLykdXEtV2ssqw47Gq9A0WByp662xpJnMEB9m43LZjsSDjIAOozWRExlFQk2hlV1XQ==
 
-bitbox-api@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.npmjs.org/bitbox-api/-/bitbox-api-0.10.0.tgz"
-  integrity sha512-cf8CoTl6E/eZw6Mksw7KFX7uZEm2YdxQJdaElLGmgLnOw36ecnIT08OC+qL1/6XHF8qkWWVhYVn+I6Vw5WYIPw==
+bitbox-api@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/bitbox-api/-/bitbox-api-0.10.1.tgz#b7eaa8a2897e73939534f2a3723700ead2456388"
+  integrity sha512-lynkzP1Zllz2/iSBD1fNVY77HIJg4QQ0GXaO5e+5/omNTevtW4I6qFq4OYmxHZ/QlAgj+bqBjsDZ2oE4H6MaQw==
 
 bitcoin-ops@^1.3.0, bitcoin-ops@^1.4.0, bitcoin-ops@^1.4.1:
   version "1.4.1"
