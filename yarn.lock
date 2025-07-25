@@ -1167,14 +1167,7 @@
   resolved "https://registry.npmjs.org/@eslint/config-helpers/-/config-helpers-0.3.0.tgz"
   integrity sha512-ViuymvFmcJi04qdZeDc2whTHryouGcDlaxPqarTD0ZE10ISpxGUVZGZDx4w01upyIynL3iu6IXH2bS1NhclQMw==
 
-"@eslint/core@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.npmjs.org/@eslint/core/-/core-0.14.0.tgz"
-  integrity sha512-qIbV0/JZr7iSDjqAc60IqbLdsj9GDt16xQtWD+B78d/HAlvysGdZZ6rpJHGAc2T0FQx1X6thsSPdnoiGKdNtdg==
-  dependencies:
-    "@types/json-schema" "^7.0.15"
-
-"@eslint/core@^0.15.0":
+"@eslint/core@^0.15.0", "@eslint/core@^0.15.1":
   version "0.15.1"
   resolved "https://registry.npmjs.org/@eslint/core/-/core-0.15.1.tgz"
   integrity sha512-bkOp+iumZCCbt1K1CmWf0R9pM5yKpDv+ZXtvSyQpudrI9kuFLp+bM2WOPXImuD/ceQuaa8f5pj93Y7zyECIGNA==
@@ -1207,11 +1200,11 @@
   integrity sha512-RBMg5FRL0I0gs51M/guSAj5/e14VQ4tpZnQNWwuDT66P14I43ItmPfIZRhO9fUVIPOAQXU47atlywZ/czoqFPA==
 
 "@eslint/plugin-kit@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.npmjs.org/@eslint/plugin-kit/-/plugin-kit-0.3.1.tgz"
-  integrity sha512-0J+zgWxHN+xXONWIyPWKFMgVuJoZuGiIFu8yxk7RJjxkzpGmyja5wRFqZIVtjDVOQpV+Rw0iOAjYPE2eQyjr0w==
+  version "0.3.4"
+  resolved "https://registry.npmjs.org/@eslint/plugin-kit/-/plugin-kit-0.3.4.tgz"
+  integrity sha512-Ul5l+lHEcw3L5+k8POx6r74mxEYKG5kOb6Xpy2gCRW6zweT6TEhAf8vhxGgjhqrd/VO/Dirhsb+1hNpD1ue9hw==
   dependencies:
-    "@eslint/core" "^0.14.0"
+    "@eslint/core" "^0.15.1"
     levn "^0.4.1"
 
 "@ethereumjs/common@^10.0.0":
@@ -2192,11 +2185,11 @@
   integrity sha512-bM7tPYShPThtBy1Y+9D28iquOeP5W5s4p7KKD/cUQoaVaPibrtC7Mm4u+IeSlH4WGvFJkTmv0vmZJajuZtM79A==
 
 "@ledgerhq/hw-app-btc@^10.9.3":
-  version "10.9.3"
-  resolved "https://registry.npmjs.org/@ledgerhq/hw-app-btc/-/hw-app-btc-10.9.3.tgz"
-  integrity sha512-HDgb/l2Oi+/oUn3aC+KkdDHqHuJDGxU7bITMyUSnutONmOFJ4z7K5Sys5R06Rzx/nfBS+Atz/QxgRbsZYaV2aQ==
+  version "10.10.0"
+  resolved "https://registry.npmjs.org/@ledgerhq/hw-app-btc/-/hw-app-btc-10.10.0.tgz"
+  integrity sha512-cYx5W4eZZKcKzu54OEerr4cZTmjCWYSGB2t8DkfqqSE9DWcNAsqDjOdxcGle0mfcgsLDcfnVSdGCVytwUNHYiQ==
   dependencies:
-    "@ledgerhq/hw-transport" "^6.31.7"
+    "@ledgerhq/hw-transport" "^6.31.8"
     "@ledgerhq/logs" "^6.13.0"
     bip32-path "^0.4.2"
     bitcoinjs-lib "^5.2.0"
@@ -2219,7 +2212,7 @@
     "@ledgerhq/hw-transport" "^6.31.8"
     "@ledgerhq/logs" "^6.13.0"
 
-"@ledgerhq/hw-transport@^6.31.7", "@ledgerhq/hw-transport@^6.31.8":
+"@ledgerhq/hw-transport@^6.31.8":
   version "6.31.8"
   resolved "https://registry.npmjs.org/@ledgerhq/hw-transport/-/hw-transport-6.31.8.tgz"
   integrity sha512-iH74gILq8BkkLX1Il0wNhcYp1BJ3tjR18fdok4KEdU86i9dOXRKfLbWNhDDFf1px/pMrsGlDS4SpaO74janeEA==
