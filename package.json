@@ -73,7 +73,7 @@
   "devDependencies": {
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
-    "@babel/runtime": "^7.27.6",
+    "@babel/runtime": "^7.28.2",
     "@react-native-community/cli": "^19.1.1",
     "@react-native/babel-preset": "0.80.2",
     "@react-native/eslint-config": "0.80.2",
@@ -83,7 +83,7 @@
     "@types/react-test-renderer": "^18.3.1",
     "babel-jest": "^30.0.5",
     "core-js": "^3.44.0",
-    "eslint": "^9.31.0",
+    "eslint": "^9.32.0",
     "jest": "^30.0.5",
     "prettier": "3.6.2",
     "react-test-renderer": "18.3.1",
