@@ -80,7 +80,7 @@
     "@react-native/metro-config": "^0.80.2",
     "@react-native/typescript-config": "0.80.2",
     "@types/react": "^18.3.23",
-    "@types/react-test-renderer": "^18.3.1",
+    "@types/react-test-renderer": "^19.0.0",
     "babel-jest": "^30.0.5",
     "core-js": "^3.44.0",
     "eslint": "^9.32.0",
