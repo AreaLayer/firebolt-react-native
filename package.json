@@ -59,7 +59,7 @@
     "react-native-nitro-tor": "^0.2.8",
     "react-native-qrcode-svg": "^6.3.15",
     "react-native-randombytes": "^3.6.2",
-    "react-native-safe-area-context": "5.5.2",
+    "react-native-safe-area-context": "5.6.0",
     "react-native-screens": "^4.13.1",
     "react-native-storage": "^1.0.1",
     "react-native-svg": "15.12.1",
