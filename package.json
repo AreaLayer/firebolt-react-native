@@ -68,7 +68,7 @@
     "snarkjs": "^0.7.5",
     "stream-browserify": "^3.0.0",
     "styled-components": "^6.1.13",
-    "tmp": "^0.2.4",
+    "tmp": "^0.2.5",
     "vm-browserify": "^1.0.0"
   },
   "devDependencies": {
@@ -84,7 +84,7 @@
     "@types/react-test-renderer": "^18.3.1",
     "babel-jest": "^30.0.5",
     "core-js": "^3.45.0",
-    "eslint": "^9.32.0",
+    "eslint": "^9.33.0",
     "jest": "^30.0.5",
     "prettier": "3.6.2",
     "react-test-renderer": "18.3.1",
