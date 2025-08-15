@@ -1,23 +1,28 @@
 import * as React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import OnBoardingHome from '../screens/Onboarding/OnBoardingHome';
-import CreateWallet from '../screens/Onboarding/CreateWallet';
-import {SCREEN_NAMES} from './screenNames';
-import ConfirmSeed from '../screens/Onboarding/ConfirmSeed';
-import PinSetup from '../screens/Onboarding/PinSetup';
-import ConfirmPin from '../screens/Onboarding/ConfirmPin';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useConnectionContext } from '../providers/ConnectionProvider';
+import { Splash } from '../components/Splash';
+
+// Onboarding screens
+import OnBoardingHome from '../screens/Onboarding';
+import CreateWallet from '../screens/onboarding/CreateWallet';
+import ConfirmSeed from '../screens/onboarding/ConfirmSeed';
+import PinSetup from '../screens/onboarding/PinSetup';
+import ConfirmPin from '../screens/onboarding/ConfirmPin';
+
+// Main app screens
 import Dashboard from '../screens/Home/Dashboard';
-import {useConnectionContext} from '../providers/ConnectionProvider';
-import {Splash} from '../components/Splash';
 import VerifyPin from '../screens/Home/VerifyPin';
-import CreateWallet from '../screens/Onboarding/CreateWallet'; // Already included
+
+// Screen name constants
+import { SCREEN_NAMES } from './screenNames';
 
 export type RootStackParamList = {
   OnboardingHome: undefined;
   CreateWallet: undefined;
-  ConfirmSeed: {words: string[]};
-  PinSetup: {words: string[]};
-  ConfirmPin: {words: string[]; walletPin: number[]};
+  ConfirmSeed: { words: string[] };
+  PinSetup: { words: string[] };
+  ConfirmPin: { words: string[]; walletPin: number[] };
   Dashboard: undefined;
   VerifyPin: undefined;
   ZKPool: undefined;
@@ -31,66 +36,52 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function OnBoardingNavigation() {
-  const {loading, isWalletConnected} = useConnectionContext();
+  const { loading, isWalletConnected } = useConnectionContext();
+
   if (loading) {
     return <Splash />;
   }
+
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       {isWalletConnected ? (
-        <Stack.Group>
-          <Stack.Screen
-            options={{headerShown: false}}
-            name={SCREEN_NAMES.VerifyPin}
-            component={VerifyPin}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name={SCREEN_NAMES.Dashboard}
-            component={Dashboard}
-          />
-        </Stack.Group>
+        // Logged-in / wallet connected flow
+        <>
+          <Stack.Screen name={SCREEN_NAMES.VerifyPin} component={VerifyPin} />
+          <Stack.Screen name={SCREEN_NAMES.Dashboard} component={Dashboard} />
+        </>
       ) : (
-        <Stack.Group>
+        // Onboarding flow
+        <>
           <Stack.Screen
-            options={{headerShown: false}}
             name={SCREEN_NAMES.OnboardingHome}
             component={OnBoardingHome}
           />
           <Stack.Screen
-            options={{headerShown: false}}
             name={SCREEN_NAMES.CreateWallet}
             component={CreateWallet}
           />
           <Stack.Screen
-            options={{headerShown: false}}
             name={SCREEN_NAMES.ConfirmSeed}
             component={ConfirmSeed}
           />
           <Stack.Screen
-            options={{headerShown: false}}
             name={SCREEN_NAMES.PinSetup}
             component={PinSetup}
           />
           <Stack.Screen
-            options={{headerShown: false}}
             name={SCREEN_NAMES.ConfirmPin}
             component={ConfirmPin}
           />
           <Stack.Screen
-            options={{headerShown: false}}
             name={SCREEN_NAMES.Dashboard}
             component={Dashboard}
           />
-          <Stack.Screen
-           options={{headerShown: false}}
-           name={SCREEN_NAMES.CreateWallet}
-           component={CreateWallet}
-         />
-        </Stack.Group>
+        </>
       )}
     </Stack.Navigator>
   );
 }
 
 export default OnBoardingNavigation;
+
