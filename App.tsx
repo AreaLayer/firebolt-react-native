@@ -1,16 +1,14 @@
-// No changes needed, 'react' is a core module and does not need to be imported explicitlyimport {GluestackUIProvider} from '@gluestack/ui';
+import React from 'react';
+import {GluestackUIProvider} from '@gluestack-ui/themed';
 import {config} from './src/theme/config';
 
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import OnBoardingNavigation from './src/navigation/OnBoarding';
 import {ConnectionProvider} from './src/providers/ConnectionProvider';
-import OnBoardingHome from './src/screens/onboarding/ZKPool';
 import Balance from './src/components/Balance';
-import HomeScreen from './src/screens/Home/HomeScreen';
 import BitcoinPrice from './src/components/BitcoinPrice';
-import React from 'react';
-
-import { GluestackUIProvider } from '@gluestack-ui/themed';
+import HomeScreen from './src/screens/Home/HomeScreen';
+import OnBoardingHome from './src/screens/onboarding/OnBoardingHome';
 
 function App(): React.JSX.Element {
   return (
