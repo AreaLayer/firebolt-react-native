@@ -8,7 +8,10 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "postinstall": "rn-nodeify --install buffer,stream,assert,events,crypto,vm,process --hack"
+    "postinstall": "rn-nodeify --install buffer,stream,assert,events,crypto,vm,process --hack",
+     "start:web": "react-scripts start",
+     "build:web": "react-scripts build",
+     "serve:web": "serve -s build"
   },
   "dependencies": {
     "@bitcoin-js/tiny-secp256k1-asmjs": "^2.2.4",
@@ -54,6 +57,7 @@
     "payjoin-react-native": "^1.1.0-beta",
     "peach-api-ts": "^0.4.0",
     "react": "18.3.1",
+    "react-dom": "^19.1.1",
     "react-native": "0.77.1",
     "react-native-crypto": "^2.2.1",
     "react-native-nitro-tor": "^0.2.8",
@@ -63,6 +67,8 @@
     "react-native-screens": "^4.14.0",
     "react-native-storage": "^1.0.1",
     "react-native-svg": "15.12.1",
+    "react-native-web": "^0.21.0",
+    "react-scripts": "^5.0.1",
     "readable-stream": "^4.7.0",
     "silent-payments": "github:BlueWallet/SilentPayments",
     "snarkjs": "^0.7.5",
