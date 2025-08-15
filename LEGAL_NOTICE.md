@@ -45,5 +45,3 @@ The project explicitly **prohibits** any use for:
 - Firebolt Wallet is provided "as-is" with no warranties regarding its use.
 
 ---
-
-This document serves as a **formal declaration** of the ethical and lawful intent of Firebolt Wallet, which may be presented to GitHub or any regulatory authority if questions arise regarding project legitimacy.
