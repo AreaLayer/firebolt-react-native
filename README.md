@@ -80,8 +80,9 @@ The other main features Firebolt supports are as follows:
 
 -  [x] BTCPayServer Plugin (2025-2026) [WIP]
 -  [x] Payjoin V2 (Payjoin React Native)
+-  [x] Fix bugs and issues (WIP)
 -  [ ] Mainnet after beta version
--  [ ] Beta App (Android - via APK) in 2025
+-  [ ] Beta App (PWA - Loca host 2025)
 -  [ ] Reproducible builds (Android)
 -  [ ] Offline signing, payments on-chain 
 -  [ ] Post Quantum Resistence Coinjoin (beta)
