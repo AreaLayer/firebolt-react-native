@@ -104,6 +104,11 @@ The other main features Firebolt supports are as follows:
 
 Coming soon in 2025/2026
 
+## Legal Notice
+
+For formal legal clarification regarding the project’s ethical use, see [LEGAL_NOTICE.md](https://github.com/AreaLayer/firebolt-react-native/blob/main/LEGAL_NOTICE.md)
+
+
 ## Contributors
 <a align="center" href="https://github.com/AreaLayer/firebolt-react-native aphs/contributors">
   <img src="https://contrib.rocks/image?repo=AreaLayer/firebolt-react-native" />
