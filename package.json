@@ -9,9 +9,9 @@
     "start": "react-native start",
     "test": "jest",
     "postinstall": "rn-nodeify --install buffer,stream,assert,events,crypto,vm,process --hack",
-     "start:web": "react-scripts start",
-     "build:web": "react-scripts build",
-     "serve:web": "serve -s build"
+    "start:web": "react-scripts start",
+    "build:web": "react-scripts build",
+    "serve:web": "serve -s build"
   },
   "dependencies": {
     "@bitcoin-js/tiny-secp256k1-asmjs": "^2.2.4",
@@ -119,5 +119,17 @@
     "_stream_passthrough": "readable-stream/passthrough",
     "stream": "stream-browserify",
     "vm": "vm-browserify"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
