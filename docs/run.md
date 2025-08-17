@@ -79,3 +79,85 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+# Run Firebolt React Native App on Localhost (PWA / Web)
+
+This guide explains how to run Firebolt on your **browser** (localhost) as a **PWA** for development.
+
+---
+
+## Step 1: Install Dependencies
+
+From the root of the Firebolt project:
+
+```bash
+# using npm
+npm install
+
+# OR using Yarn
+yarn install
+```
+
+---
+
+## Step 2: Start the Web Server
+
+If the project is already configured with **React Native Web** and Expo (recommended):
+
+```bash
+# using npm
+npm run web
+
+# OR using Yarn
+yarn web
+```
+
+This will start a development server (using Expo CLI or webpack), and open Firebolt in your default browser at:
+
+```
+http://localhost:19006
+```
+
+(or another port shown in your terminal).
+
+---
+
+## Step 3: Running as PWA
+
+1. Once Firebolt is running in the browser, open **DevTools > Application > Manifest**.
+2. You’ll see the PWA configuration (icon, theme, service worker).
+3. In Chrome/Edge, click **Install App** from the address bar to add Firebolt as a standalone PWA.
+
+---
+
+## Step 4: Modify and Hot Reload
+
+* Open `App.tsx` in your editor.
+* Save changes → the browser will **hot reload** automatically.
+
+---
+
+## Troubleshooting
+
+* If `npm run web` is not available, make sure you’re using **Expo** or have installed `react-native-web` + `webpack` config.
+* Install missing web packages if needed:
+
+```bash
+npm install react-native-web react-dom @expo/webpack-config
+```
+
+* If using plain React Native CLI, you’ll need a **custom webpack config** to bundle for the web.
+
+---
+
+## Learn More
+
+* [React Native Web Docs](https://necolas.github.io/react-native-web/docs/)
+* [Expo Web (PWA)](https://docs.expo.dev/workflow/web/)
+
+---
+
+🔥 Now Firebolt runs on `localhost` as a **PWA in your browser** — no emulator required.
+
+---
