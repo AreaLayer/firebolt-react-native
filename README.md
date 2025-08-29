@@ -10,8 +10,6 @@
 [![LN](https://img.shields.io/badge/lightning-792EE5?logo=lightning)](https://mempool.space/lightning)
 [![Nostr](https://img.shields.io/badge/nostr-only-FF9900?)]((https://user-images.githubusercontent.com/99301796/223592277-34058d0e-af30-411d-8dfe-87c42dacdcf2.png))
 
-![Banner](https://github.com/AreaLayer/FireBolt/raw/main/src/asset/firebolt_logo_readme.png)
-
 >React native version for Firebolt wallet with Bitcoin, Lightning Network/LSP (Breez SDK), Coinjoin, Nostr, Payjoin, Taproot
 
 ### Overview
@@ -108,9 +106,3 @@ Coming soon in 2025/2026
 ## Legal Notice
 
 For formal legal clarification regarding the project’s ethical use, see [LEGAL_NOTICE.md](https://github.com/AreaLayer/firebolt-react-native/blob/main/LEGAL_NOTICE.md)
-
-
-## Contributors
-<a align="center" href="https://github.com/AreaLayer/firebolt-react-native aphs/contributors">
-  <img src="https://contrib.rocks/image?repo=AreaLayer/firebolt-react-native" />
-</a>
