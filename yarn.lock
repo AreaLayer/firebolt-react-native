@@ -2556,27 +2556,27 @@
     rxjs "^7.8.1"
     semver "^7.3.5"
 
-"@ledgerhq/devices@8.5.0":
-  version "8.5.0"
-  resolved "https://registry.npmjs.org/@ledgerhq/devices/-/devices-8.5.0.tgz"
-  integrity sha512-zDB6Pdk6NYYbYis8cWoLLkL9k/IvjhC3hkuuz2lhpJ2AxIs3/PDMUKoyK4DpjPtRyKk1W1lwsnpc6J1i87r4/Q==
+"@ledgerhq/devices@8.5.1":
+  version "8.5.1"
+  resolved "https://registry.npmjs.org/@ledgerhq/devices/-/devices-8.5.1.tgz"
+  integrity sha512-oW75YQQiP2muHveXTuwSAze6CBxJ7jOYILhFiJbsVzmgLPVqtdw4s0bJJlOBft4Aup67yNAjboFCIU7kTYQBFg==
   dependencies:
-    "@ledgerhq/errors" "^6.24.0"
+    "@ledgerhq/errors" "^6.25.0"
     "@ledgerhq/logs" "^6.13.0"
     rxjs "^7.8.1"
     semver "^7.3.5"
 
-"@ledgerhq/errors@^6.23.0", "@ledgerhq/errors@^6.24.0":
-  version "6.24.0"
-  resolved "https://registry.npmjs.org/@ledgerhq/errors/-/errors-6.24.0.tgz"
-  integrity sha512-UMy+nGH4hmlaML7vPiSwGQ/mOoq/rwExYGEZVpb9TPoG0AcSfzpG43LAdAemvCTX/gK0MUO+int4FpNkD1ZrtQ==
+"@ledgerhq/errors@^6.23.0", "@ledgerhq/errors@^6.25.0":
+  version "6.25.0"
+  resolved "https://registry.npmjs.org/@ledgerhq/errors/-/errors-6.25.0.tgz"
+  integrity sha512-9cU0dgUyq3Adb1bHAjJnbwl+r+4WBjuPq0k+/DbBNpuYHwcz2xKtRIjLimUJyACjHti3iWwRt1sFcbQDDdI08w==
 
 "@ledgerhq/hw-app-btc@^10.9.3":
-  version "10.10.1"
-  resolved "https://registry.npmjs.org/@ledgerhq/hw-app-btc/-/hw-app-btc-10.10.1.tgz"
-  integrity sha512-97X1+G5u4woGJ0qurHz0Yf4K4lgBEqOvk8P8SfIILWAIim2XRuOzLLxUjPn9B9vBmA2LlXVsf3QC9WsDzXZKIg==
+  version "10.10.2"
+  resolved "https://registry.npmjs.org/@ledgerhq/hw-app-btc/-/hw-app-btc-10.10.2.tgz"
+  integrity sha512-6I25vmqsDmMcNyuHf+2CN4GYOA9uX9jVdEeJY9ugN5HroikgLnF09XNbXoGyyGdLbFpfzeLyGnLrUdXG4AqL2w==
   dependencies:
-    "@ledgerhq/hw-transport" "^6.31.9"
+    "@ledgerhq/hw-transport" "^6.31.10"
     "@ledgerhq/logs" "^6.13.0"
     bip32-path "^0.4.2"
     bitcoinjs-lib "^5.2.0"
@@ -2599,13 +2599,13 @@
     "@ledgerhq/hw-transport" "^6.31.8"
     "@ledgerhq/logs" "^6.13.0"
 
-"@ledgerhq/hw-transport@^6.31.8", "@ledgerhq/hw-transport@^6.31.9":
-  version "6.31.9"
-  resolved "https://registry.npmjs.org/@ledgerhq/hw-transport/-/hw-transport-6.31.9.tgz"
-  integrity sha512-HqB2Whl2qbrzyvs9gC/GmLhIy8RO4CWzjqHS4k0bPWDZRqKa8m6H32vjrbXGO//pUL1Mlu87UwvxvLyuICdjwg==
+"@ledgerhq/hw-transport@^6.31.10", "@ledgerhq/hw-transport@^6.31.8":
+  version "6.31.10"
+  resolved "https://registry.npmjs.org/@ledgerhq/hw-transport/-/hw-transport-6.31.10.tgz"
+  integrity sha512-ruNtkTPMO3rFCaSM+oPTOXXerzxWFZF43pAHVAHhsjiQGhLWzLSkMc7qBEpWIpZPubKRAbWSXR2zXBIJPNy8oQ==
   dependencies:
-    "@ledgerhq/devices" "8.5.0"
-    "@ledgerhq/errors" "^6.24.0"
+    "@ledgerhq/devices" "8.5.1"
+    "@ledgerhq/errors" "^6.25.0"
     "@ledgerhq/logs" "^6.13.0"
     events "^3.3.0"
 
