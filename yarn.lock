@@ -1193,23 +1193,23 @@
     bip68 "^1.0.4"
 
 "@breeztech/react-native-breez-sdk-liquid@^0.11.0":
-  version "0.11.1"
-  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.11.1.tgz"
-  integrity sha512-iL+YmowRJyv1WJbhFVPOSqEkHXCBrqyOUaxJPPgBALVOolX7weaculIoqVRI1oC5XmwRsQi64S0Mw96GE/NSfQ==
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/@breeztech/react-native-breez-sdk-liquid/-/react-native-breez-sdk-liquid-0.11.2.tgz#4b428515921923904d2342cb6e13a0ae40105ebd"
+  integrity sha512-RfJOk+o6RIKmWKtUL/cLCp3ajjzNXqwdF+4Xax7vEUq6y/hzGb/VEO7EIfS0BM8lVvS8+cE3BaDb18hsefpONw==
 
 "@breeztech/react-native-breez-sdk@^0.8.0":
   version "0.8.0"
-  resolved "https://registry.npmjs.org/@breeztech/react-native-breez-sdk/-/react-native-breez-sdk-0.8.0.tgz"
+  resolved "https://registry.yarnpkg.com/@breeztech/react-native-breez-sdk/-/react-native-breez-sdk-0.8.0.tgz#185adac12d32cc689e92113edec609f4d8ec04a2"
   integrity sha512-Ncfujp81fCGkEykxhwGDG7lavXs8J/BuWKCXcQPX5PXOaxtZODCvuBsBYsgV1V9PeZEKq3mz4EGksGL4qCXgSw==
 
 "@csstools/normalize.css@*":
   version "12.1.1"
-  resolved "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-12.1.1.tgz"
+  resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-12.1.1.tgz#f0ad221b7280f3fc814689786fd9ee092776ef8f"
   integrity sha512-YAYeJ+Xqh7fUou1d1j9XHl44BmsuThiTr4iNrgCQ3J27IbhXsxXDGZ1cXv8Qvs99d4rBbLiSKy3+WZiet32PcQ==
 
 "@csstools/postcss-cascade-layers@^1.1.1":
   version "1.1.1"
-  resolved "https://registry.npmjs.org/@csstools/postcss-cascade-layers/-/postcss-cascade-layers-1.1.1.tgz"
+  resolved "https://registry.yarnpkg.com/@csstools/postcss-cascade-layers/-/postcss-cascade-layers-1.1.1.tgz#8a997edf97d34071dd2e37ea6022447dd9e795ad"
   integrity sha512-+KdYrpKC5TgomQr2DlZF4lDEpHcoxnj5IGddYYfBWJAKfj1JtuHUIqMa+E1pJJ+z3kvDViWMqyqPlG4Ja7amQA==
   dependencies:
     "@csstools/selector-specificity" "^2.0.2"
