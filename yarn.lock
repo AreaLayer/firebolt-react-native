@@ -2724,10 +2724,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nostr-dev-kit/ndk@^2.14.33":
-  version "2.14.33"
-  resolved "https://registry.npmjs.org/@nostr-dev-kit/ndk/-/ndk-2.14.33.tgz"
-  integrity sha512-akiafJZj4ZAAYse+qNSjrx6Yg4Y2gB4UyMlo6I30ITVikRAtgPejXgtLGmjWCcgtf56b9g79AikAr3IZtr1pLA==
+"@nostr-dev-kit/ndk@^2.14.34":
+  version "2.14.34"
+  resolved "https://registry.npmjs.org/@nostr-dev-kit/ndk/-/ndk-2.14.34.tgz"
+  integrity sha512-06riFTUCg5yZodHWI6FeKn7sRhqEyAtaKVECinRDA4/rBl7BudNo07uN7K7r43HG7DrUut9cWRuLFtmuFrtdyA==
   dependencies:
     "@noble/curves" "^1.6.0"
     "@noble/hashes" "^1.5.0"
@@ -6367,10 +6367,10 @@ axe-core@^4.10.0:
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.10.3.tgz"
   integrity sha512-Xm7bpRXnDSX2YE2YFfBk2FnF0ep6tmG7xPh8iHee8MIcrgq762Nkce856dYtJYLkuIoYZvGfTs/PbZhideTcEg==
 
-axios@^1.10.0, axios@^1.11.0, axios@^1.8.4:
-  version "1.11.0"
-  resolved "https://registry.npmjs.org/axios/-/axios-1.11.0.tgz"
-  integrity sha512-1Lx3WLFQWm3ooKDYZD1eXmoGO9fxYQjrycfHFC8P0sCfQVXyROp0p9PFWBehewBOdCwHc+f/b8I0fMto5eSfwA==
+axios@^1.10.0, axios@^1.12.0, axios@^1.8.4:
+  version "1.12.2"
+  resolved "https://registry.npmjs.org/axios/-/axios-1.12.2.tgz"
+  integrity sha512-vMJzPewAlRyOgxV2dU0Cuz2O8zzzx9VYtbJOaBgXFeLc4IV/Eg50n4LowmehOOR61S8ZMpc2K5Sa7g6A4jfkUw==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.4"
