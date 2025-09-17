@@ -7712,10 +7712,10 @@ core-js@^2.4.0:
   resolved "https://registry.npmjs.org/core-js/-/core-js-2.6.12.tgz"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
-core-js@^3.19.2, core-js@^3.45.0:
-  version "3.45.0"
-  resolved "https://registry.npmjs.org/core-js/-/core-js-3.45.0.tgz"
-  integrity sha512-c2KZL9lP4DjkN3hk/an4pWn5b5ZefhRJnAc42n6LJ19kSnbeRbdQZE5dSeE2LBol1OwJD3X1BQvFTAsa8ReeDA==
+core-js@^3.19.2, core-js@^3.45.1:
+  version "3.45.1"
+  resolved "https://registry.npmjs.org/core-js/-/core-js-3.45.1.tgz"
+  integrity sha512-L4NPsJlCfZsPeXukyzHFlg/i7IIVwHSItR0wg0FLNqYClJ4MQYTYLbC7EkjKYRLZF2iof2MUgN0EGy7MdQFChg==
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -8458,10 +8458,10 @@ dotenv@^10.0.0:
   resolved "https://registry.npmjs.org/dotenv/-/dotenv-10.0.0.tgz"
   integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
-dotenv@^17.2.1:
-  version "17.2.1"
-  resolved "https://registry.npmjs.org/dotenv/-/dotenv-17.2.1.tgz"
-  integrity sha512-kQhDYKZecqnM0fCnzI5eIv5L4cAe/iRI+HqMbO/hbRdTAeXDG+M9FjipUxNfbARuEg4iHIbhnhs78BCHNbSxEQ==
+dotenv@^17.2.2:
+  version "17.2.2"
+  resolved "https://registry.npmjs.org/dotenv/-/dotenv-17.2.2.tgz"
+  integrity sha512-Sf2LSQP+bOlhKWWyhFsn0UsfdK/kCWRv1iuA2gXAwt3dyNabr6QSj00I2V10pidqz69soatm9ZwZvpQMTIOd5Q==
 
 dunder-proto@^1.0.0, dunder-proto@^1.0.1:
   version "1.0.1"
