@@ -2608,13 +2608,14 @@
   resolved "https://registry.npmjs.org/@ledgerhq/errors/-/errors-6.25.0.tgz"
   integrity sha512-9cU0dgUyq3Adb1bHAjJnbwl+r+4WBjuPq0k+/DbBNpuYHwcz2xKtRIjLimUJyACjHti3iWwRt1sFcbQDDdI08w==
 
-"@ledgerhq/hw-app-btc@^10.9.3":
-  version "10.10.2"
-  resolved "https://registry.npmjs.org/@ledgerhq/hw-app-btc/-/hw-app-btc-10.10.2.tgz"
-  integrity sha512-6I25vmqsDmMcNyuHf+2CN4GYOA9uX9jVdEeJY9ugN5HroikgLnF09XNbXoGyyGdLbFpfzeLyGnLrUdXG4AqL2w==
+"@ledgerhq/hw-app-btc@^10.11.0":
+  version "10.11.0"
+  resolved "https://registry.npmjs.org/@ledgerhq/hw-app-btc/-/hw-app-btc-10.11.0.tgz"
+  integrity sha512-BcKChF39jqytz8Vxm1iKLqxbV9wrxn+Ha/6emLOLlDgL4pZtnfqVrI/6+8BpSLDVd9B4lJQOnLIcageAIxpqUw==
   dependencies:
     "@ledgerhq/hw-transport" "^6.31.10"
     "@ledgerhq/logs" "^6.13.0"
+    "@noble/curves" "1.9.7"
     bip32-path "^0.4.2"
     bitcoinjs-lib "^5.2.0"
     bs58 "^4.0.1"
@@ -2623,7 +2624,6 @@
     ripemd160 "2"
     semver "^7.3.5"
     sha.js "2"
-    tiny-secp256k1 "1.1.6"
     varuint-bitcoin "1.1.2"
 
 "@ledgerhq/hw-transport-webhid@^6.30.6":
@@ -2722,6 +2722,13 @@
   version "1.9.0"
   resolved "https://registry.npmjs.org/@noble/curves/-/curves-1.9.0.tgz"
   integrity sha512-7YDlXiNMdO1YZeH6t/kvopHHbIZzlxrCV9WLqCY6QhcXOoXiNCMDqJIglZ9Yjx5+w7Dz30TITFrlTjnRg7sKEg==
+  dependencies:
+    "@noble/hashes" "1.8.0"
+
+"@noble/curves@1.9.7":
+  version "1.9.7"
+  resolved "https://registry.npmjs.org/@noble/curves/-/curves-1.9.7.tgz"
+  integrity sha512-gbKGcRUYIjA3/zCCNaWDciTMFI0dCkvou3TL8Zmy5Nc7sJ47a0jtOeZoTaMxkuqRo9cRhjOdZJXegxYE5FN/xw==
   dependencies:
     "@noble/hashes" "1.8.0"
 
@@ -7141,10 +7148,10 @@ bip68@^1.0.4:
   resolved "https://registry.npmjs.org/bip68/-/bip68-1.0.4.tgz"
   integrity sha512-O1htyufFTYy3EO0JkHg2CLykdXEtV2ssqw47Gq9A0WByp662xpJnMEB9m43LZjsSDjIAOozWRExlFQk2hlV1XQ==
 
-bitbox-api@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.npmjs.org/bitbox-api/-/bitbox-api-0.10.1.tgz"
-  integrity sha512-lynkzP1Zllz2/iSBD1fNVY77HIJg4QQ0GXaO5e+5/omNTevtW4I6qFq4OYmxHZ/QlAgj+bqBjsDZ2oE4H6MaQw==
+bitbox-api@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.npmjs.org/bitbox-api/-/bitbox-api-0.11.0.tgz"
+  integrity sha512-f3+frRLgr2GSWwh/3uqREgFDr/9XsfynRxlbcfuAGbLUKE8TWNex7vH7U0zBl9Q1mNwMwpk/ucnnNkE/pBztJA==
 
 bitcoin-ops@^1.3.0, bitcoin-ops@^1.4.0, bitcoin-ops@^1.4.1:
   version "1.4.1"
@@ -15390,10 +15397,10 @@ react-native-randombytes@^3.6.2:
     buffer "^4.9.1"
     sjcl "^1.0.3"
 
-react-native-safe-area-context@5.6.0:
-  version "5.6.0"
-  resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.6.0.tgz"
-  integrity sha512-tJas3YOdsuCg3kepCTGF3LWZp9onMbb9Agju2xfs2kRX8d/5TMUPmupBpjerk/B7Tv/zeJnk+qp5neA96Y0otQ==
+react-native-safe-area-context@5.6.1:
+  version "5.6.1"
+  resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.6.1.tgz"
+  integrity sha512-/wJE58HLEAkATzhhX1xSr+fostLsK8Q97EfpfMDKo8jlOc1QKESSX/FQrhk7HhQH/2uSaox4Y86sNaI02kteiA==
 
 react-native-screens@^4.14.0:
   version "4.14.0"
@@ -15428,10 +15435,10 @@ react-native-url-polyfill@^2.0.0:
   dependencies:
     whatwg-url-without-unicode "8.0.0-3"
 
-react-native-web@^0.21.0:
-  version "0.21.0"
-  resolved "https://registry.npmjs.org/react-native-web/-/react-native-web-0.21.0.tgz"
-  integrity sha512-S0mtV7wMPeet1kCRnrEmo1bTUJeFsKebleCbRwbBRBUg/BWS64bfsnnm+ArC+QtjlbZFSZmtvv8imzOIuOOa3Q==
+react-native-web@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.npmjs.org/react-native-web/-/react-native-web-0.21.1.tgz"
+  integrity sha512-BeNsgwwe4AXUFPAoFU+DKjJ+CVQa3h54zYX77p7GVZrXiiNo3vl03WYDYVEy5R2J2HOPInXtQZB5gmj3vuzrKg==
   dependencies:
     "@babel/runtime" "^7.18.6"
     "@react-native/normalize-colors" "^0.74.1"
@@ -17342,17 +17349,6 @@ tiny-secp256k1@^1.1.7:
   version "1.1.7"
   resolved "https://registry.npmjs.org/tiny-secp256k1/-/tiny-secp256k1-1.1.7.tgz"
   integrity sha512-eb+F6NabSnjbLwNoC+2o5ItbmP1kg7HliWue71JgLegQt6A5mTN8YbvTLCazdlg6e5SV6A+r8OGvZYskdlmhqQ==
-  dependencies:
-    bindings "^1.3.0"
-    bn.js "^4.11.8"
-    create-hmac "^1.1.7"
-    elliptic "^6.4.0"
-    nan "^2.13.2"
-
-tiny-secp256k1@1.1.6:
-  version "1.1.6"
-  resolved "https://registry.npmjs.org/tiny-secp256k1/-/tiny-secp256k1-1.1.6.tgz"
-  integrity sha512-FmqJZGduTyvsr2cF3375fqGHUovSwDi/QytexX1Se4BPuPZpTE5Ftp5fg+EFSuEf3lhZqgCRjEG3ydUQ/aNiwA==
   dependencies:
     bindings "^1.3.0"
     bn.js "^4.11.8"
