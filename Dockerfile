@@ -12,7 +12,7 @@ RUN apt-get update && \
 ENV PATH=/opt/gradle/gradle-7.4.2/bin:$PATH
 
 # Stage 2: Kotlin Build
-FROM openjdk:21-slim AS kotlin-build
+FROM openjdk:25-slim AS kotlin-build
 
 # Copy Gradle installation from base stage
 COPY --from=gradle-base /opt/gradle /opt/gradle
