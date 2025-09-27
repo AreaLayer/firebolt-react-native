@@ -59,7 +59,7 @@
     "react-dom": "^18.3.1",
     "react-native": "0.81.4",
     "react-native-crypto": "^2.2.1",
-    "react-native-nitro-tor": "^0.2.8",
+    "react-native-nitro-tor": "^0.3.0",
     "react-native-qrcode-svg": "^6.3.15",
     "react-native-randombytes": "^3.6.2",
     "react-native-safe-area-context": "5.6.1",
