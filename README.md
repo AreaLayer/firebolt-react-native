@@ -1,95 +1,52 @@
-### Firebolt Wallet - React Native Version ⚡🕵️🌀
+🔥 Firebolt React Native (Archived)
 
-⚠️**Pre-beta phase Android**
+**Status:** 🚨 *Project Archived — Active development has moved to Rust-based implementations.*
 
-**Soon iOs version**
+---
 
-**Contributions are welcome**
+### 🧩 Overview
 
-[![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
-[![LN](https://img.shields.io/badge/lightning-792EE5?logo=lightning)](https://mempool.space/lightning)
-[![Nostr](https://img.shields.io/badge/nostr-only-FF9900?)]((https://user-images.githubusercontent.com/99301796/223592277-34058d0e-af30-411d-8dfe-87c42dacdcf2.png))
+**Firebolt React Native** was the early prototype for the **Firebolt Wallet**, a next-generation self-sovereign wallet integrating:
 
->React native version for Firebolt wallet with Bitcoin, Lightning Network/LSP (Breez SDK), Coinjoin, Nostr, Payjoin, Taproot
+* Zero-Knowledge Proof (ZK) CoinJoin
+* Lightning Network
+* Silent Payments
+* and other privacy-preserving Bitcoin technologies.
 
-### Overview
+This React Native version served as a **frontend experiment and mobile prototype**, helping shape the architecture for the upcoming Rust-based core.
 
-*Cypherpunk App*
+---
 
-Firebolt is a wallet designed by a Bitcoiner for Bitcoiners looking for privacy using Payjoin, Lightning Network, Coinjoin, Bitcoin and Nostr.
+### 🛠️ Current Development
 
-Each individual has their own identity using Nostr.
+Development for the **core libraries and backend** continues in **Rust**, focusing on:
 
-### The problem
+* ⚙️ **ZK CoinJoin Framework** (zk-SNARKs based)
+* ⚡ **Electrum Integration** for lightweight Bitcoin connectivity
+* 💳 **BTCPayServer Compatibility** for merchant and payment flows
 
-Central Banks, centralized social media, non-coinjoin wallets and KYC platforms
+These modules will be part of the future **Firebolt ecosystem**, ensuring performance, privacy, and portability across platforms.
 
-### Firebolt's solution
+---
 
-Firebolt offers a Bitcoin wallet that supports both on-chain and lightning transactions. The application runs a custom, non-routing Lightning node created with the Breez SDK on the user's mobile phone. 
+### 💤 Why Archived
 
-Users can back up their Bitcoin and Lightning keys with a standard BIP-39 seed and backup channel 
-The other main features Firebolt supports are as follows:
+This repository is archived because:
 
-📱 Contact list via Nostr
+* React Native was primarily used for early experimentation.
+* The production codebase is transitioning fully to **Rust + React Native bindings (FFI or WASM)**.
+* Focus has shifted to building a robust **multi-platform Rust core** before UI expansion.
 
-🪙 Payments via Lightning Network
+---
 
-⚡Non custodial via on-chain and Lightning Network
+### 📦 Legacy Reference
 
-⚛️ Coinjoin (ZK proof) & Payjoin (V1) for privacy
+If you’re exploring early design patterns or UI ideas for wallet apps, feel free to fork or browse this repo.
+However, **no further updates or support** will be provided here.
 
-🫂Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RoboSats)
+---
 
-:ocean:Liquid Network support
-
-🤫 Silent Payments
-
-### Feature
-
-- Lightning Network/Liquid Network (Breez SDK)
-- Nostr (create profiles)
-- Bitcoin (on-chain)
-- LSP (Breez List)
-- Greenlight by Breez SDK
-- Coinjoin powered by ZK proof, Coinswap, Taproot and more
-- PayJoin V1 by Payjoin React Native
-- Bitcoin-only (Lightning Network, Liquid)
-- Backup using Nostr keys and BIP-39
-- Miniscript
-- Contact list via Nostr (NPub)
-- Buy Bitcoin via P2P apps (PeachBitcoin, Bisq, RoboSats)
-- RBF
-- User friendly
-- iOS and Android
-- Portal NFC by TwentyTwo Hardwallet
-- Trezor and Ledger Hardwallet support
-- Silent Payments
-- Watch only wallet
-- Bitcoin converter Tool
-- XPub support
-- Ark protocol (soon)
-- Offline payments (soon)
-- Spark wallet (soon)
-- Coinjoin resistence to the Quantum Computer (soon)
-
-## Roadmap
-
-
--  [x] BTCPayServer Plugin (2025-2026) [WIP]
--  [x] Payjoin V2 (Payjoin React Native)
--  [x] Fix bugs and issues (WIP)
--  [ ] Mainnet after beta version
--  [ ] Beta App (PWA - Loca host 2025)
--  [ ] Reproducible builds (Android)
--  [ ] Offline signing, payments on-chain 
--  [ ] Post Quantum Resistence Coinjoin (beta)
--  [ ] iOs app
--  [ ] Others hardwallets support (Green, OneKey, etc)
--  [ ] YPub
--  [ ] Ark Wallet SDK by Breez
--  [ ] Spark wallet SDK by Breez
--  [ ] BIP-360
+### 🚀 Next Steps
 
 ## Electrum Plugin
 
